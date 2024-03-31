@@ -1,7 +1,8 @@
 "use client";
-import { Box, Button, Container, Flex, HStack, Image } from "@chakra-ui/react";
+import { Box, Button, Container, Flex, HStack } from "@chakra-ui/react";
 import React from "react";
 import { H1, H3 } from "../Typography";
+import { Image } from "../Shared/Image";
 
 const Background = () => (
   <>
@@ -51,10 +52,7 @@ export const Hero = ({ header, subheader, button1, button2, image }) => {
           </HStack>
         </Box>
         <Box bgColor={"white"} p={1}>
-          <Image
-            boxSize={"md"}
-            src="https://images.unsplash.com/photo-1560257452-1ddd4ec09251?q=80&w=3165&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          />
+          <Image boxSize={"md"} url={image.url} />
         </Box>
       </Flex>
     </Flex>

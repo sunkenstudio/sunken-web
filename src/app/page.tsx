@@ -6,7 +6,6 @@ import { useQuery, gql } from "@apollo/client";
 import { camelCase } from "lodash";
 
 const SITE = gql`
-  # Write your query or mutation here
   {
     sites {
       data {
@@ -94,16 +93,18 @@ const Home = () => {
     return <>{"Error :("}</>;
   }
 
-  console.log({ data });
   const client = data.sites.data.find((i) => i.attributes.ClientId === "demo");
   const clientData = formatStrapiData(client.attributes);
-
+  console.log({ clientData });
   return (
     <main>
       <Box m={1}>
         <Stack gap={1}>
           <Hero {...clientData.hero} />
-          <Section
+          {clientData.sections.map((i) => (
+            <Section key={`section-${i.sortOrder}`} {...i} />
+          ))}
+          {/* <Section
             id="section-1"
             header="Section 1"
             bgColor="secondary"
@@ -122,7 +123,7 @@ const Home = () => {
             bgColor="primary"
             color="white"
             altLayout
-          />
+          /> */}
         </Stack>
       </Box>
     </main>

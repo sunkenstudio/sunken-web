@@ -1,6 +1,7 @@
 import { Box, Flex, HStack, Image, Stack } from "@chakra-ui/react";
 import React from "react";
 import { H3, Paragraph } from "../Typography";
+import { RichText } from "../Shared/RichText";
 
 const Background = ({ bgColor }) => (
   <>
@@ -18,21 +19,30 @@ const Background = ({ bgColor }) => (
 );
 
 export const Section = ({
-  id,
   header = "MISSING",
-  bgColor = "primary",
-  color = "white",
-  altLayout = false,
+  sortOrder,
+  text,
+  image,
+  caption,
 }) => {
   const COLORS = {
     primary: "teal",
     secondary: "#81E6D9",
     white: "white",
   };
-  console.log(bgColor);
+
+  const bgColor =
+    sortOrder % 3 === 0
+      ? "primary"
+      : sortOrder % 2 === 0
+      ? "white"
+      : "secondary";
+
+  const color = bgColor === "white" ? "primary" : "white";
+
+  const altLayout = sortOrder % 2 !== 0;
   return (
     <Flex
-      id={id}
       w="100%"
       m="0 auto"
       h="2xl"
@@ -56,30 +66,19 @@ export const Section = ({
                   src="https://images.unsplash.com/photo-1560257452-1ddd4ec09251?q=80&w=3165&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 />
               </Box>
-              <Paragraph>descriptive text goes here...</Paragraph>
+              <Paragraph>{caption}</Paragraph>
             </Stack>
           ) : null}
           <Stack maxW="40%">
             <H3>{header}</H3>
-            <Paragraph>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </Paragraph>
+            <RichText content={text} />
           </Stack>
           {!altLayout ? (
             <Stack>
               <Box bgColor={bgColor === "white" ? "teal" : "white"} p={1}>
-                <Image
-                  boxSize={"sm"}
-                  src="https://images.unsplash.com/photo-1560257452-1ddd4ec09251?q=80&w=3165&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                />
+                <Image boxSize={"sm"} src={image.url} />
               </Box>
-              <Paragraph>descriptive text goes here...</Paragraph>
+              <Paragraph>{caption}</Paragraph>
             </Stack>
           ) : null}
         </HStack>
