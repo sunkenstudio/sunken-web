@@ -12,7 +12,13 @@ import React from "react";
 
 export const Footer = () => {
   return (
-    <Flex bottom={"0px"} position={"fixed"} justifyContent={"center"} w="100%">
+    <Flex
+      bottom={"0px"}
+      position={"fixed"}
+      justifyContent={"center"}
+      w="100%"
+      zIndex={999}
+    >
       <Stack>
         <HStack gap={3} m="1rem">
           <Image
@@ -21,8 +27,9 @@ export const Footer = () => {
             src={"instagram-logo.svg"}
             alt="instagram icon"
             color={"teal"}
-            bgColor={"white"}
+            bgColor={"black"}
             borderRadius={".5rem"}
+            border="2px solid white"
             p={2}
             shadow={"sm"}
           />
@@ -32,8 +39,9 @@ export const Footer = () => {
             src={"facebook-logo.svg"}
             alt="facebook icon"
             color={"teal"}
-            bgColor={"white"}
+            bgColor={"black"}
             borderRadius={".5rem"}
+            border="2px solid white"
             p={2}
             shadow={"sm"}
           />
@@ -43,8 +51,9 @@ export const Footer = () => {
             src={"twitter-logo.svg"}
             alt="twitter icon"
             color={"teal"}
-            bgColor={"white"}
+            bgColor={"black"}
             borderRadius={".5rem"}
+            border="2px solid white"
             p={2}
             shadow={"sm"}
           />
