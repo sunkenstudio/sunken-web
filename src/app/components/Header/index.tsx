@@ -4,25 +4,21 @@ import {
   Button,
   Divider,
   Drawer,
-  DrawerBody,
   DrawerCloseButton,
   DrawerContent,
-  DrawerFooter,
-  DrawerHeader,
   DrawerOverlay,
   Flex,
-  Image,
-  Input,
   Spacer,
   Stack,
   StackDivider,
   useDisclosure,
 } from "@chakra-ui/react";
-import Link from "next/link";
 import React from "react";
 import { H3, H5 } from "../Typography";
+import { List } from "@phosphor-icons/react";
+import { upperCase } from "lodash";
 
-export const Header = () => {
+export const Header = ({ sections, brand }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
 
@@ -44,13 +40,19 @@ export const Header = () => {
       <Flex>
         <Box />
         <Spacer />
-        <Button ref={btnRef} m={4} onClick={onOpen}>
-          <Image
-            boxSize="32px"
-            objectFit="cover"
-            src={"list.svg"}
-            alt="list icon"
-          />
+        <Button
+          ref={btnRef}
+          m={4}
+          onClick={onOpen}
+          boxSize={"48px"}
+          p={2}
+          bgColor={brand.dark}
+          borderRadius={".5rem"}
+          border={`2px solid ${brand.light}`}
+          justifyContent={"center"}
+          alignItems={"center"}
+        >
+          <List size={32} color={brand.light} />
         </Button>
       </Flex>
       <Drawer
@@ -60,38 +62,44 @@ export const Header = () => {
         finalFocusRef={btnRef}
       >
         <DrawerOverlay />
-        <DrawerContent>
+        <DrawerContent
+          border={`2px solid ${brand.light}`}
+          bgColor={brand.secondary}
+        >
           <DrawerCloseButton />
-          <Stack mt={"3rem"} alignItems={"center"} p={3} gap={3}>
-            <H3>Sunken Studio</H3>
+          <Stack mt={"3rem"} alignItems={"center"} p={3} gap={"2rem"}>
+            <H3 color={brand.light}>Sunken Studio</H3>
             <Divider orientation="horizontal" />
-            <H5>
-              <a onClick={handleScroll} href={"#hero"}>
-                HOME
-              </a>
-            </H5>
-            <StackDivider />
-            <H5>
-              <a onClick={handleScroll} href={"#section-1"}>
-                SECTION 1
-              </a>
-            </H5>
-            <StackDivider />
-            <H5>
-              <a onClick={handleScroll} href={"#section-2"}>
-                SECTION 2
-              </a>
-            </H5>
-            <StackDivider />
-            <H5>
-              <a onClick={handleScroll} href={"#section-3"}>
-                SECTION 3
-              </a>
-            </H5>
+            <Box
+              color={brand.light}
+              bgColor={brand.dark}
+              border={`2px solid ${brand.light}`}
+              borderRadius={".5rem"}
+              p={2}
+            >
+              <H5>
+                <a onClick={handleScroll} href={`#hero`}>
+                  HOME
+                </a>
+              </H5>
+            </Box>
+            {sections.map((i) => (
+              <Box
+                key={`modal-link-${i.sortOrder}`}
+                color={brand.light}
+                bgColor={brand.dark}
+                border={`2px solid ${brand.light}`}
+                borderRadius={".5rem"}
+                p={2}
+              >
+                <H5>
+                  <a onClick={handleScroll} href={`#section-${i.sortOrder}`}>
+                    {upperCase(i.header)}
+                  </a>
+                </H5>
+              </Box>
+            ))}
           </Stack>
-          {/* <Link href="#section-1">Section 1</Link>
-          <Link href="#section-1">Section 2</Link>
-          <Link href="#section-1">Section 3</Link> */}
         </DrawerContent>
       </Drawer>
     </Box>

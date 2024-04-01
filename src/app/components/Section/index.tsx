@@ -24,34 +24,30 @@ export const Section = ({
   text,
   image,
   caption,
+  brand,
 }) => {
-  const COLORS = {
-    primary: "teal",
-    secondary: "#81E6D9",
-    white: "white",
-  };
-
   const bgColor =
     sortOrder % 3 === 0
       ? "primary"
       : sortOrder % 2 === 0
-      ? "white"
+      ? "light"
       : "secondary";
 
-  const color = bgColor === "white" ? "primary" : "white";
+  const color = bgColor === "light" ? "primary" : "light";
 
   const altLayout = sortOrder % 2 !== 0;
   return (
     <Flex
+      id={`section-${sortOrder}`}
       w="100%"
       m="0 auto"
       h="2xl"
       direction={"column"}
-      color={COLORS[color]}
-      textShadow={color === "white" ? `1px 1px 5px ${COLORS.primary}` : "none"}
+      color={brand[color]}
+      textShadow={color === "light" ? `1px 1px 5px ${brand.primary}` : "none"}
     >
-      <Background bgColor={COLORS[bgColor]} />
-      <Flex w="100%" m="0 auto" h="2xl" direction={"column"} zIndex={999}>
+      <Background bgColor={brand[bgColor]} />
+      <Flex w="100%" m="0 auto" h="2xl" direction={"column"} zIndex={5}>
         <HStack
           justifyContent={"center"}
           alignItems={"center"}
@@ -60,11 +56,11 @@ export const Section = ({
         >
           {altLayout ? (
             <Stack>
-              <Box bgColor={bgColor === "white" ? "teal" : "white"} p={1}>
-                <Image
-                  boxSize={"sm"}
-                  src="https://images.unsplash.com/photo-1560257452-1ddd4ec09251?q=80&w=3165&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                />
+              <Box
+                bgColor={bgColor === "light" ? brand.primary : brand.light}
+                p={1}
+              >
+                <Image boxSize={"sm"} src={image.url} />
               </Box>
               <Paragraph>{caption}</Paragraph>
             </Stack>
@@ -75,7 +71,10 @@ export const Section = ({
           </Stack>
           {!altLayout ? (
             <Stack>
-              <Box bgColor={bgColor === "white" ? "teal" : "white"} p={1}>
+              <Box
+                bgColor={bgColor === "light" ? brand.primary : brand.light}
+                p={1}
+              >
                 <Image boxSize={"sm"} src={image.url} />
               </Box>
               <Paragraph>{caption}</Paragraph>
