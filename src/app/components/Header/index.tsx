@@ -63,41 +63,46 @@ export const Header = ({ sections, brand }) => {
       >
         <DrawerOverlay />
         <DrawerContent
-          border={`2px solid ${brand.light}`}
+          border={`4px solid ${brand.light}`}
           bgColor={brand.secondary}
         >
           <DrawerCloseButton />
           <Stack mt={"3rem"} alignItems={"center"} p={3} gap={"2rem"}>
-            <H3 color={brand.light}>Sunken Studio</H3>
+            <H3 color={brand.light}>Company Name</H3>
             <Divider orientation="horizontal" />
-            <Box
-              color={brand.light}
-              bgColor={brand.dark}
-              border={`2px solid ${brand.light}`}
-              borderRadius={".5rem"}
-              p={2}
+            <a
+              onClick={handleScroll}
+              href={`#hero`}
+              style={{ minWidth: "70%" }}
             >
-              <H5>
-                <a onClick={handleScroll} href={`#hero`}>
-                  HOME
-                </a>
-              </H5>
-            </Box>
-            {sections.map((i) => (
               <Box
-                key={`modal-link-${i.sortOrder}`}
                 color={brand.light}
                 bgColor={brand.dark}
                 border={`2px solid ${brand.light}`}
                 borderRadius={".5rem"}
                 p={2}
+                minW="70%"
               >
-                <H5>
-                  <a onClick={handleScroll} href={`#section-${i.sortOrder}`}>
-                    {upperCase(i.header)}
-                  </a>
-                </H5>
+                <H5>HOME</H5>
               </Box>
+            </a>
+            {sections.map((i) => (
+              <a
+                key={`modal-link-${i.sortOrder}`}
+                onClick={handleScroll}
+                href={`#section-${i.sortOrder}`}
+                style={{ minWidth: "70%" }}
+              >
+                <Box
+                  color={brand.light}
+                  bgColor={brand.dark}
+                  border={`2px solid ${brand.light}`}
+                  borderRadius={".5rem"}
+                  p={2}
+                >
+                  <H5>{upperCase(i.header)}</H5>
+                </Box>
+              </a>
             ))}
           </Stack>
         </DrawerContent>

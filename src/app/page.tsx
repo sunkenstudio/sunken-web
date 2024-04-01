@@ -7,7 +7,6 @@ import { useQuery } from "@apollo/client";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { GET_SITE } from "./helpers/queries";
-import Head from "next/head";
 
 const Home = () => {
   const formatStrapiData = (data) => {
@@ -56,10 +55,7 @@ const Home = () => {
 
   return (
     <main>
-      <Head>
-        <title>Page Title</title>
-      </Head>
-      <Box bgColor={"white"} p={1}>
+      <Box bgColor={"white"} p={1} overflowX={"hidden"} maxW="100%">
         <Header sections={clientData.sections} brand={clientData.brand} />
         <Box>
           <Stack gap={1}>
@@ -73,7 +69,7 @@ const Home = () => {
             ))}
           </Stack>
         </Box>
-        <Footer brand={clientData.brand} />
+        <Footer brand={clientData.brand} footer={clientData.footer} />
       </Box>
     </main>
   );

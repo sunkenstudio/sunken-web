@@ -6,8 +6,19 @@ import {
   TwitterLogo,
 } from "@phosphor-icons/react";
 import Link from "next/link";
+import { RichText } from "../Shared/RichText";
 
-export const Footer = ({ brand }) => {
+const SocialButtonStyle = (brand) => ({
+  boxSize: "48px",
+  p: 2,
+  bgColor: brand.dark,
+  borderRadius: ".5rem",
+  border: `2px solid ${brand.light}`,
+  justifyContent: "center",
+  alignItems: "center",
+});
+
+export const Footer = ({ brand, footer }) => {
   return (
     <Flex
       bottom={"0px"}
@@ -16,48 +27,36 @@ export const Footer = ({ brand }) => {
       w="100%"
       zIndex={999}
     >
-      <Stack>
-        <HStack gap={3} m="1rem">
-          <Link href={"https://instagram.com"} target="_blank">
-            <Flex
-              boxSize={"48px"}
-              p={2}
-              bgColor={brand.dark}
-              borderRadius={".5rem"}
-              border={`2px solid ${brand.light}`}
-              justifyContent={"center"}
-              alignItems={"center"}
-            >
-              <InstagramLogo size={32} color={brand.light} />
-            </Flex>
-          </Link>
-          <Link href={"https://facebook.com"} target="_blank">
-            <Flex
-              boxSize={"48px"}
-              p={2}
-              bgColor={brand.dark}
-              borderRadius={".5rem"}
-              border={`2px solid ${brand.light}`}
-              justifyContent={"center"}
-              alignItems={"center"}
-            >
-              <FacebookLogo size={32} color={brand.light} />
-            </Flex>
-          </Link>
-          <Link href={"https://twitter.com"} target="_blank">
-            <Flex
-              boxSize={"48px"}
-              p={2}
-              bgColor={brand.dark}
-              borderRadius={".5rem"}
-              border={`2px solid ${brand.light}`}
-              justifyContent={"center"}
-              alignItems={"center"}
-            >
-              <TwitterLogo size={32} color={brand.light} />
-            </Flex>
-          </Link>
+      <Stack
+        textAlign={"center"}
+        color={brand.light}
+        textShadow={`1px 1px 5px ${brand.dark}`}
+        fontSize={"x-small"}
+      >
+        <HStack gap={3} justifyContent={"center"}>
+          {footer.instagramUrl && (
+            <Link href={footer.instagramUrl} target="_blank">
+              <Flex {...SocialButtonStyle(brand)}>
+                <InstagramLogo size={32} color={brand.light} />
+              </Flex>
+            </Link>
+          )}
+          {footer.facebookUrl && (
+            <Link href={footer.facebookUrl} target="_blank">
+              <Flex {...SocialButtonStyle(brand)}>
+                <FacebookLogo size={32} color={brand.light} />
+              </Flex>
+            </Link>
+          )}
+          {footer.twitterUrl && (
+            <Link href={footer.twitterUrl} target="_blank">
+              <Flex {...SocialButtonStyle(brand)}>
+                <TwitterLogo size={32} color={brand.light} />
+              </Flex>
+            </Link>
+          )}
         </HStack>
+        <RichText content={footer.text} />
       </Stack>
     </Flex>
   );

@@ -11,9 +11,9 @@ export const GET_SITE = gql`
               attributes {
                 Header
                 Subheader
-                Text
                 Button1
                 Button2
+                Text
                 Image {
                   data {
                     attributes {
@@ -49,6 +49,16 @@ export const GET_SITE = gql`
                 Accent
                 Light
                 Dark
+              }
+            }
+          }
+          footer {
+            data {
+              attributes {
+                Text
+                FacebookUrl
+                InstagramUrl
+                TwitterUrl
               }
             }
           }
