@@ -1,12 +1,13 @@
 "use client";
 import { Hero } from "./components/Hero";
 import { Section } from "./components/Section";
-import { Box, Container, Spinner, Stack } from "@chakra-ui/react";
+import { Box, Center, Container, Flex, Spinner, Stack } from "@chakra-ui/react";
 import { camelCase } from "lodash";
 import { useQuery } from "@apollo/client";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { GET_SITE } from "./helpers/queries";
+import { ContactForm } from "./components/ContactForm";
 
 const Home = () => {
   const formatStrapiData = (data) => {
@@ -41,9 +42,16 @@ const Home = () => {
   });
   if (loading) {
     return (
-      <Container>
-        <Spinner />
-      </Container>
+      <Flex
+        width={"100vw"}
+        height={"100vh"}
+        alignContent={"center"}
+        justifyContent={"center"}
+      >
+        <Center>
+          <Spinner />
+        </Center>
+      </Flex>
     );
   }
   if (error) {
@@ -55,7 +63,15 @@ const Home = () => {
 
   return (
     <main>
-      <Box bgColor={"white"} p={1} overflowX={"hidden"} maxW="100%">
+      <Box
+        bgColor={"white"}
+        m={1}
+        position={"absolute"}
+        left={0}
+        right={0}
+        top={0}
+        bottom={0}
+      >
         <Header sections={clientData.sections} brand={clientData.brand} />
         <Box>
           <Stack gap={1}>
@@ -67,6 +83,10 @@ const Home = () => {
                 brand={clientData.brand}
               />
             ))}
+            <ContactForm
+              sections={clientData.sections}
+              brand={clientData.brand}
+            />
           </Stack>
         </Box>
         <Footer brand={clientData.brand} footer={clientData.footer} />

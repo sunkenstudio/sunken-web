@@ -1,5 +1,13 @@
 "use client";
-import { Box, Button, Container, Flex, HStack, Stack } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Container,
+  Flex,
+  HStack,
+  Hide,
+  Stack,
+} from "@chakra-ui/react";
 import React from "react";
 import { H1, H3, Paragraph } from "../Typography";
 import { Image } from "../Shared/Image";
@@ -33,13 +41,13 @@ export const Hero = ({
       <Background {...brand} />
       <Flex
         zIndex={10}
-        direction={"row"}
+        direction={{ base: "column", md: "row" }}
         alignItems={"center"}
         justifyContent={"center"}
         w="100%"
         h="2xl"
       >
-        <Box alignItems={"left"} w="50%">
+        <Box alignItems={"left"} w={{ base: "90%", md: "50%" }}>
           <Stack gap={3}>
             <H1>{header}</H1>
             <H3>{subheader}</H3>
@@ -65,9 +73,11 @@ export const Hero = ({
             </HStack>
           </Stack>
         </Box>
-        <Box bgColor={brand.light} p={1}>
-          <Image boxSize={"md"} url={image.url} />
-        </Box>
+        <Hide below="md">
+          <Box bgColor={brand.light} p={1}>
+            <Image boxSize={"md"} url={image.url} />
+          </Box>
+        </Hide>
       </Flex>
     </Flex>
   );

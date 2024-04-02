@@ -1,4 +1,4 @@
-import { Box, Flex, HStack, Image, Stack } from "@chakra-ui/react";
+import { Box, Flex, Image, Stack } from "@chakra-ui/react";
 import React from "react";
 import { H3, Paragraph } from "../Typography";
 import { RichText } from "../Shared/RichText";
@@ -36,51 +36,53 @@ export const Section = ({
   const color = bgColor === "light" ? "primary" : "light";
 
   const altLayout = sortOrder % 2 !== 0;
+  const imgBorderColor = bgColor === "light" ? brand.primary : brand.light;
   return (
     <Flex
       id={`section-${sortOrder}`}
       w="100%"
-      m="0 auto"
       h="2xl"
-      direction={"column"}
       color={brand[color]}
       textShadow={color === "light" ? `1px 1px 5px ${brand.primary}` : "none"}
     >
       <Background bgColor={brand[bgColor]} />
-      <Flex w="100%" m="0 auto" h="2xl" direction={"column"} zIndex={5}>
-        <HStack
-          justifyContent={"center"}
-          alignItems={"center"}
-          h="100%"
-          gap={"5"}
-        >
-          {altLayout ? (
-            <Stack>
-              <Box
-                bgColor={bgColor === "light" ? brand.primary : brand.light}
-                p={1}
-              >
-                <Image boxSize={"sm"} src={image.url} />
+      <Flex
+        w="100%"
+        h="2xl"
+        zIndex={10}
+        direction={{ base: "column", md: "row" }}
+        m={{ base: "1rem", md: "" }}
+      >
+        <Box justifyContent={"center"} alignItems={"center"} h="100%" gap={"5"}>
+          <Stack w="100%">
+            {altLayout ? (
+              <Box>
+                <Image
+                  boxSize={"sm"}
+                  src={image.url}
+                  border={`.25rem solid ${imgBorderColor}`}
+                  objectFit={"cover"}
+                />
+                <Paragraph>{caption}</Paragraph>
               </Box>
-              <Paragraph>{caption}</Paragraph>
-            </Stack>
-          ) : null}
-          <Stack maxW="40%">
-            <H3>{header}</H3>
-            <RichText content={text} />
+            ) : null}
+            <Box>
+              <H3>{header}</H3>
+              <RichText content={text} />
+            </Box>
+            {!altLayout ? (
+              <Box>
+                <Image
+                  boxSize={"sm"}
+                  src={image.url}
+                  border={`.25rem solid ${imgBorderColor}`}
+                  objectFit={"cover"}
+                />
+                <Paragraph>{caption}</Paragraph>
+              </Box>
+            ) : null}
           </Stack>
-          {!altLayout ? (
-            <Stack>
-              <Box
-                bgColor={bgColor === "light" ? brand.primary : brand.light}
-                p={1}
-              >
-                <Image boxSize={"sm"} src={image.url} />
-              </Box>
-              <Paragraph>{caption}</Paragraph>
-            </Stack>
-          ) : null}
-        </HStack>
+        </Box>
       </Flex>
     </Flex>
   );

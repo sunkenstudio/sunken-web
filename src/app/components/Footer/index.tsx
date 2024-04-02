@@ -1,4 +1,4 @@
-import { Flex, HStack, Stack } from "@chakra-ui/react";
+import { Center, Flex, HStack, Stack } from "@chakra-ui/react";
 import React from "react";
 import {
   FacebookLogo,
@@ -21,7 +21,9 @@ const SocialButtonStyle = (brand) => ({
 export const Footer = ({ brand, footer }) => {
   return (
     <Flex
-      bottom={"0px"}
+      bottom={0}
+      left={0}
+      right={0}
       position={"fixed"}
       justifyContent={"center"}
       w="100%"
@@ -30,10 +32,11 @@ export const Footer = ({ brand, footer }) => {
       <Stack
         textAlign={"center"}
         color={brand.light}
-        textShadow={`1px 1px 5px ${brand.dark}`}
+        textShadow={`1px 1px 0px ${brand.dark}`}
         fontSize={"x-small"}
+        w="100%"
       >
-        <HStack gap={3} justifyContent={"center"}>
+        <HStack gap={3} justifyContent={"center"} w="100%">
           {footer.instagramUrl && (
             <Link href={footer.instagramUrl} target="_blank">
               <Flex {...SocialButtonStyle(brand)}>
