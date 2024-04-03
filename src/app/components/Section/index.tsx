@@ -1,4 +1,4 @@
-import { Box, Flex, Image, Stack } from "@chakra-ui/react";
+import { Box, Center, Flex, Image, Stack } from "@chakra-ui/react";
 import React from "react";
 import { H3, Paragraph } from "../Typography";
 import { RichText } from "../Shared/RichText";
@@ -40,42 +40,53 @@ export const Section = ({
         bgImage={bgImage}
         bgImageOpacity={bgImageOpacity}
       />
-      <Flex
-        w="100%"
-        h="2xl"
-        zIndex={10}
-        direction={{ base: "column", md: "row" }}
-        m={{ base: "1rem", md: "" }}
-      >
+      <Flex w="100%" h="2xl" zIndex={10}>
         <Box justifyContent={"center"} alignItems={"center"} h="100%" gap={"5"}>
-          <Stack w="100%">
+          <Flex
+            w="100%"
+            h="100%"
+            direction={{ base: "column", md: "row" }}
+            justifyContent={"center"}
+            alignItems={"center"}
+            p={{ base: ".5rem", md: "0rem" }}
+          >
             {altLayout ? (
-              <Box>
+              <Stack
+                w={{ base: "100%", md: "45%" }}
+                justifyContent={"center"}
+                alignItems={"center"}
+                mb={{ base: ".5rem", md: "0rem" }}
+              >
                 <Image
-                  boxSize={"sm"}
+                  boxSize={{ base: "sm", md: "md" }}
                   src={image.url}
                   border={`.25rem solid ${imgBorderColor}`}
                   objectFit={"cover"}
                 />
                 <Paragraph>{caption}</Paragraph>
-              </Box>
+              </Stack>
             ) : null}
-            <Box>
+            <Box w={{ base: "100%", md: "45%" }}>
               <H3>{header}</H3>
               <RichText content={text} />
             </Box>
             {!altLayout ? (
-              <Box>
+              <Stack
+                w={{ base: "100%", md: "45%" }}
+                justifyContent={"center"}
+                alignItems={"center"}
+                mt={{ base: ".5rem", md: "0rem" }}
+              >
                 <Image
-                  boxSize={"sm"}
+                  boxSize={{ base: "sm", md: "md" }}
                   src={image.url}
                   border={`.25rem solid ${imgBorderColor}`}
                   objectFit={"cover"}
                 />
                 <Paragraph>{caption}</Paragraph>
-              </Box>
+              </Stack>
             ) : null}
-          </Stack>
+          </Flex>
         </Box>
       </Flex>
     </Flex>

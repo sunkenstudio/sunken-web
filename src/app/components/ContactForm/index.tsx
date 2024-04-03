@@ -86,14 +86,14 @@ export const ContactForm = ({ sections, brand }) => {
           zIndex={10}
           justifyContent={"center"}
           alignItems={"center"}
-          w={"100%"}
+          w="100%"
         >
           <H3>CONTACT</H3>
           <form
             onSubmit={formik.handleSubmit}
-            style={{ display: "flex", width: "100%" }}
+            style={{ display: "flex", width: "100%", justifyContent: "center" }}
           >
-            <Stack gap={"1rem"} m={3} w="100%">
+            <Stack gap={"1rem"} m={3} w={{ base: "100%", md: "45%" }}>
               <FormControl isRequired>
                 <FormLabel htmlFor="name">Name</FormLabel>
                 <Input
