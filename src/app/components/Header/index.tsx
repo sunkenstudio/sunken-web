@@ -17,6 +17,7 @@ import React from "react";
 import { H3, H5 } from "../Typography";
 import { List } from "@phosphor-icons/react";
 import { upperCase } from "lodash";
+import { scrollToElement } from "@/app/helpers/utils";
 
 export const Header = ({ sections, brand }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -24,15 +25,7 @@ export const Header = ({ sections, brand }) => {
 
   const handleScroll = (e) => {
     onClose();
-    e.preventDefault();
-
-    const href = e.currentTarget.href;
-    const targetId = href.replace(/.*\#/, "");
-
-    const elem = document.getElementById(targetId);
-    elem?.scrollIntoView({
-      behavior: "smooth",
-    });
+    scrollToElement(e);
   };
 
   return (
@@ -68,7 +61,7 @@ export const Header = ({ sections, brand }) => {
         >
           <DrawerCloseButton />
           <Stack mt={"3rem"} alignItems={"center"} p={3} gap={"2rem"}>
-            <H3 color={brand.light}>Company Name</H3>
+            <H3 color={brand.light}>Bailey's Popup Shop</H3>
             <Divider orientation="horizontal" />
             <a
               onClick={handleScroll}
@@ -83,7 +76,7 @@ export const Header = ({ sections, brand }) => {
                 p={2}
                 minW="70%"
               >
-                <H5>HOME</H5>
+                <H5>Home</H5>
               </Box>
             </a>
             {sections.map((i) => (
@@ -100,7 +93,7 @@ export const Header = ({ sections, brand }) => {
                   borderRadius={".5rem"}
                   p={2}
                 >
-                  <H5>{upperCase(i.header)}</H5>
+                  <H5>{i.header}</H5>
                 </Box>
               </a>
             ))}

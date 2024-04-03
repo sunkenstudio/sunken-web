@@ -1,6 +1,6 @@
 import React from "react";
 import { BlocksRenderer } from "@strapi/blocks-react-renderer";
-import { H1, H2, H3, H4, H5, H6, Paragraph } from "../../Typography";
+import { H1, H2, H3, H4, H5, H6 } from "../../Typography";
 import Link from "next/link";
 
 export const RichText = ({ content, ...rest }) => {
@@ -10,7 +10,7 @@ export const RichText = ({ content, ...rest }) => {
       blocks={{
         // You can use the default components to set class names...
         paragraph: ({ children }) => (
-          <p className="text-neutral900 max-w-prose">{children}</p>
+          <span className="text-neutral900 max-w-prose">{children}</span>
         ),
         // ...or point to a design system
         heading: ({ children, level }) => {
@@ -28,7 +28,7 @@ export const RichText = ({ content, ...rest }) => {
             case 6:
               return <H6 {...rest}>{children}</H6>;
             default:
-              return <Paragraph {...rest}>{children}</Paragraph>;
+              return <span {...rest}>{children}</span>;
           }
         },
         // For links, you may want to use the component from your router or framework

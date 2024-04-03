@@ -15,7 +15,6 @@ const Home = () => {
       const formattedKey = camelCase(key);
       if (typeof val === "object") {
         if (Array.isArray(val?.data)) {
-          console.log("isArray", val);
           return {
             ...acc,
             [formattedKey]: val.data.map((i) => formatStrapiData(i.attributes)),

@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   Button,
@@ -35,18 +35,20 @@ const Background = ({ bgColor }) => (
 );
 
 export const ContactForm = ({ sections, brand }) => {
+  const [isFiring, setIsFiring] = useState(false);
   const [sendEmailState, sendEmailAction] = useFormState(sendEmail, {
     error: null,
     success: false,
   });
 
   useEffect(() => {
-    console.log({ sendEmailState });
     if (sendEmailState.success) {
       alert("Email sent!");
+      setIsFiring(false);
     }
     if (sendEmailState.error) {
       alert("Error sending email!");
+      setIsFiring(false);
     }
   }, [sendEmailState]);
 
@@ -68,6 +70,7 @@ export const ContactForm = ({ sections, brand }) => {
       company: "",
     },
     onSubmit: () => {
+      setIsFiring(true);
       sendEmailAction(formik.values);
     },
   });
@@ -147,6 +150,7 @@ export const ContactForm = ({ sections, brand }) => {
                 border={`2px solid ${brand.light}`}
                 color={brand.light}
                 w={"100%"}
+                isLoading={isFiring}
               >
                 Submit
               </Button>

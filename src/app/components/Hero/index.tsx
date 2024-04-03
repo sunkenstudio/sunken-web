@@ -5,6 +5,7 @@ import { H1, H3, Paragraph } from "../Typography";
 import { Image } from "../Shared/Image";
 import { RichText } from "../Shared/RichText";
 import { SectionBg } from "../Shared/SectionBg";
+import { scrollToElement } from "@/app/helpers/utils";
 
 export const Hero = ({
   header,
@@ -50,13 +51,14 @@ export const Hero = ({
               >
                 {button1}
               </Button>
-              <Button
-                colorScheme="transparent"
-                border={`2px solid ${brand.light}`}
-                onClick={() => console.log("click2")}
-              >
-                {button2}
-              </Button>
+              <a onClick={scrollToElement} href={`#contact`}>
+                <Button
+                  colorScheme="transparent"
+                  border={`2px solid ${brand.light}`}
+                >
+                  {button2}
+                </Button>
+              </a>
             </HStack>
           </Stack>
         </Box>
