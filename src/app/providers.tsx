@@ -4,6 +4,7 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import { BASE_URL } from "./urls";
+import theme from "./styles/theme";
 
 export function Providers({ children }: { children: React.ReactNode }) {
   const client = new ApolloClient({
@@ -11,7 +12,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
     cache: new InMemoryCache(),
   });
   return (
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <ApolloProvider client={client}>{children}</ApolloProvider>
     </ChakraProvider>
   );

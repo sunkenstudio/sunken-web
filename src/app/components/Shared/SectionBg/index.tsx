@@ -7,23 +7,23 @@ export const SectionBg = ({
   bgImage,
   bgImageOpacity,
 }) => (
-  <>
-    <Box bg={"#000"} w="100%" h="2xl" position={"absolute"} />
+  <Box position={"absolute"} w="100%" height="100%">
+    <Box bg={"#000"} w="100%" h="100%" position={"absolute"} />
     <Image
-      w="100%"
-      h="2xl"
       src={bgImage.url}
-      position={"absolute"}
       objectFit="cover"
       opacity={bgImageOpacity}
       filter="grayscale(100%)"
+      height="100%"
+      w={"100%"}
+      position={"absolute"}
     />
     <Box
       bg={bgColor}
       w="100%"
-      h="2xl"
+      h="100%"
       opacity={bgFilterOpacity}
       position={"absolute"}
     />
-  </>
+  </Box>
 );

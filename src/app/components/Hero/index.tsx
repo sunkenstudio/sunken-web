@@ -20,7 +20,15 @@ export const Hero = ({
   bgImageOpacity,
 }) => {
   return (
-    <Flex id="hero" color={brand.light} w="100%" h="2xl">
+    <Flex
+      id={"hero"}
+      w="100%"
+      color={brand.light}
+      position="relative"
+      minH={"2xl"}
+      justifyContent={"center"}
+      alignItems={"center"}
+    >
       <SectionBg
         bgColor={brand.primary}
         bgFilterOpacity={bgFilterOpacity}

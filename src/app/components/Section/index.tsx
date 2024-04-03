@@ -30,9 +30,12 @@ export const Section = ({
     <Flex
       id={`section-${sortOrder}`}
       w="100%"
-      h="2xl"
       color={brand[color]}
-      textShadow={color === "light" ? `1px 1px 5px ${brand.primary}` : "none"}
+      textShadow={color === "light" ? `1px 1px 3px ${brand.dark}` : "none"}
+      position="relative"
+      minH={"2xl"}
+      justifyContent={"center"}
+      alignItems={"center"}
     >
       <SectionBg
         bgColor={brand[bgColor]}
@@ -40,8 +43,14 @@ export const Section = ({
         bgImage={bgImage}
         bgImageOpacity={bgImageOpacity}
       />
-      <Flex w="100%" h="2xl" zIndex={10}>
-        <Box justifyContent={"center"} alignItems={"center"} h="100%" gap={"5"}>
+      <Flex w="100%" h="100%">
+        <Box
+          justifyContent={"center"}
+          alignItems={"center"}
+          h="100%"
+          gap={"5"}
+          zIndex={10}
+        >
           <Flex
             w="100%"
             h="100%"
