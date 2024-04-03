@@ -85,6 +85,7 @@ const Home = () => {
             <ContactForm
               sections={clientData.sections}
               brand={clientData.brand}
+              {...clientData.contact}
             />
           </Stack>
         </Box>

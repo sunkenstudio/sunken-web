@@ -18,23 +18,15 @@ import { Formik, Form, Field, useFormik, FormikProvider } from "formik";
 import { sendEmail } from "@/actions";
 import { useEffect } from "react";
 import { useFormState } from "react-dom";
+import { SectionBg } from "../Shared/SectionBg";
 
-const Background = ({ bgColor }) => (
-  <>
-    <Box bg={bgColor} w="100%" h="2xl" position={"absolute"} />
-    <Image
-      w="100%"
-      h="2xl"
-      src={"texture-2.jpg"}
-      position={"absolute"}
-      objectFit="cover"
-      opacity={0.25}
-    />
-    <Box bg={bgColor} w="100%" h="2xl" opacity={0.5} position={"absolute"} />
-  </>
-);
-
-export const ContactForm = ({ sections, brand }) => {
+export const ContactForm = ({
+  sections,
+  brand,
+  bgFilterOpacity,
+  bgImage,
+  bgImageOpacity,
+}) => {
   const [isFiring, setIsFiring] = useState(false);
   const [sendEmailState, sendEmailAction] = useFormState(sendEmail, {
     error: null,
@@ -78,13 +70,21 @@ export const ContactForm = ({ sections, brand }) => {
   return (
     <FormikProvider value={formik}>
       <Flex
-        id={`contact`}
+        id={"contact"}
         w="100%"
-        h="2xl"
         color={brand[color]}
         textShadow={color === "light" ? `1px 1px 5px ${brand.primary}` : "none"}
+        position="relative"
+        minH={"2xl"}
+        justifyContent={"center"}
+        alignItems={"center"}
       >
-        <Background bgColor={brand[bgColor]} />
+        <SectionBg
+          bgColor={brand[bgColor]}
+          bgFilterOpacity={bgFilterOpacity}
+          bgImage={bgImage}
+          bgImageOpacity={bgImageOpacity}
+        />
         <Stack
           zIndex={10}
           justifyContent={"center"}

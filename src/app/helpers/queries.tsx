@@ -80,6 +80,21 @@ export const GET_SITE = gql`
               }
             }
           }
+          contact {
+            data {
+              attributes {
+                BgImage {
+                  data {
+                    attributes {
+                      url
+                    }
+                  }
+                }
+                BgImageOpacity
+                BgFilterOpacity
+              }
+            }
+          }
         }
       }
     }
