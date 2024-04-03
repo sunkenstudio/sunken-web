@@ -1,4 +1,4 @@
-import { Center, Flex, HStack, Stack } from "@chakra-ui/react";
+import { Flex, HStack, Stack } from "@chakra-ui/react";
 import React from "react";
 import {
   FacebookLogo,
@@ -7,8 +7,9 @@ import {
 } from "@phosphor-icons/react";
 import Link from "next/link";
 import { RichText } from "../Shared/RichText";
+import { StrapiBrand, StrapiFooter } from "../Shared/types";
 
-const SocialButtonStyle = (brand) => ({
+const SocialButtonStyle = (brand: StrapiBrand) => ({
   boxSize: "48px",
   p: 2,
   bgColor: brand.dark,
@@ -18,7 +19,12 @@ const SocialButtonStyle = (brand) => ({
   alignItems: "center",
 });
 
-export const Footer = ({ brand, footer }) => {
+interface FooterProps {
+  brand: StrapiBrand;
+  footer: StrapiFooter;
+}
+
+export const Footer = ({ brand, footer }: FooterProps) => {
   return (
     <Flex
       bottom={0}

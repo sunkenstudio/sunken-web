@@ -1,24 +1,29 @@
 "use client";
 import React, { useState } from "react";
 import {
-  Box,
   Button,
   Flex,
-  Image,
   Input,
   Stack,
   Textarea,
   FormControl,
   FormLabel,
-  FormErrorMessage,
-  FormHelperText,
 } from "@chakra-ui/react";
 import { H3 } from "../Typography";
-import { Formik, Form, Field, useFormik, FormikProvider } from "formik";
+import { useFormik, FormikProvider } from "formik";
 import { sendEmail } from "@/actions";
 import { useEffect } from "react";
 import { useFormState } from "react-dom";
 import { SectionBg } from "../Shared/SectionBg";
+import { StrapiBrand, StrapiImage, StrapiSection } from "../Shared/types";
+
+interface ContactFormProps {
+  sections: StrapiSection[];
+  brand: StrapiBrand;
+  bgFilterOpacity: number;
+  bgImage: StrapiImage;
+  bgImageOpacity: number;
+}
 
 export const ContactForm = ({
   sections,
@@ -26,7 +31,7 @@ export const ContactForm = ({
   bgFilterOpacity,
   bgImage,
   bgImageOpacity,
-}) => {
+}: ContactFormProps) => {
   const [isFiring, setIsFiring] = useState(false);
   const [sendEmailState, sendEmailAction] = useFormState(sendEmail, {
     error: null,

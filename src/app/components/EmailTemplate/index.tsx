@@ -1,15 +1,18 @@
 import { Html, Heading, Text } from "@react-email/components";
+
+interface EmailTemplateProps {
+  name: string;
+  email: string;
+  message: string;
+  company: string;
+}
+
 const EmailTemplate = ({
   name,
   email,
   message,
   company,
-}: {
-  name: string;
-  email: string;
-  message: string;
-  company: string;
-}) => {
+}: EmailTemplateProps) => {
   return (
     <Html lang="en">
       <Heading as="h1">New Client Message</Heading>

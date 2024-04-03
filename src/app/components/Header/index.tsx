@@ -10,20 +10,23 @@ import {
   Flex,
   Spacer,
   Stack,
-  StackDivider,
   useDisclosure,
 } from "@chakra-ui/react";
 import React from "react";
 import { H3, H5 } from "../Typography";
 import { List } from "@phosphor-icons/react";
-import { upperCase } from "lodash";
 import { scrollToElement } from "@/app/helpers/utils";
+import { StrapiBrand, StrapiSection } from "../Shared/types";
 
-export const Header = ({ sections, brand }) => {
+interface HeaderProps {
+  sections: StrapiSection[];
+  brand: StrapiBrand;
+}
+
+export const Header = ({ sections, brand }: HeaderProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const btnRef = React.useRef();
 
-  const handleScroll = (e) => {
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>) => {
     onClose();
     scrollToElement(e);
   };
@@ -34,7 +37,6 @@ export const Header = ({ sections, brand }) => {
         <Box />
         <Spacer />
         <Button
-          ref={btnRef}
           m={4}
           onClick={onOpen}
           boxSize={"48px"}
@@ -48,12 +50,7 @@ export const Header = ({ sections, brand }) => {
           <List size={32} color={brand.light} />
         </Button>
       </Flex>
-      <Drawer
-        isOpen={isOpen}
-        placement="right"
-        onClose={onClose}
-        finalFocusRef={btnRef}
-      >
+      <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
         <DrawerOverlay />
         <DrawerContent
           border={`4px solid ${brand.light}`}
@@ -61,7 +58,7 @@ export const Header = ({ sections, brand }) => {
         >
           <DrawerCloseButton />
           <Stack mt={"3rem"} alignItems={"center"} p={3} gap={"2rem"}>
-            <H3 color={brand.light}>Bailey's Popup Shop</H3>
+            <H3 color={brand.light}>{`Bailey's Popup Shop`}</H3>
             <Divider orientation="horizontal" />
             <a
               onClick={handleScroll}

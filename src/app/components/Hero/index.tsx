@@ -6,6 +6,20 @@ import { Image } from "../Shared/Image";
 import { RichText } from "../Shared/RichText";
 import { SectionBg } from "../Shared/SectionBg";
 import { scrollToElement } from "@/app/helpers/utils";
+import { RichTextParagraph, StrapiBrand, StrapiImage } from "../Shared/types";
+
+interface HeroProps {
+  header: string;
+  subheader: string;
+  text: RichTextParagraph[];
+  button1: string;
+  button2: string;
+  image: StrapiImage;
+  brand: StrapiBrand;
+  bgFilterOpacity: number;
+  bgImage: StrapiImage;
+  bgImageOpacity: number;
+}
 
 export const Hero = ({
   header,
@@ -18,7 +32,7 @@ export const Hero = ({
   bgFilterOpacity,
   bgImage,
   bgImageOpacity,
-}) => {
+}: HeroProps) => {
   return (
     <Flex
       id={"hero"}

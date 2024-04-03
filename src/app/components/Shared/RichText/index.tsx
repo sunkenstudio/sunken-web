@@ -2,8 +2,13 @@ import React from "react";
 import { BlocksRenderer } from "@strapi/blocks-react-renderer";
 import { H1, H2, H3, H4, H5, H6 } from "../../Typography";
 import Link from "next/link";
+import { TextProps } from "@chakra-ui/react";
 
-export const RichText = ({ content, ...rest }) => {
+interface RichTextProps extends TextProps {
+  content: any;
+}
+
+export const RichText = ({ content, ...rest }: RichTextProps) => {
   return (
     <BlocksRenderer
       content={content}
@@ -28,7 +33,7 @@ export const RichText = ({ content, ...rest }) => {
             case 6:
               return <H6 {...rest}>{children}</H6>;
             default:
-              return <span {...rest}>{children}</span>;
+              return <span>{children}</span>;
           }
         },
         // For links, you may want to use the component from your router or framework

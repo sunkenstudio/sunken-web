@@ -1,8 +1,21 @@
-import { Box, Center, Flex, Image, Stack } from "@chakra-ui/react";
+import { Box, Flex, Image, Stack } from "@chakra-ui/react";
 import React from "react";
 import { H3, Paragraph } from "../Typography";
 import { RichText } from "../Shared/RichText";
 import { SectionBg } from "../Shared/SectionBg";
+import { RichTextParagraph, StrapiBrand, StrapiImage } from "../Shared/types";
+
+interface SectionProps {
+  header: string;
+  sortOrder: number;
+  text: RichTextParagraph[];
+  image: StrapiImage;
+  caption: string;
+  brand: StrapiBrand;
+  bgFilterOpacity: number;
+  bgImage: StrapiImage;
+  bgImageOpacity: number;
+}
 
 export const Section = ({
   header = "MISSING",
@@ -14,7 +27,7 @@ export const Section = ({
   bgFilterOpacity,
   bgImage,
   bgImageOpacity,
-}) => {
+}: SectionProps) => {
   const bgColor =
     sortOrder % 3 === 0
       ? "primary"
