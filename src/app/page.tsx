@@ -60,7 +60,7 @@ const Home = () => {
 
   const client = data.sites.data.find((i) => i.attributes.ClientId === "demo");
   const clientData = formatStrapiData(client.attributes);
-
+  console.log({ clientData });
   return (
     <main>
       <Box

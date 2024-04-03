@@ -21,6 +21,15 @@ export const GET_SITE = gql`
                     }
                   }
                 }
+                BgImageOpacity
+                BgFilterOpacity
+                BgImage {
+                  data {
+                    attributes {
+                      url
+                    }
+                  }
+                }
               }
             }
           }
@@ -38,6 +47,15 @@ export const GET_SITE = gql`
                   }
                 }
                 Caption
+                BgImageOpacity
+                BgFilterOpacity
+                BgImage {
+                  data {
+                    attributes {
+                      url
+                    }
+                  }
+                }
               }
             }
           }

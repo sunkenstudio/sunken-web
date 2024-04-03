@@ -71,7 +71,7 @@ export const ContactForm = ({ sections, brand }) => {
         {/* <Link href="mailto:danwarrickdev@gmail.com" passHref legacyBehavior>
           <Button as="a">Login</Button>
         </Link> */}
-        <NextLink href="mailto:danwarrickdev@gmail.com" passHref>
+        <a href="mailto:danwarrickdev@gmail.com">
           <Button
             bgColor={brand.dark}
             border={`2px solid ${brand.light}`}
@@ -82,7 +82,7 @@ export const ContactForm = ({ sections, brand }) => {
           >
             Submit
           </Button>
-        </NextLink>
+        </a>
       </Stack>
       {/* <Flex
         w="100%"

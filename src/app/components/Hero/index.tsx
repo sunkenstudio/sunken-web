@@ -1,32 +1,11 @@
 "use client";
-import {
-  Box,
-  Button,
-  Container,
-  Flex,
-  HStack,
-  Hide,
-  Stack,
-} from "@chakra-ui/react";
+import { Box, Button, Flex, HStack, Hide, Stack } from "@chakra-ui/react";
 import React from "react";
 import { H1, H3, Paragraph } from "../Typography";
 import { Image } from "../Shared/Image";
 import { RichText } from "../Shared/RichText";
+import { SectionBg } from "../Shared/SectionBg";
 
-const Background = ({ primary }) => (
-  <>
-    <Box bg={primary} w="100%" h="2xl" position={"absolute"} />
-    <Image
-      w="100%"
-      h="2xl"
-      src={"texture-2.jpg"}
-      position={"absolute"}
-      objectFit="cover"
-      opacity={0.5}
-    />
-    <Box bg={primary} w="100%" h="2xl" opacity={0.5} position={"absolute"} />
-  </>
-);
 export const Hero = ({
   header,
   subheader,
@@ -35,10 +14,18 @@ export const Hero = ({
   button2,
   image,
   brand,
+  bgFilterOpacity,
+  bgImage,
+  bgImageOpacity,
 }) => {
   return (
     <Flex id="hero" color={brand.light} w="100%" h="2xl">
-      <Background {...brand} />
+      <SectionBg
+        bgColor={brand.primary}
+        bgFilterOpacity={bgFilterOpacity}
+        bgImage={bgImage}
+        bgImageOpacity={bgImageOpacity}
+      />
       <Flex
         zIndex={10}
         direction={{ base: "column", md: "row" }}
@@ -49,9 +36,9 @@ export const Hero = ({
       >
         <Box alignItems={"left"} w={{ base: "90%", md: "50%" }}>
           <Stack gap={3}>
-            <H1>{header}</H1>
-            <H3>{subheader}</H3>
-            <Paragraph>
+            <H1 textShadow={`1px 1px 3px ${brand.dark}`}>{header}</H1>
+            <H3 textShadow={`1px 1px 3px ${brand.dark}`}>{subheader}</H3>
+            <Paragraph textShadow={`1px 1px 3px ${brand.dark}`}>
               <RichText content={text} />
             </Paragraph>
             <HStack mt={3} gap={3}>
@@ -75,7 +62,7 @@ export const Hero = ({
         </Box>
         <Hide below="md">
           <Box bgColor={brand.light} p={1}>
-            <Image boxSize={"md"} url={image.url} />
+            <Image boxSize={"md"} url={image.url} objectFit={"cover"} />
           </Box>
         </Hide>
       </Flex>

@@ -2,21 +2,7 @@ import { Box, Flex, Image, Stack } from "@chakra-ui/react";
 import React from "react";
 import { H3, Paragraph } from "../Typography";
 import { RichText } from "../Shared/RichText";
-
-const Background = ({ bgColor }) => (
-  <>
-    <Box bg={bgColor} w="100%" h="2xl" position={"absolute"} />
-    <Image
-      w="100%"
-      h="2xl"
-      src={"texture-2.jpg"}
-      position={"absolute"}
-      objectFit="cover"
-      opacity={0.25}
-    />
-    <Box bg={bgColor} w="100%" h="2xl" opacity={0.5} position={"absolute"} />
-  </>
-);
+import { SectionBg } from "../Shared/SectionBg";
 
 export const Section = ({
   header = "MISSING",
@@ -25,6 +11,9 @@ export const Section = ({
   image,
   caption,
   brand,
+  bgFilterOpacity,
+  bgImage,
+  bgImageOpacity,
 }) => {
   const bgColor =
     sortOrder % 3 === 0
@@ -45,7 +34,12 @@ export const Section = ({
       color={brand[color]}
       textShadow={color === "light" ? `1px 1px 5px ${brand.primary}` : "none"}
     >
-      <Background bgColor={brand[bgColor]} />
+      <SectionBg
+        bgColor={brand[bgColor]}
+        bgFilterOpacity={bgFilterOpacity}
+        bgImage={bgImage}
+        bgImageOpacity={bgImageOpacity}
+      />
       <Flex
         w="100%"
         h="2xl"
