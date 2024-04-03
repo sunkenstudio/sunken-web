@@ -1,20 +1,23 @@
 "use client";
+import React from "react";
 import {
   Box,
   Button,
-  Center,
   Flex,
-  HStack,
   Image,
   Input,
   Stack,
   Textarea,
+  FormControl,
+  FormLabel,
+  FormErrorMessage,
+  FormHelperText,
 } from "@chakra-ui/react";
-import React from "react";
-import { H1, H3, H5, Paragraph } from "../Typography";
-import { RichText } from "../Shared/RichText";
-import NextLink from "next/link";
-import Link from "next/link";
+import { H3 } from "../Typography";
+import { Formik, Form, Field, useFormik, FormikProvider } from "formik";
+import { sendEmail } from "@/actions";
+import { useEffect } from "react";
+import { useFormState } from "react-dom";
 
 const Background = ({ bgColor }) => (
   <>
@@ -32,6 +35,21 @@ const Background = ({ bgColor }) => (
 );
 
 export const ContactForm = ({ sections, brand }) => {
+  const [sendEmailState, sendEmailAction] = useFormState(sendEmail, {
+    error: null,
+    success: false,
+  });
+
+  useEffect(() => {
+    console.log({ sendEmailState });
+    if (sendEmailState.success) {
+      alert("Email sent!");
+    }
+    if (sendEmailState.error) {
+      alert("Error sending email!");
+    }
+  }, [sendEmailState]);
+
   const bgColor =
     sections.length % 3 === 0
       ? "secondary"
@@ -41,87 +59,101 @@ export const ContactForm = ({ sections, brand }) => {
 
   const color = bgColor === "light" ? "primary" : "light";
 
+  const formik = useFormik({
+    initialValues: {
+      senderEmail: "",
+      receiverEmail: "danwarrickdev@gmail.com",
+      name: "",
+      message: "",
+      company: "",
+    },
+    onSubmit: () => {
+      sendEmailAction(formik.values);
+    },
+  });
+
   return (
-    <Flex
-      id={`contact`}
-      w="100%"
-      h="2xl"
-      color={brand[color]}
-      textShadow={color === "light" ? `1px 1px 5px ${brand.primary}` : "none"}
-    >
-      <Background bgColor={brand[bgColor]} />
-      <Stack zIndex={10} gap={3} w="100%" m={3}>
-        <H3 my="1rem">Contact</H3>
-        <H5>Name: *</H5>
-        <Input
-        // placeholder="Name"
-        />
-        <H5>Company:</H5>
-        <Input
-        // placeholder="Company"
-        />
-        <H5>Email: *</H5>
-        <Input
-        // placeholder="Email"
-        />
-        <H5>Message: *</H5>
-        <Textarea
-        // placeholder="Message"
-        />
-        {/* <Link href="mailto:danwarrickdev@gmail.com" passHref legacyBehavior>
-          <Button as="a">Login</Button>
-        </Link> */}
-        <a href="mailto:danwarrickdev@gmail.com">
-          <Button
-            bgColor={brand.dark}
-            border={`2px solid ${brand.light}`}
-            color={brand.light}
-            mt={"1.5rem"}
-            w={"100%"}
-            as="a"
-          >
-            Submit
-          </Button>
-        </a>
-      </Stack>
-      {/* <Flex
+    <FormikProvider value={formik}>
+      <Flex
+        id={`contact`}
         w="100%"
         h="2xl"
-        zIndex={10}
-        direction={{ base: "column", md: "row" }}
-        m={{ base: "1rem", md: "" }}
+        color={brand[color]}
+        textShadow={color === "light" ? `1px 1px 5px ${brand.primary}` : "none"}
       >
-        <Box justifyContent={"center"} alignItems={"center"} h="100%" gap={"5"}>
-          <Stack w="100%">
-            {altLayout ? (
-              <Box>
-                <Box
-                  bgColor={bgColor === "light" ? brand.primary : brand.light}
-                  p={1}
-                >
-                  <Image boxSize={"sm"} src={image.url} />
-                </Box>
-                <Paragraph>{caption}</Paragraph>
-              </Box>
-            ) : null}
-            <Box>
-              <H3>{header}</H3>
-              <RichText content={text} />
-            </Box>
-            {!altLayout ? (
-              <Box>
-                <Box
-                  bgColor={bgColor === "light" ? brand.primary : brand.light}
-                  p={1}
-                >
-                  <Image boxSize={"sm"} src={image.url} />
-                </Box>
-                <Paragraph>{caption}</Paragraph>
-              </Box>
-            ) : null}
-          </Stack>
-        </Box>
-      </Flex> */}
-    </Flex>
+        <Background bgColor={brand[bgColor]} />
+        <Stack
+          zIndex={10}
+          justifyContent={"center"}
+          alignItems={"center"}
+          w={"100%"}
+        >
+          <H3>CONTACT</H3>
+          <form
+            onSubmit={formik.handleSubmit}
+            style={{ display: "flex", width: "100%" }}
+          >
+            <Stack gap={"1rem"} m={3} w="100%">
+              <FormControl isRequired>
+                <FormLabel htmlFor="name">Name</FormLabel>
+                <Input
+                  id="name"
+                  name="name"
+                  type="text"
+                  variant="filled"
+                  onChange={formik.handleChange}
+                  value={formik.values.name}
+                  color={brand.dark}
+                />
+              </FormControl>
+              <FormControl isRequired>
+                <FormLabel htmlFor="senderEmail">Email</FormLabel>
+                <Input
+                  id="senderEmail"
+                  name="senderEmail"
+                  type="email"
+                  variant="filled"
+                  onChange={formik.handleChange}
+                  value={formik.values.senderEmail}
+                  color={brand.dark}
+                />
+              </FormControl>
+              <FormControl>
+                <FormLabel htmlFor="company">Company</FormLabel>
+                <Input
+                  id="company"
+                  name="company"
+                  type="text"
+                  variant="filled"
+                  onChange={formik.handleChange}
+                  value={formik.values.company}
+                  color={brand.dark}
+                />
+              </FormControl>
+              <FormControl isRequired>
+                <FormLabel htmlFor="message">Message</FormLabel>
+                <Textarea
+                  id="message"
+                  name="message"
+                  variant="filled"
+                  onChange={formik.handleChange}
+                  value={formik.values.message}
+                  color={brand.dark}
+                />
+              </FormControl>
+              <Button
+                type="submit"
+                bgColor={brand.dark}
+                border={`2px solid ${brand.light}`}
+                color={brand.light}
+                w={"100%"}
+              >
+                Submit
+              </Button>
+            </Stack>
+          </form>
+        </Stack>
+      </Flex>
+    </FormikProvider>
   );
 };
