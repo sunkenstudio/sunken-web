@@ -15,14 +15,14 @@ interface Payload {
 }
 
 export const sendEmail = async (prevState: State, formData: Payload) => {
-  const { name, senderEmail, receiverEmail, message } = formData;
+  const { name, senderEmail, receiverEmail, message, company } = formData;
   try {
     const resend = new Resend(process.env.RESEND_API_KEY);
     await resend.emails.send({
       from: "accounts@sunkenstudio.com",
       to: receiverEmail,
       subject: "New Client Message",
-      react: EmailTemplate({ name, email: senderEmail, message }),
+      react: EmailTemplate({ name, email: senderEmail, message, company }),
     });
     return {
       error: null,

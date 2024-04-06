@@ -67,16 +67,16 @@ export const Hero = ({
             <HStack mt={3} gap={3}>
               <Button
                 bgColor={brand.dark}
-                border={`2px solid ${brand.light}`}
+                border={`2px solid ${brand.dark}`}
                 onClick={() => console.log("click1")}
-                color={brand.light}
+                color={"white"}
               >
                 {button1}
               </Button>
               <a onClick={scrollToElement} href={`#contact`}>
                 <Button
                   colorScheme="transparent"
-                  border={`2px solid ${brand.light}`}
+                  border={`2px solid ${brand.dark}`}
                 >
                   {button2}
                 </Button>
