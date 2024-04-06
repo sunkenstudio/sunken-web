@@ -3,45 +3,40 @@
 import { Hero } from "./components/Hero";
 import { Section } from "./components/Section";
 import { Box, Center, Flex, Spinner, Stack } from "@chakra-ui/react";
-import { camelCase } from "lodash";
-import { useQuery } from "@apollo/client";
+import { useApolloClient } from "@apollo/client";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { GET_SITE } from "./helpers/queries";
 import { ContactForm } from "./components/ContactForm";
 import { Client } from "./components/Shared/types";
+import { formatStrapiData, getClientIdFromUrl } from "./helpers/utils";
+import { useEffect, useState } from "react";
 
 const Home = () => {
-  const formatStrapiData = (data: any): Client => {
-    return Object.entries(data).reduce((acc, [key, val]) => {
-      const formattedKey = camelCase(key);
-      if (typeof val === "object") {
-        if (val && Array.isArray(val?.data)) {
-          return {
-            ...acc,
-            [formattedKey]: val.data.map((i) => formatStrapiData(i.attributes)),
-          };
-        }
-        if (val?.data?.attributes) {
-          return {
-            ...acc,
-            [formattedKey]: formatStrapiData(val.data.attributes),
-          };
-        }
-      }
-      return {
-        ...acc,
-        [formattedKey]: val,
-      };
-    }, {}) as unknown as Client;
-  };
+  const [error, setError] = useState(null);
+  const [data, setData] = useState(null);
 
-  const { loading, error, data } = useQuery(GET_SITE, {
-    variables: {
-      clientId: "demo",
-    },
-  });
-  if (loading) {
+  const client = useApolloClient();
+  useEffect(() => {
+    async function fetchData() {
+      const ClientId = getClientIdFromUrl();
+      client
+        .query({
+          query: GET_SITE,
+          variables: {
+            ClientId,
+          },
+        })
+        .then((res) => {
+          setData(res.data);
+        })
+        .catch((err) => setError(err));
+    }
+
+    fetchData();
+  }, []);
+
+  if (!data) {
     return (
       <Flex
         width={"100vw"}
@@ -56,14 +51,16 @@ const Home = () => {
     );
   }
   if (error) {
+    console.log({ error });
     return <>{"Error :("}</>;
   }
+  if (data && data.sites.data.length === 0) {
+    return <>404 Client not found</>;
+  }
+  const raw = data.sites.data[0];
 
-  const client = data.sites.data.find((i) => i.attributes.ClientId === "demo");
-  const clientData: Client = formatStrapiData(client.attributes);
-
+  const clientData: Client = formatStrapiData(raw.attributes);
   const { hero, brand, sections } = clientData;
-  console.log({ hero });
   return (
     <main>
       <Box

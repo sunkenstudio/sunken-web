@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client";
 
 export const GET_SITE = gql`
-  {
-    sites {
+  query Site($ClientId: String) {
+    sites(filters: { ClientId: { eq: $ClientId } }) {
       data {
         attributes {
           ClientId
