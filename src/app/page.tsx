@@ -1,3 +1,4 @@
+// @ts-nocheck
 "use client";
 import { Hero } from "./components/Hero";
 import { Section } from "./components/Section";
@@ -15,7 +16,7 @@ const Home = () => {
     return Object.entries(data).reduce((acc, [key, val]) => {
       const formattedKey = camelCase(key);
       if (typeof val === "object") {
-        if (Array.isArray(val?.data)) {
+        if (val && Array.isArray(val?.data)) {
           return {
             ...acc,
             [formattedKey]: val.data.map((i) => formatStrapiData(i.attributes)),

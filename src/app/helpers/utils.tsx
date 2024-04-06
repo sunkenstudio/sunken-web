@@ -1,4 +1,4 @@
-export const scrollToElement = (e) => {
+export const scrollToElement = (e: any) => {
   e.preventDefault();
 
   const href = e.currentTarget.href;
