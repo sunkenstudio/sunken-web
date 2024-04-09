@@ -36,7 +36,6 @@ const Home = () => {
           const raw = res.data.sites.data[0];
           const clientData: Client = formatStrapiData(raw.attributes);
           const { font } = clientData.brand;
-          console.log({ clientData });
           Fonts(font);
           setFontFamily(font.Family);
           return clientData;

@@ -13,7 +13,6 @@ const Fonts = (font: StrapiBrand["font"]) => {
   const roboto = new FontFaceObserver(Family);
 
   roboto.load().then(() => {
-    console.log(Family.toLowerCase());
     document.documentElement.classList.add(Family.toLowerCase());
   });
 };
