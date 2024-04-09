@@ -96,6 +96,7 @@ export const GET_SITE = gql`
                 }
                 BgImageOpacity
                 BgFilterOpacity
+                Fields
               }
             }
           }
