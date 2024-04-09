@@ -42,6 +42,6 @@ export const breakpoints = {
 };
 
 // 3. extend the theme
-const theme = extendTheme({ fonts, breakpoints, config });
+const theme = extendTheme({ breakpoints, config });
 
 export default theme;

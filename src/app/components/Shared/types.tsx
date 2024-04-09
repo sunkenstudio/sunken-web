@@ -36,6 +36,10 @@ export interface StrapiBrand {
   accent: string;
   light: string;
   dark: string;
+  font: {
+    Family: string;
+    Url: string;
+  };
 }
 
 export interface StrapiFooter {

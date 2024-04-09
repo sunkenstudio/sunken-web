@@ -11,29 +11,49 @@ import { ContactForm } from "./components/ContactForm";
 import { Client } from "./components/Shared/types";
 import { formatStrapiData, getClientIdFromUrl } from "./helpers/utils";
 import { useEffect, useState } from "react";
+import { isEmpty } from "lodash";
+import { useRef } from "react";
+import Fonts from "./helpers/fonts";
 
 const Home = () => {
   const [error, setError] = useState(null);
   const [data, setData] = useState(null);
+  const [fontFamily, setFontFamily] = useState("");
+  const ref = useRef();
 
   const client = useApolloClient();
+
   useEffect(() => {
-    async function fetchData() {
-      const ClientId = getClientIdFromUrl();
+    async function fetchData(id: string) {
       client
         .query({
           query: GET_SITE,
           variables: {
-            ClientId,
+            id,
           },
         })
         .then((res) => {
-          setData(res.data);
+          const raw = res.data.sites.data[0];
+          const clientData: Client = formatStrapiData(raw.attributes);
+          const { font } = clientData.brand;
+          console.log({ clientData });
+          Fonts(font);
+          setFontFamily(font.Family);
+          return clientData;
+        })
+        .then((clientData) => {
+          setData(clientData);
         })
         .catch((err) => setError(err));
     }
 
-    fetchData();
+    const ClientId = getClientIdFromUrl();
+
+    if (ClientId) {
+      fetchData(ClientId);
+    } else {
+      setData({});
+    }
   }, []);
 
   if (!data) {
@@ -54,16 +74,15 @@ const Home = () => {
     console.log({ error });
     return <>{"Error :("}</>;
   }
-  if (data && data.sites.data.length === 0) {
+  if (isEmpty(data)) {
     return <>404 Client not found</>;
   }
-  const raw = data.sites.data[0];
 
-  const clientData: Client = formatStrapiData(raw.attributes);
-  const { hero, brand, sections } = clientData;
+  const { hero, brand, sections, footer } = data;
   return (
     <main>
       <Box
+        ref={ref}
         bgColor={"white"}
         m={1}
         position={"absolute"}
@@ -71,8 +90,9 @@ const Home = () => {
         right={0}
         top={0}
         bottom={0}
+        fontFamily={fontFamily}
       >
-        <Header sections={clientData.sections} brand={clientData.brand} />
+        <Header sections={sections} brand={brand} />
         <Box>
           <Stack gap={1}>
             <Hero
@@ -101,14 +121,10 @@ const Home = () => {
                 bgImageOpacity={i.bgImageOpacity}
               />
             ))}
-            <ContactForm
-              sections={clientData.sections}
-              brand={clientData.brand}
-              {...clientData.contact}
-            />
+            <ContactForm sections={sections} brand={brand} {...data.contact} />
           </Stack>
         </Box>
-        <Footer brand={clientData.brand} footer={clientData.footer} />
+        <Footer brand={brand} footer={footer} />
       </Box>
     </main>
   );
