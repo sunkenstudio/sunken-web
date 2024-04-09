@@ -67,6 +67,10 @@ export const GET_SITE = gql`
                 Accent
                 Light
                 Dark
+                Font {
+                  Url
+                  Family
+                }
               }
             }
           }

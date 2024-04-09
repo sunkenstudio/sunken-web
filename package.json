@@ -19,6 +19,7 @@
     "@react-email/components": "^0.0.16",
     "@react-email/render": "^0.0.12",
     "@strapi/blocks-react-renderer": "^1.0.1",
+    "fontfaceobserver": "^2.3.0",
     "formik": "^2.4.5",
     "framer-motion": "^11.0.14",
     "graphql": "^16.8.1",
