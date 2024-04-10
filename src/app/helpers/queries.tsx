@@ -15,20 +15,38 @@ export const GET_SITE = gql`
                 Button2
                 Text
                 Image {
-                  data {
-                    attributes {
-                      url
+                  Media {
+                    data {
+                      attributes {
+                        url
+                      }
                     }
                   }
+                  Alt
+                  BorderWidth
+                  BorderColor
+                  BorderRadius
+                  GrayscalePercent
+                  FilterColor
+                  FilterOpacity
                 }
                 BgImageOpacity
                 BgFilterOpacity
                 BgImage {
-                  data {
-                    attributes {
-                      url
+                  Media {
+                    data {
+                      attributes {
+                        url
+                      }
                     }
                   }
+                  Alt
+                  BorderWidth
+                  BorderColor
+                  BorderRadius
+                  GrayscalePercent
+                  FilterColor
+                  FilterOpacity
                 }
               }
             }

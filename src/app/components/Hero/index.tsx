@@ -6,7 +6,12 @@ import { Image } from "../Shared/Image";
 import { RichText } from "../Shared/RichText";
 import { SectionBg } from "../Shared/SectionBg";
 import { scrollToElement } from "@/app/helpers/utils";
-import { RichTextParagraph, StrapiBrand, StrapiImage } from "../Shared/types";
+import {
+  RichTextParagraph,
+  StrapiBrand,
+  StrapiImage,
+  StrapiStyledImage,
+} from "../Shared/types";
 
 interface HeroProps {
   header: string;
@@ -14,7 +19,7 @@ interface HeroProps {
   text: RichTextParagraph[];
   button1: string;
   button2: string;
-  image: StrapiImage;
+  image: StrapiStyledImage;
   brand: StrapiBrand;
   bgFilterOpacity: number;
   bgImage: StrapiImage;
@@ -29,9 +34,7 @@ export const Hero = ({
   button2,
   image,
   brand,
-  bgFilterOpacity,
   bgImage,
-  bgImageOpacity,
 }: HeroProps) => {
   return (
     <Flex
@@ -43,12 +46,7 @@ export const Hero = ({
       justifyContent={"center"}
       alignItems={"center"}
     >
-      <SectionBg
-        bgColor={brand.primary}
-        bgFilterOpacity={bgFilterOpacity}
-        bgImage={bgImage}
-        bgImageOpacity={bgImageOpacity}
-      />
+      <SectionBg image={bgImage} />
       <Flex
         zIndex={10}
         direction={{ base: "column", md: "row" }}
@@ -85,8 +83,8 @@ export const Hero = ({
           </Stack>
         </Box>
         <Hide below="md">
-          <Box bgColor={brand.light} p={1}>
-            <Image boxSize={"md"} url={image.url} objectFit={"cover"} />
+          <Box>
+            <Image boxSize={"md"} {...image} objectFit={"cover"} />
           </Box>
         </Hide>
       </Flex>

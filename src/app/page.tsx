@@ -41,6 +41,7 @@ const Home = () => {
           return clientData;
         })
         .then((clientData) => {
+          console.log("hero", clientData.hero);
           setData(clientData);
         })
         .catch((err) => setError(err));
@@ -78,6 +79,7 @@ const Home = () => {
   }
 
   const { hero, brand, sections, footer, contact } = data;
+  console.log({ data });
   return (
     <main>
       <Box
@@ -106,7 +108,7 @@ const Home = () => {
               bgImageOpacity={hero.bgImageOpacity}
               brand={brand}
             />
-            {sections.map((i) => (
+            {/* {sections.map((i) => (
               <Section
                 key={`section-${i.sortOrder}`}
                 header={i.header}
@@ -119,7 +121,7 @@ const Home = () => {
                 bgImage={i.bgImage}
                 bgImageOpacity={i.bgImageOpacity}
               />
-            ))}
+            ))} */}
             <ContactForm sections={sections} brand={brand} contact={contact} />
           </Stack>
         </Box>

@@ -31,17 +31,29 @@ export const formatStrapiData = (data: any): Client => {
     const formattedKey = camelCase(key);
     if (typeof val === "object") {
       if (val && Array.isArray(val?.data)) {
+        if (val?.__typename === "ComponentCommonImage") {
+          console.log("a");
+        }
         return {
           ...acc,
           [formattedKey]: val.data.map((i) => formatStrapiData(i.attributes)),
         };
       }
       if (val?.data?.attributes) {
+        if (val?.__typename === "ComponentCommonImage") {
+          console.log("b");
+        }
         return {
           ...acc,
           [formattedKey]: formatStrapiData(val.data.attributes),
         };
       }
+    }
+    if (val?.__typename?.includes("ComponentCommon")) {
+      return {
+        ...acc,
+        [formattedKey]: formatStrapiData(val),
+      };
     }
     return {
       ...acc,

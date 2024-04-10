@@ -3,6 +3,18 @@ export interface StrapiImage {
   url: string;
 }
 
+export interface StrapiStyledImage {
+  typename: string;
+  media: StrapiImage;
+  alt: string;
+  borderWidth: string;
+  borderColor: string;
+  borderRadius: string;
+  grayscalePercent: number;
+  filterColor: string;
+  filterOpacity: number;
+}
+
 export interface RichTextParagraph {
   type: string;
   children: RichTextSegment[];
@@ -37,8 +49,8 @@ export interface StrapiBrand {
   light: string;
   dark: string;
   font: {
-    Family: string;
-    Url: string;
+    family: string;
+    url: string;
   };
 }
 
@@ -57,7 +69,7 @@ export interface StrapiHero {
   button1: string;
   button2: string;
   text: RichTextParagraph[];
-  image: StrapiImage;
+  image: StrapiStyledImage;
   bgImageOpacity: number;
   bgFilterOpacity: number;
   bgImage: StrapiImage;
