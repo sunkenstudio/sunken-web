@@ -20,6 +20,7 @@ interface ContactFormProps {
     bgImage: StrapiImage;
     bgImageOpacity: number;
     fields: InputFieldProps[];
+    sendTo: string;
   };
 }
 
@@ -29,7 +30,7 @@ export const ContactForm = ({ sections, brand, contact }: ContactFormProps) => {
     error: null,
     success: false,
   });
-  const { bgFilterOpacity, bgImage, bgImageOpacity } = contact;
+  const { bgFilterOpacity, bgImage, bgImageOpacity, sendTo } = contact;
 
   useEffect(() => {
     if (sendEmailState.success) {
@@ -56,7 +57,7 @@ export const ContactForm = ({ sections, brand, contact }: ContactFormProps) => {
     onSubmit: () => {
       setIsFiring(true);
       sendEmailAction({
-        receiverEmail: "dan@sunkenstudio.com",
+        receiverEmail: sendTo,
         ...formik.values,
       });
     },
