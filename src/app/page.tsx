@@ -77,7 +77,7 @@ const Home = () => {
     return <>404 Client not found</>;
   }
 
-  const { hero, brand, sections, footer } = data;
+  const { hero, brand, sections, footer, contact } = data;
   return (
     <main>
       <Box
@@ -120,7 +120,7 @@ const Home = () => {
                 bgImageOpacity={i.bgImageOpacity}
               />
             ))}
-            <ContactForm sections={sections} brand={brand} {...data.contact} />
+            <ContactForm sections={sections} brand={brand} contact={contact} />
           </Stack>
         </Box>
         <Footer brand={brand} footer={footer} />

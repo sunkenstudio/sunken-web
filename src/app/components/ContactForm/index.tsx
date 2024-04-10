@@ -1,14 +1,7 @@
+// @ts-nocheck
 "use client";
 import React, { useState } from "react";
-import {
-  Button,
-  Flex,
-  Input,
-  Stack,
-  Textarea,
-  FormControl,
-  FormLabel,
-} from "@chakra-ui/react";
+import { Button, Flex, Stack } from "@chakra-ui/react";
 import { H3 } from "../Typography";
 import { useFormik, FormikProvider } from "formik";
 import { sendEmail } from "@/actions";
@@ -16,27 +9,28 @@ import { useEffect } from "react";
 import { useFormState } from "react-dom";
 import { SectionBg } from "../Shared/SectionBg";
 import { StrapiBrand, StrapiImage, StrapiSection } from "../Shared/types";
+import { InputField, InputFieldProps } from "../Shared/InputField";
+import { snakeCase } from "lodash";
 
 interface ContactFormProps {
   sections: StrapiSection[];
   brand: StrapiBrand;
-  bgFilterOpacity: number;
-  bgImage: StrapiImage;
-  bgImageOpacity: number;
+  contact: {
+    bgFilterOpacity: number;
+    bgImage: StrapiImage;
+    bgImageOpacity: number;
+    fields: InputFieldProps[];
+    sendTo: string;
+  };
 }
 
-export const ContactForm = ({
-  sections,
-  brand,
-  bgFilterOpacity,
-  bgImage,
-  bgImageOpacity,
-}: ContactFormProps) => {
+export const ContactForm = ({ sections, brand, contact }: ContactFormProps) => {
   const [isFiring, setIsFiring] = useState(false);
   const [sendEmailState, sendEmailAction] = useFormState(sendEmail, {
     error: null,
     success: false,
   });
+  const { bgFilterOpacity, bgImage, bgImageOpacity, sendTo } = contact;
 
   useEffect(() => {
     if (sendEmailState.success) {
@@ -59,16 +53,13 @@ export const ContactForm = ({
   const color = bgColor === "light" ? "primary" : "light";
 
   const formik = useFormik({
-    initialValues: {
-      senderEmail: "",
-      receiverEmail: "danwarrickdev@gmail.com",
-      name: "",
-      message: "",
-      company: "",
-    },
+    initialValues: {},
     onSubmit: () => {
       setIsFiring(true);
-      sendEmailAction(formik.values);
+      sendEmailAction({
+        receiverEmail: sendTo,
+        ...formik.values,
+      });
     },
   });
 
@@ -95,6 +86,8 @@ export const ContactForm = ({
           justifyContent={"center"}
           alignItems={"center"}
           w="100%"
+          pb={"5rem"}
+          pt={"1rem"}
         >
           <H3>CONTACT</H3>
           <form
@@ -102,53 +95,21 @@ export const ContactForm = ({
             style={{ display: "flex", width: "100%", justifyContent: "center" }}
           >
             <Stack gap={"1rem"} m={3} w={{ base: "100%", md: "45%" }}>
-              <FormControl isRequired>
-                <FormLabel htmlFor="name">Name</FormLabel>
-                <Input
-                  id="name"
-                  name="name"
-                  type="text"
-                  variant="filled"
-                  onChange={formik.handleChange}
-                  value={formik.values.name}
-                  color={brand.dark}
-                />
-              </FormControl>
-              <FormControl isRequired>
-                <FormLabel htmlFor="senderEmail">Email</FormLabel>
-                <Input
-                  id="senderEmail"
-                  name="senderEmail"
-                  type="email"
-                  variant="filled"
-                  onChange={formik.handleChange}
-                  value={formik.values.senderEmail}
-                  color={brand.dark}
-                />
-              </FormControl>
-              <FormControl>
-                <FormLabel htmlFor="company">Company</FormLabel>
-                <Input
-                  id="company"
-                  name="company"
-                  type="text"
-                  variant="filled"
-                  onChange={formik.handleChange}
-                  value={formik.values.company}
-                  color={brand.dark}
-                />
-              </FormControl>
-              <FormControl isRequired>
-                <FormLabel htmlFor="message">Message</FormLabel>
-                <Textarea
-                  id="message"
-                  name="message"
-                  variant="filled"
-                  onChange={formik.handleChange}
-                  value={formik.values.message}
-                  color={brand.dark}
-                />
-              </FormControl>
+              {contact.fields.map((i) => {
+                const key = snakeCase(i.label);
+                return (
+                  <InputField
+                    key={key}
+                    id={key}
+                    label={i.label}
+                    type={i.type}
+                    options={i.options}
+                    brand={brand}
+                    value={formik.values[key]}
+                    onChange={formik.handleChange}
+                  />
+                );
+              })}
               <Button
                 type="submit"
                 bgColor={brand.dark}
