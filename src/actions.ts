@@ -1,6 +1,7 @@
 "use server";
 import { Resend } from "resend";
 import EmailTemplate from "./app/components/EmailTemplate";
+import { omit } from "lodash";
 interface State {
   error: string | null;
   success: boolean;
@@ -15,14 +16,14 @@ interface Payload {
 }
 
 export const sendEmail = async (prevState: State, formData: Payload) => {
-  const { name, senderEmail, receiverEmail, message, company } = formData;
   try {
+    const { receiverEmail } = formData;
     const resend = new Resend(process.env.RESEND_API_KEY);
     await resend.emails.send({
       from: "accounts@sunkenstudio.com",
       to: receiverEmail,
       subject: "New Client Message",
-      react: EmailTemplate({ name, email: senderEmail, message, company }),
+      react: EmailTemplate(omit(formData, "receiverEmail")),
     });
     return {
       error: null,

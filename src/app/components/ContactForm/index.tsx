@@ -1,14 +1,7 @@
+// @ts-nocheck
 "use client";
 import React, { useState } from "react";
-import {
-  Button,
-  Flex,
-  Input,
-  Stack,
-  Textarea,
-  FormControl,
-  FormLabel,
-} from "@chakra-ui/react";
+import { Button, Flex, Stack } from "@chakra-ui/react";
 import { H3 } from "../Typography";
 import { useFormik, FormikProvider } from "formik";
 import { sendEmail } from "@/actions";
@@ -61,9 +54,11 @@ export const ContactForm = ({ sections, brand, contact }: ContactFormProps) => {
   const formik = useFormik({
     initialValues: {},
     onSubmit: () => {
-      console.log(formik.values);
-      // setIsFiring(true);
-      // sendEmailAction(formik.values);
+      setIsFiring(true);
+      sendEmailAction({
+        receiverEmail: "dan@sunkenstudio.com",
+        ...formik.values,
+      });
     },
   });
 

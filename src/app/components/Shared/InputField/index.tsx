@@ -1,10 +1,7 @@
 import {
   FormControl,
   FormLabel,
-  HStack,
   Input,
-  InputGroup,
-  InputLeftElement,
   Select,
   Stack,
   Textarea,
@@ -12,7 +9,6 @@ import {
 import React from "react";
 import { StrapiBrand } from "../types";
 import { snakeCase } from "lodash";
-import { PhoneIcon } from "@chakra-ui/icons";
 
 export interface InputFieldProps {
   id: string;
@@ -93,41 +89,6 @@ export const InputField = ({
             />
           </FormControl>
         )}
-      </Stack>
-    );
-  }
-  if (type === "time_range") {
-    const startId = `${id}-start`;
-    const endId = `${id}-end`;
-    return (
-      <Stack>
-        <FormLabel>{label}</FormLabel>
-        <HStack>
-          <FormControl isRequired>
-            <FormLabel htmlFor={startId}>{"Start"}</FormLabel>
-            <Input
-              id={startId}
-              name={label}
-              type={"time"}
-              variant="filled"
-              onChange={onChange}
-              value={value}
-              color={brand.dark}
-            />
-          </FormControl>
-          <FormControl isRequired>
-            <FormLabel htmlFor={endId}>{"End"}</FormLabel>
-            <Input
-              id={endId}
-              name={label}
-              type={"time"}
-              variant="filled"
-              onChange={onChange}
-              value={value}
-              color={brand.dark}
-            />
-          </FormControl>
-        </HStack>
       </Stack>
     );
   }
