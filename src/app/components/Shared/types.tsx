@@ -15,6 +15,19 @@ export interface StrapiStyledImage {
   filterOpacity: number;
 }
 
+export interface StrapiStyledButton {
+  typename: string;
+  type: "link" | "modal" | "pdf";
+  text: string;
+  href: string;
+  icon: string;
+  textColor: string;
+  bgColor: string;
+  borderColor: string;
+  borderWidth: string;
+  borderRadius: string;
+}
+
 export interface RichTextParagraph {
   type: string;
   children: RichTextSegment[];
@@ -66,8 +79,7 @@ export interface StrapiHero {
   typename: string;
   header: string;
   subheader: string;
-  button1: string;
-  button2: string;
+  buttons: StrapiStyledButton[];
   text: RichTextParagraph[];
   image: StrapiStyledImage;
   bgImageOpacity: number;

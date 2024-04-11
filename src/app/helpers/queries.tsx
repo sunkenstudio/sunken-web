@@ -11,8 +11,6 @@ export const GET_SITE = gql`
               attributes {
                 Header
                 Subheader
-                Button1
-                Button2
                 Text
                 Image {
                   Media {
@@ -47,6 +45,17 @@ export const GET_SITE = gql`
                   GrayscalePercent
                   FilterColor
                   FilterOpacity
+                }
+                Buttons {
+                  Type
+                  Text
+                  Href
+                  Icon
+                  TextColor
+                  BgColor
+                  BorderColor
+                  BorderWidth
+                  BorderRadius
                 }
               }
             }

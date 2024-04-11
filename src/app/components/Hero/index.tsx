@@ -1,41 +1,20 @@
 "use client";
-import { Box, Button, Flex, HStack, Hide, Stack } from "@chakra-ui/react";
+import { Box, Flex, HStack, Hide, Stack } from "@chakra-ui/react";
 import React from "react";
 import { H1, H3, Paragraph } from "../Typography";
 import { Image } from "../Shared/Image";
 import { RichText } from "../Shared/RichText";
 import { SectionBg } from "../Shared/SectionBg";
-import { scrollToElement } from "@/app/helpers/utils";
-import {
-  RichTextParagraph,
-  StrapiBrand,
-  StrapiImage,
-  StrapiStyledImage,
-} from "../Shared/types";
+import { StrapiBrand, StrapiHero } from "../Shared/types";
+import { Button } from "../Shared/Button";
 
 interface HeroProps {
-  header: string;
-  subheader: string;
-  text: RichTextParagraph[];
-  button1: string;
-  button2: string;
-  image: StrapiStyledImage;
+  hero: StrapiHero;
   brand: StrapiBrand;
-  bgFilterOpacity: number;
-  bgImage: StrapiImage;
-  bgImageOpacity: number;
 }
 
-export const Hero = ({
-  header,
-  subheader,
-  text,
-  button1,
-  button2,
-  image,
-  brand,
-  bgImage,
-}: HeroProps) => {
+export const Hero = ({ brand, hero }: HeroProps) => {
+  const { header, subheader, text, buttons, image, bgImage } = hero;
   return (
     <Flex
       id={"hero"}
@@ -63,22 +42,9 @@ export const Hero = ({
               <RichText content={text} />
             </Paragraph>
             <HStack mt={3} gap={3}>
-              <Button
-                bgColor={brand.dark}
-                border={`2px solid ${brand.dark}`}
-                onClick={() => console.log("click1")}
-                color={"white"}
-              >
-                {button1}
-              </Button>
-              <a onClick={scrollToElement} href={`#contact`}>
-                <Button
-                  colorScheme="transparent"
-                  border={`2px solid ${brand.dark}`}
-                >
-                  {button2}
-                </Button>
-              </a>
+              {buttons.map((i) => {
+                return <Button key={i.typename} {...i} />;
+              })}
             </HStack>
           </Stack>
         </Box>

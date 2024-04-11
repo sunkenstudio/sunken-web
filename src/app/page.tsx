@@ -96,19 +96,8 @@ const Home = () => {
         <Header sections={sections} brand={brand} />
         <Box>
           <Stack gap={1}>
-            <Hero
-              header={hero.header}
-              subheader={hero.subheader}
-              text={hero.text}
-              button1={hero.button1}
-              button2={hero.button2}
-              image={hero.image}
-              bgFilterOpacity={hero.bgFilterOpacity}
-              bgImage={hero.bgImage}
-              bgImageOpacity={hero.bgImageOpacity}
-              brand={brand}
-            />
-            {/* {sections.map((i) => (
+            <Hero hero={hero} brand={brand} />
+            {sections.map((i) => (
               <Section
                 key={`section-${i.sortOrder}`}
                 header={i.header}
@@ -121,7 +110,7 @@ const Home = () => {
                 bgImage={i.bgImage}
                 bgImageOpacity={i.bgImageOpacity}
               />
-            ))} */}
+            ))}
             <ContactForm sections={sections} brand={brand} contact={contact} />
           </Stack>
         </Box>
