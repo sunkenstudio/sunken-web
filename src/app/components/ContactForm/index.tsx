@@ -85,11 +85,12 @@ export const ContactForm = ({
         id={"contact"}
         w="100%"
         color={brand[color]}
-        textShadow={color === "light" ? `1px 1px 5px ${brand.primary}` : "none"}
         position="relative"
         minH={"2xl"}
         justifyContent={"center"}
         alignItems={"center"}
+        fontFamily={"Arial"}
+        textShadow={"1px 1px 1px black"}
       >
         <SectionBg image={bgImage} />
         <Stack
@@ -100,7 +101,7 @@ export const ContactForm = ({
           pb={"5rem"}
           pt={"1rem"}
         >
-          <H3>CONTACT</H3>
+          <H3 mt={"2.5rem"}>CONTACT</H3>
           <form
             onSubmit={formik.handleSubmit}
             style={{ display: "flex", width: "100%", justifyContent: "center" }}
@@ -112,7 +113,7 @@ export const ContactForm = ({
                   <InputField
                     key={key}
                     id={key}
-                    label={i.label}
+                    label={i.label.toUpperCase()}
                     type={i.type}
                     options={i.options}
                     brand={brand}
