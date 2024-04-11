@@ -126,19 +126,8 @@ export const ContactForm = ({
                 isLoading={isFiring}
                 w={"100%"}
                 {...sharedProps}
-                text={"Submit"}
+                text={"SUBMIT"}
               />
-
-              {/* <Button
-                type="submit"
-                bgColor={brand.dark}
-                border={`2px solid ${brand.light}`}
-                color={brand.light}
-                w={"100%"}
-                isLoading={isFiring}
-              >
-                Submit
-              </Button> */}
             </Stack>
           </form>
         </Stack>

@@ -21,23 +21,12 @@ export const Section = ({ section, brand }: SectionProps) => {
     bgImage,
   } = section;
 
-  const bgColor =
-    sortOrder % 3 === 0
-      ? "primary"
-      : sortOrder % 2 === 0
-      ? "light"
-      : "secondary";
-
-  const color = bgColor === "light" ? "primary" : "light";
-
   const altLayout = sortOrder % 2 !== 0;
-  const imgBorderColor = bgColor === "light" ? brand.primary : brand.light;
   return (
     <Flex
       id={`section-${sortOrder}`}
       w="100%"
       color={brand.dark}
-      // textShadow={color === "light" ? `1px 1px 3px ${brand.dark}` : "none"}
       position="relative"
       minH={"2xl"}
       justifyContent={"center"}
@@ -76,7 +65,7 @@ export const Section = ({ section, brand }: SectionProps) => {
               </Stack>
             ) : null}
             <Box w={{ base: "100%", md: "45%" }}>
-              <H3>{header}</H3>
+              <H3 mb={"1.25rem"}>{header}</H3>
               <RichText content={text} />
             </Box>
             {!altLayout ? (

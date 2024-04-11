@@ -42,7 +42,7 @@ const H6 = ({ children, ...rest }: HeaderProps) => (
 );
 
 const Paragraph = ({ children, ...rest }: HeaderProps) => (
-  <Text as="p" size="1.25rem" {...rest}>
+  <Text as="p" size="1.5rem" {...rest}>
     {children}
   </Text>
 );
