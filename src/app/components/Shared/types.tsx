@@ -3,6 +3,31 @@ export interface StrapiImage {
   url: string;
 }
 
+export interface StrapiStyledImage {
+  typename: string;
+  media: StrapiImage;
+  alt: string;
+  borderWidth: string;
+  borderColor: string;
+  borderRadius: string;
+  grayscalePercent: number;
+  filterColor: string;
+  filterOpacity: number;
+}
+
+export interface StrapiStyledButton {
+  typename: string;
+  type: "link" | "modal" | "pdf" | "submit";
+  text: string;
+  href: string;
+  icon: string;
+  textColor: string;
+  bgColor: string;
+  borderColor: string;
+  borderWidth: string;
+  borderRadius: string;
+}
+
 export interface RichTextParagraph {
   type: string;
   children: RichTextSegment[];
@@ -22,11 +47,9 @@ export interface StrapiSection {
   header: string;
   sortOrder: number;
   text: RichTextParagraph[];
-  image: StrapiImage;
+  image: StrapiStyledImage;
   caption: string;
-  bgImageOpacity: number;
-  bgFilterOpacity: number;
-  bgImage: StrapiImage;
+  bgImage: StrapiStyledImage;
 }
 
 export interface StrapiBrand {
@@ -36,10 +59,10 @@ export interface StrapiBrand {
   accent: string;
   light: string;
   dark: string;
-  font: {
-    Family: string;
-    Url: string;
-  };
+  fonts: {
+    family: string;
+    url: string;
+  }[];
 }
 
 export interface StrapiFooter {
@@ -54,13 +77,12 @@ export interface StrapiHero {
   typename: string;
   header: string;
   subheader: string;
-  button1: string;
-  button2: string;
+  buttons: StrapiStyledButton[];
   text: RichTextParagraph[];
-  image: StrapiImage;
+  image: StrapiStyledImage;
   bgImageOpacity: number;
   bgFilterOpacity: number;
-  bgImage: StrapiImage;
+  bgImage: StrapiStyledImage;
 }
 
 export interface StrapiContact {

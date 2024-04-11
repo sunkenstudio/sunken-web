@@ -1,37 +1,53 @@
 // @ts-nocheck
 "use client";
 import React, { useState } from "react";
-import { Button, Flex, Stack } from "@chakra-ui/react";
+import { Flex, Stack } from "@chakra-ui/react";
 import { H3 } from "../Typography";
 import { useFormik, FormikProvider } from "formik";
 import { sendEmail } from "@/actions";
 import { useEffect } from "react";
 import { useFormState } from "react-dom";
 import { SectionBg } from "../Shared/SectionBg";
-import { StrapiBrand, StrapiImage, StrapiSection } from "../Shared/types";
+import {
+  StrapiBrand,
+  StrapiHero,
+  StrapiSection,
+  StrapiStyledImage,
+} from "../Shared/types";
 import { InputField, InputFieldProps } from "../Shared/InputField";
 import { snakeCase } from "lodash";
+import { Button } from "../Shared/Button";
 
 interface ContactFormProps {
+  hero: StrapiHero;
   sections: StrapiSection[];
   brand: StrapiBrand;
   contact: {
-    bgFilterOpacity: number;
-    bgImage: StrapiImage;
-    bgImageOpacity: number;
     fields: InputFieldProps[];
     sendTo: string;
+    bgImage: StrapiStyledImage;
   };
 }
 
-export const ContactForm = ({ sections, brand, contact }: ContactFormProps) => {
+export const ContactForm = ({
+  hero,
+  sections,
+  brand,
+  contact,
+}: ContactFormProps) => {
   const [isFiring, setIsFiring] = useState(false);
   const [sendEmailState, sendEmailAction] = useFormState(sendEmail, {
     error: null,
     success: false,
   });
-  const { bgFilterOpacity, bgImage, bgImageOpacity, sendTo } = contact;
-
+  const { bgImage, sendTo } = contact;
+  const sharedProps = {
+    bgColor: hero.buttons[0].bgColor,
+    borderColor: hero.buttons[0].borderColor,
+    borderRadius: hero.buttons[0].borderRadius,
+    borderWidth: hero.buttons[0].borderWidth,
+    textColor: hero.buttons[0].textColor,
+  };
   useEffect(() => {
     if (sendEmailState.success) {
       alert("Email sent!");
@@ -45,10 +61,10 @@ export const ContactForm = ({ sections, brand, contact }: ContactFormProps) => {
 
   const bgColor =
     sections.length % 3 === 0
-      ? "secondary"
+      ? "light"
       : sections.length % 2 === 0
       ? "primary"
-      : "light";
+      : "secondary";
 
   const color = bgColor === "light" ? "primary" : "light";
 
@@ -69,18 +85,14 @@ export const ContactForm = ({ sections, brand, contact }: ContactFormProps) => {
         id={"contact"}
         w="100%"
         color={brand[color]}
-        textShadow={color === "light" ? `1px 1px 5px ${brand.primary}` : "none"}
         position="relative"
         minH={"2xl"}
         justifyContent={"center"}
         alignItems={"center"}
+        fontFamily={"Arial"}
+        textShadow={"1px 1px 1px black"}
       >
-        <SectionBg
-          bgColor={brand[bgColor]}
-          bgFilterOpacity={bgFilterOpacity}
-          bgImage={bgImage}
-          bgImageOpacity={bgImageOpacity}
-        />
+        <SectionBg image={bgImage} />
         <Stack
           zIndex={10}
           justifyContent={"center"}
@@ -89,7 +101,7 @@ export const ContactForm = ({ sections, brand, contact }: ContactFormProps) => {
           pb={"5rem"}
           pt={"1rem"}
         >
-          <H3>CONTACT</H3>
+          <H3 mt={"2.5rem"}>CONTACT</H3>
           <form
             onSubmit={formik.handleSubmit}
             style={{ display: "flex", width: "100%", justifyContent: "center" }}
@@ -101,7 +113,7 @@ export const ContactForm = ({ sections, brand, contact }: ContactFormProps) => {
                   <InputField
                     key={key}
                     id={key}
-                    label={i.label}
+                    label={i.label.toUpperCase()}
                     type={i.type}
                     options={i.options}
                     brand={brand}
@@ -112,14 +124,11 @@ export const ContactForm = ({ sections, brand, contact }: ContactFormProps) => {
               })}
               <Button
                 type="submit"
-                bgColor={brand.dark}
-                border={`2px solid ${brand.light}`}
-                color={brand.light}
-                w={"100%"}
                 isLoading={isFiring}
-              >
-                Submit
-              </Button>
+                w={"100%"}
+                {...sharedProps}
+                text={"SUBMIT"}
+              />
             </Stack>
           </form>
         </Stack>

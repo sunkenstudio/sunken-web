@@ -48,10 +48,10 @@ export const InputField = ({
           id={id}
           name={label}
           type={type}
-          variant="filled"
           onChange={onChange}
           value={value}
           color={brand.dark}
+          bgColor="white"
         />
       </FormControl>
     );
@@ -64,10 +64,10 @@ export const InputField = ({
           <Select
             id={id}
             name={label}
-            variant="filled"
             onChange={onChange}
             value={value}
             color={brand.dark}
+            bgColor="white"
           >
             {options.map((i) => (
               <option key={snakeCase(i)} value={i}>
@@ -82,10 +82,10 @@ export const InputField = ({
               id={`${id}-other`}
               name={`${label}-other`}
               type={"text"}
-              variant="filled"
               onChange={onChange}
               value={value}
               color={brand.dark}
+              bgColor="white"
             />
           </FormControl>
         )}

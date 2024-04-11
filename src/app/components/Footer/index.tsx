@@ -7,24 +7,37 @@ import {
 } from "@phosphor-icons/react";
 import Link from "next/link";
 import { RichText } from "../Shared/RichText";
-import { StrapiBrand, StrapiFooter } from "../Shared/types";
+import { StrapiBrand, StrapiFooter, StrapiHero } from "../Shared/types";
 
-const SocialButtonStyle = (brand: StrapiBrand) => ({
+const SocialButtonStyle = (sharedProps: {
+  bgColor: string;
+  borderColor: string;
+  borderRadius: string;
+  borderWidth: string;
+}) => ({
   boxSize: "48px",
   p: 2,
-  bgColor: brand.dark,
-  borderRadius: ".5rem",
-  border: `2px solid ${brand.light}`,
+  bgColor: sharedProps.bgColor,
+  borderRadius: sharedProps.borderRadius,
+  border: `${sharedProps.borderWidth} solid ${sharedProps.borderColor}`,
   justifyContent: "center",
   alignItems: "center",
 });
 
 interface FooterProps {
   brand: StrapiBrand;
+  // TODO - Refactor after color palette refactor
+  hero: StrapiHero;
   footer: StrapiFooter;
 }
 
-export const Footer = ({ brand, footer }: FooterProps) => {
+export const Footer = ({ brand, hero, footer }: FooterProps) => {
+  const sharedProps = {
+    bgColor: hero.buttons[0].bgColor,
+    borderColor: hero.buttons[0].borderColor,
+    borderRadius: hero.buttons[0].borderRadius,
+    borderWidth: hero.buttons[0].borderWidth,
+  };
   return (
     <Flex
       bottom={0}
@@ -45,27 +58,31 @@ export const Footer = ({ brand, footer }: FooterProps) => {
         <HStack gap={3} justifyContent={"center"} w="100%">
           {footer.instagramUrl && (
             <Link href={footer.instagramUrl} target="_blank">
-              <Flex {...SocialButtonStyle(brand)}>
+              <Flex {...SocialButtonStyle(sharedProps)}>
                 <InstagramLogo size={32} color={brand.light} />
               </Flex>
             </Link>
           )}
           {footer.facebookUrl && (
             <Link href={footer.facebookUrl} target="_blank">
-              <Flex {...SocialButtonStyle(brand)}>
+              <Flex {...SocialButtonStyle(sharedProps)}>
                 <FacebookLogo size={32} color={brand.light} />
               </Flex>
             </Link>
           )}
           {footer.twitterUrl && (
             <Link href={footer.twitterUrl} target="_blank">
-              <Flex {...SocialButtonStyle(brand)}>
+              <Flex {...SocialButtonStyle(sharedProps)}>
                 <TwitterLogo size={32} color={brand.light} />
               </Flex>
             </Link>
           )}
         </HStack>
-        <RichText content={footer.text} />
+        <RichText
+          content={footer.text}
+          fontFamily={"Arial"}
+          textShadow="1px 1px 1px black"
+        />
       </Stack>
     </Flex>
   );

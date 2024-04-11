@@ -11,24 +11,51 @@ export const GET_SITE = gql`
               attributes {
                 Header
                 Subheader
-                Button1
-                Button2
                 Text
                 Image {
-                  data {
-                    attributes {
-                      url
+                  Media {
+                    data {
+                      attributes {
+                        url
+                      }
                     }
                   }
+                  Alt
+                  BorderWidth
+                  BorderColor
+                  BorderRadius
+                  GrayscalePercent
+                  FilterColor
+                  FilterOpacity
                 }
                 BgImageOpacity
                 BgFilterOpacity
                 BgImage {
-                  data {
-                    attributes {
-                      url
+                  Media {
+                    data {
+                      attributes {
+                        url
+                      }
                     }
                   }
+                  Alt
+                  BorderWidth
+                  BorderColor
+                  BorderRadius
+                  GrayscalePercent
+                  FilterColor
+                  FilterOpacity
+                }
+                Buttons {
+                  Type
+                  Text
+                  Href
+                  Icon
+                  TextColor
+                  BgColor
+                  BorderColor
+                  BorderWidth
+                  BorderRadius
                 }
               }
             }
@@ -40,21 +67,37 @@ export const GET_SITE = gql`
                 SortOrder
                 Text
                 Image {
-                  data {
-                    attributes {
-                      url
+                  Media {
+                    data {
+                      attributes {
+                        url
+                      }
                     }
                   }
+                  Alt
+                  BorderWidth
+                  BorderColor
+                  BorderRadius
+                  GrayscalePercent
+                  FilterColor
+                  FilterOpacity
                 }
                 Caption
-                BgImageOpacity
-                BgFilterOpacity
                 BgImage {
-                  data {
-                    attributes {
-                      url
+                  Media {
+                    data {
+                      attributes {
+                        url
+                      }
                     }
                   }
+                  Alt
+                  BorderWidth
+                  BorderColor
+                  BorderRadius
+                  GrayscalePercent
+                  FilterColor
+                  FilterOpacity
                 }
               }
             }
@@ -67,10 +110,11 @@ export const GET_SITE = gql`
                 Accent
                 Light
                 Dark
-                Font {
+                Fonts {
                   Url
                   Family
                 }
+                CompanyName
               }
             }
           }
@@ -87,17 +131,24 @@ export const GET_SITE = gql`
           contact {
             data {
               attributes {
-                BgImage {
-                  data {
-                    attributes {
-                      url
-                    }
-                  }
-                }
-                BgImageOpacity
-                BgFilterOpacity
                 Fields
                 SendTo
+                BgImage {
+                  Media {
+                    data {
+                      attributes {
+                        url
+                      }
+                    }
+                  }
+                  Alt
+                  BorderWidth
+                  BorderColor
+                  BorderRadius
+                  GrayscalePercent
+                  FilterColor
+                  FilterOpacity
+                }
               }
             }
           }

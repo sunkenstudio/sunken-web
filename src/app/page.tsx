@@ -18,7 +18,7 @@ import Fonts from "./helpers/fonts";
 const Home = () => {
   const [error, setError] = useState(null);
   const [data, setData] = useState(null);
-  const [fontFamily, setFontFamily] = useState("");
+  const [fontFamilies, setFontFamilies] = useState("");
   const ref = useRef();
 
   const client = useApolloClient();
@@ -35,12 +35,13 @@ const Home = () => {
         .then((res) => {
           const raw = res.data.sites.data[0];
           const clientData: Client = formatStrapiData(raw.attributes);
-          const { font } = clientData.brand;
-          Fonts(font);
-          setFontFamily(font.Family);
+          const { fonts } = clientData.brand;
+          Fonts(fonts);
           return clientData;
         })
         .then((clientData) => {
+          document.title = clientData.brand.companyName;
+          setFontFamilies(clientData.brand.fonts);
           setData(clientData);
         })
         .catch((err) => setError(err));
@@ -83,47 +84,40 @@ const Home = () => {
       <Box
         ref={ref}
         bgColor={"white"}
-        m={1}
+        // m={1}
         position={"absolute"}
         left={0}
         right={0}
         top={0}
         bottom={0}
-        fontFamily={fontFamily}
+        css={{
+          fontFamily: fontFamilies?.[1].family || "",
+          "& h1, & h2, & h3, & h4, & h5, & h6": {
+            fontFamily: fontFamilies[0].family,
+          },
+        }}
+        fontSize={{ base: "1rem", md: "1.25rem" }}
       >
-        <Header sections={sections} brand={brand} />
+        <Header hero={hero} sections={sections} brand={brand} />
         <Box>
-          <Stack gap={1}>
-            <Hero
-              header={hero.header}
-              subheader={hero.subheader}
-              text={hero.text}
-              button1={hero.button1}
-              button2={hero.button2}
-              image={hero.image}
-              bgFilterOpacity={hero.bgFilterOpacity}
-              bgImage={hero.bgImage}
-              bgImageOpacity={hero.bgImageOpacity}
-              brand={brand}
-            />
+          <Stack gap={0}>
+            <Hero hero={hero} brand={brand} />
             {sections.map((i) => (
               <Section
                 key={`section-${i.sortOrder}`}
-                header={i.header}
-                sortOrder={i.sortOrder}
-                text={i.text}
-                image={i.image}
-                caption={i.caption}
+                section={i}
                 brand={brand}
-                bgFilterOpacity={i.bgFilterOpacity}
-                bgImage={i.bgImage}
-                bgImageOpacity={i.bgImageOpacity}
               />
             ))}
-            <ContactForm sections={sections} brand={brand} contact={contact} />
+            <ContactForm
+              hero={hero}
+              sections={sections}
+              brand={brand}
+              contact={contact}
+            />
           </Stack>
         </Box>
-        <Footer brand={brand} footer={footer} />
+        <Footer brand={brand} hero={hero} footer={footer} />
       </Box>
     </main>
   );

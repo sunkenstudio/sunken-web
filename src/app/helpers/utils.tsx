@@ -43,6 +43,23 @@ export const formatStrapiData = (data: any): Client => {
         };
       }
     }
+    if (val?.__typename?.includes("ComponentCommon")) {
+      return {
+        ...acc,
+        [formattedKey]: formatStrapiData(val),
+      };
+    }
+    // hero > buttons array
+    if (
+      val &&
+      Array.isArray(val) &&
+      val?.[0].__typename?.includes("ComponentCommon")
+    ) {
+      return {
+        ...acc,
+        [formattedKey]: val.map((i) => formatStrapiData(i)),
+      };
+    }
     return {
       ...acc,
       [formattedKey]: val,
