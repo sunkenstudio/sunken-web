@@ -110,7 +110,7 @@ export const GET_SITE = gql`
                 Accent
                 Light
                 Dark
-                Font {
+                Fonts {
                   Url
                   Family
                 }
@@ -130,17 +130,24 @@ export const GET_SITE = gql`
           contact {
             data {
               attributes {
-                BgImage {
-                  data {
-                    attributes {
-                      url
-                    }
-                  }
-                }
-                BgImageOpacity
-                BgFilterOpacity
                 Fields
                 SendTo
+                BgImage {
+                  Media {
+                    data {
+                      attributes {
+                        url
+                      }
+                    }
+                  }
+                  Alt
+                  BorderWidth
+                  BorderColor
+                  BorderRadius
+                  GrayscalePercent
+                  FilterColor
+                  FilterOpacity
+                }
               }
             }
           }

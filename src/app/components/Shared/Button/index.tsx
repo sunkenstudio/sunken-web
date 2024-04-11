@@ -24,20 +24,31 @@ export const Button = ({
     borderColor: borderColor,
     borderWidth: borderWidth,
     borderRadius: borderRadius,
+    fontFamily: "Arial",
+    textShadow: "1px 1px 1px black",
     ...rest,
   };
   if (type === "link") {
     if (href.includes("#")) {
       return (
-        <a onClick={scrollToElement} href={href}>
-          <ChakraButton {...commonProps}>{text}</ChakraButton>
+        <a onClick={scrollToElement} href={href} style={{ width: "100%" }}>
+          <ChakraButton {...commonProps} w={{ base: "100%", md: "45%" }}>
+            {text}
+          </ChakraButton>
         </a>
       );
     }
     return (
-      <a href={href}>
+      <a href={href} style={{ width: "100%" }}>
         <ChakraButton {...commonProps}>{text}</ChakraButton>
       </a>
+    );
+  }
+  if (type === "submit") {
+    return (
+      <ChakraButton type="submit" {...commonProps}>
+        {text}
+      </ChakraButton>
     );
   }
   return <>MISSING BUTTON IMPLEMENTATION</>;

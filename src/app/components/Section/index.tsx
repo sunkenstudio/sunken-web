@@ -36,8 +36,8 @@ export const Section = ({ section, brand }: SectionProps) => {
     <Flex
       id={`section-${sortOrder}`}
       w="100%"
-      color={brand[color]}
-      textShadow={color === "light" ? `1px 1px 3px ${brand.dark}` : "none"}
+      color={brand.dark}
+      // textShadow={color === "light" ? `1px 1px 3px ${brand.dark}` : "none"}
       position="relative"
       minH={"2xl"}
       justifyContent={"center"}
@@ -67,19 +67,11 @@ export const Section = ({ section, brand }: SectionProps) => {
                 alignItems={"center"}
                 mb={{ base: ".5rem", md: "0rem" }}
               >
-                <Box>
-                  <Image
-                    boxSize={{ base: "sm", md: "md" }}
-                    {...image}
-                    objectFit={"cover"}
-                  />
-                </Box>
-                {/* <Image
-                  boxSize={{ base: "sm", md: "md" }}
-                  src={image.url}
-                  border={`.25rem solid ${imgBorderColor}`}
+                <Image
+                  boxSize={{ base: "xs", md: "md" }}
+                  {...image}
                   objectFit={"cover"}
-                /> */}
+                />
                 <Paragraph>{caption}</Paragraph>
               </Stack>
             ) : null}
@@ -94,13 +86,11 @@ export const Section = ({ section, brand }: SectionProps) => {
                 alignItems={"center"}
                 mt={{ base: ".5rem", md: "0rem" }}
               >
-                <Box>
-                  <Image
-                    boxSize={{ base: "sm", md: "md" }}
-                    {...image}
-                    objectFit={"cover"}
-                  />
-                </Box>
+                <Image
+                  boxSize={{ base: "xs", md: "md" }}
+                  {...image}
+                  objectFit={"cover"}
+                />
                 <Paragraph>{caption}</Paragraph>
               </Stack>
             ) : null}

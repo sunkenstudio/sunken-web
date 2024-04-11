@@ -78,7 +78,11 @@ export const Footer = ({ brand, hero, footer }: FooterProps) => {
             </Link>
           )}
         </HStack>
-        <RichText content={footer.text} />
+        <RichText
+          content={footer.text}
+          fontFamily={"Arial"}
+          textShadow="1px 1px 1px black"
+        />
       </Stack>
     </Flex>
   );

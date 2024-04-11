@@ -8,7 +8,6 @@ interface SectionBgProps {
 }
 
 export const SectionBg = ({ image }: SectionBgProps) => {
-  console.log({ image });
   return (
     <Box position={"absolute"} w="100%" height="100%">
       <Image
@@ -16,7 +15,6 @@ export const SectionBg = ({ image }: SectionBgProps) => {
         height="100%"
         w={"100%"}
         position={"absolute"}
-        border={"2px dashed blue"}
         {...image}
       />
     </Box>

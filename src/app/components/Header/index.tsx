@@ -1,3 +1,4 @@
+// @ts-nocheck
 "use client";
 import {
   Box,
@@ -16,15 +17,24 @@ import React from "react";
 import { H3, H5 } from "../Typography";
 import { List } from "@phosphor-icons/react";
 import { scrollToElement } from "@/app/helpers/utils";
-import { StrapiBrand, StrapiSection } from "../Shared/types";
+import { StrapiBrand, StrapiHero, StrapiSection } from "../Shared/types";
 
 interface HeaderProps {
+  hero: StrapiHero;
   sections: StrapiSection[];
   brand: StrapiBrand;
 }
 
-export const Header = ({ sections, brand }: HeaderProps) => {
+export const Header = ({ hero, sections, brand }: HeaderProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const sharedProps = {
+    bgColor: hero.buttons[0].bgColor,
+    borderColor: hero.buttons[0].borderColor,
+    borderRadius: hero.buttons[0].borderRadius,
+    borderWidth: hero.buttons[0].borderWidth,
+    textColor: hero.buttons[0].textColor,
+  };
 
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>) => {
     onClose();
@@ -41,11 +51,9 @@ export const Header = ({ sections, brand }: HeaderProps) => {
           onClick={onOpen}
           boxSize={"48px"}
           p={2}
-          bgColor={brand.dark}
-          borderRadius={".5rem"}
-          border={`2px solid ${brand.light}`}
           justifyContent={"center"}
           alignItems={"center"}
+          {...sharedProps}
         >
           <List size={32} color={brand.light} />
         </Button>
@@ -59,7 +67,7 @@ export const Header = ({ sections, brand }: HeaderProps) => {
         >
           <DrawerCloseButton />
           <Stack mt={"3rem"} alignItems={"center"} p={3} gap={"2rem"}>
-            <H3 color={brand.light}>{`Bailey's Popup Shop`}</H3>
+            <H3 color={brand.light}>{`Corridor Cocktails`}</H3>
             <Divider orientation="horizontal" />
             <a
               onClick={handleScroll}
@@ -95,6 +103,22 @@ export const Header = ({ sections, brand }: HeaderProps) => {
                 </Box>
               </a>
             ))}
+            <a
+              onClick={handleScroll}
+              href={`#contact`}
+              style={{ minWidth: "70%" }}
+            >
+              <Box
+                color={brand.light}
+                bgColor={brand.dark}
+                border={`2px solid ${brand.light}`}
+                borderRadius={".5rem"}
+                p={2}
+                minW="70%"
+              >
+                <H5>Book An Event</H5>
+              </Box>
+            </a>
           </Stack>
         </DrawerContent>
       </Drawer>

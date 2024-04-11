@@ -1,6 +1,6 @@
 import React from "react";
 import { BlocksRenderer } from "@strapi/blocks-react-renderer";
-import { H1, H2, H3, H4, H5, H6 } from "../../Typography";
+import { H1, H2, H3, H4, H5, H6, Paragraph } from "../../Typography";
 import Link from "next/link";
 import { TextProps } from "@chakra-ui/react";
 
@@ -14,9 +14,7 @@ export const RichText = ({ content, ...rest }: RichTextProps) => {
       content={content}
       blocks={{
         // You can use the default components to set class names...
-        paragraph: ({ children }) => (
-          <span className="text-neutral900 max-w-prose">{children}</span>
-        ),
+        paragraph: ({ children }) => <span>{children}</span>,
         // ...or point to a design system
         heading: ({ children, level }) => {
           switch (level) {
@@ -33,7 +31,7 @@ export const RichText = ({ content, ...rest }: RichTextProps) => {
             case 6:
               return <H6 {...rest}>{children}</H6>;
             default:
-              return <span>{children}</span>;
+              return <Paragraph {...rest}>{children}</Paragraph>;
           }
         },
         // For links, you may want to use the component from your router or framework

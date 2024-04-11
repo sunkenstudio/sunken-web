@@ -17,7 +17,7 @@ export interface StrapiStyledImage {
 
 export interface StrapiStyledButton {
   typename: string;
-  type: "link" | "modal" | "pdf";
+  type: "link" | "modal" | "pdf" | "submit";
   text: string;
   href: string;
   icon: string;
@@ -59,10 +59,10 @@ export interface StrapiBrand {
   accent: string;
   light: string;
   dark: string;
-  font: {
+  fonts: {
     family: string;
     url: string;
-  };
+  }[];
 }
 
 export interface StrapiFooter {

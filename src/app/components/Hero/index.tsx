@@ -38,10 +38,13 @@ export const Hero = ({ brand, hero }: HeroProps) => {
           <Stack gap={3}>
             <H1 textShadow={`1px 1px 3px ${brand.dark}`}>{header}</H1>
             <H3 textShadow={`1px 1px 3px ${brand.dark}`}>{subheader}</H3>
-            <Paragraph textShadow={`1px 1px 3px ${brand.dark}`}>
+            <Paragraph
+              textShadow={`1px 1px 3px ${brand.dark}`}
+              w={{ base: "100%", md: "75%" }}
+            >
               <RichText content={text} />
             </Paragraph>
-            <HStack mt={3} gap={3}>
+            <HStack mt={3} gap={3} w="100%">
               {buttons.map((i) => {
                 return <Button key={i.typename} {...i} />;
               })}

@@ -55,7 +55,6 @@ export const formatStrapiData = (data: any): Client => {
       Array.isArray(val) &&
       val?.[0].__typename?.includes("ComponentCommon")
     ) {
-      console.log(val);
       return {
         ...acc,
         [formattedKey]: val.map((i) => formatStrapiData(i)),
