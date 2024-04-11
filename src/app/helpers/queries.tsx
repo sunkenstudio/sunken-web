@@ -114,6 +114,7 @@ export const GET_SITE = gql`
                   Url
                   Family
                 }
+                CompanyName
               }
             }
           }

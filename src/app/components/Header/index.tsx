@@ -63,11 +63,11 @@ export const Header = ({ hero, sections, brand }: HeaderProps) => {
         <DrawerContent
           border={`4px solid ${brand.light}`}
           bgColor={brand.secondary}
-          fontFamily={brand?.font?.Family}
+          fontFamily={brand?.fonts?.[0].family}
         >
           <DrawerCloseButton />
           <Stack mt={"3rem"} alignItems={"center"} p={3} gap={"2rem"}>
-            <H3 color={brand.light}>{`Corridor Cocktails`}</H3>
+            <H3 color={brand.light}>{brand.companyName}</H3>
             <Divider orientation="horizontal" />
             <a
               onClick={handleScroll}

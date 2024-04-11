@@ -40,6 +40,7 @@ const Home = () => {
           return clientData;
         })
         .then((clientData) => {
+          document.title = clientData.brand.companyName;
           setFontFamilies(clientData.brand.fonts);
           setData(clientData);
         })
@@ -96,7 +97,6 @@ const Home = () => {
           },
         }}
         fontSize={{ base: "1rem", md: "1.25rem" }}
-        // fontFamilies={fontFamilies}
       >
         <Header hero={hero} sections={sections} brand={brand} />
         <Box>
