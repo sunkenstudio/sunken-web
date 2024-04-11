@@ -67,21 +67,37 @@ export const GET_SITE = gql`
                 SortOrder
                 Text
                 Image {
-                  data {
-                    attributes {
-                      url
+                  Media {
+                    data {
+                      attributes {
+                        url
+                      }
                     }
                   }
+                  Alt
+                  BorderWidth
+                  BorderColor
+                  BorderRadius
+                  GrayscalePercent
+                  FilterColor
+                  FilterOpacity
                 }
                 Caption
-                BgImageOpacity
-                BgFilterOpacity
                 BgImage {
-                  data {
-                    attributes {
-                      url
+                  Media {
+                    data {
+                      attributes {
+                        url
+                      }
                     }
                   }
+                  Alt
+                  BorderWidth
+                  BorderColor
+                  BorderRadius
+                  GrayscalePercent
+                  FilterColor
+                  FilterOpacity
                 }
               }
             }

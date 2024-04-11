@@ -100,21 +100,14 @@ const Home = () => {
             {sections.map((i) => (
               <Section
                 key={`section-${i.sortOrder}`}
-                header={i.header}
-                sortOrder={i.sortOrder}
-                text={i.text}
-                image={i.image}
-                caption={i.caption}
+                section={i}
                 brand={brand}
-                bgFilterOpacity={i.bgFilterOpacity}
-                bgImage={i.bgImage}
-                bgImageOpacity={i.bgImageOpacity}
               />
             ))}
             <ContactForm sections={sections} brand={brand} contact={contact} />
           </Stack>
         </Box>
-        <Footer brand={brand} footer={footer} />
+        <Footer brand={brand} hero={hero} footer={footer} />
       </Box>
     </main>
   );

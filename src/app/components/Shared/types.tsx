@@ -47,11 +47,9 @@ export interface StrapiSection {
   header: string;
   sortOrder: number;
   text: RichTextParagraph[];
-  image: StrapiImage;
+  image: StrapiStyledImage;
   caption: string;
-  bgImageOpacity: number;
-  bgFilterOpacity: number;
-  bgImage: StrapiImage;
+  bgImage: StrapiStyledImage;
 }
 
 export interface StrapiBrand {
@@ -84,7 +82,7 @@ export interface StrapiHero {
   image: StrapiStyledImage;
   bgImageOpacity: number;
   bgFilterOpacity: number;
-  bgImage: StrapiImage;
+  bgImage: StrapiStyledImage;
 }
 
 export interface StrapiContact {
