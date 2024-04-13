@@ -7,7 +7,7 @@ import {
 } from "@phosphor-icons/react";
 import Link from "next/link";
 import { RichText } from "../Shared/RichText";
-import { StrapiBrand, StrapiFooter, StrapiHero } from "../Shared/types";
+import { StrapiBrand, StrapiFooter, StrapiHero } from "../../types";
 
 const SocialButtonStyle = (sharedProps: {
   bgColor: string;

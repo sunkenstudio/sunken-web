@@ -25,6 +25,7 @@ module.exports = {
 
     // Handle module aliases
     "^@/components/(.*)$": "<rootDir>/components/$1",
+    "^@/(.*)$": "<rootDir>/src/$1",
 
     // Handle @next/font
     "@next/font/(.*)": `<rootDir>/__mocks__/nextFontMock.js`,
@@ -34,7 +35,7 @@ module.exports = {
     "server-only": `<rootDir>/__mocks__/empty.js`,
   },
   // Add more setup options before each test is run
-  // setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
+  setupFilesAfterEnv: ["<rootDir>/setup.jest.ts"],
   testPathIgnorePatterns: ["<rootDir>/node_modules/", "<rootDir>/.next/"],
   testEnvironment: "jsdom",
   transform: {

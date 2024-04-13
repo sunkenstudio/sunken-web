@@ -1,5 +1,5 @@
 import { snakeCase } from "lodash";
-import { StrapiBrand } from "../components/Shared/types";
+import { StrapiBrand } from "../types";
 
 const FontFaceObserver = require("fontfaceobserver");
 

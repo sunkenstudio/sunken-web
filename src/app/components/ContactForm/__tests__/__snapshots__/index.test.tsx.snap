@@ -1,0 +1,960 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContactForm match snapshot 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="css-qqpqvm"
+        id="contact"
+      >
+        <div
+          class="css-b4kcmh"
+        >
+          <div
+            class="css-ojqyia"
+          >
+            <img
+              alt="Bg image - logo"
+              class="chakra-image css-13gqxk6"
+              src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/b8c12199347804e795219ef484f5572e.jpeg"
+              typename="ComponentCommonImage"
+            />
+            <div
+              class="css-1mh3gfe"
+            />
+          </div>
+        </div>
+        <div
+          class="chakra-stack css-7pq1ey"
+        >
+          <h3
+            class="chakra-heading css-qmgl8q"
+          >
+            CONTACT
+          </h3>
+          <form
+            style="display: flex; width: 100%; justify-content: center;"
+          >
+            <div
+              class="chakra-stack css-dpw1x7"
+            >
+              <div
+                class="chakra-form-control css-0"
+                role="group"
+              >
+                <label
+                  class="chakra-form__label css-uvho5g"
+                  for="name"
+                  id="field-:r0:-label"
+                >
+                  NAME
+                  <span
+                    aria-hidden="true"
+                    class="chakra-form__required-indicator css-0"
+                    role="presentation"
+                  >
+                    *
+                  </span>
+                </label>
+                <input
+                  aria-required="true"
+                  class="chakra-input css-1aa1a7y"
+                  id="name"
+                  name="NAME"
+                  required=""
+                  type="text"
+                  value=""
+                />
+              </div>
+              <div
+                class="chakra-form-control css-0"
+                role="group"
+              >
+                <label
+                  class="chakra-form__label css-uvho5g"
+                  for="email"
+                  id="field-:r1:-label"
+                >
+                  EMAIL
+                  <span
+                    aria-hidden="true"
+                    class="chakra-form__required-indicator css-0"
+                    role="presentation"
+                  >
+                    *
+                  </span>
+                </label>
+                <input
+                  aria-required="true"
+                  class="chakra-input css-1aa1a7y"
+                  id="email"
+                  name="EMAIL"
+                  required=""
+                  type="email"
+                  value=""
+                />
+              </div>
+              <div
+                class="chakra-form-control css-0"
+                role="group"
+              >
+                <label
+                  class="chakra-form__label css-uvho5g"
+                  for="phone_number"
+                  id="field-:r2:-label"
+                >
+                  PHONE NUMBER
+                  <span
+                    aria-hidden="true"
+                    class="chakra-form__required-indicator css-0"
+                    role="presentation"
+                  >
+                    *
+                  </span>
+                </label>
+                <input
+                  aria-required="true"
+                  class="chakra-input css-1aa1a7y"
+                  id="phone_number"
+                  name="PHONE NUMBER"
+                  required=""
+                  type="tel"
+                  value=""
+                />
+              </div>
+              <div
+                class="chakra-form-control css-0"
+                role="group"
+              >
+                <label
+                  class="chakra-form__label css-uvho5g"
+                  for="date"
+                  id="field-:r3:-label"
+                >
+                  DATE
+                  <span
+                    aria-hidden="true"
+                    class="chakra-form__required-indicator css-0"
+                    role="presentation"
+                  >
+                    *
+                  </span>
+                </label>
+                <input
+                  aria-required="true"
+                  class="chakra-input css-1aa1a7y"
+                  id="date"
+                  name="DATE"
+                  required=""
+                  type="date"
+                  value=""
+                />
+              </div>
+              <div
+                class="chakra-form-control css-0"
+                role="group"
+              >
+                <label
+                  class="chakra-form__label css-uvho5g"
+                  for="time_of_event"
+                  id="field-:r4:-label"
+                >
+                  TIME OF EVENT
+                  <span
+                    aria-hidden="true"
+                    class="chakra-form__required-indicator css-0"
+                    role="presentation"
+                  >
+                    *
+                  </span>
+                </label>
+                <input
+                  aria-required="true"
+                  class="chakra-input css-1aa1a7y"
+                  id="time_of_event"
+                  name="TIME OF EVENT"
+                  required=""
+                  type="time"
+                  value=""
+                />
+              </div>
+              <div
+                class="chakra-form-control css-0"
+                role="group"
+              >
+                <label
+                  class="chakra-form__label css-uvho5g"
+                  for="hours_of_service_start"
+                  id="field-:r5:-label"
+                >
+                  HOURS OF SERVICE (START)
+                  <span
+                    aria-hidden="true"
+                    class="chakra-form__required-indicator css-0"
+                    role="presentation"
+                  >
+                    *
+                  </span>
+                </label>
+                <input
+                  aria-required="true"
+                  class="chakra-input css-1aa1a7y"
+                  id="hours_of_service_start"
+                  name="HOURS OF SERVICE (START)"
+                  required=""
+                  type="time"
+                  value=""
+                />
+              </div>
+              <div
+                class="chakra-form-control css-0"
+                role="group"
+              >
+                <label
+                  class="chakra-form__label css-uvho5g"
+                  for="hours_of_service_end"
+                  id="field-:r6:-label"
+                >
+                  HOURS OF SERVICE (END)
+                  <span
+                    aria-hidden="true"
+                    class="chakra-form__required-indicator css-0"
+                    role="presentation"
+                  >
+                    *
+                  </span>
+                </label>
+                <input
+                  aria-required="true"
+                  class="chakra-input css-1aa1a7y"
+                  id="hours_of_service_end"
+                  name="HOURS OF SERVICE (END)"
+                  required=""
+                  type="time"
+                  value=""
+                />
+              </div>
+              <div
+                class="chakra-form-control css-0"
+                role="group"
+              >
+                <label
+                  class="chakra-form__label css-uvho5g"
+                  for="location"
+                  id="field-:r7:-label"
+                >
+                  LOCATION
+                  <span
+                    aria-hidden="true"
+                    class="chakra-form__required-indicator css-0"
+                    role="presentation"
+                  >
+                    *
+                  </span>
+                </label>
+                <input
+                  aria-required="true"
+                  class="chakra-input css-1aa1a7y"
+                  id="location"
+                  name="LOCATION"
+                  required=""
+                  type="text"
+                  value=""
+                />
+              </div>
+              <div
+                class="chakra-stack css-8g8ihq"
+              >
+                <div
+                  class="chakra-form-control css-0"
+                  role="group"
+                >
+                  <label
+                    class="chakra-form__label css-uvho5g"
+                    for="type_of_event"
+                    id="field-:r8:-label"
+                  >
+                    TYPE OF EVENT
+                    <span
+                      aria-hidden="true"
+                      class="chakra-form__required-indicator css-0"
+                      role="presentation"
+                    >
+                      *
+                    </span>
+                  </label>
+                  <div
+                    class="chakra-select__wrapper css-1ylyrkq"
+                  >
+                    <select
+                      aria-required="true"
+                      class="chakra-select css-1x2j97e"
+                      id="type_of_event"
+                      name="TYPE OF EVENT"
+                      required=""
+                    >
+                      <option
+                        value="Corporate"
+                      >
+                        Corporate
+                      </option>
+                      <option
+                        value="Gallery"
+                      >
+                        Gallery
+                      </option>
+                      <option
+                        value="Wedding"
+                      >
+                        Wedding
+                      </option>
+                      <option
+                        value="Shower"
+                      >
+                        Shower
+                      </option>
+                      <option
+                        value="Afters"
+                      >
+                        Afters
+                      </option>
+                      <option
+                        value="Social / Community"
+                      >
+                        Social / Community
+                      </option>
+                      <option
+                        value="Birthday / Anniversary"
+                      >
+                        Birthday / Anniversary
+                      </option>
+                      <option
+                        value="Holiday"
+                      >
+                        Holiday
+                      </option>
+                      <option
+                        value="Other"
+                      >
+                        Other
+                      </option>
+                    </select>
+                    <div
+                      class="chakra-select__icon-wrapper css-1580ndv"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="chakra-select__icon"
+                        focusable="false"
+                        role="presentation"
+                        style="width: 1em; height: 1em; color: currentColor;"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="chakra-form-control css-0"
+                role="group"
+              >
+                <label
+                  class="chakra-form__label css-uvho5g"
+                  for="how_many_guests"
+                  id="field-:r9:-label"
+                >
+                  HOW MANY GUESTS?
+                  <span
+                    aria-hidden="true"
+                    class="chakra-form__required-indicator css-0"
+                    role="presentation"
+                  >
+                    *
+                  </span>
+                </label>
+                <input
+                  aria-required="true"
+                  class="chakra-input css-1aa1a7y"
+                  id="how_many_guests"
+                  name="HOW MANY GUESTS?"
+                  required=""
+                  type="number"
+                  value=""
+                />
+              </div>
+              <div
+                class="chakra-form-control css-0"
+                role="group"
+              >
+                <label
+                  class="chakra-form__label css-uvho5g"
+                  for="total_bar_budget"
+                  id="field-:ra:-label"
+                >
+                  TOTAL BAR BUDGET
+                  <span
+                    aria-hidden="true"
+                    class="chakra-form__required-indicator css-0"
+                    role="presentation"
+                  >
+                    *
+                  </span>
+                </label>
+                <input
+                  aria-required="true"
+                  class="chakra-input css-1aa1a7y"
+                  id="total_bar_budget"
+                  name="TOTAL BAR BUDGET"
+                  required=""
+                  type="money"
+                  value=""
+                />
+              </div>
+              <div
+                class="chakra-form-control css-0"
+                role="group"
+              >
+                <label
+                  class="chakra-form__label css-uvho5g"
+                  for="tell_us_more_about_you_and_your_event"
+                  id="field-:rb:-label"
+                >
+                  TELL US MORE ABOUT YOU AND YOUR EVENT!
+                  <span
+                    aria-hidden="true"
+                    class="chakra-form__required-indicator css-0"
+                    role="presentation"
+                  >
+                    *
+                  </span>
+                </label>
+                <textarea
+                  aria-required="true"
+                  class="chakra-textarea css-1sujuex"
+                  id="tell_us_more_about_you_and_your_event"
+                  name="TELL US MORE ABOUT YOU AND YOUR EVENT!"
+                  required=""
+                />
+              </div>
+              <button
+                class="chakra-button css-jatuu1"
+                type="submit"
+              >
+                SUBMIT
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="css-qqpqvm"
+      id="contact"
+    >
+      <div
+        class="css-b4kcmh"
+      >
+        <div
+          class="css-ojqyia"
+        >
+          <img
+            alt="Bg image - logo"
+            class="chakra-image css-13gqxk6"
+            src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/b8c12199347804e795219ef484f5572e.jpeg"
+            typename="ComponentCommonImage"
+          />
+          <div
+            class="css-1mh3gfe"
+          />
+        </div>
+      </div>
+      <div
+        class="chakra-stack css-7pq1ey"
+      >
+        <h3
+          class="chakra-heading css-qmgl8q"
+        >
+          CONTACT
+        </h3>
+        <form
+          style="display: flex; width: 100%; justify-content: center;"
+        >
+          <div
+            class="chakra-stack css-dpw1x7"
+          >
+            <div
+              class="chakra-form-control css-0"
+              role="group"
+            >
+              <label
+                class="chakra-form__label css-uvho5g"
+                for="name"
+                id="field-:r0:-label"
+              >
+                NAME
+                <span
+                  aria-hidden="true"
+                  class="chakra-form__required-indicator css-0"
+                  role="presentation"
+                >
+                  *
+                </span>
+              </label>
+              <input
+                aria-required="true"
+                class="chakra-input css-1aa1a7y"
+                id="name"
+                name="NAME"
+                required=""
+                type="text"
+                value=""
+              />
+            </div>
+            <div
+              class="chakra-form-control css-0"
+              role="group"
+            >
+              <label
+                class="chakra-form__label css-uvho5g"
+                for="email"
+                id="field-:r1:-label"
+              >
+                EMAIL
+                <span
+                  aria-hidden="true"
+                  class="chakra-form__required-indicator css-0"
+                  role="presentation"
+                >
+                  *
+                </span>
+              </label>
+              <input
+                aria-required="true"
+                class="chakra-input css-1aa1a7y"
+                id="email"
+                name="EMAIL"
+                required=""
+                type="email"
+                value=""
+              />
+            </div>
+            <div
+              class="chakra-form-control css-0"
+              role="group"
+            >
+              <label
+                class="chakra-form__label css-uvho5g"
+                for="phone_number"
+                id="field-:r2:-label"
+              >
+                PHONE NUMBER
+                <span
+                  aria-hidden="true"
+                  class="chakra-form__required-indicator css-0"
+                  role="presentation"
+                >
+                  *
+                </span>
+              </label>
+              <input
+                aria-required="true"
+                class="chakra-input css-1aa1a7y"
+                id="phone_number"
+                name="PHONE NUMBER"
+                required=""
+                type="tel"
+                value=""
+              />
+            </div>
+            <div
+              class="chakra-form-control css-0"
+              role="group"
+            >
+              <label
+                class="chakra-form__label css-uvho5g"
+                for="date"
+                id="field-:r3:-label"
+              >
+                DATE
+                <span
+                  aria-hidden="true"
+                  class="chakra-form__required-indicator css-0"
+                  role="presentation"
+                >
+                  *
+                </span>
+              </label>
+              <input
+                aria-required="true"
+                class="chakra-input css-1aa1a7y"
+                id="date"
+                name="DATE"
+                required=""
+                type="date"
+                value=""
+              />
+            </div>
+            <div
+              class="chakra-form-control css-0"
+              role="group"
+            >
+              <label
+                class="chakra-form__label css-uvho5g"
+                for="time_of_event"
+                id="field-:r4:-label"
+              >
+                TIME OF EVENT
+                <span
+                  aria-hidden="true"
+                  class="chakra-form__required-indicator css-0"
+                  role="presentation"
+                >
+                  *
+                </span>
+              </label>
+              <input
+                aria-required="true"
+                class="chakra-input css-1aa1a7y"
+                id="time_of_event"
+                name="TIME OF EVENT"
+                required=""
+                type="time"
+                value=""
+              />
+            </div>
+            <div
+              class="chakra-form-control css-0"
+              role="group"
+            >
+              <label
+                class="chakra-form__label css-uvho5g"
+                for="hours_of_service_start"
+                id="field-:r5:-label"
+              >
+                HOURS OF SERVICE (START)
+                <span
+                  aria-hidden="true"
+                  class="chakra-form__required-indicator css-0"
+                  role="presentation"
+                >
+                  *
+                </span>
+              </label>
+              <input
+                aria-required="true"
+                class="chakra-input css-1aa1a7y"
+                id="hours_of_service_start"
+                name="HOURS OF SERVICE (START)"
+                required=""
+                type="time"
+                value=""
+              />
+            </div>
+            <div
+              class="chakra-form-control css-0"
+              role="group"
+            >
+              <label
+                class="chakra-form__label css-uvho5g"
+                for="hours_of_service_end"
+                id="field-:r6:-label"
+              >
+                HOURS OF SERVICE (END)
+                <span
+                  aria-hidden="true"
+                  class="chakra-form__required-indicator css-0"
+                  role="presentation"
+                >
+                  *
+                </span>
+              </label>
+              <input
+                aria-required="true"
+                class="chakra-input css-1aa1a7y"
+                id="hours_of_service_end"
+                name="HOURS OF SERVICE (END)"
+                required=""
+                type="time"
+                value=""
+              />
+            </div>
+            <div
+              class="chakra-form-control css-0"
+              role="group"
+            >
+              <label
+                class="chakra-form__label css-uvho5g"
+                for="location"
+                id="field-:r7:-label"
+              >
+                LOCATION
+                <span
+                  aria-hidden="true"
+                  class="chakra-form__required-indicator css-0"
+                  role="presentation"
+                >
+                  *
+                </span>
+              </label>
+              <input
+                aria-required="true"
+                class="chakra-input css-1aa1a7y"
+                id="location"
+                name="LOCATION"
+                required=""
+                type="text"
+                value=""
+              />
+            </div>
+            <div
+              class="chakra-stack css-8g8ihq"
+            >
+              <div
+                class="chakra-form-control css-0"
+                role="group"
+              >
+                <label
+                  class="chakra-form__label css-uvho5g"
+                  for="type_of_event"
+                  id="field-:r8:-label"
+                >
+                  TYPE OF EVENT
+                  <span
+                    aria-hidden="true"
+                    class="chakra-form__required-indicator css-0"
+                    role="presentation"
+                  >
+                    *
+                  </span>
+                </label>
+                <div
+                  class="chakra-select__wrapper css-1ylyrkq"
+                >
+                  <select
+                    aria-required="true"
+                    class="chakra-select css-1x2j97e"
+                    id="type_of_event"
+                    name="TYPE OF EVENT"
+                    required=""
+                  >
+                    <option
+                      value="Corporate"
+                    >
+                      Corporate
+                    </option>
+                    <option
+                      value="Gallery"
+                    >
+                      Gallery
+                    </option>
+                    <option
+                      value="Wedding"
+                    >
+                      Wedding
+                    </option>
+                    <option
+                      value="Shower"
+                    >
+                      Shower
+                    </option>
+                    <option
+                      value="Afters"
+                    >
+                      Afters
+                    </option>
+                    <option
+                      value="Social / Community"
+                    >
+                      Social / Community
+                    </option>
+                    <option
+                      value="Birthday / Anniversary"
+                    >
+                      Birthday / Anniversary
+                    </option>
+                    <option
+                      value="Holiday"
+                    >
+                      Holiday
+                    </option>
+                    <option
+                      value="Other"
+                    >
+                      Other
+                    </option>
+                  </select>
+                  <div
+                    class="chakra-select__icon-wrapper css-1580ndv"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="chakra-select__icon"
+                      focusable="false"
+                      role="presentation"
+                      style="width: 1em; height: 1em; color: currentColor;"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="chakra-form-control css-0"
+              role="group"
+            >
+              <label
+                class="chakra-form__label css-uvho5g"
+                for="how_many_guests"
+                id="field-:r9:-label"
+              >
+                HOW MANY GUESTS?
+                <span
+                  aria-hidden="true"
+                  class="chakra-form__required-indicator css-0"
+                  role="presentation"
+                >
+                  *
+                </span>
+              </label>
+              <input
+                aria-required="true"
+                class="chakra-input css-1aa1a7y"
+                id="how_many_guests"
+                name="HOW MANY GUESTS?"
+                required=""
+                type="number"
+                value=""
+              />
+            </div>
+            <div
+              class="chakra-form-control css-0"
+              role="group"
+            >
+              <label
+                class="chakra-form__label css-uvho5g"
+                for="total_bar_budget"
+                id="field-:ra:-label"
+              >
+                TOTAL BAR BUDGET
+                <span
+                  aria-hidden="true"
+                  class="chakra-form__required-indicator css-0"
+                  role="presentation"
+                >
+                  *
+                </span>
+              </label>
+              <input
+                aria-required="true"
+                class="chakra-input css-1aa1a7y"
+                id="total_bar_budget"
+                name="TOTAL BAR BUDGET"
+                required=""
+                type="money"
+                value=""
+              />
+            </div>
+            <div
+              class="chakra-form-control css-0"
+              role="group"
+            >
+              <label
+                class="chakra-form__label css-uvho5g"
+                for="tell_us_more_about_you_and_your_event"
+                id="field-:rb:-label"
+              >
+                TELL US MORE ABOUT YOU AND YOUR EVENT!
+                <span
+                  aria-hidden="true"
+                  class="chakra-form__required-indicator css-0"
+                  role="presentation"
+                >
+                  *
+                </span>
+              </label>
+              <textarea
+                aria-required="true"
+                class="chakra-textarea css-1sujuex"
+                id="tell_us_more_about_you_and_your_event"
+                name="TELL US MORE ABOUT YOU AND YOUR EVENT!"
+                required=""
+              />
+            </div>
+            <button
+              class="chakra-button css-jatuu1"
+              type="submit"
+            >
+              SUBMIT
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

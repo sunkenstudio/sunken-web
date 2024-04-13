@@ -6,7 +6,7 @@ import {
   StrapiFooter,
   StrapiHero,
   StrapiSection,
-} from "@/app/components/Shared/types";
+} from "@/app/types";
 
 export const HeroFixture = (
   overrides: Partial<StrapiHero> = {}

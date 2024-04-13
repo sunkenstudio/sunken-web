@@ -1,6 +1,6 @@
 import { Box } from "@chakra-ui/react";
 import React from "react";
-import { StrapiStyledImage } from "../types";
+import { StrapiStyledImage } from "../../../types";
 import { Image } from "../Image";
 
 interface SectionBgProps {

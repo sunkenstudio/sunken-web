@@ -7,15 +7,14 @@ interface State {
   success: boolean;
 }
 
-interface Payload {
-  senderEmail: string;
-  receiverEmail: string;
-  name: string;
-  message: string;
-  company: string;
-}
+// interface Payload {
+//   receiverEmail: string;
+// } & Record<string
 
-export const sendEmail = async (prevState: State, formData: Payload) => {
+type Payload = {
+  receiverEmail: string;
+} & Record<string, string>;
+export const sendEmail = async (formData: Payload) => {
   try {
     const { receiverEmail } = formData;
     const resend = new Resend(process.env.RESEND_API_KEY);

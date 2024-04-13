@@ -8,7 +8,7 @@ import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { GET_SITE } from "./helpers/queries";
 import { ContactForm } from "./components/ContactForm";
-import { Client } from "./components/Shared/types";
+import { Client } from "./types";
 import { formatStrapiData, getClientIdFromUrl } from "./helpers/utils";
 import { useEffect, useState } from "react";
 import { isEmpty } from "lodash";

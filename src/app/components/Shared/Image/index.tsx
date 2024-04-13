@@ -4,7 +4,7 @@ import {
   Image as ChakraImage,
   ImageProps as ChakraImageProps,
 } from "@chakra-ui/react";
-import { StrapiStyledImage } from "../types";
+import { StrapiStyledImage } from "../../../types";
 
 type ImageProps = StrapiStyledImage & ChakraImageProps;
 

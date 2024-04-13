@@ -1,3 +1,11 @@
+import { InputFieldProps } from "./components/Shared/InputField";
+
+export interface StrapiContact {
+  fields: InputFieldProps[];
+  sendTo: string;
+  bgImage: StrapiStyledImage;
+}
+
 export interface StrapiConfig {
   typename: string;
   isUnderConstruction: boolean;
