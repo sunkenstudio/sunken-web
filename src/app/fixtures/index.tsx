@@ -5,6 +5,7 @@ import {
   StrapiContact,
   StrapiFooter,
   StrapiHero,
+  StrapiInputField,
   StrapiSection,
 } from "@/app/types";
 
@@ -226,65 +227,11 @@ export const ContactFixture = (
 ): StrapiContact => ({
   typename: "Contact",
   fields: [
-    {
-      label: "Name",
-      type: "text",
-    },
-    {
-      label: "Email",
-      type: "email",
-    },
-    {
-      label: "Phone number",
-      type: "tel",
-    },
-    {
-      label: "Date",
-      type: "date",
-    },
-    {
-      label: "Time of event",
-      type: "time",
-    },
-    {
-      label: "Hours of service (Start)",
-      type: "time",
-    },
-    {
-      label: "Hours of service (End)",
-      type: "time",
-    },
-    {
-      label: "Location",
-      type: "text",
-    },
-    {
-      label: "Type of event",
-      type: "dropdown",
-      options: [
-        "Corporate",
-        "Gallery",
-        "Wedding",
-        "Shower",
-        "Afters",
-        "Social / Community",
-        "Birthday / Anniversary",
-        "Holiday",
-        "Other",
-      ],
-    },
-    {
-      label: "How many guests?",
-      type: "number",
-    },
-    {
-      label: "Total bar budget",
-      type: "money",
-    },
-    {
-      label: "Tell us more about you and your event!",
-      type: "textarea",
-    },
+    TextInputFixture(),
+    TimeInputFixture(),
+    DateInputFixture(),
+    DropdownInputFixture(),
+    TextareaInputFixture(),
   ],
   sendTo: "dan@sunkenstudio.com",
   bgImage: {
@@ -301,6 +248,47 @@ export const ContactFixture = (
     filterColor: "#37061d",
     filterOpacity: 0.75,
   },
+  ...overrides,
+});
+
+export const TextInputFixture = (
+  overrides: Partial<StrapiInputField> = {}
+): StrapiInputField => ({
+  label: "Name",
+  type: "text",
+  ...overrides,
+});
+
+export const TimeInputFixture = (
+  overrides: Partial<StrapiInputField> = {}
+): StrapiInputField => ({
+  label: "StartTime",
+  type: "time",
+  ...overrides,
+});
+
+export const DateInputFixture = (
+  overrides: Partial<StrapiInputField> = {}
+): StrapiInputField => ({
+  label: "Date",
+  type: "time",
+  ...overrides,
+});
+
+export const DropdownInputFixture = (
+  overrides: Partial<StrapiInputField> = {}
+): StrapiInputField => ({
+  label: "Dropdown",
+  type: "dropdown",
+  options: ["Option 1", "Option 2"],
+  ...overrides,
+});
+
+export const TextareaInputFixture = (
+  overrides: Partial<StrapiInputField> = {}
+): StrapiInputField => ({
+  label: "Message",
+  type: "textarea",
   ...overrides,
 });
 

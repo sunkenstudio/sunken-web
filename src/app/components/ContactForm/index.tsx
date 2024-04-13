@@ -102,9 +102,7 @@ export const ContactForm = ({
                   <InputField
                     key={key}
                     id={key}
-                    label={i.label.toUpperCase()}
-                    type={i.type}
-                    options={i.options}
+                    field={i}
                     brand={brand}
                     value={formik?.values?.[key]}
                     onChange={formik.handleChange}

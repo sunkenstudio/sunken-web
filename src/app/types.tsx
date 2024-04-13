@@ -1,9 +1,25 @@
-import { InputFieldProps } from "./components/Shared/InputField";
-
 export interface StrapiContact {
-  fields: InputFieldProps[];
+  typename: string;
+  fields: StrapiInputField[];
   sendTo: string;
   bgImage: StrapiStyledImage;
+}
+
+export interface StrapiInputField {
+  label: string;
+  type:
+    | "text"
+    | "email"
+    | "tel"
+    | "calendar"
+    | "time"
+    | "time_range"
+    | "dropdown"
+    | "money"
+    | "number"
+    | "textarea"
+    | "date";
+  options?: string[];
 }
 
 export interface StrapiConfig {
@@ -99,13 +115,6 @@ export interface StrapiHero {
   bgImageOpacity: number;
   bgFilterOpacity: number;
   bgImage: StrapiStyledImage;
-}
-
-export interface StrapiContact {
-  typename: string;
-  bgImage: StrapiImage;
-  bgImageOpacity: number;
-  bgFilterOpacity: number;
 }
 
 export interface Client {
