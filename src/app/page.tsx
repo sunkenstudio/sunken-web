@@ -24,27 +24,37 @@ const Home = () => {
   const client = useApolloClient();
 
   useEffect(() => {
-    async function fetchData(ClientId: string) {
+    async function fetchData(id: string) {
       client
         .query({
           query: GET_SITE,
           variables: {
-            ClientId,
+            ClientId: id,
           },
         })
         .then((res) => {
+          const sites = res.data.sites.data;
+          if (sites.length === 0) {
+            return null;
+          }
           const raw = res.data.sites.data[0];
           const clientData: Client = formatStrapiData(raw.attributes);
           const { fonts } = clientData.brand;
-          Fonts(fonts);
+          if (fonts.length > 0) {
+            Fonts(fonts);
+          }
           return clientData;
         })
         .then((clientData) => {
-          document.title = clientData.brand.companyName;
-          setFontFamilies(clientData.brand.fonts);
-          setData(clientData);
+          if (clientData) {
+            document.title = clientData.brand.companyName;
+            setFontFamilies(clientData?.brand?.fonts || []);
+            setData(clientData);
+          } else {
+            setData({});
+          }
         })
-        .catch((err) => setError(err));
+        .catch((err) => console.log(err));
     }
 
     const ClientId = getClientIdFromUrl();
@@ -78,7 +88,20 @@ const Home = () => {
     return <>404 Client not found</>;
   }
 
-  const { hero, brand, sections, footer, contact } = data;
+  const { hero, brand, sections, footer, contact, config } = data;
+
+  if (config.isUnderConstruction) {
+    return <>Under Construction</>;
+  }
+
+  if (config.isMaintenanceMode) {
+    return (
+      <>
+        Site is currently undergoing routine maintenance. Please try again
+        later.
+      </>
+    );
+  }
   return (
     <main>
       <Box
@@ -91,9 +114,9 @@ const Home = () => {
         top={0}
         bottom={0}
         css={{
-          fontFamily: fontFamilies?.[1].family || "",
+          fontFamily: fontFamilies?.[1]?.family || "",
           "& h1, & h2, & h3, & h4, & h5, & h6": {
-            fontFamily: fontFamilies[0].family,
+            fontFamily: fontFamilies?.[0]?.family,
           },
         }}
         fontSize={{ base: "1rem", md: "1.25rem" }}

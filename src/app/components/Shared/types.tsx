@@ -1,3 +1,8 @@
+export interface StrapiConfig {
+  isUnderConstruction: boolean;
+  isMaintenanceMode: boolean;
+}
+
 export interface StrapiImage {
   typename: string;
   url: string;
@@ -100,4 +105,5 @@ export interface Client {
   brand: StrapiBrand;
   footer: StrapiFooter;
   contact: StrapiContact;
+  config: StrapiConfig;
 }

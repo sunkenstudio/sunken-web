@@ -53,7 +53,7 @@ export const formatStrapiData = (data: any): Client => {
     if (
       val &&
       Array.isArray(val) &&
-      val?.[0].__typename?.includes("ComponentCommon")
+      val?.[0]?.__typename?.includes("ComponentCommon")
     ) {
       return {
         ...acc,
