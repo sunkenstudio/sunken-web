@@ -24,12 +24,12 @@ const Home = () => {
   const client = useApolloClient();
 
   useEffect(() => {
-    async function fetchData(id: string) {
+    async function fetchData(ClientId: string) {
       client
         .query({
           query: GET_SITE,
           variables: {
-            id,
+            ClientId,
           },
         })
         .then((res) => {
