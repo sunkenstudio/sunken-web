@@ -1,32 +1,25 @@
-// @ts-nocheck
 "use client";
 import React, { useState } from "react";
 import { Flex, Stack } from "@chakra-ui/react";
 import { H3 } from "../Typography";
 import { useFormik, FormikProvider } from "formik";
 import { sendEmail } from "@/actions";
-import { useEffect } from "react";
-import { useFormState } from "react-dom";
 import { SectionBg } from "../Shared/SectionBg";
 import {
   StrapiBrand,
+  StrapiContact,
   StrapiHero,
   StrapiSection,
-  StrapiStyledImage,
-} from "../Shared/types";
-import { InputField, InputFieldProps } from "../Shared/InputField";
+} from "../../types";
+import { InputField } from "../Shared/InputField";
 import { snakeCase } from "lodash";
 import { Button } from "../Shared/Button";
 
-interface ContactFormProps {
+export interface ContactFormProps {
   hero: StrapiHero;
   sections: StrapiSection[];
   brand: StrapiBrand;
-  contact: {
-    fields: InputFieldProps[];
-    sendTo: string;
-    bgImage: StrapiStyledImage;
-  };
+  contact: StrapiContact;
 }
 
 export const ContactForm = ({
@@ -36,10 +29,7 @@ export const ContactForm = ({
   contact,
 }: ContactFormProps) => {
   const [isFiring, setIsFiring] = useState(false);
-  const [sendEmailState, sendEmailAction] = useFormState(sendEmail, {
-    error: null,
-    success: false,
-  });
+
   const { bgImage, sendTo } = contact;
   const sharedProps = {
     bgColor: hero.buttons[0].bgColor,
@@ -48,16 +38,6 @@ export const ContactForm = ({
     borderWidth: hero.buttons[0].borderWidth,
     textColor: hero.buttons[0].textColor,
   };
-  useEffect(() => {
-    if (sendEmailState.success) {
-      alert("Email sent!");
-      setIsFiring(false);
-    }
-    if (sendEmailState.error) {
-      alert("Error sending email!");
-      setIsFiring(false);
-    }
-  }, [sendEmailState]);
 
   const bgColor =
     sections.length % 3 === 0
@@ -69,12 +49,21 @@ export const ContactForm = ({
   const color = bgColor === "light" ? "primary" : "light";
 
   const formik = useFormik({
-    initialValues: {},
+    initialValues: {} as Record<string, string>,
     onSubmit: () => {
       setIsFiring(true);
-      sendEmailAction({
+      sendEmail({
         receiverEmail: sendTo,
         ...formik.values,
+      }).then((res) => {
+        if (res.success) {
+          alert("Email sent!");
+          setIsFiring(false);
+        }
+        if (res.error) {
+          alert("Error sending email!");
+          setIsFiring(false);
+        }
       });
     },
   });
@@ -113,11 +102,9 @@ export const ContactForm = ({
                   <InputField
                     key={key}
                     id={key}
-                    label={i.label.toUpperCase()}
-                    type={i.type}
-                    options={i.options}
+                    field={i}
                     brand={brand}
-                    value={formik.values[key]}
+                    value={formik?.values?.[key]}
                     onChange={formik.handleChange}
                   />
                 );

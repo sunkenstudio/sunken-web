@@ -5,7 +5,7 @@ import { H1, H3, Paragraph } from "../Typography";
 import { Image } from "../Shared/Image";
 import { RichText } from "../Shared/RichText";
 import { SectionBg } from "../Shared/SectionBg";
-import { StrapiBrand, StrapiHero } from "../Shared/types";
+import { StrapiBrand, StrapiHero } from "../../types";
 import { Button } from "../Shared/Button";
 
 interface HeroProps {

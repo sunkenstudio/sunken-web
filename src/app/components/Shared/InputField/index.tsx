@@ -7,46 +7,36 @@ import {
   Textarea,
 } from "@chakra-ui/react";
 import React from "react";
-import { StrapiBrand } from "../types";
+import { StrapiBrand, StrapiInputField } from "../../../types";
 import { snakeCase } from "lodash";
 
 export interface InputFieldProps {
   id: string;
-  label: string;
-  type:
-    | "text"
-    | "email"
-    | "tel"
-    | "calendar"
-    | "time"
-    | "time_range"
-    | "dropdown"
-    | "money"
-    | "number"
-    | "textarea";
+  field: StrapiInputField;
   value: string;
-  options?: string[];
   brand: StrapiBrand;
-  onChange: () => void;
+  onChange: (e: any) => void;
 }
+
 export const InputField = ({
   id,
-  label,
-  type,
-  options = [],
+  field,
   value,
   brand,
   onChange,
 }: InputFieldProps) => {
+  const { type, label, options = [] } = field;
+
+  const display = label.toUpperCase();
   if (
     ["text", "email", "date", "time", "number", "tel", "money"].includes(type)
   ) {
     return (
       <FormControl isRequired>
-        <FormLabel htmlFor={id}>{label}</FormLabel>
+        <FormLabel htmlFor={id}>{display}</FormLabel>
         <Input
           id={id}
-          name={label}
+          name={display}
           type={type}
           onChange={onChange}
           value={value}
@@ -60,10 +50,10 @@ export const InputField = ({
     return (
       <Stack>
         <FormControl isRequired>
-          <FormLabel htmlFor={id}>{label}</FormLabel>
+          <FormLabel htmlFor={id}>{display}</FormLabel>
           <Select
             id={id}
-            name={label}
+            name={display}
             onChange={onChange}
             value={value}
             color={brand.dark}
@@ -80,7 +70,7 @@ export const InputField = ({
           <FormControl isRequired>
             <Input
               id={`${id}-other`}
-              name={`${label}-other`}
+              name={`${display}-other`}
               type={"text"}
               onChange={onChange}
               value={value}
@@ -95,10 +85,10 @@ export const InputField = ({
   if (type === "textarea") {
     return (
       <FormControl isRequired>
-        <FormLabel htmlFor={id}>{label}</FormLabel>
+        <FormLabel htmlFor={id}>{display}</FormLabel>
         <Textarea
           id={id}
-          name={label}
+          name={display}
           variant="filled"
           onChange={onChange}
           value={value}

@@ -2,36 +2,38 @@ import React from "react";
 import {
   Box,
   Image as ChakraImage,
-  ImageProps as ChakraImageProps,
+  ChakraStyledOptions,
 } from "@chakra-ui/react";
-import { StrapiStyledImage } from "../types";
+import { StrapiStyledImage } from "../../../types";
 
-type ImageProps = StrapiStyledImage & ChakraImageProps;
+type ImageProps = StrapiStyledImage & ChakraStyledOptions;
 
 export const Image = ({
   media = { typename: "", url: "" },
   alt,
-  borderWidth = "0px",
+  borderWidth,
   borderColor,
-  borderRadius = "0px",
+  borderRadius,
   grayscalePercent,
   filterColor,
   filterOpacity,
   ...rest
 }: ImageProps) => {
+  const border =
+    borderWidth && borderColor ? `${borderWidth} solid ${borderColor}` : "";
   return (
     <Box position={"relative"} height={"100%"} width={"100%"}>
       <ChakraImage
         src={media.url}
         alt={alt}
-        border={`${borderWidth} solid ${borderColor}`}
-        borderRadius={borderRadius}
+        border={border}
+        borderRadius={borderRadius || ""}
         filter={`grayscale(${grayscalePercent}%)`}
         {...rest}
       />
       <Box
-        borderRadius={borderRadius}
-        bgColor={filterColor}
+        borderRadius={borderRadius || ""}
+        bgColor={filterColor || ""}
         opacity={filterOpacity}
         height={"100%"}
         width={"100%"}

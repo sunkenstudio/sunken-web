@@ -8,7 +8,7 @@ import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { GET_SITE } from "./helpers/queries";
 import { ContactForm } from "./components/ContactForm";
-import { Client } from "./components/Shared/types";
+import { Client } from "./types";
 import { formatStrapiData, getClientIdFromUrl } from "./helpers/utils";
 import { useEffect, useState } from "react";
 import { isEmpty } from "lodash";
@@ -39,6 +39,7 @@ const Home = () => {
           }
           const raw = res.data.sites.data[0];
           const clientData: Client = formatStrapiData(raw.attributes);
+          console.log({ clientData });
           const { fonts } = clientData.brand;
           if (fonts.length > 0) {
             Fonts(fonts);

@@ -17,7 +17,7 @@ import React from "react";
 import { H3, H5 } from "../Typography";
 import { List } from "@phosphor-icons/react";
 import { scrollToElement } from "@/app/helpers/utils";
-import { StrapiBrand, StrapiHero, StrapiSection } from "../Shared/types";
+import { StrapiBrand, StrapiHero, StrapiSection } from "../../types";
 
 interface HeaderProps {
   hero: StrapiHero;

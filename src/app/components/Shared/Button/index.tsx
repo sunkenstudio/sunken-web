@@ -1,9 +1,8 @@
 import { Button as ChakraButton, ChakraStyledOptions } from "@chakra-ui/react";
 import React from "react";
-import { StrapiStyledButton } from "../types";
 import { scrollToElement } from "@/app/helpers/utils";
 
-type ButtonProps = StrapiStyledButton & ChakraStyledOptions;
+type ButtonProps = ChakraStyledOptions;
 export const Button = ({
   typename,
   type,

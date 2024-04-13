@@ -1,4 +1,29 @@
+export interface StrapiContact {
+  typename: string;
+  fields: StrapiInputField[];
+  sendTo: string;
+  bgImage: StrapiStyledImage;
+}
+
+export interface StrapiInputField {
+  label: string;
+  type:
+    | "text"
+    | "email"
+    | "tel"
+    | "calendar"
+    | "time"
+    | "time_range"
+    | "dropdown"
+    | "money"
+    | "number"
+    | "textarea"
+    | "date";
+  options?: string[];
+}
+
 export interface StrapiConfig {
+  typename: string;
   isUnderConstruction: boolean;
   isMaintenanceMode: boolean;
 }
@@ -12,11 +37,11 @@ export interface StrapiStyledImage {
   typename: string;
   media: StrapiImage;
   alt: string;
-  borderWidth: string;
-  borderColor: string;
-  borderRadius: string;
+  borderWidth: string | null;
+  borderColor: string | null;
+  borderRadius: string | null;
   grayscalePercent: number;
-  filterColor: string;
+  filterColor: string | null;
   filterOpacity: number;
 }
 
@@ -25,12 +50,12 @@ export interface StrapiStyledButton {
   type: "link" | "modal" | "pdf" | "submit";
   text: string;
   href: string;
-  icon: string;
+  icon: string | null;
   textColor: string;
   bgColor: string;
-  borderColor: string;
-  borderWidth: string;
-  borderRadius: string;
+  borderColor: string | null;
+  borderWidth: string | null;
+  borderRadius: string | null;
 }
 
 export interface RichTextParagraph {
@@ -53,7 +78,7 @@ export interface StrapiSection {
   sortOrder: number;
   text: RichTextParagraph[];
   image: StrapiStyledImage;
-  caption: string;
+  caption: string | null;
   bgImage: StrapiStyledImage;
 }
 
@@ -65,9 +90,11 @@ export interface StrapiBrand {
   light: string;
   dark: string;
   fonts: {
+    typename: string;
     family: string;
     url: string;
   }[];
+  companyName: string;
 }
 
 export interface StrapiFooter {
@@ -88,13 +115,6 @@ export interface StrapiHero {
   bgImageOpacity: number;
   bgFilterOpacity: number;
   bgImage: StrapiStyledImage;
-}
-
-export interface StrapiContact {
-  typename: string;
-  bgImage: StrapiImage;
-  bgImageOpacity: number;
-  bgFilterOpacity: number;
 }
 
 export interface Client {

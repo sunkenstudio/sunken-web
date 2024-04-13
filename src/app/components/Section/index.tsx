@@ -3,7 +3,7 @@ import React from "react";
 import { H3, Paragraph } from "../Typography";
 import { RichText } from "../Shared/RichText";
 import { SectionBg } from "../Shared/SectionBg";
-import { StrapiBrand, StrapiSection } from "../Shared/types";
+import { StrapiBrand, StrapiSection } from "../../types";
 import { Image } from "../Shared/Image";
 
 interface SectionProps {
