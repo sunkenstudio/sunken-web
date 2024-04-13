@@ -74,10 +74,10 @@ exports[`ContactForm match snapshot 1`] = `
               >
                 <label
                   class="chakra-form__label css-uvho5g"
-                  for="email"
+                  for="start_time"
                   id="field-:r1:-label"
                 >
-                  EMAIL
+                  STARTTIME
                   <span
                     aria-hidden="true"
                     class="chakra-form__required-indicator css-0"
@@ -89,38 +89,10 @@ exports[`ContactForm match snapshot 1`] = `
                 <input
                   aria-required="true"
                   class="chakra-input css-1aa1a7y"
-                  id="email"
-                  name="EMAIL"
+                  id="start_time"
+                  name="STARTTIME"
                   required=""
-                  type="email"
-                  value=""
-                />
-              </div>
-              <div
-                class="chakra-form-control css-0"
-                role="group"
-              >
-                <label
-                  class="chakra-form__label css-uvho5g"
-                  for="phone_number"
-                  id="field-:r2:-label"
-                >
-                  PHONE NUMBER
-                  <span
-                    aria-hidden="true"
-                    class="chakra-form__required-indicator css-0"
-                    role="presentation"
-                  >
-                    *
-                  </span>
-                </label>
-                <input
-                  aria-required="true"
-                  class="chakra-input css-1aa1a7y"
-                  id="phone_number"
-                  name="PHONE NUMBER"
-                  required=""
-                  type="tel"
+                  type="time"
                   value=""
                 />
               </div>
@@ -131,7 +103,7 @@ exports[`ContactForm match snapshot 1`] = `
                 <label
                   class="chakra-form__label css-uvho5g"
                   for="date"
-                  id="field-:r3:-label"
+                  id="field-:r2:-label"
                 >
                   DATE
                   <span
@@ -148,119 +120,7 @@ exports[`ContactForm match snapshot 1`] = `
                   id="date"
                   name="DATE"
                   required=""
-                  type="date"
-                  value=""
-                />
-              </div>
-              <div
-                class="chakra-form-control css-0"
-                role="group"
-              >
-                <label
-                  class="chakra-form__label css-uvho5g"
-                  for="time_of_event"
-                  id="field-:r4:-label"
-                >
-                  TIME OF EVENT
-                  <span
-                    aria-hidden="true"
-                    class="chakra-form__required-indicator css-0"
-                    role="presentation"
-                  >
-                    *
-                  </span>
-                </label>
-                <input
-                  aria-required="true"
-                  class="chakra-input css-1aa1a7y"
-                  id="time_of_event"
-                  name="TIME OF EVENT"
-                  required=""
                   type="time"
-                  value=""
-                />
-              </div>
-              <div
-                class="chakra-form-control css-0"
-                role="group"
-              >
-                <label
-                  class="chakra-form__label css-uvho5g"
-                  for="hours_of_service_start"
-                  id="field-:r5:-label"
-                >
-                  HOURS OF SERVICE (START)
-                  <span
-                    aria-hidden="true"
-                    class="chakra-form__required-indicator css-0"
-                    role="presentation"
-                  >
-                    *
-                  </span>
-                </label>
-                <input
-                  aria-required="true"
-                  class="chakra-input css-1aa1a7y"
-                  id="hours_of_service_start"
-                  name="HOURS OF SERVICE (START)"
-                  required=""
-                  type="time"
-                  value=""
-                />
-              </div>
-              <div
-                class="chakra-form-control css-0"
-                role="group"
-              >
-                <label
-                  class="chakra-form__label css-uvho5g"
-                  for="hours_of_service_end"
-                  id="field-:r6:-label"
-                >
-                  HOURS OF SERVICE (END)
-                  <span
-                    aria-hidden="true"
-                    class="chakra-form__required-indicator css-0"
-                    role="presentation"
-                  >
-                    *
-                  </span>
-                </label>
-                <input
-                  aria-required="true"
-                  class="chakra-input css-1aa1a7y"
-                  id="hours_of_service_end"
-                  name="HOURS OF SERVICE (END)"
-                  required=""
-                  type="time"
-                  value=""
-                />
-              </div>
-              <div
-                class="chakra-form-control css-0"
-                role="group"
-              >
-                <label
-                  class="chakra-form__label css-uvho5g"
-                  for="location"
-                  id="field-:r7:-label"
-                >
-                  LOCATION
-                  <span
-                    aria-hidden="true"
-                    class="chakra-form__required-indicator css-0"
-                    role="presentation"
-                  >
-                    *
-                  </span>
-                </label>
-                <input
-                  aria-required="true"
-                  class="chakra-input css-1aa1a7y"
-                  id="location"
-                  name="LOCATION"
-                  required=""
-                  type="text"
                   value=""
                 />
               </div>
@@ -273,10 +133,10 @@ exports[`ContactForm match snapshot 1`] = `
                 >
                   <label
                     class="chakra-form__label css-uvho5g"
-                    for="type_of_event"
-                    id="field-:r8:-label"
+                    for="dropdown"
+                    id="field-:r3:-label"
                   >
-                    TYPE OF EVENT
+                    DROPDOWN
                     <span
                       aria-hidden="true"
                       class="chakra-form__required-indicator css-0"
@@ -291,54 +151,19 @@ exports[`ContactForm match snapshot 1`] = `
                     <select
                       aria-required="true"
                       class="chakra-select css-1x2j97e"
-                      id="type_of_event"
-                      name="TYPE OF EVENT"
+                      id="dropdown"
+                      name="DROPDOWN"
                       required=""
                     >
                       <option
-                        value="Corporate"
+                        value="Option 1"
                       >
-                        Corporate
+                        Option 1
                       </option>
                       <option
-                        value="Gallery"
+                        value="Option 2"
                       >
-                        Gallery
-                      </option>
-                      <option
-                        value="Wedding"
-                      >
-                        Wedding
-                      </option>
-                      <option
-                        value="Shower"
-                      >
-                        Shower
-                      </option>
-                      <option
-                        value="Afters"
-                      >
-                        Afters
-                      </option>
-                      <option
-                        value="Social / Community"
-                      >
-                        Social / Community
-                      </option>
-                      <option
-                        value="Birthday / Anniversary"
-                      >
-                        Birthday / Anniversary
-                      </option>
-                      <option
-                        value="Holiday"
-                      >
-                        Holiday
-                      </option>
-                      <option
-                        value="Other"
-                      >
-                        Other
+                        Option 2
                       </option>
                     </select>
                     <div
@@ -367,66 +192,10 @@ exports[`ContactForm match snapshot 1`] = `
               >
                 <label
                   class="chakra-form__label css-uvho5g"
-                  for="how_many_guests"
-                  id="field-:r9:-label"
+                  for="message"
+                  id="field-:r4:-label"
                 >
-                  HOW MANY GUESTS?
-                  <span
-                    aria-hidden="true"
-                    class="chakra-form__required-indicator css-0"
-                    role="presentation"
-                  >
-                    *
-                  </span>
-                </label>
-                <input
-                  aria-required="true"
-                  class="chakra-input css-1aa1a7y"
-                  id="how_many_guests"
-                  name="HOW MANY GUESTS?"
-                  required=""
-                  type="number"
-                  value=""
-                />
-              </div>
-              <div
-                class="chakra-form-control css-0"
-                role="group"
-              >
-                <label
-                  class="chakra-form__label css-uvho5g"
-                  for="total_bar_budget"
-                  id="field-:ra:-label"
-                >
-                  TOTAL BAR BUDGET
-                  <span
-                    aria-hidden="true"
-                    class="chakra-form__required-indicator css-0"
-                    role="presentation"
-                  >
-                    *
-                  </span>
-                </label>
-                <input
-                  aria-required="true"
-                  class="chakra-input css-1aa1a7y"
-                  id="total_bar_budget"
-                  name="TOTAL BAR BUDGET"
-                  required=""
-                  type="money"
-                  value=""
-                />
-              </div>
-              <div
-                class="chakra-form-control css-0"
-                role="group"
-              >
-                <label
-                  class="chakra-form__label css-uvho5g"
-                  for="tell_us_more_about_you_and_your_event"
-                  id="field-:rb:-label"
-                >
-                  TELL US MORE ABOUT YOU AND YOUR EVENT!
+                  MESSAGE
                   <span
                     aria-hidden="true"
                     class="chakra-form__required-indicator css-0"
@@ -438,8 +207,8 @@ exports[`ContactForm match snapshot 1`] = `
                 <textarea
                   aria-required="true"
                   class="chakra-textarea css-1sujuex"
-                  id="tell_us_more_about_you_and_your_event"
-                  name="TELL US MORE ABOUT YOU AND YOUR EVENT!"
+                  id="message"
+                  name="MESSAGE"
                   required=""
                 />
               </div>
@@ -525,10 +294,10 @@ exports[`ContactForm match snapshot 1`] = `
             >
               <label
                 class="chakra-form__label css-uvho5g"
-                for="email"
+                for="start_time"
                 id="field-:r1:-label"
               >
-                EMAIL
+                STARTTIME
                 <span
                   aria-hidden="true"
                   class="chakra-form__required-indicator css-0"
@@ -540,38 +309,10 @@ exports[`ContactForm match snapshot 1`] = `
               <input
                 aria-required="true"
                 class="chakra-input css-1aa1a7y"
-                id="email"
-                name="EMAIL"
+                id="start_time"
+                name="STARTTIME"
                 required=""
-                type="email"
-                value=""
-              />
-            </div>
-            <div
-              class="chakra-form-control css-0"
-              role="group"
-            >
-              <label
-                class="chakra-form__label css-uvho5g"
-                for="phone_number"
-                id="field-:r2:-label"
-              >
-                PHONE NUMBER
-                <span
-                  aria-hidden="true"
-                  class="chakra-form__required-indicator css-0"
-                  role="presentation"
-                >
-                  *
-                </span>
-              </label>
-              <input
-                aria-required="true"
-                class="chakra-input css-1aa1a7y"
-                id="phone_number"
-                name="PHONE NUMBER"
-                required=""
-                type="tel"
+                type="time"
                 value=""
               />
             </div>
@@ -582,7 +323,7 @@ exports[`ContactForm match snapshot 1`] = `
               <label
                 class="chakra-form__label css-uvho5g"
                 for="date"
-                id="field-:r3:-label"
+                id="field-:r2:-label"
               >
                 DATE
                 <span
@@ -599,119 +340,7 @@ exports[`ContactForm match snapshot 1`] = `
                 id="date"
                 name="DATE"
                 required=""
-                type="date"
-                value=""
-              />
-            </div>
-            <div
-              class="chakra-form-control css-0"
-              role="group"
-            >
-              <label
-                class="chakra-form__label css-uvho5g"
-                for="time_of_event"
-                id="field-:r4:-label"
-              >
-                TIME OF EVENT
-                <span
-                  aria-hidden="true"
-                  class="chakra-form__required-indicator css-0"
-                  role="presentation"
-                >
-                  *
-                </span>
-              </label>
-              <input
-                aria-required="true"
-                class="chakra-input css-1aa1a7y"
-                id="time_of_event"
-                name="TIME OF EVENT"
-                required=""
                 type="time"
-                value=""
-              />
-            </div>
-            <div
-              class="chakra-form-control css-0"
-              role="group"
-            >
-              <label
-                class="chakra-form__label css-uvho5g"
-                for="hours_of_service_start"
-                id="field-:r5:-label"
-              >
-                HOURS OF SERVICE (START)
-                <span
-                  aria-hidden="true"
-                  class="chakra-form__required-indicator css-0"
-                  role="presentation"
-                >
-                  *
-                </span>
-              </label>
-              <input
-                aria-required="true"
-                class="chakra-input css-1aa1a7y"
-                id="hours_of_service_start"
-                name="HOURS OF SERVICE (START)"
-                required=""
-                type="time"
-                value=""
-              />
-            </div>
-            <div
-              class="chakra-form-control css-0"
-              role="group"
-            >
-              <label
-                class="chakra-form__label css-uvho5g"
-                for="hours_of_service_end"
-                id="field-:r6:-label"
-              >
-                HOURS OF SERVICE (END)
-                <span
-                  aria-hidden="true"
-                  class="chakra-form__required-indicator css-0"
-                  role="presentation"
-                >
-                  *
-                </span>
-              </label>
-              <input
-                aria-required="true"
-                class="chakra-input css-1aa1a7y"
-                id="hours_of_service_end"
-                name="HOURS OF SERVICE (END)"
-                required=""
-                type="time"
-                value=""
-              />
-            </div>
-            <div
-              class="chakra-form-control css-0"
-              role="group"
-            >
-              <label
-                class="chakra-form__label css-uvho5g"
-                for="location"
-                id="field-:r7:-label"
-              >
-                LOCATION
-                <span
-                  aria-hidden="true"
-                  class="chakra-form__required-indicator css-0"
-                  role="presentation"
-                >
-                  *
-                </span>
-              </label>
-              <input
-                aria-required="true"
-                class="chakra-input css-1aa1a7y"
-                id="location"
-                name="LOCATION"
-                required=""
-                type="text"
                 value=""
               />
             </div>
@@ -724,10 +353,10 @@ exports[`ContactForm match snapshot 1`] = `
               >
                 <label
                   class="chakra-form__label css-uvho5g"
-                  for="type_of_event"
-                  id="field-:r8:-label"
+                  for="dropdown"
+                  id="field-:r3:-label"
                 >
-                  TYPE OF EVENT
+                  DROPDOWN
                   <span
                     aria-hidden="true"
                     class="chakra-form__required-indicator css-0"
@@ -742,54 +371,19 @@ exports[`ContactForm match snapshot 1`] = `
                   <select
                     aria-required="true"
                     class="chakra-select css-1x2j97e"
-                    id="type_of_event"
-                    name="TYPE OF EVENT"
+                    id="dropdown"
+                    name="DROPDOWN"
                     required=""
                   >
                     <option
-                      value="Corporate"
+                      value="Option 1"
                     >
-                      Corporate
+                      Option 1
                     </option>
                     <option
-                      value="Gallery"
+                      value="Option 2"
                     >
-                      Gallery
-                    </option>
-                    <option
-                      value="Wedding"
-                    >
-                      Wedding
-                    </option>
-                    <option
-                      value="Shower"
-                    >
-                      Shower
-                    </option>
-                    <option
-                      value="Afters"
-                    >
-                      Afters
-                    </option>
-                    <option
-                      value="Social / Community"
-                    >
-                      Social / Community
-                    </option>
-                    <option
-                      value="Birthday / Anniversary"
-                    >
-                      Birthday / Anniversary
-                    </option>
-                    <option
-                      value="Holiday"
-                    >
-                      Holiday
-                    </option>
-                    <option
-                      value="Other"
-                    >
-                      Other
+                      Option 2
                     </option>
                   </select>
                   <div
@@ -818,66 +412,10 @@ exports[`ContactForm match snapshot 1`] = `
             >
               <label
                 class="chakra-form__label css-uvho5g"
-                for="how_many_guests"
-                id="field-:r9:-label"
+                for="message"
+                id="field-:r4:-label"
               >
-                HOW MANY GUESTS?
-                <span
-                  aria-hidden="true"
-                  class="chakra-form__required-indicator css-0"
-                  role="presentation"
-                >
-                  *
-                </span>
-              </label>
-              <input
-                aria-required="true"
-                class="chakra-input css-1aa1a7y"
-                id="how_many_guests"
-                name="HOW MANY GUESTS?"
-                required=""
-                type="number"
-                value=""
-              />
-            </div>
-            <div
-              class="chakra-form-control css-0"
-              role="group"
-            >
-              <label
-                class="chakra-form__label css-uvho5g"
-                for="total_bar_budget"
-                id="field-:ra:-label"
-              >
-                TOTAL BAR BUDGET
-                <span
-                  aria-hidden="true"
-                  class="chakra-form__required-indicator css-0"
-                  role="presentation"
-                >
-                  *
-                </span>
-              </label>
-              <input
-                aria-required="true"
-                class="chakra-input css-1aa1a7y"
-                id="total_bar_budget"
-                name="TOTAL BAR BUDGET"
-                required=""
-                type="money"
-                value=""
-              />
-            </div>
-            <div
-              class="chakra-form-control css-0"
-              role="group"
-            >
-              <label
-                class="chakra-form__label css-uvho5g"
-                for="tell_us_more_about_you_and_your_event"
-                id="field-:rb:-label"
-              >
-                TELL US MORE ABOUT YOU AND YOUR EVENT!
+                MESSAGE
                 <span
                   aria-hidden="true"
                   class="chakra-form__required-indicator css-0"
@@ -889,8 +427,8 @@ exports[`ContactForm match snapshot 1`] = `
               <textarea
                 aria-required="true"
                 class="chakra-textarea css-1sujuex"
-                id="tell_us_more_about_you_and_your_event"
-                name="TELL US MORE ABOUT YOU AND YOUR EVENT!"
+                id="message"
+                name="MESSAGE"
                 required=""
               />
             </div>
