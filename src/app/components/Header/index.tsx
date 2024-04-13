@@ -63,7 +63,7 @@ export const Header = ({ hero, sections, brand }: HeaderProps) => {
         <DrawerContent
           border={`4px solid ${brand.light}`}
           bgColor={brand.secondary}
-          fontFamily={brand?.fonts?.[0].family}
+          fontFamily={brand?.fonts?.[0]?.family}
         >
           <DrawerCloseButton />
           <Stack mt={"3rem"} alignItems={"center"} p={3} gap={"2rem"}>

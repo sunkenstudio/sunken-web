@@ -152,6 +152,14 @@ export const GET_SITE = gql`
               }
             }
           }
+          config {
+            data {
+              attributes {
+                IsUnderConstruction
+                IsMaintenanceMode
+              }
+            }
+          }
         }
       }
     }
