@@ -12,6 +12,12 @@ jobs:
       - node/install-packages:
           pkg-manager: npm
       - run:
+          name: Run eslint
+          command: npm lint
+      - run:
+          name: Run type check
+          command: tsc
+      - run:
           name: Run tests
           command: npm test
 

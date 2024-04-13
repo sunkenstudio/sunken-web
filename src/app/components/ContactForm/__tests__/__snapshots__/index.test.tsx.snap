@@ -17,12 +17,12 @@ exports[`ContactForm match snapshot 1`] = `
           >
             <img
               alt="Bg image - logo"
-              class="chakra-image css-13gqxk6"
+              class="chakra-image css-o0922y"
               src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/b8c12199347804e795219ef484f5572e.jpeg"
               typename="ComponentCommonImage"
             />
             <div
-              class="css-1mh3gfe"
+              class="css-1m3udba"
             />
           </div>
         </div>
@@ -237,12 +237,12 @@ exports[`ContactForm match snapshot 1`] = `
         >
           <img
             alt="Bg image - logo"
-            class="chakra-image css-13gqxk6"
+            class="chakra-image css-o0922y"
             src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/b8c12199347804e795219ef484f5572e.jpeg"
             typename="ComponentCommonImage"
           />
           <div
-            class="css-1mh3gfe"
+            class="css-1m3udba"
           />
         </div>
       </div>
