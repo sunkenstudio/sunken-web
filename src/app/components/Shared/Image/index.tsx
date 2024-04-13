@@ -2,7 +2,6 @@ import React from "react";
 import {
   Box,
   Image as ChakraImage,
-  ImageProps as ChakraImageProps,
   ChakraStyledOptions,
 } from "@chakra-ui/react";
 import { StrapiStyledImage } from "../../../types";
