@@ -11,18 +11,30 @@ import { StrapiBrand, StrapiFooter, StrapiHero } from "../../types";
 
 const SocialButtonStyle = (sharedProps: {
   bgColor: string;
-  borderColor: string;
-  borderRadius: string;
-  borderWidth: string;
-}) => ({
-  boxSize: "48px",
-  p: 2,
-  bgColor: sharedProps.bgColor,
-  borderRadius: sharedProps.borderRadius,
-  border: `${sharedProps.borderWidth} solid ${sharedProps.borderColor}`,
-  justifyContent: "center",
-  alignItems: "center",
-});
+  borderColor: string | null;
+  borderRadius: string | null;
+  borderWidth: string | null;
+}) => {
+  const baseStyle = {
+    boxSize: "48px",
+    p: 2,
+    justifyContent: "center",
+    alignItems: "center",
+    bgColor: "",
+    borderRadius: "",
+    border: "",
+  };
+  if (sharedProps.bgColor) {
+    baseStyle.bgColor = sharedProps.bgColor;
+  }
+  if (sharedProps.borderRadius) {
+    baseStyle.borderRadius = sharedProps.borderRadius;
+  }
+  if (sharedProps.borderWidth && sharedProps.borderColor) {
+    baseStyle.border = `${sharedProps.borderWidth} solid ${sharedProps.borderColor}`;
+  }
+  return baseStyle;
+};
 
 interface FooterProps {
   brand: StrapiBrand;
