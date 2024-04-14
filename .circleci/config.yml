@@ -13,13 +13,13 @@ jobs:
           pkg-manager: npm
       - run:
           name: Run eslint
-          command: npm lint
+          command: npm run lint
       - run:
           name: Run type check
           command: tsc
       - run:
           name: Run tests
-          command: npm test
+          command: npm run test
 
 workflows:
   sample:
