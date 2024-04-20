@@ -33,17 +33,31 @@ export interface StrapiImage {
   url: string;
 }
 
+export type Color = "primary" | "secondary" | "accent" | "light" | "dark";
+
+export type StrapiBrandColor = {
+  color: Color;
+} | null;
+
 export interface StrapiStyledImage {
   typename: string;
   media: StrapiImage;
   alt: string;
-  borderWidth: string | null;
-  borderColor: string | null;
-  borderRadius: string | null;
-  grayscalePercent: number;
-  filterColor: string | null;
-  filterOpacity: number;
+  border: StrapiBorder;
+  filter: StrapiFilter;
 }
+
+type StrapiBorder = {
+  width: string | null;
+  color: Color;
+  radius: string | null;
+} | null;
+
+type StrapiFilter = {
+  color: Color;
+  opacity: number;
+  grayscale: number;
+} | null;
 
 export interface StrapiStyledButton {
   typename: string;
@@ -75,11 +89,13 @@ type RichTextSegment = {
 export interface StrapiSection {
   typename: string;
   header: string;
+  variant: "left" | "right";
   sortOrder: number;
   text: RichTextParagraph[];
   image: StrapiStyledImage;
   caption: string | null;
   bgImage: StrapiStyledImage;
+  bgColor: Color;
 }
 
 export interface StrapiBrand {
@@ -108,7 +124,7 @@ export interface StrapiFooter {
 export interface StrapiHero {
   typename: string;
   header: string;
-  variant: 'leftAligned' | 'centerAligned';
+  variant: "leftAligned" | "centerAligned";
   subheader: string;
   buttons: StrapiStyledButton[];
   text: RichTextParagraph[];

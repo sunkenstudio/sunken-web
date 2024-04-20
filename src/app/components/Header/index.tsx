@@ -17,16 +17,17 @@ import React from "react";
 import { H3, H5 } from "../Typography";
 import { List } from "@phosphor-icons/react";
 import { scrollToElement } from "@/app/helpers/utils";
-import { StrapiBrand, StrapiHero, StrapiSection } from "../../types";
+import { StrapiHero, StrapiSection } from "../../types";
+import { useBrand } from "@/app/contexts/BrandContext";
 
 interface HeaderProps {
   hero: StrapiHero;
   sections: StrapiSection[];
-  brand: StrapiBrand;
 }
 
-export const Header = ({ hero, sections, brand }: HeaderProps) => {
+export const Header = ({ hero, sections }: HeaderProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { colors, fonts } = useBrand();
 
   const sharedProps = {
     bgColor: hero.buttons[0].bgColor,
@@ -55,19 +56,19 @@ export const Header = ({ hero, sections, brand }: HeaderProps) => {
           alignItems={"center"}
           {...sharedProps}
         >
-          <List size={32} color={brand.light} />
+          <List size={32} color={colors.light} />
         </Button>
       </Flex>
       <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
         <DrawerOverlay />
         <DrawerContent
-          border={`4px solid ${brand.light}`}
-          bgColor={brand.secondary}
-          fontFamily={brand?.fonts?.[0]?.family}
+          border={`4px solid ${colors.light}`}
+          bgColor={colors.secondary}
+          fontFamily={fonts.headers}
         >
           <DrawerCloseButton />
           <Stack mt={"3rem"} alignItems={"center"} p={3} gap={"2rem"}>
-            <H3 color={brand.light}>{brand.companyName}</H3>
+            <H3 color={colors.light}>{colors.companyName}</H3>
             <Divider orientation="horizontal" />
             <a
               onClick={handleScroll}
@@ -75,9 +76,9 @@ export const Header = ({ hero, sections, brand }: HeaderProps) => {
               style={{ minWidth: "70%" }}
             >
               <Box
-                color={brand.light}
-                bgColor={brand.dark}
-                border={`2px solid ${brand.light}`}
+                color={colors.light}
+                bgColor={colors.dark}
+                border={`2px solid ${colors.light}`}
                 borderRadius={".5rem"}
                 p={2}
                 minW="70%"
@@ -93,9 +94,9 @@ export const Header = ({ hero, sections, brand }: HeaderProps) => {
                 style={{ minWidth: "70%" }}
               >
                 <Box
-                  color={brand.light}
-                  bgColor={brand.dark}
-                  border={`2px solid ${brand.light}`}
+                  color={colors.light}
+                  bgColor={colors.dark}
+                  border={`2px solid ${colors.light}`}
                   borderRadius={".5rem"}
                   p={2}
                 >
@@ -109,9 +110,9 @@ export const Header = ({ hero, sections, brand }: HeaderProps) => {
               style={{ minWidth: "70%" }}
             >
               <Box
-                color={brand.light}
-                bgColor={brand.dark}
-                border={`2px solid ${brand.light}`}
+                color={colors.light}
+                bgColor={colors.dark}
+                border={`2px solid ${colors.light}`}
                 borderRadius={".5rem"}
                 p={2}
                 minW="70%"

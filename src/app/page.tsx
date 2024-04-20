@@ -14,6 +14,7 @@ import { useEffect, useState } from "react";
 import { isEmpty } from "lodash";
 import { useRef } from "react";
 import Fonts from "./helpers/fonts";
+import { useBrand } from "./contexts/BrandContext";
 
 const Home = () => {
   const [error, setError] = useState(null);
@@ -22,6 +23,7 @@ const Home = () => {
   const ref = useRef();
 
   const client = useApolloClient();
+  const { loadContent } = useBrand();
 
   useEffect(() => {
     async function fetchData(id: string) {
@@ -39,6 +41,7 @@ const Home = () => {
           }
           const raw = res.data.sites.data[0];
           const clientData: Client = formatStrapiData(raw.attributes);
+          loadContent(clientData.brand);
           console.log({ clientData });
           const { fonts } = clientData.brand;
           if (fonts.length > 0) {
@@ -89,7 +92,7 @@ const Home = () => {
     return <>404 Client not found</>;
   }
 
-  const { hero, brand, sections, footer, contact, config } = data;
+  const { hero, sections, footer, contact, config } = data;
 
   if (config.isUnderConstruction) {
     return <>Under Construction</>;
@@ -125,26 +128,17 @@ const Home = () => {
         }}
         fontSize={{ base: "1rem", md: "1.25rem" }}
       >
-        <Header hero={hero} sections={sections} brand={brand} />
+        <Header hero={hero} sections={sections} />
         <Box>
           <Stack gap={0}>
-            <Hero hero={hero} brand={brand} />
+            <Hero hero={hero} />
             {sections.map((i) => (
-              <Section
-                key={`section-${i.sortOrder}`}
-                section={i}
-                brand={brand}
-              />
+              <Section key={`section-${i.sortOrder}`} section={i} />
             ))}
-            <ContactForm
-              hero={hero}
-              sections={sections}
-              brand={brand}
-              contact={contact}
-            />
+            <ContactForm hero={hero} sections={sections} contact={contact} />
           </Stack>
         </Box>
-        <Footer brand={brand} hero={hero} footer={footer} />
+        <Footer hero={hero} footer={footer} />
       </Box>
     </main>
   );

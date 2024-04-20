@@ -14,21 +14,17 @@ import {
 import { InputField } from "../Shared/InputField";
 import { snakeCase } from "lodash";
 import { Button } from "../Shared/Button";
+import { useBrand } from "@/app/contexts/BrandContext";
 
 export interface ContactFormProps {
   hero: StrapiHero;
   sections: StrapiSection[];
-  brand: StrapiBrand;
   contact: StrapiContact;
 }
 
-export const ContactForm = ({
-  hero,
-  sections,
-  brand,
-  contact,
-}: ContactFormProps) => {
+export const ContactForm = ({ hero, sections, contact }: ContactFormProps) => {
   const [isFiring, setIsFiring] = useState(false);
+  const { colors } = useBrand();
 
   const { bgImage, sendTo } = contact;
   const sharedProps = {
@@ -73,7 +69,7 @@ export const ContactForm = ({
       <Flex
         id={"contact"}
         w="100%"
-        color={brand[color]}
+        color={colors[color]}
         position="relative"
         minH={"2xl"}
         justifyContent={"center"}
@@ -103,7 +99,6 @@ export const ContactForm = ({
                     key={key}
                     id={key}
                     field={i}
-                    brand={brand}
                     value={formik?.values?.[key]}
                     onChange={formik.handleChange}
                   />

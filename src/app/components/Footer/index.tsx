@@ -7,7 +7,8 @@ import {
 } from "@phosphor-icons/react";
 import Link from "next/link";
 import { RichText } from "../Shared/RichText";
-import { StrapiBrand, StrapiFooter, StrapiHero } from "../../types";
+import { StrapiFooter, StrapiHero } from "../../types";
+import { useBrand } from "@/app/contexts/BrandContext";
 
 const SocialButtonStyle = (sharedProps: {
   bgColor: string;
@@ -37,13 +38,12 @@ const SocialButtonStyle = (sharedProps: {
 };
 
 interface FooterProps {
-  brand: StrapiBrand;
-  // TODO - Refactor after color palette refactor
   hero: StrapiHero;
   footer: StrapiFooter;
 }
 
-export const Footer = ({ brand, hero, footer }: FooterProps) => {
+export const Footer = ({ hero, footer }: FooterProps) => {
+  const { colors } = useBrand();
   const sharedProps = {
     bgColor: hero.buttons[0].bgColor,
     borderColor: hero.buttons[0].borderColor,
@@ -62,8 +62,8 @@ export const Footer = ({ brand, hero, footer }: FooterProps) => {
     >
       <Stack
         textAlign={"center"}
-        color={brand.light}
-        textShadow={`1px 1px 0px ${brand.dark}`}
+        color={colors.light}
+        textShadow={`1px 1px 0px ${colors.dark}`}
         fontSize={"x-small"}
         w="100%"
       >
@@ -71,21 +71,21 @@ export const Footer = ({ brand, hero, footer }: FooterProps) => {
           {footer.instagramUrl && (
             <Link href={footer.instagramUrl} target="_blank">
               <Flex {...SocialButtonStyle(sharedProps)}>
-                <InstagramLogo size={32} color={brand.light} />
+                <InstagramLogo size={32} color={colors.light} />
               </Flex>
             </Link>
           )}
           {footer.facebookUrl && (
             <Link href={footer.facebookUrl} target="_blank">
               <Flex {...SocialButtonStyle(sharedProps)}>
-                <FacebookLogo size={32} color={brand.light} />
+                <FacebookLogo size={32} color={colors.light} />
               </Flex>
             </Link>
           )}
           {footer.twitterUrl && (
             <Link href={footer.twitterUrl} target="_blank">
               <Flex {...SocialButtonStyle(sharedProps)}>
-                <TwitterLogo size={32} color={brand.light} />
+                <TwitterLogo size={32} color={colors.light} />
               </Flex>
             </Link>
           )}

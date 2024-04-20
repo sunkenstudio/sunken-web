@@ -1,6 +1,40 @@
 import { gql } from "@apollo/client";
 
 export const GET_SITE = gql`
+  # Write your query or mutation here
+  fragment imageFields on ComponentCommonImage {
+    Media {
+      data {
+        attributes {
+          url
+        }
+      }
+    }
+    Alt
+    Border {
+      Width
+      Radius
+      Color
+    }
+    Filter {
+      Color
+      Opacity
+      Grayscale
+    }
+  }
+
+  fragment buttonsFields on ComponentCommonButton {
+    Type
+    Text
+    Href
+    Icon
+    TextColor
+    BgColor
+    BorderColor
+    BorderWidth
+    BorderRadius
+  }
+
   query Site($ClientId: String) {
     sites(filters: { ClientId: { eq: $ClientId } }) {
       data {
@@ -10,53 +44,17 @@ export const GET_SITE = gql`
             data {
               attributes {
                 Header
-                Variant
                 Subheader
                 Text
                 Image {
-                  Media {
-                    data {
-                      attributes {
-                        url
-                      }
-                    }
-                  }
-                  Alt
-                  BorderWidth
-                  BorderColor
-                  BorderRadius
-                  GrayscalePercent
-                  FilterColor
-                  FilterOpacity
+                  ...imageFields
                 }
-                BgImageOpacity
-                BgFilterOpacity
+                Variant
                 BgImage {
-                  Media {
-                    data {
-                      attributes {
-                        url
-                      }
-                    }
-                  }
-                  Alt
-                  BorderWidth
-                  BorderColor
-                  BorderRadius
-                  GrayscalePercent
-                  FilterColor
-                  FilterOpacity
+                  ...imageFields
                 }
                 Buttons {
-                  Type
-                  Text
-                  Href
-                  Icon
-                  TextColor
-                  BgColor
-                  BorderColor
-                  BorderWidth
-                  BorderRadius
+                  ...buttonsFields
                 }
               }
             }
@@ -65,40 +63,16 @@ export const GET_SITE = gql`
             data {
               attributes {
                 Header
+                Variant
                 SortOrder
                 Text
+                BgColor
                 Image {
-                  Media {
-                    data {
-                      attributes {
-                        url
-                      }
-                    }
-                  }
-                  Alt
-                  BorderWidth
-                  BorderColor
-                  BorderRadius
-                  GrayscalePercent
-                  FilterColor
-                  FilterOpacity
+                  ...imageFields
                 }
                 Caption
                 BgImage {
-                  Media {
-                    data {
-                      attributes {
-                        url
-                      }
-                    }
-                  }
-                  Alt
-                  BorderWidth
-                  BorderColor
-                  BorderRadius
-                  GrayscalePercent
-                  FilterColor
-                  FilterOpacity
+                  ...imageFields
                 }
               }
             }
@@ -135,20 +109,7 @@ export const GET_SITE = gql`
                 Fields
                 SendTo
                 BgImage {
-                  Media {
-                    data {
-                      attributes {
-                        url
-                      }
-                    }
-                  }
-                  Alt
-                  BorderWidth
-                  BorderColor
-                  BorderRadius
-                  GrayscalePercent
-                  FilterColor
-                  FilterOpacity
+                  ...imageFields
                 }
               }
             }

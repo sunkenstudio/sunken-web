@@ -43,7 +43,7 @@ export const formatStrapiData = (data: any): Client => {
         };
       }
     }
-    if (val?.__typename?.includes("ComponentCommon")) {
+    if (val?.__typename?.includes("Component")) {
       return {
         ...acc,
         [formattedKey]: formatStrapiData(val),

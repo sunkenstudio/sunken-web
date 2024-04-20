@@ -5,15 +5,16 @@ import { H1, H3, Paragraph } from "../Typography";
 import { Image } from "../Shared/Image";
 import { RichText } from "../Shared/RichText";
 import { SectionBg } from "../Shared/SectionBg";
-import { StrapiBrand, StrapiHero } from "../../types";
+import { StrapiHero } from "../../types";
 import { Button } from "../Shared/Button";
+import { useBrand } from "@/app/contexts/BrandContext";
 
 interface HeroProps {
   hero: StrapiHero;
-  brand: StrapiBrand;
 }
 
-export const Hero = ({ brand, hero }: HeroProps) => {
+export const Hero = ({ hero }: HeroProps) => {
+  const { colors } = useBrand();
   const { header, subheader, text, buttons, image, bgImage, variant } = hero;
 
   const renderCenterVariant = () => (
@@ -29,7 +30,7 @@ export const Hero = ({ brand, hero }: HeroProps) => {
             maxWidth={"20rem"}
           />
         </Box>
-        <H3 textShadow={`1px 1px 3px ${brand.dark}`}>{subheader}</H3>
+        <H3 textShadow={`1px 1px 3px ${colors.dark}`}>{subheader}</H3>
         <Paragraph w={{ base: "100%", md: "85%" }}>
           <RichText content={text} />
         </Paragraph>
@@ -46,8 +47,8 @@ export const Hero = ({ brand, hero }: HeroProps) => {
     <>
       <Box alignItems={"left"} w={{ base: "90%", md: "50%" }}>
         <Stack gap={3}>
-          <H1 textShadow={`1px 1px 3px ${brand.dark}`}>{header}</H1>
-          <H3 textShadow={`1px 1px 3px ${brand.dark}`}>{subheader}</H3>
+          <H1 textShadow={`1px 1px 3px ${colors.dark}`}>{header}</H1>
+          <H3 textShadow={`1px 1px 3px ${colors.dark}`}>{subheader}</H3>
           <Paragraph w={{ base: "100%", md: "85%" }}>
             <RichText content={text} />
           </Paragraph>
@@ -76,7 +77,7 @@ export const Hero = ({ brand, hero }: HeroProps) => {
     <Flex
       id={"hero"}
       w="100%"
-      color={brand.light}
+      color={colors.light}
       position="relative"
       minH={"2xl"}
       justifyContent={"center"}
