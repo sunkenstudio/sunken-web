@@ -10,6 +10,7 @@ export const GET_SITE = gql`
             data {
               attributes {
                 Header
+                Variant
                 Subheader
                 Text
                 Image {
