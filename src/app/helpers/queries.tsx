@@ -28,11 +28,13 @@ export const GET_SITE = gql`
     Text
     Href
     Icon
-    TextColor
+    Color
     BgColor
-    BorderColor
-    BorderWidth
-    BorderRadius
+    Border {
+      Width
+      Radius
+      Color
+    }
   }
 
   query Site($ClientId: String) {

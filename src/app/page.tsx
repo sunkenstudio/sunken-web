@@ -42,7 +42,7 @@ const Home = () => {
           const raw = res.data.sites.data[0];
           const clientData: Client = formatStrapiData(raw.attributes);
           loadContent(clientData.brand);
-          console.log({ clientData });
+
           const { fonts } = clientData.brand;
           if (fonts.length > 0) {
             Fonts(fonts);

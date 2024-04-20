@@ -29,10 +29,8 @@ export const ContactForm = ({ hero, sections, contact }: ContactFormProps) => {
   const { bgImage, sendTo } = contact;
   const sharedProps = {
     bgColor: hero.buttons[0].bgColor,
-    borderColor: hero.buttons[0].borderColor,
-    borderRadius: hero.buttons[0].borderRadius,
-    borderWidth: hero.buttons[0].borderWidth,
-    textColor: hero.buttons[0].textColor,
+    border: hero.buttons[0].border,
+    textColor: hero.buttons[0].color,
   };
 
   const bgColor =
@@ -77,7 +75,7 @@ export const ContactForm = ({ hero, sections, contact }: ContactFormProps) => {
         fontFamily={"Arial"}
         textShadow={"1px 1px 1px black"}
       >
-        <SectionBg image={bgImage} />
+        <SectionBg bgColor="" image={bgImage} />
         <Stack
           zIndex={10}
           justifyContent={"center"}

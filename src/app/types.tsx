@@ -47,7 +47,7 @@ export interface StrapiStyledImage {
   filter: StrapiFilter;
 }
 
-type StrapiBorder = {
+export type StrapiBorder = {
   width: string | null;
   color: Color;
   radius: string | null;
@@ -65,11 +65,9 @@ export interface StrapiStyledButton {
   text: string;
   href: string;
   icon: string | null;
-  textColor: string;
+  color: string;
   bgColor: string;
-  borderColor: string | null;
-  borderWidth: string | null;
-  borderRadius: string | null;
+  border: StrapiBorder;
 }
 
 export interface RichTextParagraph {

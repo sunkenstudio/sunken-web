@@ -30,11 +30,9 @@ export const Header = ({ hero, sections }: HeaderProps) => {
   const { colors, fonts } = useBrand();
 
   const sharedProps = {
-    bgColor: hero.buttons[0].bgColor,
-    borderColor: hero.buttons[0].borderColor,
-    borderRadius: hero.buttons[0].borderRadius,
-    borderWidth: hero.buttons[0].borderWidth,
-    textColor: hero.buttons[0].textColor,
+    color: colors[hero.buttons[0].color],
+    bgColor: colors[hero.buttons[0].bgColor],
+    borderRadius: hero.buttons[0].border?.radius,
   };
 
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>) => {

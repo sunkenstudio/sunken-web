@@ -7,14 +7,12 @@ import {
 } from "@phosphor-icons/react";
 import Link from "next/link";
 import { RichText } from "../Shared/RichText";
-import { StrapiFooter, StrapiHero } from "../../types";
+import { Color, StrapiBorder, StrapiFooter, StrapiHero } from "../../types";
 import { useBrand } from "@/app/contexts/BrandContext";
 
 const SocialButtonStyle = (sharedProps: {
   bgColor: string;
-  borderColor: string | null;
-  borderRadius: string | null;
-  borderWidth: string | null;
+  border: StrapiBorder;
 }) => {
   const baseStyle = {
     boxSize: "48px",
@@ -28,11 +26,11 @@ const SocialButtonStyle = (sharedProps: {
   if (sharedProps.bgColor) {
     baseStyle.bgColor = sharedProps.bgColor;
   }
-  if (sharedProps.borderRadius) {
-    baseStyle.borderRadius = sharedProps.borderRadius;
+  if (sharedProps.border?.radius) {
+    baseStyle.borderRadius = sharedProps.border?.radius;
   }
-  if (sharedProps.borderWidth && sharedProps.borderColor) {
-    baseStyle.border = `${sharedProps.borderWidth} solid ${sharedProps.borderColor}`;
+  if (sharedProps.border?.width && sharedProps.border.color) {
+    baseStyle.border = `${sharedProps.border.width} solid ${sharedProps.border.color}`;
   }
   return baseStyle;
 };
@@ -45,10 +43,9 @@ interface FooterProps {
 export const Footer = ({ hero, footer }: FooterProps) => {
   const { colors } = useBrand();
   const sharedProps = {
-    bgColor: hero.buttons[0].bgColor,
-    borderColor: hero.buttons[0].borderColor,
-    borderRadius: hero.buttons[0].borderRadius,
-    borderWidth: hero.buttons[0].borderWidth,
+    textColor: colors[hero.buttons[0].color as Color],
+    bgColor: colors[hero.buttons[0].bgColor as Color],
+    border: hero.buttons[0].border,
   };
   return (
     <Flex
