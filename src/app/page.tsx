@@ -103,6 +103,9 @@ const Home = () => {
       </>
     );
   }
+
+  const fontHeader = fontFamilies?.[0]?.family || "";
+  const fontBody = fontFamilies?.[1]?.family || fontHeader || "";
   return (
     <main>
       <Box
@@ -115,9 +118,9 @@ const Home = () => {
         top={0}
         bottom={0}
         css={{
-          fontFamily: fontFamilies?.[1]?.family || "",
+          fontFamily: fontBody,
           "& h1, & h2, & h3, & h4, & h5, & h6": {
-            fontFamily: fontFamilies?.[0]?.family,
+            fontFamily: fontHeader,
           },
         }}
         fontSize={{ base: "1rem", md: "1.25rem" }}
