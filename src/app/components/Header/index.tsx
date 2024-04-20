@@ -33,6 +33,7 @@ export const Header = ({ hero, sections }: HeaderProps) => {
     color: colors[hero.buttons[0].color],
     bgColor: colors[hero.buttons[0].bgColor],
     borderRadius: hero.buttons[0].border?.radius,
+    shadow: hero.buttons[0].shadow,
   };
 
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>) => {

@@ -14,6 +14,7 @@ export const Button = ({
   color,
   bgColor,
   border,
+  shadow,
   ...rest
 }: ButtonProps) => {
   const { colors } = useBrand();
@@ -26,6 +27,7 @@ export const Button = ({
     borderRadius: border?.radius,
     fontFamily: "Arial",
     textShadow: "1px 1px 1px black",
+    shadow,
     ...rest,
   };
   if (type === "link") {

@@ -68,6 +68,7 @@ export interface StrapiStyledButton {
   color: string;
   bgColor: string;
   border: StrapiBorder;
+  shadow: string;
 }
 
 export interface RichTextParagraph {

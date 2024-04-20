@@ -13,6 +13,7 @@ import { useBrand } from "@/app/contexts/BrandContext";
 const SocialButtonStyle = (sharedProps: {
   bgColor: string;
   border: StrapiBorder;
+  shadow: string;
 }) => {
   const baseStyle = {
     boxSize: "48px",
@@ -22,6 +23,7 @@ const SocialButtonStyle = (sharedProps: {
     bgColor: "",
     borderRadius: "",
     border: "",
+    shadow: "",
   };
   if (sharedProps.bgColor) {
     baseStyle.bgColor = sharedProps.bgColor;
@@ -31,6 +33,9 @@ const SocialButtonStyle = (sharedProps: {
   }
   if (sharedProps.border?.width && sharedProps.border.color) {
     baseStyle.border = `${sharedProps.border.width} solid ${sharedProps.border.color}`;
+  }
+  if (sharedProps.shadow) {
+    baseStyle.shadow = sharedProps.shadow;
   }
   return baseStyle;
 };
@@ -46,6 +51,7 @@ export const Footer = ({ hero, footer }: FooterProps) => {
     textColor: colors[hero.buttons[0].color as Color],
     bgColor: colors[hero.buttons[0].bgColor as Color],
     border: hero.buttons[0].border,
+    shadow: hero.buttons[0].shadow,
   };
   return (
     <Flex

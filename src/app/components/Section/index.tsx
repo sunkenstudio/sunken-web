@@ -34,6 +34,7 @@ export const Section = ({ section }: SectionProps) => {
       minH={"2xl"}
       justifyContent={"center"}
       alignItems={"center"}
+      py={{ base: "2rem", md: "" }}
     >
       <SectionBg bgColor={colors[bgColor]} image={bgImage} />
       <Flex w="100%" h="100%">

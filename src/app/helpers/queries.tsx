@@ -35,6 +35,7 @@ export const GET_SITE = gql`
       Radius
       Color
     }
+    Shadow
   }
 
   query Site($ClientId: String) {

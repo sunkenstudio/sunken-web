@@ -126,7 +126,7 @@ const Home = () => {
             fontFamily: fontHeader,
           },
         }}
-        fontSize={{ base: "1rem", md: "1.25rem" }}
+        fontSize={{ base: "1.15rem", md: "1.25rem" }}
       >
         <Header hero={hero} sections={sections} />
         <Box>
