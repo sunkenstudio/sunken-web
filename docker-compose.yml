@@ -4,7 +4,7 @@ services:
       context: .
       dockerfile: Dockerfile.dev
     ports:
-      - "3000:3000"
+      - '3000:3000'
     volumes:
       - .:/app
       - /app/node_modules
@@ -15,6 +15,6 @@ services:
       context: .
       dockerfile: Dockerfile.prod
     ports:
-      - "4000:4000"
+      - '4000:4000'
     env_file:
       - .env
