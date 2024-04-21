@@ -83,7 +83,7 @@ export const Hero = ({ hero }: HeroProps) => {
       justifyContent={"center"}
       alignItems={"center"}
     >
-      <SectionBg image={bgImage} />
+      <SectionBg bgColor={""} image={bgImage} />
       <Flex
         zIndex={10}
         direction={{ base: "column", md: "row" }}

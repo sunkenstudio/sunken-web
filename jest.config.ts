@@ -48,3 +48,5 @@ module.exports = {
     "^.+\\.module\\.(css|sass|scss)$",
   ],
 };
+
+export {};
