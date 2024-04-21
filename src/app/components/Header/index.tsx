@@ -53,6 +53,7 @@ export const Header = ({ hero, sections }: HeaderProps) => {
           p={2}
           justifyContent={"center"}
           alignItems={"center"}
+          _hover={{ filter: "brightness(75%)" }}
           {...sharedProps}
         >
           <List size={32} color={colors.light} />

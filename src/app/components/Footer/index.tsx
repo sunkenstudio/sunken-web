@@ -1,4 +1,4 @@
-import { Flex, HStack, Stack } from "@chakra-ui/react";
+import { Button, Flex, HStack, Stack } from "@chakra-ui/react";
 import React from "react";
 import {
   FacebookLogo,
@@ -73,23 +73,35 @@ export const Footer = ({ hero, footer }: FooterProps) => {
         <HStack gap={3} justifyContent={"center"} w="100%">
           {footer.instagramUrl && (
             <Link href={footer.instagramUrl} target="_blank">
-              <Flex {...SocialButtonStyle(sharedProps)}>
+              <Button
+                as="a"
+                {...SocialButtonStyle(sharedProps)}
+                _hover={{ filter: "brightness(75%)" }}
+              >
                 <InstagramLogo size={32} color={colors.light} />
-              </Flex>
+              </Button>
             </Link>
           )}
           {footer.facebookUrl && (
             <Link href={footer.facebookUrl} target="_blank">
-              <Flex {...SocialButtonStyle(sharedProps)}>
+              <Button
+                as="a"
+                {...SocialButtonStyle(sharedProps)}
+                _hover={{ filter: "brightness(75%)" }}
+              >
                 <FacebookLogo size={32} color={colors.light} />
-              </Flex>
+              </Button>
             </Link>
           )}
           {footer.twitterUrl && (
             <Link href={footer.twitterUrl} target="_blank">
-              <Flex {...SocialButtonStyle(sharedProps)}>
+              <Button
+                as="a"
+                {...SocialButtonStyle(sharedProps)}
+                _hover={{ filter: "brightness(75%)" }}
+              >
                 <TwitterLogo size={32} color={colors.light} />
-              </Flex>
+              </Button>
             </Link>
           )}
         </HStack>

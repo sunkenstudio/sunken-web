@@ -34,7 +34,11 @@ export const Button = ({
     if (href.includes("#")) {
       return (
         <a onClick={scrollToElement} href={href} style={{ width: "100%" }}>
-          <ChakraButton {...commonProps} w={{ base: "100%", md: "45%" }}>
+          <ChakraButton
+            {...commonProps}
+            w={{ base: "100%", md: "45%" }}
+            _hover={{ filter: "brightness(75%)" }}
+          >
             {text}
           </ChakraButton>
         </a>
@@ -42,13 +46,19 @@ export const Button = ({
     }
     return (
       <a href={href} style={{ width: "100%" }}>
-        <ChakraButton {...commonProps}>{text}</ChakraButton>
+        <ChakraButton {...commonProps} _hover={{ filter: "brightness(75%)" }}>
+          {text}
+        </ChakraButton>
       </a>
     );
   }
   if (type === "submit") {
     return (
-      <ChakraButton type="submit" {...commonProps}>
+      <ChakraButton
+        type="submit"
+        {...commonProps}
+        _hover={{ filter: "brightness(75%)" }}
+      >
         {text}
       </ChakraButton>
     );
