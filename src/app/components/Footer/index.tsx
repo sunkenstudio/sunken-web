@@ -1,4 +1,4 @@
-import { Flex, HStack, Stack } from "@chakra-ui/react";
+import { Button, Flex, HStack, Stack } from "@chakra-ui/react";
 import React from "react";
 import {
   FacebookLogo,
@@ -7,13 +7,13 @@ import {
 } from "@phosphor-icons/react";
 import Link from "next/link";
 import { RichText } from "../Shared/RichText";
-import { StrapiBrand, StrapiFooter, StrapiHero } from "../../types";
+import { Color, StrapiBorder, StrapiFooter, StrapiHero } from "../../types";
+import { useBrand } from "@/app/contexts/BrandContext";
 
 const SocialButtonStyle = (sharedProps: {
   bgColor: string;
-  borderColor: string | null;
-  borderRadius: string | null;
-  borderWidth: string | null;
+  border: StrapiBorder;
+  shadow: string;
 }) => {
   const baseStyle = {
     boxSize: "48px",
@@ -23,32 +23,35 @@ const SocialButtonStyle = (sharedProps: {
     bgColor: "",
     borderRadius: "",
     border: "",
+    shadow: "",
   };
   if (sharedProps.bgColor) {
     baseStyle.bgColor = sharedProps.bgColor;
   }
-  if (sharedProps.borderRadius) {
-    baseStyle.borderRadius = sharedProps.borderRadius;
+  if (sharedProps.border?.radius) {
+    baseStyle.borderRadius = sharedProps.border?.radius;
   }
-  if (sharedProps.borderWidth && sharedProps.borderColor) {
-    baseStyle.border = `${sharedProps.borderWidth} solid ${sharedProps.borderColor}`;
+  if (sharedProps.border?.width && sharedProps.border.color) {
+    baseStyle.border = `${sharedProps.border.width} solid ${sharedProps.border.color}`;
+  }
+  if (sharedProps.shadow) {
+    baseStyle.shadow = sharedProps.shadow;
   }
   return baseStyle;
 };
 
 interface FooterProps {
-  brand: StrapiBrand;
-  // TODO - Refactor after color palette refactor
   hero: StrapiHero;
   footer: StrapiFooter;
 }
 
-export const Footer = ({ brand, hero, footer }: FooterProps) => {
+export const Footer = ({ hero, footer }: FooterProps) => {
+  const { colors } = useBrand();
   const sharedProps = {
-    bgColor: hero.buttons[0].bgColor,
-    borderColor: hero.buttons[0].borderColor,
-    borderRadius: hero.buttons[0].borderRadius,
-    borderWidth: hero.buttons[0].borderWidth,
+    textColor: colors[hero.buttons[0].color as Color],
+    bgColor: colors[hero.buttons[0].bgColor as Color],
+    border: hero.buttons[0].border,
+    shadow: hero.buttons[0].shadow,
   };
   return (
     <Flex
@@ -62,31 +65,43 @@ export const Footer = ({ brand, hero, footer }: FooterProps) => {
     >
       <Stack
         textAlign={"center"}
-        color={brand.light}
-        textShadow={`1px 1px 0px ${brand.dark}`}
+        color={colors.light}
+        textShadow={`1px 1px 0px ${colors.dark}`}
         fontSize={"x-small"}
         w="100%"
       >
         <HStack gap={3} justifyContent={"center"} w="100%">
           {footer.instagramUrl && (
             <Link href={footer.instagramUrl} target="_blank">
-              <Flex {...SocialButtonStyle(sharedProps)}>
-                <InstagramLogo size={32} color={brand.light} />
-              </Flex>
+              <Button
+                as="a"
+                {...SocialButtonStyle(sharedProps)}
+                _hover={{ filter: "brightness(75%)" }}
+              >
+                <InstagramLogo size={32} color={colors.light} />
+              </Button>
             </Link>
           )}
           {footer.facebookUrl && (
             <Link href={footer.facebookUrl} target="_blank">
-              <Flex {...SocialButtonStyle(sharedProps)}>
-                <FacebookLogo size={32} color={brand.light} />
-              </Flex>
+              <Button
+                as="a"
+                {...SocialButtonStyle(sharedProps)}
+                _hover={{ filter: "brightness(75%)" }}
+              >
+                <FacebookLogo size={32} color={colors.light} />
+              </Button>
             </Link>
           )}
           {footer.twitterUrl && (
             <Link href={footer.twitterUrl} target="_blank">
-              <Flex {...SocialButtonStyle(sharedProps)}>
-                <TwitterLogo size={32} color={brand.light} />
-              </Flex>
+              <Button
+                as="a"
+                {...SocialButtonStyle(sharedProps)}
+                _hover={{ filter: "brightness(75%)" }}
+              >
+                <TwitterLogo size={32} color={colors.light} />
+              </Button>
             </Link>
           )}
         </HStack>

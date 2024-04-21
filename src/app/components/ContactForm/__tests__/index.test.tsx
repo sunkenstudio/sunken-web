@@ -20,7 +20,6 @@ describe("ContactForm", () => {
     const defaults = (props: Partial<ContactFormProps>): ContactFormProps => ({
       hero: HeroFixture(),
       sections: [SectionFixture()],
-      brand: BrandFixture(),
       contact: ContactFixture(),
       ...props,
     });

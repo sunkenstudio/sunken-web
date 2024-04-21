@@ -3,15 +3,15 @@ import React from "react";
 import { H3, Paragraph } from "../Typography";
 import { RichText } from "../Shared/RichText";
 import { SectionBg } from "../Shared/SectionBg";
-import { StrapiBrand, StrapiSection } from "../../types";
+import { StrapiSection } from "../../types";
 import { Image } from "../Shared/Image";
+import { useBrand } from "@/app/contexts/BrandContext";
 
 interface SectionProps {
   section: StrapiSection;
-  brand: StrapiBrand;
 }
 
-export const Section = ({ section, brand }: SectionProps) => {
+export const Section = ({ section }: SectionProps) => {
   const {
     header = "MISSING",
     sortOrder,
@@ -19,20 +19,24 @@ export const Section = ({ section, brand }: SectionProps) => {
     image,
     caption,
     bgImage,
+    bgColor,
+    variant,
   } = section;
 
-  const altLayout = sortOrder % 2 !== 0;
+  const { colors } = useBrand();
+
   return (
     <Flex
       id={`section-${sortOrder}`}
       w="100%"
-      color={brand.dark}
+      color={colors.dark}
       position="relative"
       minH={"2xl"}
       justifyContent={"center"}
       alignItems={"center"}
+      py={{ base: "2rem", md: "" }}
     >
-      <SectionBg image={bgImage} />
+      <SectionBg bgColor={colors[bgColor]} image={bgImage} />
       <Flex w="100%" h="100%">
         <Box
           justifyContent={"center"}
@@ -40,6 +44,7 @@ export const Section = ({ section, brand }: SectionProps) => {
           h="100%"
           gap={"5"}
           zIndex={10}
+          w="100%"
         >
           <Flex
             w="100%"
@@ -49,12 +54,11 @@ export const Section = ({ section, brand }: SectionProps) => {
             alignItems={"center"}
             p={{ base: ".5rem", md: "0rem" }}
           >
-            {altLayout ? (
+            {variant === "left" ? (
               <Stack
-                w={{ base: "100%", md: "45%" }}
-                justifyContent={"center"}
-                alignItems={"center"}
+                boxSize={{ base: "xs", md: "md" }}
                 mb={{ base: ".5rem", md: "0rem" }}
+                mr={{ base: "0rem", md: "3rem" }}
               >
                 <Image
                   boxSize={{ base: "xs", md: "md" }}
@@ -64,16 +68,15 @@ export const Section = ({ section, brand }: SectionProps) => {
                 <Paragraph>{caption}</Paragraph>
               </Stack>
             ) : null}
-            <Box w={{ base: "100%", md: "45%" }}>
+            <Box w={{ base: "100%", md: "45%" }} textColor={"#FFF"}>
               <H3 mb={"1.25rem"}>{header}</H3>
               <RichText content={text} />
             </Box>
-            {!altLayout ? (
+            {variant === "right" ? (
               <Stack
-                w={{ base: "100%", md: "45%" }}
-                justifyContent={"center"}
-                alignItems={"center"}
-                mt={{ base: ".5rem", md: "0rem" }}
+                boxSize={{ base: "xs", md: "md" }}
+                mb={{ base: ".5rem", md: "0rem" }}
+                ml={{ base: "0rem", md: "1rem" }}
               >
                 <Image
                   boxSize={{ base: "xs", md: "md" }}

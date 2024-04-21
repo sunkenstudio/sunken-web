@@ -5,38 +5,27 @@ import { H3 } from "../Typography";
 import { useFormik, FormikProvider } from "formik";
 import { sendEmail } from "@/actions";
 import { SectionBg } from "../Shared/SectionBg";
-import {
-  StrapiBrand,
-  StrapiContact,
-  StrapiHero,
-  StrapiSection,
-} from "../../types";
+import { StrapiContact, StrapiHero, StrapiSection } from "../../types";
 import { InputField } from "../Shared/InputField";
 import { snakeCase } from "lodash";
 import { Button } from "../Shared/Button";
+import { useBrand } from "@/app/contexts/BrandContext";
 
 export interface ContactFormProps {
   hero: StrapiHero;
   sections: StrapiSection[];
-  brand: StrapiBrand;
   contact: StrapiContact;
 }
 
-export const ContactForm = ({
-  hero,
-  sections,
-  brand,
-  contact,
-}: ContactFormProps) => {
+export const ContactForm = ({ hero, sections, contact }: ContactFormProps) => {
   const [isFiring, setIsFiring] = useState(false);
+  const { colors } = useBrand();
 
   const { bgImage, sendTo } = contact;
   const sharedProps = {
     bgColor: hero.buttons[0].bgColor,
-    borderColor: hero.buttons[0].borderColor,
-    borderRadius: hero.buttons[0].borderRadius,
-    borderWidth: hero.buttons[0].borderWidth,
-    textColor: hero.buttons[0].textColor,
+    border: hero.buttons[0].border,
+    textColor: hero.buttons[0].color,
   };
 
   const bgColor =
@@ -73,7 +62,7 @@ export const ContactForm = ({
       <Flex
         id={"contact"}
         w="100%"
-        color={brand[color]}
+        color={colors[color]}
         position="relative"
         minH={"2xl"}
         justifyContent={"center"}
@@ -81,7 +70,7 @@ export const ContactForm = ({
         fontFamily={"Arial"}
         textShadow={"1px 1px 1px black"}
       >
-        <SectionBg image={bgImage} />
+        <SectionBg bgColor={colors[contact.bgColor]} image={bgImage} />
         <Stack
           zIndex={10}
           justifyContent={"center"}
@@ -90,7 +79,7 @@ export const ContactForm = ({
           pb={"5rem"}
           pt={"1rem"}
         >
-          <H3 mt={"2.5rem"}>CONTACT</H3>
+          <H3 mt={"2.5rem"}>{contact.header}</H3>
           <form
             onSubmit={formik.handleSubmit}
             style={{ display: "flex", width: "100%", justifyContent: "center" }}
@@ -103,7 +92,6 @@ export const ContactForm = ({
                     key={key}
                     id={key}
                     field={i}
-                    brand={brand}
                     value={formik?.values?.[key]}
                     onChange={formik.handleChange}
                   />

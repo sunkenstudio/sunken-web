@@ -14,26 +14,27 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import React from "react";
-import { H3, H5 } from "../Typography";
+import { H3, H4, H5 } from "../Typography";
 import { List } from "@phosphor-icons/react";
 import { scrollToElement } from "@/app/helpers/utils";
-import { StrapiBrand, StrapiHero, StrapiSection } from "../../types";
+import { StrapiContact, StrapiHero, StrapiSection } from "../../types";
+import { useBrand } from "@/app/contexts/BrandContext";
 
 interface HeaderProps {
   hero: StrapiHero;
   sections: StrapiSection[];
-  brand: StrapiBrand;
+  contact: StrapiContact;
 }
 
-export const Header = ({ hero, sections, brand }: HeaderProps) => {
+export const Header = ({ hero, sections, contact }: HeaderProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { colors, fonts, companyName } = useBrand();
 
   const sharedProps = {
-    bgColor: hero.buttons[0].bgColor,
-    borderColor: hero.buttons[0].borderColor,
-    borderRadius: hero.buttons[0].borderRadius,
-    borderWidth: hero.buttons[0].borderWidth,
-    textColor: hero.buttons[0].textColor,
+    color: colors[hero.buttons[0].color],
+    bgColor: colors[hero.buttons[0].bgColor],
+    borderRadius: hero.buttons[0].border?.radius,
+    shadow: hero.buttons[0].shadow,
   };
 
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -53,37 +54,39 @@ export const Header = ({ hero, sections, brand }: HeaderProps) => {
           p={2}
           justifyContent={"center"}
           alignItems={"center"}
+          _hover={{ filter: "brightness(75%)" }}
           {...sharedProps}
         >
-          <List size={32} color={brand.light} />
+          <List size={32} color={colors.light} />
         </Button>
       </Flex>
       <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
         <DrawerOverlay />
         <DrawerContent
-          border={`4px solid ${brand.light}`}
-          bgColor={brand.secondary}
-          fontFamily={brand?.fonts?.[0]?.family}
+          bgColor={colors.secondary}
+          fontFamily={fonts.headers.family}
         >
-          <DrawerCloseButton />
+          <DrawerCloseButton color={colors.light} />
           <Stack mt={"3rem"} alignItems={"center"} p={3} gap={"2rem"}>
-            <H3 color={brand.light}>{brand.companyName}</H3>
+            <H3 color={colors.light} textAlign={"center"}>
+              {companyName}
+            </H3>
             <Divider orientation="horizontal" />
             <a
               onClick={handleScroll}
               href={`#hero`}
               style={{ minWidth: "70%" }}
             >
-              <Box
-                color={brand.light}
-                bgColor={brand.dark}
-                border={`2px solid ${brand.light}`}
+              <Button
+                color={colors.light}
+                colorScheme={"tansparent"}
                 borderRadius={".5rem"}
                 p={2}
-                minW="70%"
+                _hover={{ border: `2px solid ${colors.light}` }}
+                w="100%"
               >
-                <H5>Home</H5>
-              </Box>
+                <H4>Home</H4>
+              </Button>
             </a>
             {sections.map((i) => (
               <a
@@ -92,15 +95,16 @@ export const Header = ({ hero, sections, brand }: HeaderProps) => {
                 href={`#section-${i.sortOrder}`}
                 style={{ minWidth: "70%" }}
               >
-                <Box
-                  color={brand.light}
-                  bgColor={brand.dark}
-                  border={`2px solid ${brand.light}`}
+                <Button
+                  color={colors.light}
+                  colorScheme={"tansparent"}
                   borderRadius={".5rem"}
                   p={2}
+                  w="100%"
+                  _hover={{ border: `2px solid ${colors.light}` }}
                 >
-                  <H5>{i.header}</H5>
-                </Box>
+                  <H4>{i.header}</H4>
+                </Button>
               </a>
             ))}
             <a
@@ -108,16 +112,17 @@ export const Header = ({ hero, sections, brand }: HeaderProps) => {
               href={`#contact`}
               style={{ minWidth: "70%" }}
             >
-              <Box
-                color={brand.light}
-                bgColor={brand.dark}
-                border={`2px solid ${brand.light}`}
+              <Button
+                as="a"
+                color={colors.light}
+                colorScheme={"tansparent"}
                 borderRadius={".5rem"}
+                _hover={{ border: `2px solid ${colors.light}` }}
                 p={2}
-                minW="70%"
+                w="100%"
               >
-                <H5>Book An Event</H5>
-              </Box>
+                <H4>{contact.header}</H4>
+              </Button>
             </a>
           </Stack>
         </DrawerContent>

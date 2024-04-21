@@ -7,26 +7,20 @@ import {
   Textarea,
 } from "@chakra-ui/react";
 import React from "react";
-import { StrapiBrand, StrapiInputField } from "../../../types";
+import { StrapiInputField } from "../../../types";
 import { snakeCase } from "lodash";
+import { useBrand } from "@/app/contexts/BrandContext";
 
 export interface InputFieldProps {
   id: string;
   field: StrapiInputField;
   value: string;
-  brand: StrapiBrand;
   onChange: (e: any) => void;
 }
 
-export const InputField = ({
-  id,
-  field,
-  value,
-  brand,
-  onChange,
-}: InputFieldProps) => {
+export const InputField = ({ id, field, value, onChange }: InputFieldProps) => {
   const { type, label, options = [] } = field;
-
+  const { colors } = useBrand();
   const display = label.toUpperCase();
   if (
     ["text", "email", "date", "time", "number", "tel", "money"].includes(type)
@@ -40,7 +34,7 @@ export const InputField = ({
           type={type}
           onChange={onChange}
           value={value}
-          color={brand.dark}
+          color={colors.dark}
           bgColor="white"
         />
       </FormControl>
@@ -56,7 +50,7 @@ export const InputField = ({
             name={display}
             onChange={onChange}
             value={value}
-            color={brand.dark}
+            color={colors.dark}
             bgColor="white"
           >
             {options.map((i) => (
@@ -74,7 +68,7 @@ export const InputField = ({
               type={"text"}
               onChange={onChange}
               value={value}
-              color={brand.dark}
+              color={colors.dark}
               bgColor="white"
             />
           </FormControl>
@@ -92,7 +86,7 @@ export const InputField = ({
           variant="filled"
           onChange={onChange}
           value={value}
-          color={brand.dark}
+          color={colors.dark}
         />
       </FormControl>
     );

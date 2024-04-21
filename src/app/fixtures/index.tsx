@@ -14,6 +14,7 @@ export const HeroFixture = (
 ): StrapiHero => ({
   typename: "Hero",
   header: "Corridor Cocktails",
+  variant: "leftAligned",
   subheader: "A one-of-a-kind mobile cocktail bar experience",
   text: [
     {
@@ -33,12 +34,16 @@ export const HeroFixture = (
       url: "https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/597ee6441f99aff5999e28ce065b563b.jpeg",
     },
     alt: "Company Logo - Cocktail glass with two cherries",
-    borderWidth: ".25rem",
-    borderColor: "#390D0F",
-    borderRadius: "99rem",
-    grayscalePercent: 0,
-    filterColor: "#992121",
-    filterOpacity: 0,
+    border: {
+      width: ".25rem",
+      color: "secondary",
+      radius: "99rem",
+    },
+    filter: {
+      grayscale: 0,
+      color: "primary",
+      opacity: 0,
+    },
   },
   bgImageOpacity: 0.8,
   bgFilterOpacity: 0.25,
@@ -49,12 +54,12 @@ export const HeroFixture = (
       url: "https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/e1b053e4603d44705ac074325111d66b.jpg",
     },
     alt: "Bg Image - Table with cocktails and cards",
-    borderWidth: null,
-    borderColor: null,
-    borderRadius: null,
-    grayscalePercent: 0,
-    filterColor: "#3e0000",
-    filterOpacity: 0.6,
+    border: null,
+    filter: {
+      grayscale: 0,
+      color: "secondary",
+      opacity: 0.6,
+    },
   },
   buttons: [
     {
@@ -63,11 +68,14 @@ export const HeroFixture = (
       text: "BOOK AN EVENT",
       href: "#contact",
       icon: null,
-      textColor: "#ffffff",
+      color: "#ffffff",
       bgColor: "#9D121A",
-      borderColor: "#ffffff",
-      borderWidth: null,
-      borderRadius: "2rem",
+      border: {
+        color: "light",
+        width: null,
+        radius: "2rem",
+      },
+      shadow: "",
     },
   ],
   ...overrides,
@@ -79,6 +87,7 @@ export const SectionFixture = (
   typename: "Section",
   header: "What We Do",
   sortOrder: 1,
+  bgColor: "primary",
   text: [
     {
       type: "paragraph",
@@ -144,6 +153,7 @@ export const SectionFixture = (
       ],
     },
   ],
+  variant: "left",
   image: {
     typename: "ComponentCommonImage",
     media: {
@@ -151,12 +161,12 @@ export const SectionFixture = (
       url: "https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/b181fb8a2e37c5523f5f625b11628738.avif",
     },
     alt: "Craft cocktail with lemon twist",
-    borderWidth: ".25rem",
-    borderColor: "#390D0F",
-    borderRadius: "99rem",
-    grayscalePercent: 0,
-    filterColor: null,
-    filterOpacity: 0,
+    border: {
+      width: ".25rem",
+      color: "secondary",
+      radius: "99rem",
+    },
+    filter: null,
   },
   caption: null,
   bgImage: {
@@ -166,12 +176,12 @@ export const SectionFixture = (
       url: "https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/368ef30c049d5e73fc77113499547b2f.svg",
     },
     alt: "Background image - Red fabric",
-    borderWidth: null,
-    borderColor: null,
-    borderRadius: null,
-    grayscalePercent: 0,
-    filterColor: "#f2b5aa",
-    filterOpacity: 1,
+    border: null,
+    filter: {
+      grayscale: 0,
+      color: "light",
+      opacity: 1,
+    },
   },
   ...overrides,
 });
@@ -226,6 +236,7 @@ export const ContactFixture = (
   overrides: Partial<StrapiContact> = {}
 ): StrapiContact => ({
   typename: "Contact",
+  header: "Contact",
   fields: [
     TextInputFixture(),
     TimeInputFixture(),
@@ -234,6 +245,7 @@ export const ContactFixture = (
     TextareaInputFixture(),
   ],
   sendTo: "dan@sunkenstudio.com",
+  bgColor: "dark",
   bgImage: {
     typename: "ComponentCommonImage",
     media: {
@@ -241,12 +253,12 @@ export const ContactFixture = (
       url: "https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/b8c12199347804e795219ef484f5572e.jpeg",
     },
     alt: "Bg image - logo",
-    borderWidth: null,
-    borderColor: null,
-    borderRadius: null,
-    grayscalePercent: 0,
-    filterColor: "#37061d",
-    filterOpacity: 0.75,
+    border: null,
+    filter: {
+      grayscale: 0,
+      color: "secondary",
+      opacity: 0.75,
+    },
   },
   ...overrides,
 });

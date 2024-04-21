@@ -6,7 +6,7 @@ exports[`ContactForm match snapshot 1`] = `
   "baseElement": <body>
     <div>
       <div
-        class="css-qqpqvm"
+        class="css-1jlvcm7"
         id="contact"
       >
         <div
@@ -17,12 +17,12 @@ exports[`ContactForm match snapshot 1`] = `
           >
             <img
               alt="Bg image - logo"
-              class="chakra-image css-13gqxk6"
+              class="chakra-image css-o0922y"
               src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/b8c12199347804e795219ef484f5572e.jpeg"
               typename="ComponentCommonImage"
             />
             <div
-              class="css-1mh3gfe"
+              class="css-1bauqsl"
             />
           </div>
         </div>
@@ -32,7 +32,7 @@ exports[`ContactForm match snapshot 1`] = `
           <h3
             class="chakra-heading css-qmgl8q"
           >
-            CONTACT
+            Contact
           </h3>
           <form
             style="display: flex; width: 100%; justify-content: center;"
@@ -60,7 +60,7 @@ exports[`ContactForm match snapshot 1`] = `
                 </label>
                 <input
                   aria-required="true"
-                  class="chakra-input css-1aa1a7y"
+                  class="chakra-input css-cxmp86"
                   id="name"
                   name="NAME"
                   required=""
@@ -88,7 +88,7 @@ exports[`ContactForm match snapshot 1`] = `
                 </label>
                 <input
                   aria-required="true"
-                  class="chakra-input css-1aa1a7y"
+                  class="chakra-input css-cxmp86"
                   id="start_time"
                   name="STARTTIME"
                   required=""
@@ -116,7 +116,7 @@ exports[`ContactForm match snapshot 1`] = `
                 </label>
                 <input
                   aria-required="true"
-                  class="chakra-input css-1aa1a7y"
+                  class="chakra-input css-cxmp86"
                   id="date"
                   name="DATE"
                   required=""
@@ -146,7 +146,7 @@ exports[`ContactForm match snapshot 1`] = `
                     </span>
                   </label>
                   <div
-                    class="chakra-select__wrapper css-1ylyrkq"
+                    class="chakra-select__wrapper css-42b2qy"
                   >
                     <select
                       aria-required="true"
@@ -167,7 +167,7 @@ exports[`ContactForm match snapshot 1`] = `
                       </option>
                     </select>
                     <div
-                      class="chakra-select__icon-wrapper css-1580ndv"
+                      class="chakra-select__icon-wrapper css-162mkon"
                     >
                       <svg
                         aria-hidden="true"
@@ -206,14 +206,14 @@ exports[`ContactForm match snapshot 1`] = `
                 </label>
                 <textarea
                   aria-required="true"
-                  class="chakra-textarea css-1sujuex"
+                  class="chakra-textarea css-0"
                   id="message"
                   name="MESSAGE"
                   required=""
                 />
               </div>
               <button
-                class="chakra-button css-jatuu1"
+                class="chakra-button css-1qrv8y5"
                 type="submit"
               >
                 SUBMIT
@@ -226,7 +226,7 @@ exports[`ContactForm match snapshot 1`] = `
   </body>,
   "container": <div>
     <div
-      class="css-qqpqvm"
+      class="css-1jlvcm7"
       id="contact"
     >
       <div
@@ -237,12 +237,12 @@ exports[`ContactForm match snapshot 1`] = `
         >
           <img
             alt="Bg image - logo"
-            class="chakra-image css-13gqxk6"
+            class="chakra-image css-o0922y"
             src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/b8c12199347804e795219ef484f5572e.jpeg"
             typename="ComponentCommonImage"
           />
           <div
-            class="css-1mh3gfe"
+            class="css-1bauqsl"
           />
         </div>
       </div>
@@ -252,7 +252,7 @@ exports[`ContactForm match snapshot 1`] = `
         <h3
           class="chakra-heading css-qmgl8q"
         >
-          CONTACT
+          Contact
         </h3>
         <form
           style="display: flex; width: 100%; justify-content: center;"
@@ -280,7 +280,7 @@ exports[`ContactForm match snapshot 1`] = `
               </label>
               <input
                 aria-required="true"
-                class="chakra-input css-1aa1a7y"
+                class="chakra-input css-cxmp86"
                 id="name"
                 name="NAME"
                 required=""
@@ -308,7 +308,7 @@ exports[`ContactForm match snapshot 1`] = `
               </label>
               <input
                 aria-required="true"
-                class="chakra-input css-1aa1a7y"
+                class="chakra-input css-cxmp86"
                 id="start_time"
                 name="STARTTIME"
                 required=""
@@ -336,7 +336,7 @@ exports[`ContactForm match snapshot 1`] = `
               </label>
               <input
                 aria-required="true"
-                class="chakra-input css-1aa1a7y"
+                class="chakra-input css-cxmp86"
                 id="date"
                 name="DATE"
                 required=""
@@ -366,7 +366,7 @@ exports[`ContactForm match snapshot 1`] = `
                   </span>
                 </label>
                 <div
-                  class="chakra-select__wrapper css-1ylyrkq"
+                  class="chakra-select__wrapper css-42b2qy"
                 >
                   <select
                     aria-required="true"
@@ -387,7 +387,7 @@ exports[`ContactForm match snapshot 1`] = `
                     </option>
                   </select>
                   <div
-                    class="chakra-select__icon-wrapper css-1580ndv"
+                    class="chakra-select__icon-wrapper css-162mkon"
                   >
                     <svg
                       aria-hidden="true"
@@ -426,14 +426,14 @@ exports[`ContactForm match snapshot 1`] = `
               </label>
               <textarea
                 aria-required="true"
-                class="chakra-textarea css-1sujuex"
+                class="chakra-textarea css-0"
                 id="message"
                 name="MESSAGE"
                 required=""
               />
             </div>
             <button
-              class="chakra-button css-jatuu1"
+              class="chakra-button css-1qrv8y5"
               type="submit"
             >
               SUBMIT
