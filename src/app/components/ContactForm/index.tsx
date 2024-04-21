@@ -32,8 +32,8 @@ export const ContactForm = ({ hero, sections, contact }: ContactFormProps) => {
     sections.length % 3 === 0
       ? "light"
       : sections.length % 2 === 0
-      ? "primary"
-      : "secondary";
+        ? "primary"
+        : "secondary";
 
   const color = bgColor === "light" ? "primary" : "light";
 

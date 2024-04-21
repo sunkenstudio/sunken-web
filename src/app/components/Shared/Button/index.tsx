@@ -10,7 +10,6 @@ export const Button = ({
   type,
   text,
   href,
-  icon,
   color,
   bgColor,
   border,

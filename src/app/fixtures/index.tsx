@@ -10,7 +10,7 @@ import {
 } from "@/app/types";
 
 export const HeroFixture = (
-  overrides: Partial<StrapiHero> = {}
+  overrides: Partial<StrapiHero> = {},
 ): StrapiHero => ({
   typename: "Hero",
   header: "Corridor Cocktails",
@@ -82,7 +82,7 @@ export const HeroFixture = (
 });
 
 export const SectionFixture = (
-  overrides: Partial<StrapiSection> = {}
+  overrides: Partial<StrapiSection> = {},
 ): StrapiSection => ({
   typename: "Section",
   header: "What We Do",
@@ -187,7 +187,7 @@ export const SectionFixture = (
 });
 
 export const BrandFixture = (
-  overrides: Partial<StrapiBrand> = {}
+  overrides: Partial<StrapiBrand> = {},
 ): StrapiBrand => ({
   typename: "Brand",
   primary: "#9D121A",
@@ -212,7 +212,7 @@ export const BrandFixture = (
 });
 
 export const FooterFixture = (
-  overrides: Partial<StrapiFooter> = {}
+  overrides: Partial<StrapiFooter> = {},
 ): StrapiFooter => ({
   typename: "Footer",
   text: [
@@ -233,7 +233,7 @@ export const FooterFixture = (
 });
 
 export const ContactFixture = (
-  overrides: Partial<StrapiContact> = {}
+  overrides: Partial<StrapiContact> = {},
 ): StrapiContact => ({
   typename: "Contact",
   header: "Contact",
@@ -264,7 +264,7 @@ export const ContactFixture = (
 });
 
 export const TextInputFixture = (
-  overrides: Partial<StrapiInputField> = {}
+  overrides: Partial<StrapiInputField> = {},
 ): StrapiInputField => ({
   label: "Name",
   type: "text",
@@ -272,7 +272,7 @@ export const TextInputFixture = (
 });
 
 export const TimeInputFixture = (
-  overrides: Partial<StrapiInputField> = {}
+  overrides: Partial<StrapiInputField> = {},
 ): StrapiInputField => ({
   label: "StartTime",
   type: "time",
@@ -280,7 +280,7 @@ export const TimeInputFixture = (
 });
 
 export const DateInputFixture = (
-  overrides: Partial<StrapiInputField> = {}
+  overrides: Partial<StrapiInputField> = {},
 ): StrapiInputField => ({
   label: "Date",
   type: "time",
@@ -288,7 +288,7 @@ export const DateInputFixture = (
 });
 
 export const DropdownInputFixture = (
-  overrides: Partial<StrapiInputField> = {}
+  overrides: Partial<StrapiInputField> = {},
 ): StrapiInputField => ({
   label: "Dropdown",
   type: "dropdown",
@@ -297,7 +297,7 @@ export const DropdownInputFixture = (
 });
 
 export const TextareaInputFixture = (
-  overrides: Partial<StrapiInputField> = {}
+  overrides: Partial<StrapiInputField> = {},
 ): StrapiInputField => ({
   label: "Message",
   type: "textarea",
@@ -305,7 +305,7 @@ export const TextareaInputFixture = (
 });
 
 export const ConfigFixture = (
-  overrides: Partial<StrapiConfig> = {}
+  overrides: Partial<StrapiConfig> = {},
 ): StrapiConfig => ({
   typename: "Config",
   isUnderConstruction: false,

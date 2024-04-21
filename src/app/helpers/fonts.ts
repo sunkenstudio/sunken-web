@@ -1,7 +1,6 @@
 import { snakeCase } from "lodash";
 import { StrapiBrand } from "../types";
-
-const FontFaceObserver = require("fontfaceobserver");
+import FontFaceObserver from "fontfaceobserver";
 
 const Fonts = (fonts: StrapiBrand["fonts"]) => {
   fonts.forEach((font) => {

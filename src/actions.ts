@@ -2,14 +2,6 @@
 import { Resend } from "resend";
 import EmailTemplate from "./app/components/EmailTemplate";
 import { omit } from "lodash";
-interface State {
-  error: string | null;
-  success: boolean;
-}
-
-// interface Payload {
-//   receiverEmail: string;
-// } & Record<string
 
 type Payload = {
   receiverEmail: string;

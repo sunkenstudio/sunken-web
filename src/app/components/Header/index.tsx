@@ -1,4 +1,3 @@
-// @ts-nocheck
 "use client";
 import {
   Box,
@@ -14,10 +13,10 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import React from "react";
-import { H3, H4, H5 } from "../Typography";
+import { H3, H4 } from "../Typography";
 import { List } from "@phosphor-icons/react";
 import { scrollToElement } from "@/app/helpers/utils";
-import { StrapiContact, StrapiHero, StrapiSection } from "../../types";
+import { Color, StrapiContact, StrapiHero, StrapiSection } from "../../types";
 import { useBrand } from "@/app/contexts/BrandContext";
 
 interface HeaderProps {
@@ -31,9 +30,9 @@ export const Header = ({ hero, sections, contact }: HeaderProps) => {
   const { colors, fonts, companyName } = useBrand();
 
   const sharedProps = {
-    color: colors[hero.buttons[0].color],
-    bgColor: colors[hero.buttons[0].bgColor],
-    borderRadius: hero.buttons[0].border?.radius,
+    color: colors[hero.buttons[0].color as Color],
+    bgColor: colors[hero.buttons[0].bgColor as Color],
+    borderRadius: hero.buttons[0].border?.radius || "",
     shadow: hero.buttons[0].shadow,
   };
 

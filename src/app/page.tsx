@@ -17,7 +17,6 @@ import Fonts from "./helpers/fonts";
 import { useBrand } from "./contexts/BrandContext";
 
 const Home = () => {
-  const [error, setError] = useState(null);
   const [data, setData] = useState(null);
   const [fontFamilies, setFontFamilies] = useState("");
   const ref = useRef();
@@ -58,7 +57,9 @@ const Home = () => {
             setData({});
           }
         })
-        .catch((err) => console.log(err));
+        .catch((err) => {
+          console.log(err);
+        });
     }
 
     const ClientId = getClientIdFromUrl();
@@ -84,10 +85,7 @@ const Home = () => {
       </Flex>
     );
   }
-  if (error) {
-    console.log({ error });
-    return <>{"Error :("}</>;
-  }
+
   if (isEmpty(data)) {
     return <>404 Client not found</>;
   }
