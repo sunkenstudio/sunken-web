@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - docker-integration
 
 env:
   REGISTRY: ${{ secrets.DOCKERHUB_USERNAME }}
