@@ -1,6 +1,6 @@
-"use client";
-import { camelCase } from "lodash";
-import { Client } from "../types";
+'use client';
+import { camelCase } from 'lodash';
+import { Client } from '../types';
 
 export const emptyFunction = () => {
   // Default value for no behavior
@@ -10,20 +10,20 @@ export const scrollToElement = (e: any) => {
   e.preventDefault();
 
   const href = e.currentTarget.href;
-  const targetId = href.replace(/.*#/, "");
+  const targetId = href.replace(/.*#/, '');
 
   const elem = document.getElementById(targetId);
   elem?.scrollIntoView({
-    behavior: "smooth",
+    behavior: 'smooth',
   });
 };
 
 export const getClientIdFromUrl = () => {
   // localhost
   const url = window?.location?.href;
-  if (url.includes("localhost")) {
+  if (url.includes('localhost')) {
     const urlParams = new URLSearchParams(window.location.search);
-    const clientId = urlParams.get("clientId");
+    const clientId = urlParams.get('clientId');
     return clientId;
   }
   // prod
@@ -34,7 +34,7 @@ export const getClientIdFromUrl = () => {
 export const formatStrapiData = (data: any): Client => {
   return Object.entries(data).reduce((acc, [key, val]) => {
     const formattedKey = camelCase(key);
-    if (typeof val === "object") {
+    if (typeof val === 'object') {
       /* @ts-ignore */
       if (val && Array.isArray(val?.data)) {
         return {
@@ -53,7 +53,7 @@ export const formatStrapiData = (data: any): Client => {
       }
     }
     /* @ts-ignore */
-    if (val?.__typename?.includes("Component")) {
+    if (val?.__typename?.includes('Component')) {
       return {
         ...acc,
         [formattedKey]: formatStrapiData(val),
@@ -63,7 +63,7 @@ export const formatStrapiData = (data: any): Client => {
     if (
       val &&
       Array.isArray(val) &&
-      val?.[0]?.__typename?.includes("ComponentCommon")
+      val?.[0]?.__typename?.includes('ComponentCommon')
     ) {
       return {
         ...acc,

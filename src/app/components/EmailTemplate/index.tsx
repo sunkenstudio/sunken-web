@@ -1,5 +1,5 @@
-import { Html, Heading, Text } from "@react-email/components";
-import { snakeCase } from "lodash";
+import { Html, Heading, Text } from '@react-email/components';
+import { snakeCase } from 'lodash';
 
 const EmailTemplate = (formData: Record<string, string>) => {
   return (

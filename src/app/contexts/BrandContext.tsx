@@ -1,6 +1,6 @@
-import { createContext, useContext, useState } from "react";
-import { StrapiBrand } from "../types";
-import { emptyFunction } from "../helpers/utils";
+import { createContext, useContext, useState } from 'react';
+import { StrapiBrand } from '../types';
+import { emptyFunction } from '../helpers/utils';
 
 // Define the type for the context value
 type BrandContextType = {

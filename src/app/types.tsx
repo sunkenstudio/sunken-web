@@ -10,17 +10,17 @@ export interface StrapiContact {
 export interface StrapiInputField {
   label: string;
   type:
-    | "text"
-    | "email"
-    | "tel"
-    | "calendar"
-    | "time"
-    | "time_range"
-    | "dropdown"
-    | "money"
-    | "number"
-    | "textarea"
-    | "date";
+    | 'text'
+    | 'email'
+    | 'tel'
+    | 'calendar'
+    | 'time'
+    | 'time_range'
+    | 'dropdown'
+    | 'money'
+    | 'number'
+    | 'textarea'
+    | 'date';
   options?: string[];
 }
 
@@ -35,7 +35,7 @@ export interface StrapiImage {
   url: string;
 }
 
-export type Color = "primary" | "secondary" | "accent" | "light" | "dark";
+export type Color = 'primary' | 'secondary' | 'accent' | 'light' | 'dark';
 
 export type StrapiBrandColor = {
   color: Color;
@@ -63,7 +63,7 @@ type StrapiFilter = {
 
 export interface StrapiStyledButton {
   typename: string;
-  type: "link" | "modal" | "pdf" | "submit";
+  type: 'link' | 'modal' | 'pdf' | 'submit';
   text: string;
   href: string;
   icon: string | null;
@@ -79,7 +79,7 @@ export interface RichTextParagraph {
 }
 
 type RichTextSegment = {
-  type: "text" | "link";
+  type: 'text' | 'link';
   text?: string;
   url?: string;
   bold?: boolean;
@@ -90,7 +90,7 @@ type RichTextSegment = {
 export interface StrapiSection {
   typename: string;
   header: string;
-  variant: "left" | "right";
+  variant: 'left' | 'right';
   sortOrder: number;
   text: RichTextParagraph[];
   image: StrapiStyledImage;
@@ -125,7 +125,7 @@ export interface StrapiFooter {
 export interface StrapiHero {
   typename: string;
   header: string;
-  variant: "leftAligned" | "centerAligned";
+  variant: 'leftAligned' | 'centerAligned';
   subheader: string;
   buttons: StrapiStyledButton[];
   text: RichTextParagraph[];

@@ -1,14 +1,14 @@
-import { Button, Flex, HStack, Stack } from "@chakra-ui/react";
-import React from "react";
+import { Button, Flex, HStack, Stack } from '@chakra-ui/react';
+import React from 'react';
 import {
   FacebookLogo,
   InstagramLogo,
   TwitterLogo,
-} from "@phosphor-icons/react";
-import Link from "next/link";
-import { RichText } from "../Shared/RichText";
-import { Color, StrapiBorder, StrapiFooter, StrapiHero } from "../../types";
-import { useBrand } from "@/app/contexts/BrandContext";
+} from '@phosphor-icons/react';
+import Link from 'next/link';
+import { RichText } from '../Shared/RichText';
+import { Color, StrapiBorder, StrapiFooter, StrapiHero } from '../../types';
+import { useBrand } from '@/app/contexts/BrandContext';
 
 const SocialButtonStyle = (sharedProps: {
   bgColor: string;
@@ -16,14 +16,14 @@ const SocialButtonStyle = (sharedProps: {
   shadow: string;
 }) => {
   const baseStyle = {
-    boxSize: "48px",
+    boxSize: '48px',
     p: 2,
-    justifyContent: "center",
-    alignItems: "center",
-    bgColor: "",
-    borderRadius: "",
-    border: "",
-    shadow: "",
+    justifyContent: 'center',
+    alignItems: 'center',
+    bgColor: '',
+    borderRadius: '',
+    border: '',
+    shadow: '',
   };
   if (sharedProps.bgColor) {
     baseStyle.bgColor = sharedProps.bgColor;
@@ -58,25 +58,25 @@ export const Footer = ({ hero, footer }: FooterProps) => {
       bottom={0}
       left={0}
       right={0}
-      position={"fixed"}
-      justifyContent={"center"}
+      position={'fixed'}
+      justifyContent={'center'}
       w="100%"
       zIndex={999}
     >
       <Stack
-        textAlign={"center"}
+        textAlign={'center'}
         color={colors.light}
         textShadow={`1px 1px 0px ${colors.dark}`}
-        fontSize={"x-small"}
+        fontSize={'x-small'}
         w="100%"
       >
-        <HStack gap={3} justifyContent={"center"} w="100%">
+        <HStack gap={3} justifyContent={'center'} w="100%">
           {footer.instagramUrl && (
             <Link href={footer.instagramUrl} target="_blank">
               <Button
                 as="a"
                 {...SocialButtonStyle(sharedProps)}
-                _hover={{ filter: "brightness(75%)" }}
+                _hover={{ filter: 'brightness(75%)' }}
               >
                 <InstagramLogo size={32} color={colors.light} />
               </Button>
@@ -87,7 +87,7 @@ export const Footer = ({ hero, footer }: FooterProps) => {
               <Button
                 as="a"
                 {...SocialButtonStyle(sharedProps)}
-                _hover={{ filter: "brightness(75%)" }}
+                _hover={{ filter: 'brightness(75%)' }}
               >
                 <FacebookLogo size={32} color={colors.light} />
               </Button>
@@ -98,7 +98,7 @@ export const Footer = ({ hero, footer }: FooterProps) => {
               <Button
                 as="a"
                 {...SocialButtonStyle(sharedProps)}
-                _hover={{ filter: "brightness(75%)" }}
+                _hover={{ filter: 'brightness(75%)' }}
               >
                 <TwitterLogo size={32} color={colors.light} />
               </Button>
@@ -107,7 +107,7 @@ export const Footer = ({ hero, footer }: FooterProps) => {
         </HStack>
         <RichText
           content={footer.text}
-          fontFamily={"Arial"}
+          fontFamily={'Arial'}
           textShadow="1px 1px 1px black"
         />
       </Stack>
