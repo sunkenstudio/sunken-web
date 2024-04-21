@@ -13,7 +13,7 @@ services:
   prod:
     build:
       context: .
-      dockerfile: Dockerfile.prod
+      dockerfile: Dockerfile
     ports:
       - '4000:4000'
     env_file:
