@@ -5,12 +5,14 @@ import { StrapiBrand } from "../types";
 type BrandContextType = {
   colors: BrandColors;
   fonts: BrandFonts;
+  companyName: string | null;
   loadContent: (brandContent: StrapiBrand) => void;
 };
 
 const BrandContext = createContext<BrandContextType>({
   colors: {} as BrandColors,
   fonts: {} as BrandFonts,
+  companyName: null,
   loadContent: () => {},
 });
 
@@ -57,7 +59,12 @@ export const BrandProvider = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <BrandContext.Provider
-      value={{ colors: getColors(), fonts: getFonts(), loadContent }}
+      value={{
+        colors: getColors(),
+        fonts: getFonts(),
+        companyName: brand.companyName,
+        loadContent,
+      }}
     >
       {children}
     </BrandContext.Provider>

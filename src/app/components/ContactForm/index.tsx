@@ -5,12 +5,7 @@ import { H3 } from "../Typography";
 import { useFormik, FormikProvider } from "formik";
 import { sendEmail } from "@/actions";
 import { SectionBg } from "../Shared/SectionBg";
-import {
-  StrapiBrand,
-  StrapiContact,
-  StrapiHero,
-  StrapiSection,
-} from "../../types";
+import { StrapiContact, StrapiHero, StrapiSection } from "../../types";
 import { InputField } from "../Shared/InputField";
 import { snakeCase } from "lodash";
 import { Button } from "../Shared/Button";
@@ -75,7 +70,7 @@ export const ContactForm = ({ hero, sections, contact }: ContactFormProps) => {
         fontFamily={"Arial"}
         textShadow={"1px 1px 1px black"}
       >
-        <SectionBg bgColor="" image={bgImage} />
+        <SectionBg bgColor={colors[contact.bgColor]} image={bgImage} />
         <Stack
           zIndex={10}
           justifyContent={"center"}
@@ -84,7 +79,7 @@ export const ContactForm = ({ hero, sections, contact }: ContactFormProps) => {
           pb={"5rem"}
           pt={"1rem"}
         >
-          <H3 mt={"2.5rem"}>CONTACT</H3>
+          <H3 mt={"2.5rem"}>{contact.header}</H3>
           <form
             onSubmit={formik.handleSubmit}
             style={{ display: "flex", width: "100%", justifyContent: "center" }}

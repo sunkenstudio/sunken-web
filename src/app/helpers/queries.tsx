@@ -111,6 +111,8 @@ export const GET_SITE = gql`
               attributes {
                 Fields
                 SendTo
+                Header
+                BgColor
                 BgImage {
                   ...imageFields
                 }

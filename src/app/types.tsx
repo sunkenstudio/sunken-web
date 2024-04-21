@@ -2,6 +2,8 @@ export interface StrapiContact {
   typename: string;
   fields: StrapiInputField[];
   sendTo: string;
+  header: string;
+  bgColor: Color;
   bgImage: StrapiStyledImage;
 }
 

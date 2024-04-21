@@ -128,7 +128,7 @@ const Home = () => {
         }}
         fontSize={{ base: "1.15rem", md: "1.25rem" }}
       >
-        <Header hero={hero} sections={sections} />
+        <Header hero={hero} sections={sections} contact={contact} />
         <Box>
           <Stack gap={0}>
             <Hero hero={hero} />
