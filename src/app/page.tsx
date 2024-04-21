@@ -1,25 +1,24 @@
 // @ts-nocheck
-"use client";
-import { Hero } from "./components/Hero";
-import { Section } from "./components/Section";
-import { Box, Center, Flex, Spinner, Stack } from "@chakra-ui/react";
-import { useApolloClient } from "@apollo/client";
-import { Header } from "./components/Header";
-import { Footer } from "./components/Footer";
-import { GET_SITE } from "./helpers/queries";
-import { ContactForm } from "./components/ContactForm";
-import { Client } from "./types";
-import { formatStrapiData, getClientIdFromUrl } from "./helpers/utils";
-import { useEffect, useState } from "react";
-import { isEmpty } from "lodash";
-import { useRef } from "react";
-import Fonts from "./helpers/fonts";
-import { useBrand } from "./contexts/BrandContext";
+'use client';
+import { Hero } from './components/Hero';
+import { Section } from './components/Section';
+import { Box, Center, Flex, Spinner, Stack } from '@chakra-ui/react';
+import { useApolloClient } from '@apollo/client';
+import { Header } from './components/Header';
+import { Footer } from './components/Footer';
+import { GET_SITE } from './helpers/queries';
+import { ContactForm } from './components/ContactForm';
+import { Client } from './types';
+import { formatStrapiData, getClientIdFromUrl } from './helpers/utils';
+import { useEffect, useState } from 'react';
+import { isEmpty } from 'lodash';
+import { useRef } from 'react';
+import Fonts from './helpers/fonts';
+import { useBrand } from './contexts/BrandContext';
 
 const Home = () => {
-  const [error, setError] = useState(null);
   const [data, setData] = useState(null);
-  const [fontFamilies, setFontFamilies] = useState("");
+  const [fontFamilies, setFontFamilies] = useState('');
   const ref = useRef();
 
   const client = useApolloClient();
@@ -58,7 +57,9 @@ const Home = () => {
             setData({});
           }
         })
-        .catch((err) => console.log(err));
+        .catch((err) => {
+          console.log(err);
+        });
     }
 
     const ClientId = getClientIdFromUrl();
@@ -73,10 +74,10 @@ const Home = () => {
   if (!data) {
     return (
       <Flex
-        width={"100vw"}
-        height={"100vh"}
-        alignContent={"center"}
-        justifyContent={"center"}
+        width={'100vw'}
+        height={'100vh'}
+        alignContent={'center'}
+        justifyContent={'center'}
       >
         <Center>
           <Spinner />
@@ -84,10 +85,7 @@ const Home = () => {
       </Flex>
     );
   }
-  if (error) {
-    console.log({ error });
-    return <>{"Error :("}</>;
-  }
+
   if (isEmpty(data)) {
     return <>404 Client not found</>;
   }
@@ -107,26 +105,26 @@ const Home = () => {
     );
   }
 
-  const fontHeader = fontFamilies?.[0]?.family || "";
-  const fontBody = fontFamilies?.[1]?.family || fontHeader || "";
+  const fontHeader = fontFamilies?.[0]?.family || '';
+  const fontBody = fontFamilies?.[1]?.family || fontHeader || '';
   return (
     <main>
       <Box
         ref={ref}
-        bgColor={"white"}
+        bgColor={'white'}
         // m={1}
-        position={"absolute"}
+        position={'absolute'}
         left={0}
         right={0}
         top={0}
         bottom={0}
         css={{
           fontFamily: fontBody,
-          "& h1, & h2, & h3, & h4, & h5, & h6": {
+          '& h1, & h2, & h3, & h4, & h5, & h6': {
             fontFamily: fontHeader,
           },
         }}
-        fontSize={{ base: "1.15rem", md: "1.25rem" }}
+        fontSize={{ base: '1.15rem', md: '1.25rem' }}
       >
         <Header hero={hero} sections={sections} contact={contact} />
         <Box>

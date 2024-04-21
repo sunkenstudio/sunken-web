@@ -1,0 +1,31 @@
+name: Continuous Integration
+
+# triggers on all branches and PRs
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20.11.1'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Eslint
+        run: npm run lint
+
+      - name: Run Prettier
+        run: npm run format
+
+      - name: Run Unit Tests
+        run: npm run test

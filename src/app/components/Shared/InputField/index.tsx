@@ -5,11 +5,11 @@ import {
   Select,
   Stack,
   Textarea,
-} from "@chakra-ui/react";
-import React from "react";
-import { StrapiInputField } from "../../../types";
-import { snakeCase } from "lodash";
-import { useBrand } from "@/app/contexts/BrandContext";
+} from '@chakra-ui/react';
+import React from 'react';
+import { StrapiInputField } from '../../../types';
+import { snakeCase } from 'lodash';
+import { useBrand } from '@/app/contexts/BrandContext';
 
 export interface InputFieldProps {
   id: string;
@@ -23,7 +23,7 @@ export const InputField = ({ id, field, value, onChange }: InputFieldProps) => {
   const { colors } = useBrand();
   const display = label.toUpperCase();
   if (
-    ["text", "email", "date", "time", "number", "tel", "money"].includes(type)
+    ['text', 'email', 'date', 'time', 'number', 'tel', 'money'].includes(type)
   ) {
     return (
       <FormControl isRequired>
@@ -40,7 +40,7 @@ export const InputField = ({ id, field, value, onChange }: InputFieldProps) => {
       </FormControl>
     );
   }
-  if (type === "dropdown") {
+  if (type === 'dropdown') {
     return (
       <Stack>
         <FormControl isRequired>
@@ -60,12 +60,12 @@ export const InputField = ({ id, field, value, onChange }: InputFieldProps) => {
             ))}
           </Select>
         </FormControl>
-        {value === "Other" && (
+        {value === 'Other' && (
           <FormControl isRequired>
             <Input
               id={`${id}-other`}
               name={`${display}-other`}
-              type={"text"}
+              type={'text'}
               onChange={onChange}
               value={value}
               color={colors.dark}
@@ -76,7 +76,7 @@ export const InputField = ({ id, field, value, onChange }: InputFieldProps) => {
       </Stack>
     );
   }
-  if (type === "textarea") {
+  if (type === 'textarea') {
     return (
       <FormControl isRequired>
         <FormLabel htmlFor={id}>{display}</FormLabel>

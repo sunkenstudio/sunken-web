@@ -1,5 +1,4 @@
-// @ts-nocheck
-"use client";
+'use client';
 import {
   Box,
   Button,
@@ -12,13 +11,13 @@ import {
   Spacer,
   Stack,
   useDisclosure,
-} from "@chakra-ui/react";
-import React from "react";
-import { H3, H4, H5 } from "../Typography";
-import { List } from "@phosphor-icons/react";
-import { scrollToElement } from "@/app/helpers/utils";
-import { StrapiContact, StrapiHero, StrapiSection } from "../../types";
-import { useBrand } from "@/app/contexts/BrandContext";
+} from '@chakra-ui/react';
+import React from 'react';
+import { H3, H4 } from '../Typography';
+import { List } from '@phosphor-icons/react';
+import { scrollToElement } from '@/app/helpers/utils';
+import { Color, StrapiContact, StrapiHero, StrapiSection } from '../../types';
+import { useBrand } from '@/app/contexts/BrandContext';
 
 interface HeaderProps {
   hero: StrapiHero;
@@ -31,9 +30,9 @@ export const Header = ({ hero, sections, contact }: HeaderProps) => {
   const { colors, fonts, companyName } = useBrand();
 
   const sharedProps = {
-    color: colors[hero.buttons[0].color],
-    bgColor: colors[hero.buttons[0].bgColor],
-    borderRadius: hero.buttons[0].border?.radius,
+    color: colors[hero.buttons[0].color as Color],
+    bgColor: colors[hero.buttons[0].bgColor as Color],
+    borderRadius: hero.buttons[0].border?.radius || '',
     shadow: hero.buttons[0].shadow,
   };
 
@@ -50,11 +49,11 @@ export const Header = ({ hero, sections, contact }: HeaderProps) => {
         <Button
           m={4}
           onClick={onOpen}
-          boxSize={"48px"}
+          boxSize={'48px'}
           p={2}
-          justifyContent={"center"}
-          alignItems={"center"}
-          _hover={{ filter: "brightness(75%)" }}
+          justifyContent={'center'}
+          alignItems={'center'}
+          _hover={{ filter: 'brightness(75%)' }}
           {...sharedProps}
         >
           <List size={32} color={colors.light} />
@@ -67,20 +66,20 @@ export const Header = ({ hero, sections, contact }: HeaderProps) => {
           fontFamily={fonts.headers.family}
         >
           <DrawerCloseButton color={colors.light} />
-          <Stack mt={"3rem"} alignItems={"center"} p={3} gap={"2rem"}>
-            <H3 color={colors.light} textAlign={"center"}>
+          <Stack mt={'3rem'} alignItems={'center'} p={3} gap={'2rem'}>
+            <H3 color={colors.light} textAlign={'center'}>
               {companyName}
             </H3>
             <Divider orientation="horizontal" />
             <a
               onClick={handleScroll}
               href={`#hero`}
-              style={{ minWidth: "70%" }}
+              style={{ minWidth: '70%' }}
             >
               <Button
                 color={colors.light}
-                colorScheme={"tansparent"}
-                borderRadius={".5rem"}
+                colorScheme={'tansparent'}
+                borderRadius={'.5rem'}
                 p={2}
                 _hover={{ border: `2px solid ${colors.light}` }}
                 w="100%"
@@ -93,12 +92,12 @@ export const Header = ({ hero, sections, contact }: HeaderProps) => {
                 key={`modal-link-${i.sortOrder}`}
                 onClick={handleScroll}
                 href={`#section-${i.sortOrder}`}
-                style={{ minWidth: "70%" }}
+                style={{ minWidth: '70%' }}
               >
                 <Button
                   color={colors.light}
-                  colorScheme={"tansparent"}
-                  borderRadius={".5rem"}
+                  colorScheme={'tansparent'}
+                  borderRadius={'.5rem'}
                   p={2}
                   w="100%"
                   _hover={{ border: `2px solid ${colors.light}` }}
@@ -110,13 +109,13 @@ export const Header = ({ hero, sections, contact }: HeaderProps) => {
             <a
               onClick={handleScroll}
               href={`#contact`}
-              style={{ minWidth: "70%" }}
+              style={{ minWidth: '70%' }}
             >
               <Button
                 as="a"
                 color={colors.light}
-                colorScheme={"tansparent"}
-                borderRadius={".5rem"}
+                colorScheme={'tansparent'}
+                borderRadius={'.5rem'}
                 _hover={{ border: `2px solid ${colors.light}` }}
                 p={2}
                 w="100%"

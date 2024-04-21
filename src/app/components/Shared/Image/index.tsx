@@ -1,18 +1,18 @@
-import React from "react";
+import React from 'react';
 import {
   Box,
   Image as ChakraImage,
   ChakraStyledOptions,
-} from "@chakra-ui/react";
-import { StrapiStyledImage } from "../../../types";
-import { useBrand } from "@/app/contexts/BrandContext";
+} from '@chakra-ui/react';
+import { StrapiStyledImage } from '../../../types';
+import { useBrand } from '@/app/contexts/BrandContext';
 
 type ImageProps = StrapiStyledImage & ChakraStyledOptions;
 
 export const Image = ({
-  media = { typename: "", url: "" },
+  media = { typename: '', url: '' },
   alt,
-  border = { width: "", color: "dark", radius: "" },
+  border = { width: '', color: 'dark', radius: '' },
   filter,
   ...rest
 }: ImageProps) => {
@@ -20,25 +20,25 @@ export const Image = ({
 
   const borderString = border
     ? `${border.width} ${colors[border.color]} solid`
-    : "";
+    : '';
 
   return (
-    <Box position={"relative"} height={"100%"} width={"100%"}>
+    <Box position={'relative'} height={'100%'} width={'100%'}>
       <ChakraImage
         src={media.url}
         alt={alt}
         border={borderString}
-        borderRadius={border?.radius || ""}
+        borderRadius={border?.radius || ''}
         filter={`grayscale(${filter?.grayscale || 0}%)`}
         {...rest}
       />
       <Box
-        borderRadius={border?.radius || ""}
-        bgColor={filter?.color ? colors[filter.color] : ""}
+        borderRadius={border?.radius || ''}
+        bgColor={filter?.color ? colors[filter.color] : ''}
         opacity={filter?.opacity}
-        height={"100%"}
-        width={"100%"}
-        position={"absolute"}
+        height={'100%'}
+        width={'100%'}
+        position={'absolute'}
         top={0}
         bottom={0}
         left={0}

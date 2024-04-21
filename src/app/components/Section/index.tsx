@@ -1,11 +1,11 @@
-import { Box, Flex, Stack } from "@chakra-ui/react";
-import React from "react";
-import { H3, Paragraph } from "../Typography";
-import { RichText } from "../Shared/RichText";
-import { SectionBg } from "../Shared/SectionBg";
-import { StrapiSection } from "../../types";
-import { Image } from "../Shared/Image";
-import { useBrand } from "@/app/contexts/BrandContext";
+import { Box, Flex, Stack } from '@chakra-ui/react';
+import React from 'react';
+import { H3, Paragraph } from '../Typography';
+import { RichText } from '../Shared/RichText';
+import { SectionBg } from '../Shared/SectionBg';
+import { StrapiSection } from '../../types';
+import { Image } from '../Shared/Image';
+import { useBrand } from '@/app/contexts/BrandContext';
 
 interface SectionProps {
   section: StrapiSection;
@@ -13,7 +13,7 @@ interface SectionProps {
 
 export const Section = ({ section }: SectionProps) => {
   const {
-    header = "MISSING",
+    header = 'MISSING',
     sortOrder,
     text,
     image,
@@ -31,57 +31,57 @@ export const Section = ({ section }: SectionProps) => {
       w="100%"
       color={colors.dark}
       position="relative"
-      minH={"2xl"}
-      justifyContent={"center"}
-      alignItems={"center"}
-      py={{ base: "2rem", md: "" }}
+      minH={'2xl'}
+      justifyContent={'center'}
+      alignItems={'center'}
+      py={{ base: '2rem', md: '' }}
     >
       <SectionBg bgColor={colors[bgColor]} image={bgImage} />
       <Flex w="100%" h="100%">
         <Box
-          justifyContent={"center"}
-          alignItems={"center"}
+          justifyContent={'center'}
+          alignItems={'center'}
           h="100%"
-          gap={"5"}
+          gap={'5'}
           zIndex={10}
           w="100%"
         >
           <Flex
             w="100%"
             h="100%"
-            direction={{ base: "column", md: "row" }}
-            justifyContent={"center"}
-            alignItems={"center"}
-            p={{ base: ".5rem", md: "0rem" }}
+            direction={{ base: 'column', md: 'row' }}
+            justifyContent={'center'}
+            alignItems={'center'}
+            p={{ base: '.5rem', md: '0rem' }}
           >
-            {variant === "left" ? (
+            {variant === 'left' ? (
               <Stack
-                boxSize={{ base: "xs", md: "md" }}
-                mb={{ base: ".5rem", md: "0rem" }}
-                mr={{ base: "0rem", md: "3rem" }}
+                boxSize={{ base: 'xs', md: 'md' }}
+                mb={{ base: '.5rem', md: '0rem' }}
+                mr={{ base: '0rem', md: '3rem' }}
               >
                 <Image
-                  boxSize={{ base: "xs", md: "md" }}
+                  boxSize={{ base: 'xs', md: 'md' }}
                   {...image}
-                  objectFit={"cover"}
+                  objectFit={'cover'}
                 />
                 <Paragraph>{caption}</Paragraph>
               </Stack>
             ) : null}
-            <Box w={{ base: "100%", md: "45%" }} textColor={"#FFF"}>
-              <H3 mb={"1.25rem"}>{header}</H3>
+            <Box w={{ base: '100%', md: '45%' }} textColor={'#FFF'}>
+              <H3 mb={'1.25rem'}>{header}</H3>
               <RichText content={text} />
             </Box>
-            {variant === "right" ? (
+            {variant === 'right' ? (
               <Stack
-                boxSize={{ base: "xs", md: "md" }}
-                mb={{ base: ".5rem", md: "0rem" }}
-                ml={{ base: "0rem", md: "1rem" }}
+                boxSize={{ base: 'xs', md: 'md' }}
+                mb={{ base: '.5rem', md: '0rem' }}
+                ml={{ base: '0rem', md: '1rem' }}
               >
                 <Image
-                  boxSize={{ base: "xs", md: "md" }}
+                  boxSize={{ base: 'xs', md: 'md' }}
                   {...image}
-                  objectFit={"cover"}
+                  objectFit={'cover'}
                 />
                 <Paragraph>{caption}</Paragraph>
               </Stack>

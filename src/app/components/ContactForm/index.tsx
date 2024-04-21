@@ -1,15 +1,15 @@
-"use client";
-import React, { useState } from "react";
-import { Flex, Stack } from "@chakra-ui/react";
-import { H3 } from "../Typography";
-import { useFormik, FormikProvider } from "formik";
-import { sendEmail } from "@/actions";
-import { SectionBg } from "../Shared/SectionBg";
-import { StrapiContact, StrapiHero, StrapiSection } from "../../types";
-import { InputField } from "../Shared/InputField";
-import { snakeCase } from "lodash";
-import { Button } from "../Shared/Button";
-import { useBrand } from "@/app/contexts/BrandContext";
+'use client';
+import React, { useState } from 'react';
+import { Flex, Stack } from '@chakra-ui/react';
+import { H3 } from '../Typography';
+import { useFormik, FormikProvider } from 'formik';
+import { sendEmail } from '@/actions';
+import { SectionBg } from '../Shared/SectionBg';
+import { StrapiContact, StrapiHero, StrapiSection } from '../../types';
+import { InputField } from '../Shared/InputField';
+import { snakeCase } from 'lodash';
+import { Button } from '../Shared/Button';
+import { useBrand } from '@/app/contexts/BrandContext';
 
 export interface ContactFormProps {
   hero: StrapiHero;
@@ -30,12 +30,12 @@ export const ContactForm = ({ hero, sections, contact }: ContactFormProps) => {
 
   const bgColor =
     sections.length % 3 === 0
-      ? "light"
+      ? 'light'
       : sections.length % 2 === 0
-      ? "primary"
-      : "secondary";
+        ? 'primary'
+        : 'secondary';
 
-  const color = bgColor === "light" ? "primary" : "light";
+  const color = bgColor === 'light' ? 'primary' : 'light';
 
   const formik = useFormik({
     initialValues: {} as Record<string, string>,
@@ -46,11 +46,11 @@ export const ContactForm = ({ hero, sections, contact }: ContactFormProps) => {
         ...formik.values,
       }).then((res) => {
         if (res.success) {
-          alert("Email sent!");
+          alert('Email sent!');
           setIsFiring(false);
         }
         if (res.error) {
-          alert("Error sending email!");
+          alert('Error sending email!');
           setIsFiring(false);
         }
       });
@@ -60,31 +60,31 @@ export const ContactForm = ({ hero, sections, contact }: ContactFormProps) => {
   return (
     <FormikProvider value={formik}>
       <Flex
-        id={"contact"}
+        id={'contact'}
         w="100%"
         color={colors[color]}
         position="relative"
-        minH={"2xl"}
-        justifyContent={"center"}
-        alignItems={"center"}
-        fontFamily={"Arial"}
-        textShadow={"1px 1px 1px black"}
+        minH={'2xl'}
+        justifyContent={'center'}
+        alignItems={'center'}
+        fontFamily={'Arial'}
+        textShadow={'1px 1px 1px black'}
       >
         <SectionBg bgColor={colors[contact.bgColor]} image={bgImage} />
         <Stack
           zIndex={10}
-          justifyContent={"center"}
-          alignItems={"center"}
+          justifyContent={'center'}
+          alignItems={'center'}
           w="100%"
-          pb={"5rem"}
-          pt={"1rem"}
+          pb={'5rem'}
+          pt={'1rem'}
         >
-          <H3 mt={"2.5rem"}>{contact.header}</H3>
+          <H3 mt={'2.5rem'}>{contact.header}</H3>
           <form
             onSubmit={formik.handleSubmit}
-            style={{ display: "flex", width: "100%", justifyContent: "center" }}
+            style={{ display: 'flex', width: '100%', justifyContent: 'center' }}
           >
-            <Stack gap={"1rem"} m={3} w={{ base: "100%", md: "45%" }}>
+            <Stack gap={'1rem'} m={3} w={{ base: '100%', md: '45%' }}>
               {contact.fields.map((i) => {
                 const key = snakeCase(i.label);
                 return (
@@ -100,9 +100,9 @@ export const ContactForm = ({ hero, sections, contact }: ContactFormProps) => {
               <Button
                 type="submit"
                 isLoading={isFiring}
-                w={"100%"}
+                w={'100%'}
                 {...sharedProps}
-                text={"SUBMIT"}
+                text={'SUBMIT'}
               />
             </Stack>
           </form>
