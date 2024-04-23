@@ -51,8 +51,8 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: bash ~/sunken-web/update.sh
 
-  alerts-success:
-    - name: Discord notification
+  alerts_success:
+    name: Discord notification
     if: success()
     needs: [push_to_registry, pull_on_server]
     env:
@@ -61,8 +61,8 @@ jobs:
     with:
       args: 'Success! Sunken-web has been successfully deployed!'
 
-  alerts-failure:
-    - name: Discord notification
+  alerts_failure:
+    name: Discord notification
     if: failure()
     needs: [push_to_registry, pull_on_server]
     env:

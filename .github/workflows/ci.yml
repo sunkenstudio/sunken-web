@@ -3,7 +3,6 @@ name: Continuous Integration
 # triggers on all branches and PRs
 on:
   push:
-  pull_request:
 
 jobs:
   build:
