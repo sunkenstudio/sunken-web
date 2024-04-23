@@ -50,3 +50,23 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
           script: bash ~/sunken-web/update.sh
+
+  alerts-success:
+    - name: Discord notification
+    if: success()
+    needs: [push_to_registry, pull_on_server]
+    env:
+      DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+    uses: Ilshidur/action-discord@master
+    with:
+      args: 'Success! Sunken-web has been successfully deployed!'
+
+  alerts-failure:
+    - name: Discord notification
+    if: failure()
+    needs: [push_to_registry, pull_on_server]
+    env:
+      DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+    uses: Ilshidur/action-discord@master
+    with:
+      args: 'Problem. Sunken-web has failed to deploy :('
