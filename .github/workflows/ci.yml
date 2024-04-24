@@ -39,5 +39,3 @@ jobs:
             "timestamp": "${{ steps.current-time.outputs.time }}"
           }]'
         uses: Ilshidur/action-discord@master
-        with:
-          args: 'Success! Sunken-web has been successfully deployed!'
