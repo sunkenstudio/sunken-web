@@ -19,7 +19,7 @@ import { scrollToElement } from '@/app/helpers/utils';
 import { Color, StrapiContact, StrapiHero, StrapiSection } from '../../types';
 import { useBrand } from '@/app/contexts/BrandContext';
 
-interface HeaderProps {
+export interface HeaderProps {
   hero: StrapiHero;
   sections: StrapiSection[];
   contact: StrapiContact;
