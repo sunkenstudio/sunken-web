@@ -33,7 +33,13 @@ jobs:
         if: success()
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-          DISCORD_EMBEDS: '[{"title": "Test Discord Action","description": "Description goes here", "footer":"This is a footer"}]'
+          DISCORD_EMBEDS: '[{ 
+            "title": "Test"
+            "author": { "name": "${{github.event.pusher.full_name}}", 
+            "icon_url": "${{github.event.pusher.avatar_url}}" }, 
+            "description": "${{github.event.repository.name}}",
+            "timestamp": "${{ steps.current-time.outputs.time }}",
+          }]'
         uses: Ilshidur/action-discord@master
         with:
           args: 'Success! Sunken-web has been successfully deployed!'
