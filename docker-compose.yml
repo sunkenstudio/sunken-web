@@ -1,6 +1,6 @@
 services:
   prod:
-    image: dwarrick/sunken-web
+    image: dwarrick/sunken-web:main
     build: .
     ports:
       - '4000:4000'
