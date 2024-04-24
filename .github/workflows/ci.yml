@@ -42,7 +42,7 @@ jobs:
           { "name": "Status", "value": "SUCCESS!!! 😃", "inline": true },
           { "name": "Author", "value": "[${{github.event.head_commit.author.name}}](https://github.com/${{github.actor}})" }
           ],
-          "color":1127128,
+          "color":65280,
           "timestamp": "${{github.event.head_commit.timestamp}}",
           "footer":{"text": "${{github.event.head_commit.timestamp}}"}
           }    ]'
