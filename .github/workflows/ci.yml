@@ -33,10 +33,10 @@ jobs:
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
           DISCORD_EMBEDS: '[{ 
-            "author": { "name": "${{github.event.pusher.full_name}}", 
-            "icon_url": "${{github.event.pusher.avatar_url}}" }, 
+            "author": { "name": "${{github.event.pusher.full_name}}" }, 
+            "icon_url": "${{github.event.pusher.avatar_url}}", 
             "description": "${{github.event.repository.name}}",
-            "timestamp": "${{ steps.current-time.outputs.time }}",
+            "timestamp": "${{ steps.current-time.outputs.time }}"
           }]'
         uses: Ilshidur/action-discord@master
         with:
