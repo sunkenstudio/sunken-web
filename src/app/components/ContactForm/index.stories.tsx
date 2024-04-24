@@ -11,7 +11,9 @@ const meta = {
 
 type Story = StoryObj<typeof meta>;
 
-const withDefaults = (overrides: Partial<ContactFormProps> = {}) => ({
+const withDefaults = (
+  overrides: Partial<ContactFormProps> = {}
+): ContactFormProps => ({
   hero: HeroFixture(),
   sections: [SectionFixture()],
   contact: ContactFixture(),

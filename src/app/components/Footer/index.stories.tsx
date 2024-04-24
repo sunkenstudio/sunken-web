@@ -11,7 +11,7 @@ const meta = {
 
 type Story = StoryObj<typeof meta>;
 
-const withDefaults = (overrides: Partial<FooterProps> = {}) => ({
+const withDefaults = (overrides: Partial<FooterProps> = {}): FooterProps => ({
   hero: HeroFixture(),
   footer: FooterFixture(),
   ...overrides,

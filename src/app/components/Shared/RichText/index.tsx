@@ -4,7 +4,7 @@ import { H1, H2, H3, H4, H5, H6, Paragraph } from '../../Typography';
 import Link from 'next/link';
 import { TextProps } from '@chakra-ui/react';
 
-interface RichTextProps extends TextProps {
+export interface RichTextProps extends TextProps {
   content: any;
 }
 

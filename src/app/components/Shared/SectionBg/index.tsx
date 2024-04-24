@@ -3,7 +3,7 @@ import React from 'react';
 import { StrapiStyledImage } from '../../../types';
 import { Image } from '../Image';
 
-interface SectionBgProps {
+export interface SectionBgProps {
   bgColor: string;
   image: StrapiStyledImage;
 }

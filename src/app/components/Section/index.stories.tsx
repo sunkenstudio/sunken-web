@@ -1,21 +1,21 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Hero, HeroProps } from '../Hero';
-import { HeroFixture } from '@/app/fixtures';
+import { Section, SectionProps } from '../Section';
+import { SectionFixture } from '@/app/fixtures';
 
 const meta = {
-  title: 'components/Hero',
-  component: Hero,
+  title: 'components/Section',
+  component: Section,
   parameters: {
     layout: 'centered',
   },
   tags: ['autodocs'],
   argTypes: {},
-} satisfies Meta<typeof Hero>;
+} satisfies Meta<typeof Section>;
 
 type Story = StoryObj<typeof meta>;
 
-const withDefaults = (overrides: Partial<HeroProps> = {}): HeroProps => ({
-  hero: HeroFixture(),
+const withDefaults = (overrides: Partial<SectionProps> = {}): SectionProps => ({
+  section: SectionFixture(),
   ...overrides,
 });
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args

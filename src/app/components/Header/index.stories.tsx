@@ -11,7 +11,7 @@ const meta = {
 
 type Story = StoryObj<typeof meta>;
 
-const withDefaults = (overrides: Partial<HeaderProps> = {}) => ({
+const withDefaults = (overrides: Partial<HeaderProps> = {}): HeaderProps => ({
   hero: HeroFixture(),
   sections: [SectionFixture()],
   contact: ContactFixture(),

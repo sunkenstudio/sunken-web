@@ -1,21 +1,25 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Hero, HeroProps } from '../Hero';
-import { HeroFixture } from '@/app/fixtures';
+import { InputField, InputFieldProps } from '../InputField';
+import { TextInputFixture } from '@/app/fixtures';
+import { fn } from '@storybook/test';
 
 const meta = {
-  title: 'components/Hero',
-  component: Hero,
+  title: '_Shared/InputField',
+  component: InputField,
   parameters: {
     layout: 'centered',
   },
   tags: ['autodocs'],
   argTypes: {},
-} satisfies Meta<typeof Hero>;
+} satisfies Meta<typeof InputField>;
 
 type Story = StoryObj<typeof meta>;
 
-const withDefaults = (overrides: Partial<HeroProps> = {}): HeroProps => ({
-  hero: HeroFixture(),
+const withDefaults = (overrides: Partial<InputFieldProps> = {}) => ({
+  id: 'name',
+  value: 'value',
+  field: TextInputFixture(),
+  onChange: fn(),
   ...overrides,
 });
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args

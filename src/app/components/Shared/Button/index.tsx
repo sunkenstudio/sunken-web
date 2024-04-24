@@ -4,7 +4,7 @@ import { scrollToElement } from '@/app/helpers/utils';
 import { useBrand } from '@/app/contexts/BrandContext';
 import { Color } from '@/app/types';
 
-type ButtonProps = ChakraStyledOptions;
+export type ButtonProps = ChakraStyledOptions;
 export const Button = ({
   typename,
   type,

@@ -1,0 +1,44 @@
+import type { Meta, StoryObj } from '@storybook/react';
+import { SectionBg, SectionBgProps } from '../SectionBg';
+import { Color } from '@/app/types';
+
+const meta = {
+  title: '_Shared/SectionBg',
+  component: SectionBg,
+  parameters: {
+    layout: 'centered',
+  },
+  tags: ['autodocs'],
+  argTypes: {},
+} satisfies Meta<typeof SectionBg>;
+
+type Story = StoryObj<typeof meta>;
+
+const withDefaults = (
+  overrides: Partial<SectionBgProps> = {}
+): SectionBgProps => ({
+  bgColor: 'blue',
+  image: {
+    typename: '',
+    media: {
+      typename: '',
+      url: 'https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/597ee6441f99aff5999e28ce065b563b.jpeg',
+    },
+    alt: 'foo',
+    border: { width: '', color: 'dark' as Color, radius: '' },
+    filter: {
+      color: 'light' as Color,
+      opacity: 0,
+      grayscale: 0,
+    },
+  },
+  ...overrides,
+});
+// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
+export const Primary: Story = {
+  args: {
+    ...withDefaults(),
+  },
+};
+
+export default meta;

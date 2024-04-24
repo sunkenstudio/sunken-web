@@ -7,7 +7,7 @@ import {
 import { StrapiStyledImage } from '../../../types';
 import { useBrand } from '@/app/contexts/BrandContext';
 
-type ImageProps = StrapiStyledImage & ChakraStyledOptions;
+export type ImageProps = StrapiStyledImage & ChakraStyledOptions;
 
 export const Image = ({
   media = { typename: '', url: '' },
