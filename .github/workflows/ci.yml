@@ -32,11 +32,20 @@ jobs:
       - name: test discord action
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-          DISCORD_EMBEDS: '[{ 
-            "footer": { 
-              "text": "${{github.event.pusher.full_name}}", 
-              "icon_url": "${{github.event.pusher.avatar_url}}"
-            }, 
-            "title": "${{github.event.repository.name}}",
-          }]'
+          DISCORD_EMBEDS: '[    { 
+          "author": {  "icon_url": "https://avatars.githubusercontent.com/${{ github.actor }}", "name": "${{ github.actor }}", "url": "https://github.com/${{github.actor}}" },
+          "url": "https://github.com/${{github.repository}}/commit/${{github.sha}}",
+          "fields": [
+          { "name": "Repository", "value": "[${{github.event.repository.name}}](${{github.event.repository.clone_url}})", "inline": true },
+          { "name": "Branch", "value": "[${{github.ref_name}}](https://github.com/${{github.repository}}/tree/${{github.ref_name}})", "inline": true },
+          { "name": "Event", "value": "${{github.event_name}}", "inline": true },
+          { "name": "Job", "value": "${{github.job}}", "inline": true },
+          { "name": "Commit Message", "value": "[${{ env.SHA }}](https://github.com/${{github.repository}}/commit/${{github.sha}}) - `${{github.event.head_commit.message}}`" },
+          { "name": "Changed Files", "value": "${{ steps.changed-files.outputs.all_changed_files }}" },
+          { "name": "Author", "value": "[${{github.event.head_commit.author.name}}](https://github.com/${{github.actor}})" }
+          ],
+          "color":1127128,
+          "timestamp": "${{github.event.head_commit.timestamp}}",
+          "footer":{"text": "${{github.event.head_commit.timestamp}}"}
+          }    ]'
         uses: Ilshidur/action-discord@master
