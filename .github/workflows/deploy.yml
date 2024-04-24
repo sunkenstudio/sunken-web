@@ -66,6 +66,7 @@ jobs:
           { "name": "Branch", "value": "[${{github.ref_name}}](https://github.com/${{github.repository}}/tree/${{github.ref_name}})", "inline": true },
           { "name": "Event", "value": "${{github.event_name}}", "inline": true },
           { "name": "Status", "value": "SUCCESS!!! 😃", "inline": true },
+          { "name": "Commit Message", "value": "[${{ env.SHA }}](https://github.com/${{github.repository}}/commit/${{github.sha}}) - `${{github.event.head_commit.message}}`" },
           { "name": "Author", "value": "[${{github.event.head_commit.author.name}}](https://github.com/${{github.actor}})" }
           ],
           "color":65280,
@@ -86,6 +87,7 @@ jobs:
           { "name": "Branch", "value": "[${{github.ref_name}}](https://github.com/${{github.repository}}/tree/${{github.ref_name}})", "inline": true },
           { "name": "Event", "value": "${{github.event_name}}", "inline": true },
           { "name": "Status", "value": "Something went wrong.. 😞", "inline": true },
+          { "name": "Commit Message", "value": "[${{ env.SHA }}](https://github.com/${{github.repository}}/commit/${{github.sha}}) - `${{github.event.head_commit.message}}`" },
           { "name": "Author", "value": "[${{github.event.head_commit.author.name}}](https://github.com/${{github.actor}})" }
           ],
           "color":16711680,

@@ -40,7 +40,7 @@ const SocialButtonStyle = (sharedProps: {
   return baseStyle;
 };
 
-interface FooterProps {
+export interface FooterProps {
   hero: StrapiHero;
   footer: StrapiFooter;
 }

@@ -7,7 +7,7 @@ import { StrapiSection } from '../../types';
 import { Image } from '../Shared/Image';
 import { useBrand } from '@/app/contexts/BrandContext';
 
-interface SectionProps {
+export interface SectionProps {
   section: StrapiSection;
 }
 

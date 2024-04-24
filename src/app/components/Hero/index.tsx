@@ -9,7 +9,7 @@ import { StrapiHero } from '../../types';
 import { Button } from '../Shared/Button';
 import { useBrand } from '@/app/contexts/BrandContext';
 
-interface HeroProps {
+export interface HeroProps {
   hero: StrapiHero;
 }
 

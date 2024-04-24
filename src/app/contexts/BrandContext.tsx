@@ -54,8 +54,8 @@ export const BrandProvider = ({ children }: { children: React.ReactNode }) => {
   });
 
   const getFonts = (): BrandFonts => ({
-    headers: brand.fonts?.[0],
-    body: brand.fonts?.[1] || brand.fonts?.[0],
+    headers: brand.fonts?.[0] || 'Arial',
+    body: brand.fonts?.[1] || brand.fonts?.[0] || 'Arial',
   });
 
   return (
