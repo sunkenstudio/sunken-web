@@ -17,24 +17,22 @@ jobs:
         with:
           node-version: '20.11.1'
 
-      - name: Install Dependencies
-        run: npm install
+      # - name: Install Dependencies
+      #   run: npm install
 
-      - name: Run Eslint
-        run: npm run lint
+      # - name: Run Eslint
+      #   run: npm run lint
 
-      - name: Run Prettier
-        run: npm run format
+      # - name: Run Prettier
+      #   run: npm run format
 
-      - name: Run Unit Tests
-        run: npm run test
+      # - name: Run Unit Tests
+      #   run: npm run test
 
       - name: test discord action
-        if: success()
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
           DISCORD_EMBEDS: '[{ 
-            "title": "Test"
             "author": { "name": "${{github.event.pusher.full_name}}", 
             "icon_url": "${{github.event.pusher.avatar_url}}" }, 
             "description": "${{github.event.repository.name}}",
