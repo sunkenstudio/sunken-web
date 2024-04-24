@@ -28,3 +28,12 @@ jobs:
 
       - name: Run Unit Tests
         run: npm run test
+
+      - name: test discord action
+        if: success()
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          DISCORD_EMBEDS: '[{"title": "Test Discord Action","description": "Description goes here", "footer":"This is a footer"}]'
+        uses: Ilshidur/action-discord@master
+        with:
+          args: 'Success! Sunken-web has been successfully deployed!'
