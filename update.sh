@@ -1,4 +1,4 @@
 #!/bin/bash
 cd sunken-web
 git pull
-docker compose pull && docker compose up -d prod
+docker-compose down && docker-compose pull && docker-compose up -d

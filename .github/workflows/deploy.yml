@@ -58,14 +58,38 @@ jobs:
         if: success()
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          DISCORD_EMBEDS: '[    { 
+          "author": {  "icon_url": "https://avatars.githubusercontent.com/${{ github.actor }}", "name": "${{ github.actor }}", "url": "https://github.com/${{github.actor}}" },
+          "url": "https://github.com/${{github.repository}}/commit/${{github.sha}}",
+          "fields": [
+          { "name": "Repository", "value": "[${{github.event.repository.name}}](${{github.event.repository.clone_url}})", "inline": true },
+          { "name": "Branch", "value": "[${{github.ref_name}}](https://github.com/${{github.repository}}/tree/${{github.ref_name}})", "inline": true },
+          { "name": "Event", "value": "${{github.event_name}}", "inline": true },
+          { "name": "Status", "value": "SUCCESS!!! 😃", "inline": true },
+          { "name": "Author", "value": "[${{github.event.head_commit.author.name}}](https://github.com/${{github.actor}})" }
+          ],
+          "color":65280,
+          "timestamp": "${{github.event.head_commit.timestamp}}",
+          "footer":{"text": "${{github.event.head_commit.timestamp}}"}
+          }    ]'
         uses: Ilshidur/action-discord@master
-        with:
-          args: 'Success! Sunken-web has been successfully deployed!'
 
       - name: notify discord of failed deploy
         if: failure()
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          DISCORD_EMBEDS: '[    { 
+          "author": {  "icon_url": "https://avatars.githubusercontent.com/${{ github.actor }}", "name": "${{ github.actor }}", "url": "https://github.com/${{github.actor}}" },
+          "url": "https://github.com/${{github.repository}}/commit/${{github.sha}}",
+          "fields": [
+          { "name": "Repository", "value": "[${{github.event.repository.name}}](${{github.event.repository.clone_url}})", "inline": true },
+          { "name": "Branch", "value": "[${{github.ref_name}}](https://github.com/${{github.repository}}/tree/${{github.ref_name}})", "inline": true },
+          { "name": "Event", "value": "${{github.event_name}}", "inline": true },
+          { "name": "Status", "value": "Something went wrong.. 😞", "inline": true },
+          { "name": "Author", "value": "[${{github.event.head_commit.author.name}}](https://github.com/${{github.actor}})" }
+          ],
+          "color":16711680,
+          "timestamp": "${{github.event.head_commit.timestamp}}",
+          "footer":{"text": "${{github.event.head_commit.timestamp}}"}
+          }    ]'
         uses: Ilshidur/action-discord@master
-        with:
-          args: 'Problem. Sunken-web has failed to deploy :('
