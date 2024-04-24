@@ -18,7 +18,7 @@ const withDefaults = (overrides: Partial<SectionProps> = {}): SectionProps => ({
   section: SectionFixture(),
   ...overrides,
 });
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
+
 export const Primary: Story = {
   args: {
     ...withDefaults(),

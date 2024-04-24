@@ -18,7 +18,7 @@ const withDefaults = (overrides: Partial<HeroProps> = {}): HeroProps => ({
   hero: HeroFixture(),
   ...overrides,
 });
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
+
 export const Primary: Story = {
   args: {
     ...withDefaults(),

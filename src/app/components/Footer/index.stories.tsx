@@ -16,7 +16,7 @@ const withDefaults = (overrides: Partial<FooterProps> = {}): FooterProps => ({
   footer: FooterFixture(),
   ...overrides,
 });
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
+
 export const Primary: Story = {
   args: {
     ...withDefaults(),
