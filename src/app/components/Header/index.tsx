@@ -106,23 +106,25 @@ export const Header = ({ hero, sections, contact }: HeaderProps) => {
                 </Button>
               </a>
             ))}
-            <a
-              onClick={handleScroll}
-              href={`#contact`}
-              style={{ minWidth: '70%' }}
-            >
-              <Button
-                as="a"
-                color={colors.light}
-                colorScheme={'tansparent'}
-                borderRadius={'.5rem'}
-                _hover={{ border: `2px solid ${colors.light}` }}
-                p={2}
-                w="100%"
+            {contact && (
+              <a
+                onClick={handleScroll}
+                href={`#contact`}
+                style={{ minWidth: '70%' }}
               >
-                <H4>{contact.header}</H4>
-              </Button>
-            </a>
+                <Button
+                  as="a"
+                  color={colors.light}
+                  colorScheme={'tansparent'}
+                  borderRadius={'.5rem'}
+                  _hover={{ border: `2px solid ${colors.light}` }}
+                  p={2}
+                  w="100%"
+                >
+                  <H4>{contact.header}</H4>
+                </Button>
+              </a>
+            )}
           </Stack>
         </DrawerContent>
       </Drawer>
