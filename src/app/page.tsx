@@ -107,6 +107,12 @@ const Home = () => {
 
   const fontHeader = fontFamilies?.[0]?.family || '';
   const fontBody = fontFamilies?.[1]?.family || fontHeader || '';
+  const primaryButtonStyle = {
+    textColor: colors[hero.buttons[0].color as Color],
+    bgColor: colors[hero.buttons[0].bgColor as Color],
+    border: hero.buttons[0].border,
+    shadow: hero.buttons[0].shadow,
+  };
   return (
     <main>
       <Box
@@ -136,7 +142,7 @@ const Home = () => {
             <ContactForm hero={hero} sections={sections} contact={contact} />
           </Stack>
         </Box>
-        <Footer hero={hero} footer={footer} />
+        <Footer buttonStyle={primaryButtonStyle} footer={footer} />
       </Box>
     </main>
   );

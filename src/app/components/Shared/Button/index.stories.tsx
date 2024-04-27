@@ -1,5 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Button, ButtonProps } from '../Button';
+import { Button } from '../Button';
+import { ChakraStyledOptions } from '@chakra-ui/react';
+
+type ButtonProps = ChakraStyledOptions;
 
 const meta = {
   title: '_Shared/Button',

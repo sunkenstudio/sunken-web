@@ -7,7 +7,7 @@ import {
 } from '@phosphor-icons/react';
 import Link from 'next/link';
 import { RichText } from '../Shared/RichText';
-import { Color, StrapiBorder, StrapiFooter, StrapiHero } from '../../types';
+import { StrapiBorder, StrapiFooter } from '../../types';
 import { useBrand } from '@/app/contexts/BrandContext';
 
 const SocialButtonStyle = (sharedProps: {
@@ -41,18 +41,18 @@ const SocialButtonStyle = (sharedProps: {
 };
 
 export interface FooterProps {
-  hero: StrapiHero;
+  buttonStyle: {
+    textColor: string;
+    bgColor: string;
+    border: StrapiBorder;
+    shadow: string;
+  };
   footer: StrapiFooter;
 }
 
-export const Footer = ({ hero, footer }: FooterProps) => {
+export const Footer = ({ buttonStyle, footer }: FooterProps) => {
   const { colors } = useBrand();
-  const sharedProps = {
-    textColor: colors[hero.buttons[0].color as Color],
-    bgColor: colors[hero.buttons[0].bgColor as Color],
-    border: hero.buttons[0].border,
-    shadow: hero.buttons[0].shadow,
-  };
+  const { instagramUrl, facebookUrl, twitterUrl, text } = footer;
   return (
     <Flex
       bottom={0}
@@ -71,33 +71,33 @@ export const Footer = ({ hero, footer }: FooterProps) => {
         w="100%"
       >
         <HStack gap={3} justifyContent={'center'} w="100%">
-          {footer.instagramUrl && (
-            <Link href={footer.instagramUrl} target="_blank">
+          {instagramUrl && (
+            <Link href={instagramUrl} target="_blank">
               <Button
                 as="a"
-                {...SocialButtonStyle(sharedProps)}
+                {...SocialButtonStyle(buttonStyle)}
                 _hover={{ filter: 'brightness(75%)' }}
               >
                 <InstagramLogo size={32} color={colors.light} />
               </Button>
             </Link>
           )}
-          {footer.facebookUrl && (
-            <Link href={footer.facebookUrl} target="_blank">
+          {facebookUrl && (
+            <Link href={facebookUrl} target="_blank">
               <Button
                 as="a"
-                {...SocialButtonStyle(sharedProps)}
+                {...SocialButtonStyle(buttonStyle)}
                 _hover={{ filter: 'brightness(75%)' }}
               >
                 <FacebookLogo size={32} color={colors.light} />
               </Button>
             </Link>
           )}
-          {footer.twitterUrl && (
-            <Link href={footer.twitterUrl} target="_blank">
+          {twitterUrl && (
+            <Link href={twitterUrl} target="_blank">
               <Button
                 as="a"
-                {...SocialButtonStyle(sharedProps)}
+                {...SocialButtonStyle(buttonStyle)}
                 _hover={{ filter: 'brightness(75%)' }}
               >
                 <TwitterLogo size={32} color={colors.light} />
@@ -106,7 +106,7 @@ export const Footer = ({ hero, footer }: FooterProps) => {
           )}
         </HStack>
         <RichText
-          content={footer.text}
+          content={text}
           fontFamily={'Arial'}
           textShadow="1px 1px 1px black"
         />
