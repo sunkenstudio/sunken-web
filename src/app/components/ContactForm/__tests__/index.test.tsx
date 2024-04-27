@@ -13,6 +13,8 @@ import {
   TextareaInputFixture,
   TimeInputFixture,
 } from '@/app/fixtures';
+import { testStories } from '@/app/helpers/testStorybook';
+import * as Stories from '../index.stories';
 
 describe('ContactForm', () => {
   const renderComponent = (overrides: Partial<ContactFormProps> = {}) => {
@@ -24,6 +26,11 @@ describe('ContactForm', () => {
     });
     return render(<ContactForm {...defaults(overrides)} />);
   };
+
+  describe('All stories should render successfully', () => {
+    testStories(Stories);
+  });
+
   it('match snapshot', () => {
     const rendered = renderComponent();
     expect(rendered).toMatchSnapshot();
