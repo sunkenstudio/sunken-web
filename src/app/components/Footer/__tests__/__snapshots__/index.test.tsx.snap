@@ -146,7 +146,9 @@ exports[`Footer All stories should render successfully Renders Primary story 1`]
 exports[`Footer match snapshot 1`] = `
 {
   "asFragment": [Function],
-  "baseElement": <body>
+  "baseElement": <body
+    class="chakra-ui-light"
+  >
     <div>
       <div
         class="css-do35vm"

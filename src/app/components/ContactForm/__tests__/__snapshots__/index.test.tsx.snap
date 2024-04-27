@@ -279,7 +279,9 @@ exports[`ContactForm All stories should render successfully Renders Primary stor
 exports[`ContactForm match snapshot 1`] = `
 {
   "asFragment": [Function],
-  "baseElement": <body>
+  "baseElement": <body
+    class="chakra-ui-light"
+  >
     <div>
       <div
         class="css-1jlvcm7"
@@ -323,7 +325,7 @@ exports[`ContactForm match snapshot 1`] = `
                 <label
                   class="chakra-form__label css-uvho5g"
                   for="name"
-                  id="field-:r0:-label"
+                  id="field-:r5:-label"
                 >
                   NAME
                   <span
@@ -351,7 +353,7 @@ exports[`ContactForm match snapshot 1`] = `
                 <label
                   class="chakra-form__label css-uvho5g"
                   for="start_time"
-                  id="field-:r1:-label"
+                  id="field-:r6:-label"
                 >
                   STARTTIME
                   <span
@@ -379,7 +381,7 @@ exports[`ContactForm match snapshot 1`] = `
                 <label
                   class="chakra-form__label css-uvho5g"
                   for="date"
-                  id="field-:r2:-label"
+                  id="field-:r7:-label"
                 >
                   DATE
                   <span
@@ -410,7 +412,7 @@ exports[`ContactForm match snapshot 1`] = `
                   <label
                     class="chakra-form__label css-uvho5g"
                     for="dropdown"
-                    id="field-:r3:-label"
+                    id="field-:r8:-label"
                   >
                     DROPDOWN
                     <span
@@ -469,7 +471,7 @@ exports[`ContactForm match snapshot 1`] = `
                 <label
                   class="chakra-form__label css-uvho5g"
                   for="message"
-                  id="field-:r4:-label"
+                  id="field-:r9:-label"
                 >
                   MESSAGE
                   <span
@@ -543,7 +545,7 @@ exports[`ContactForm match snapshot 1`] = `
               <label
                 class="chakra-form__label css-uvho5g"
                 for="name"
-                id="field-:r0:-label"
+                id="field-:r5:-label"
               >
                 NAME
                 <span
@@ -571,7 +573,7 @@ exports[`ContactForm match snapshot 1`] = `
               <label
                 class="chakra-form__label css-uvho5g"
                 for="start_time"
-                id="field-:r1:-label"
+                id="field-:r6:-label"
               >
                 STARTTIME
                 <span
@@ -599,7 +601,7 @@ exports[`ContactForm match snapshot 1`] = `
               <label
                 class="chakra-form__label css-uvho5g"
                 for="date"
-                id="field-:r2:-label"
+                id="field-:r7:-label"
               >
                 DATE
                 <span
@@ -630,7 +632,7 @@ exports[`ContactForm match snapshot 1`] = `
                 <label
                   class="chakra-form__label css-uvho5g"
                   for="dropdown"
-                  id="field-:r3:-label"
+                  id="field-:r8:-label"
                 >
                   DROPDOWN
                   <span
@@ -689,7 +691,7 @@ exports[`ContactForm match snapshot 1`] = `
               <label
                 class="chakra-form__label css-uvho5g"
                 for="message"
-                id="field-:r4:-label"
+                id="field-:r9:-label"
               >
                 MESSAGE
                 <span
