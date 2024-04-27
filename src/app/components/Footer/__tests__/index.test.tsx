@@ -5,6 +5,8 @@ import { render } from '@testing-library/react';
 import { Footer, FooterProps } from '..';
 import { FooterFixture } from '@/app/fixtures';
 import { Color } from '@/app/types';
+import { testStories } from '@/app/helpers/testStorybook';
+import * as Stories from '../index.stories';
 
 describe('Footer', () => {
   const renderComponent = (overrides: Partial<FooterProps> = {}) => {
@@ -24,6 +26,11 @@ describe('Footer', () => {
     });
     return render(<Footer {...defaults(overrides)} />);
   };
+
+  describe('All stories should render successfully', () => {
+    testStories(Stories);
+  });
+
   it('match snapshot', () => {
     const rendered = renderComponent();
     expect(rendered).toMatchSnapshot();

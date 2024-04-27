@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Footer, FooterProps } from '../Footer';
-import { FooterFixture, HeroFixture } from '@/app/fixtures';
+import { FooterFixture } from '@/app/fixtures';
 
 const meta = {
   title: 'components/Footer',
@@ -12,7 +12,12 @@ const meta = {
 type Story = StoryObj<typeof meta>;
 
 const withDefaults = (overrides: Partial<FooterProps> = {}): FooterProps => ({
-  hero: HeroFixture(),
+  buttonStyle: {
+    textColor: 'black',
+    bgColor: 'white',
+    border: null,
+    shadow: '',
+  },
   footer: FooterFixture(),
   ...overrides,
 });

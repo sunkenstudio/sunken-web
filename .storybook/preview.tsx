@@ -1,14 +1,18 @@
 import React from 'react';
 
 import { Preview } from '@storybook/react';
-import { Providers } from '../src/app/providers';
+import { ChakraProvider } from '@chakra-ui/react';
+import { BrandProvider } from '@/app/contexts/BrandContext';
+import theme from '@/app/styles/theme';
 
 const preview: Preview = {
   decorators: [
     (Story) => (
-      <Providers>
-        <Story />
-      </Providers>
+      <ChakraProvider theme={theme}>
+        <BrandProvider>
+          <Story />
+        </BrandProvider>
+      </ChakraProvider>
     ),
   ],
 };
