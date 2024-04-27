@@ -22,7 +22,7 @@ const Home = () => {
   const ref = useRef();
 
   const client = useApolloClient();
-  const { loadContent } = useBrand();
+  const { colors, loadContent } = useBrand();
 
   useEffect(() => {
     async function fetchData(id: string) {
