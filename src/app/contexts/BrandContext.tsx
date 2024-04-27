@@ -3,7 +3,7 @@ import { StrapiBrand } from '../types';
 import { emptyFunction } from '../helpers/utils';
 
 // Define the type for the context value
-type BrandContextType = {
+export type BrandContextType = {
   colors: BrandColors;
   fonts: BrandFonts;
   companyName: string | null;
@@ -38,8 +38,16 @@ interface BrandFonts {
   };
 }
 
-export const BrandProvider = ({ children }: { children: React.ReactNode }) => {
-  const [brand, setBrand] = useState<StrapiBrand>({} as StrapiBrand);
+export const BrandProvider = ({
+  brandOverrides = {} as StrapiBrand,
+  children,
+}: {
+  brandOverrides?: StrapiBrand;
+  children: React.ReactNode;
+}) => {
+  const [brand, setBrand] = useState<StrapiBrand>(
+    brandOverrides as StrapiBrand
+  );
 
   const loadContent = (brandContent: StrapiBrand) => {
     setBrand(brandContent);
