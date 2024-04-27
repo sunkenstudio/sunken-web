@@ -14,10 +14,10 @@ import {
 } from '@chakra-ui/react';
 import React from 'react';
 import { H3, H4 } from '../Typography';
-import { List } from '@phosphor-icons/react';
 import { scrollToElement } from '@/app/helpers/utils';
 import { Color, StrapiContact, StrapiHero, StrapiSection } from '../../types';
 import { useBrand } from '@/app/contexts/BrandContext';
+import { Icon } from '../Shared/Icon';
 
 export interface HeaderProps {
   hero: StrapiHero;
@@ -56,7 +56,7 @@ export const Header = ({ hero, sections, contact }: HeaderProps) => {
           _hover={{ filter: 'brightness(75%)' }}
           {...sharedProps}
         >
-          <List size={32} color={colors.light} />
+          <Icon type={'list'} size={32} color={colors.light} />
         </Button>
       </Flex>
       <Drawer isOpen={isOpen} placement="right" onClose={onClose}>

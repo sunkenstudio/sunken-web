@@ -1,14 +1,10 @@
 import { Button, Flex, HStack, Stack } from '@chakra-ui/react';
 import React from 'react';
-import {
-  FacebookLogo,
-  InstagramLogo,
-  TwitterLogo,
-} from '@phosphor-icons/react';
 import Link from 'next/link';
 import { RichText } from '../Shared/RichText';
-import { Color, StrapiBorder, StrapiFooter, StrapiHero } from '../../types';
+import { StrapiBorder, StrapiFooter } from '../../types';
 import { useBrand } from '@/app/contexts/BrandContext';
+import { Icon, IconTypes } from '../Shared/Icon';
 
 const SocialButtonStyle = (sharedProps: {
   bgColor: string;
@@ -41,18 +37,24 @@ const SocialButtonStyle = (sharedProps: {
 };
 
 export interface FooterProps {
-  hero: StrapiHero;
+  buttonStyle: {
+    textColor: string;
+    bgColor: string;
+    border: StrapiBorder;
+    shadow: string;
+  };
   footer: StrapiFooter;
 }
 
-export const Footer = ({ hero, footer }: FooterProps) => {
+export const Footer = ({ buttonStyle, footer }: FooterProps) => {
   const { colors } = useBrand();
-  const sharedProps = {
-    textColor: colors[hero.buttons[0].color as Color],
-    bgColor: colors[hero.buttons[0].bgColor as Color],
-    border: hero.buttons[0].border,
-    shadow: hero.buttons[0].shadow,
-  };
+  const { instagramUrl, facebookUrl, twitterUrl, text } = footer;
+
+  const socialIcons: { type: IconTypes; href: string }[] = [
+    { type: 'instagram', href: instagramUrl },
+    { type: 'facebook', href: facebookUrl },
+    { type: 'twitter', href: twitterUrl },
+  ];
   return (
     <Flex
       bottom={0}
@@ -71,42 +73,22 @@ export const Footer = ({ hero, footer }: FooterProps) => {
         w="100%"
       >
         <HStack gap={3} justifyContent={'center'} w="100%">
-          {footer.instagramUrl && (
-            <Link href={footer.instagramUrl} target="_blank">
-              <Button
-                as="a"
-                {...SocialButtonStyle(sharedProps)}
-                _hover={{ filter: 'brightness(75%)' }}
-              >
-                <InstagramLogo size={32} color={colors.light} />
-              </Button>
-            </Link>
-          )}
-          {footer.facebookUrl && (
-            <Link href={footer.facebookUrl} target="_blank">
-              <Button
-                as="a"
-                {...SocialButtonStyle(sharedProps)}
-                _hover={{ filter: 'brightness(75%)' }}
-              >
-                <FacebookLogo size={32} color={colors.light} />
-              </Button>
-            </Link>
-          )}
-          {footer.twitterUrl && (
-            <Link href={footer.twitterUrl} target="_blank">
-              <Button
-                as="a"
-                {...SocialButtonStyle(sharedProps)}
-                _hover={{ filter: 'brightness(75%)' }}
-              >
-                <TwitterLogo size={32} color={colors.light} />
-              </Button>
-            </Link>
+          {socialIcons.map((i) =>
+            i.href ? (
+              <Link key={`social-icon-${i.type}`} href={i.href} target="_blank">
+                <Button
+                  as="a"
+                  {...SocialButtonStyle(buttonStyle)}
+                  _hover={{ filter: 'brightness(75%)' }}
+                >
+                  <Icon type={i.type} size={32} color={colors.light} />
+                </Button>
+              </Link>
+            ) : null
           )}
         </HStack>
         <RichText
-          content={footer.text}
+          content={text}
           fontFamily={'Arial'}
           textShadow="1px 1px 1px black"
         />
