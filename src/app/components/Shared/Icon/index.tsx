@@ -14,7 +14,7 @@ export interface IconProps {
 export const iconMap = (props: {
   size: number;
   color: string;
-}): Record<IconTypes, React.ReactNode> => ({
+}): Record<IconTypes, JSX.Element> => ({
   facebook: <FacebookLogo alt="Facebook Logo" {...props} />,
   instagram: <InstagramLogo alt="Instagram Logo" {...props} />,
   twitter: <TwitterLogo alt="Twitter Logo" {...props} />,
