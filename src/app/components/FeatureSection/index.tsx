@@ -2,14 +2,9 @@
 'use client';
 import { Box } from '@chakra-ui/react';
 import React from 'react';
-import { H1 } from '../Typography';
-// import { StrapiHero } from '../../types';
+import { Feature } from './Feature';
 
-// export interface HeroProps {
-//   hero: StrapiHero;
-// }
-
-export const FeatureSection = ({ ...props }) => {
+export const FeatureSection = () => {
   return (
     <Box
       display="flex"
@@ -22,16 +17,7 @@ export const FeatureSection = ({ ...props }) => {
       padding="20px"
     >
       <div>
-        <H1>Box 1</H1>
-      </div>
-      <div>
-        <H1>Box 2</H1>
-      </div>
-      <div>
-        <H1>Box 3</H1>
-      </div>
-      <div>
-        <H1>Box 4</H1>
+        <Feature />
       </div>
     </Box>
   );
