@@ -17,7 +17,7 @@ export const FeatureSection = () => {
       padding="20px"
     >
       <div>
-        <Feature />
+        <Feature type="instagram" />
       </div>
     </Box>
   );
