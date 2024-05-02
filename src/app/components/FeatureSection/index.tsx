@@ -32,7 +32,7 @@ export const FeatureSection = () => {
     <Box
       display="flex"
       alignItems="center"
-      justifyContent="space-between"
+      justifyContent="space-evenly"
       border="2px"
       borderColor="green"
       borderRadius="15px"

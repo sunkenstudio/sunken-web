@@ -13,13 +13,12 @@ export const Feature = ({ type, subHeader, blurb }) => {
       display="flex"
       flexDirection="column"
       alignItems="center"
-      justifyContent="space-between"
       textAlign="center"
+      width="228px"
+      height="264px"
       border="2px"
       borderColor="green"
       borderRadius="15px"
-      margin="10px"
-      padding="20px"
     >
       <Icon type={type} size={64} color={colors.light} />
       <H4>{subHeader}</H4>
