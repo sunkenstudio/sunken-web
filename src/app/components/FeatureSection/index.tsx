@@ -41,6 +41,7 @@ export const FeatureSection = () => {
     >
       {featureData.map((e, i) => {
         // Error message "Missing key prop for element in iterator." Have tried to add the key prop multiple times and the linter is still mad.
+        // Error message "i is defined but never used."
         // Forcing this commit for now, this is something for Sunday.
         return (
           <Feature
