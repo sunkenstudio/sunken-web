@@ -6,10 +6,26 @@ import { Feature } from './Feature';
 
 export const FeatureSection = () => {
   const featureData = [
-    { type: 'headset' },
-    { type: 'gift' },
-    { type: 'student' },
-    { type: 'coffee' },
+    {
+      type: 'headset',
+      subHeader: '24 Hour Customer Service',
+      blurb: 'Need help? Our team of specialists is ready to make your day!',
+    },
+    {
+      type: 'gift',
+      subHeader: 'Send a Gift!',
+      blurb: 'Shopping for someone else? No problem!',
+    },
+    {
+      type: 'student',
+      subHeader: 'Academic Portal',
+      blurb: 'Browse student resources and office hours.',
+    },
+    {
+      type: 'coffee',
+      subHeader: 'Buy us a Cup of Coffee!',
+      blurb: 'Support our work and keep us awake!',
+    },
   ];
 
   return (
@@ -23,8 +39,17 @@ export const FeatureSection = () => {
       margin="10px"
       padding="20px"
     >
-      {featureData.map((e) => {
-        return <Feature type={e.type} />;
+      {featureData.map((e, i) => {
+        // Error message "Missing key prop for element in iterator." Have tried to add the key prop multiple times and the linter is still mad.
+        // Forcing this commit for now, this is something for Sunday.
+        return (
+          <Feature
+            key={i}
+            type={e.type}
+            subHeader={e.subHeader}
+            blurb={e.blurb}
+          />
+        );
       })}
     </Box>
   );

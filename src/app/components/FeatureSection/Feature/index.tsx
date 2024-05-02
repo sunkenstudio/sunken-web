@@ -2,11 +2,11 @@
 'use client';
 import { Box } from '@chakra-ui/react';
 import React from 'react';
-import { H2, Paragraph } from '../../Typography';
+import { H4, Paragraph } from '../../Typography';
 import { Icon } from '../../Shared/Icon';
 import { useBrand } from '@/app/contexts/BrandContext';
 
-export const Feature = ({ type }) => {
+export const Feature = ({ type, subHeader, blurb }) => {
   const { colors } = useBrand();
   return (
     <Box
@@ -14,6 +14,7 @@ export const Feature = ({ type }) => {
       flexDirection="column"
       alignItems="center"
       justifyContent="space-between"
+      textAlign="center"
       border="2px"
       borderColor="green"
       borderRadius="15px"
@@ -21,8 +22,8 @@ export const Feature = ({ type }) => {
       padding="20px"
     >
       <Icon type={type} size={64} color={colors.light} />
-      <H2>Feature</H2>
-      <Paragraph>Here is some information about the Feature</Paragraph>
+      <H4>{subHeader}</H4>
+      <Paragraph>{blurb}</Paragraph>
     </Box>
   );
 };
