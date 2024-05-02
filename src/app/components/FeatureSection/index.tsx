@@ -5,6 +5,13 @@ import React from 'react';
 import { Feature } from './Feature';
 
 export const FeatureSection = () => {
+  const featureData = [
+    { type: 'headset' },
+    { type: 'gift' },
+    { type: 'student' },
+    { type: 'coffee' },
+  ];
+
   return (
     <Box
       display="flex"
@@ -16,9 +23,9 @@ export const FeatureSection = () => {
       margin="10px"
       padding="20px"
     >
-      <div>
-        <Feature type="instagram" />
-      </div>
+      {featureData.map((e) => {
+        return <Feature type={e.type} />;
+      })}
     </Box>
   );
 };

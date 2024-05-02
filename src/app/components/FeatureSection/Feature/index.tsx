@@ -20,7 +20,7 @@ export const Feature = ({ type }) => {
       margin="10px"
       padding="20px"
     >
-      <Icon type={type} size={32} color={colors.light} />
+      <Icon type={type} size={64} color={colors.light} />
       <H2>Feature</H2>
       <Paragraph>Here is some information about the Feature</Paragraph>
     </Box>
