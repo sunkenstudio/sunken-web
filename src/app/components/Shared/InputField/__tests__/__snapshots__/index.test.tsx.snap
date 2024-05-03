@@ -26,6 +26,7 @@ exports[`InputField All stories should render successfully Renders Primary story
       <input
         aria-required="true"
         class="chakra-input css-3bdgjy"
+        data-testid="input-name"
         id="name"
         name="NAME"
         required=""
@@ -94,34 +95,37 @@ exports[`InputField match snapshot 1`] = `
     class="chakra-ui-light"
   >
     <div>
-      <div
-        class="chakra-form-control css-1kxonj9"
-        role="group"
-      >
-        <label
-          class="chakra-form__label css-g6pte"
-          for="test-id"
-          id="field-:r1:-label"
+      <form>
+        <div
+          class="chakra-form-control css-1kxonj9"
+          role="group"
         >
-          TEST FIELD
-          <span
-            aria-hidden="true"
-            class="chakra-form__required-indicator css-1tfjd1n"
-            role="presentation"
+          <label
+            class="chakra-form__label css-g6pte"
+            for="test-id"
+            id="field-:r1:-label"
           >
-            *
-          </span>
-        </label>
-        <input
-          aria-required="true"
-          class="chakra-input css-15izoeg"
-          id="test-id"
-          name="TEST FIELD"
-          required=""
-          type="text"
-          value=""
-        />
-      </div>
+            TEST FIELD
+            <span
+              aria-hidden="true"
+              class="chakra-form__required-indicator css-1tfjd1n"
+              role="presentation"
+            >
+              *
+            </span>
+          </label>
+          <input
+            aria-required="true"
+            class="chakra-input css-15izoeg"
+            data-testid="input-test-id"
+            id="test-id"
+            name="TEST FIELD"
+            required=""
+            type="text"
+            value=""
+          />
+        </div>
+      </form>
       <span
         hidden=""
         id="__chakra_env"
@@ -175,34 +179,37 @@ exports[`InputField match snapshot 1`] = `
     </div>
   </body>,
   "container": <div>
-    <div
-      class="chakra-form-control css-1kxonj9"
-      role="group"
-    >
-      <label
-        class="chakra-form__label css-g6pte"
-        for="test-id"
-        id="field-:r1:-label"
+    <form>
+      <div
+        class="chakra-form-control css-1kxonj9"
+        role="group"
       >
-        TEST FIELD
-        <span
-          aria-hidden="true"
-          class="chakra-form__required-indicator css-1tfjd1n"
-          role="presentation"
+        <label
+          class="chakra-form__label css-g6pte"
+          for="test-id"
+          id="field-:r1:-label"
         >
-          *
-        </span>
-      </label>
-      <input
-        aria-required="true"
-        class="chakra-input css-15izoeg"
-        id="test-id"
-        name="TEST FIELD"
-        required=""
-        type="text"
-        value=""
-      />
-    </div>
+          TEST FIELD
+          <span
+            aria-hidden="true"
+            class="chakra-form__required-indicator css-1tfjd1n"
+            role="presentation"
+          >
+            *
+          </span>
+        </label>
+        <input
+          aria-required="true"
+          class="chakra-input css-15izoeg"
+          data-testid="input-test-id"
+          id="test-id"
+          name="TEST FIELD"
+          required=""
+          type="text"
+          value=""
+        />
+      </div>
+    </form>
     <span
       hidden=""
       id="__chakra_env"

@@ -30,6 +30,7 @@ export const InputField = ({ id, field, value, onChange }: InputFieldProps) => {
         <FormLabel htmlFor={id}>{display}</FormLabel>
         <Input
           id={id}
+          data-testid={`input-${id}`}
           name={display}
           type={type}
           onChange={onChange}
@@ -47,6 +48,7 @@ export const InputField = ({ id, field, value, onChange }: InputFieldProps) => {
           <FormLabel htmlFor={id}>{display}</FormLabel>
           <Select
             id={id}
+            data-testid={`input-${id}`}
             name={display}
             onChange={onChange}
             value={value}
@@ -64,6 +66,7 @@ export const InputField = ({ id, field, value, onChange }: InputFieldProps) => {
           <FormControl isRequired>
             <Input
               id={`${id}-other`}
+              data-testid={`input-${id}`}
               name={`${display}-other`}
               type={'text'}
               onChange={onChange}
@@ -82,6 +85,7 @@ export const InputField = ({ id, field, value, onChange }: InputFieldProps) => {
         <FormLabel htmlFor={id}>{display}</FormLabel>
         <Textarea
           id={id}
+          data-testid={`input-${id}`}
           name={display}
           variant="filled"
           onChange={onChange}
