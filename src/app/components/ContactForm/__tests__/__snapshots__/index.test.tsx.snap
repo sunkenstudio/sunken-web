@@ -61,6 +61,7 @@ exports[`ContactForm All stories should render successfully Renders Primary stor
               <input
                 aria-required="true"
                 class="chakra-input css-3bdgjy"
+                data-testid="input-name"
                 id="name"
                 name="NAME"
                 required=""
@@ -89,6 +90,7 @@ exports[`ContactForm All stories should render successfully Renders Primary stor
               <input
                 aria-required="true"
                 class="chakra-input css-3bdgjy"
+                data-testid="input-start_time"
                 id="start_time"
                 name="STARTTIME"
                 required=""
@@ -117,6 +119,7 @@ exports[`ContactForm All stories should render successfully Renders Primary stor
               <input
                 aria-required="true"
                 class="chakra-input css-3bdgjy"
+                data-testid="input-date"
                 id="date"
                 name="DATE"
                 required=""
@@ -151,6 +154,7 @@ exports[`ContactForm All stories should render successfully Renders Primary stor
                   <select
                     aria-required="true"
                     class="chakra-select css-16z42hf"
+                    data-testid="input-dropdown"
                     id="dropdown"
                     name="DROPDOWN"
                     required=""
@@ -207,6 +211,7 @@ exports[`ContactForm All stories should render successfully Renders Primary stor
               <textarea
                 aria-required="true"
                 class="chakra-textarea css-1xjenok"
+                data-testid="input-message"
                 id="message"
                 name="MESSAGE"
                 required=""
@@ -339,6 +344,7 @@ exports[`ContactForm match snapshot 1`] = `
                 <input
                   aria-required="true"
                   class="chakra-input css-cxmp86"
+                  data-testid="input-name"
                   id="name"
                   name="NAME"
                   required=""
@@ -367,6 +373,7 @@ exports[`ContactForm match snapshot 1`] = `
                 <input
                   aria-required="true"
                   class="chakra-input css-cxmp86"
+                  data-testid="input-start_time"
                   id="start_time"
                   name="STARTTIME"
                   required=""
@@ -395,6 +402,7 @@ exports[`ContactForm match snapshot 1`] = `
                 <input
                   aria-required="true"
                   class="chakra-input css-cxmp86"
+                  data-testid="input-date"
                   id="date"
                   name="DATE"
                   required=""
@@ -429,6 +437,7 @@ exports[`ContactForm match snapshot 1`] = `
                     <select
                       aria-required="true"
                       class="chakra-select css-1x2j97e"
+                      data-testid="input-dropdown"
                       id="dropdown"
                       name="DROPDOWN"
                       required=""
@@ -485,6 +494,7 @@ exports[`ContactForm match snapshot 1`] = `
                 <textarea
                   aria-required="true"
                   class="chakra-textarea css-0"
+                  data-testid="input-message"
                   id="message"
                   name="MESSAGE"
                   required=""
@@ -559,6 +569,7 @@ exports[`ContactForm match snapshot 1`] = `
               <input
                 aria-required="true"
                 class="chakra-input css-cxmp86"
+                data-testid="input-name"
                 id="name"
                 name="NAME"
                 required=""
@@ -587,6 +598,7 @@ exports[`ContactForm match snapshot 1`] = `
               <input
                 aria-required="true"
                 class="chakra-input css-cxmp86"
+                data-testid="input-start_time"
                 id="start_time"
                 name="STARTTIME"
                 required=""
@@ -615,6 +627,7 @@ exports[`ContactForm match snapshot 1`] = `
               <input
                 aria-required="true"
                 class="chakra-input css-cxmp86"
+                data-testid="input-date"
                 id="date"
                 name="DATE"
                 required=""
@@ -649,6 +662,7 @@ exports[`ContactForm match snapshot 1`] = `
                   <select
                     aria-required="true"
                     class="chakra-select css-1x2j97e"
+                    data-testid="input-dropdown"
                     id="dropdown"
                     name="DROPDOWN"
                     required=""
@@ -705,6 +719,7 @@ exports[`ContactForm match snapshot 1`] = `
               <textarea
                 aria-required="true"
                 class="chakra-textarea css-0"
+                data-testid="input-message"
                 id="message"
                 name="MESSAGE"
                 required=""
