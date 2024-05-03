@@ -8,6 +8,22 @@ import {
   StrapiInputField,
   StrapiSection,
 } from '@/app/types';
+import { type BlocksContent } from '@strapi/blocks-react-renderer';
+
+export const RichTextFixture = (
+  overrides: { text?: string } = {}
+): BlocksContent => [
+  {
+    type: 'paragraph',
+    children: [
+      {
+        type: 'text',
+        text: 'Corridor Cocktails provides a portable mini bar, craft cocktails, skilled bartenders and anything you need to make your event amazing! ',
+        ...overrides,
+      },
+    ],
+  },
+];
 
 export const HeroFixture = (
   overrides: Partial<StrapiHero> = {}

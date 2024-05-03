@@ -1,3 +1,5 @@
+import { type BlocksContent } from '@strapi/blocks-react-renderer';
+
 export interface StrapiContact {
   typename: string;
   fields: StrapiInputField[];
@@ -73,26 +75,12 @@ export interface StrapiStyledButton {
   shadow: string;
 }
 
-export interface RichTextParagraph {
-  type: string;
-  children: RichTextSegment[];
-}
-
-type RichTextSegment = {
-  type: 'text' | 'link';
-  text?: string;
-  url?: string;
-  bold?: boolean;
-  italic?: boolean;
-  children?: RichTextSegment[];
-};
-
 export interface StrapiSection {
   typename: string;
   header: string;
   variant: 'left' | 'right';
   sortOrder: number;
-  text: RichTextParagraph[];
+  text: BlocksContent;
   image: StrapiStyledImage;
   caption: string | null;
   bgImage: StrapiStyledImage;
@@ -116,7 +104,7 @@ export interface StrapiBrand {
 
 export interface StrapiFooter {
   typename: string;
-  text: RichTextParagraph[];
+  text: BlocksContent;
   facebookUrl: string;
   instagramUrl: string;
   twitterUrl: string;
@@ -128,7 +116,7 @@ export interface StrapiHero {
   variant: 'leftAligned' | 'centerAligned';
   subheader: string;
   buttons: StrapiStyledButton[];
-  text: RichTextParagraph[];
+  text: BlocksContent;
   image: StrapiStyledImage;
   bgImageOpacity: number;
   bgFilterOpacity: number;
