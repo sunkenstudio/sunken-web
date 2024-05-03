@@ -60,9 +60,11 @@ export const Hero = ({ hero }: HeroProps) => {
         </Stack>
       </Box>
       <Hide below="md">
-        <Box>
-          <Image boxSize={'md'} {...image} objectFit={'cover'} />
-        </Box>
+        {image && (
+          <Box>
+            <Image boxSize={'md'} {...image} objectFit={'cover'} />
+          </Box>
+        )}
       </Hide>
     </>
   );

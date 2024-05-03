@@ -28,7 +28,7 @@ export interface HeaderProps {
 export const Header = ({ hero, sections, contact }: HeaderProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colors, fonts, companyName } = useBrand();
-
+  console.log({ contact });
   const sharedProps = {
     color: colors[hero.buttons[0].color as Color],
     bgColor: colors[hero.buttons[0].bgColor as Color],

@@ -139,7 +139,9 @@ const Home = () => {
             {sections.map((i) => (
               <Section key={`section-${i.sortOrder}`} section={i} />
             ))}
-            <ContactForm hero={hero} sections={sections} contact={contact} />
+            {contact.fields && (
+              <ContactForm hero={hero} sections={sections} contact={contact} />
+            )}
           </Stack>
         </Box>
         <Footer buttonStyle={primaryButtonStyle} footer={footer} />
