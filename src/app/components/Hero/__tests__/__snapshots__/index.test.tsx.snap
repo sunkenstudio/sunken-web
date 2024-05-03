@@ -1,0 +1,431 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Hero All stories should render successfully Renders Primary story 1`] = `
+<body
+  class="chakra-ui-light"
+>
+  <div>
+    <div
+      class="css-9j274v"
+      id="hero"
+    >
+      <div
+        class="css-159r5o7"
+      >
+        <div
+          class="css-ojqyia"
+        >
+          <img
+            alt="Bg Image - Table with cocktails and cards"
+            class="chakra-image css-o0922y"
+            src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/e1b053e4603d44705ac074325111d66b.jpg"
+            typename="ComponentCommonImage"
+          />
+          <div
+            class="css-yd0ujm"
+          />
+        </div>
+      </div>
+      <div
+        class="css-1go9adf"
+      >
+        <div
+          class="css-ugneas"
+        >
+          <div
+            class="chakra-stack css-11nrrcx"
+          >
+            <h1
+              class="chakra-heading css-1xrotbt"
+            >
+              Corridor Cocktails
+            </h1>
+            <h3
+              class="chakra-heading css-1yk5nes"
+            >
+              A one-of-a-kind mobile cocktail bar experience
+            </h3>
+            <p
+              class="chakra-text css-9xjet3"
+            >
+              <span>
+                Corridor Cocktails provides a portable mini bar, craft cocktails, skilled bartenders and anything you need to make your event amazing! 
+              </span>
+            </p>
+            <div
+              class="chakra-stack css-1dpia4i"
+            >
+              <a
+                href="#contact"
+                style="width: 100%;"
+              >
+                <button
+                  class="chakra-button css-ra552a"
+                  id="ComponentCommonButton"
+                  type="button"
+                >
+                  BOOK AN EVENT
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="css-0"
+        >
+          <div
+            class="css-ojqyia"
+          >
+            <img
+              alt="Company Logo - Cocktail glass with two cherries"
+              class="chakra-image css-1j2zslm"
+              src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/597ee6441f99aff5999e28ce065b563b.jpeg"
+              typename="ComponentCommonImage"
+            />
+            <div
+              class="css-esqsjk"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <span
+      hidden=""
+      id="__chakra_env"
+    />
+  </div>
+  <div
+    class="chakra-portal"
+  >
+    <div
+      aria-label="Notifications-top"
+      aria-live="polite"
+      id="chakra-toast-manager-top"
+      role="region"
+      style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column; margin: 0px auto;"
+    />
+    <div
+      aria-label="Notifications-top-left"
+      aria-live="polite"
+      id="chakra-toast-manager-top-left"
+      role="region"
+      style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column;"
+    />
+    <div
+      aria-label="Notifications-top-right"
+      aria-live="polite"
+      id="chakra-toast-manager-top-right"
+      role="region"
+      style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column;"
+    />
+    <div
+      aria-label="Notifications-bottom-left"
+      aria-live="polite"
+      id="chakra-toast-manager-bottom-left"
+      role="region"
+      style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column;"
+    />
+    <div
+      aria-label="Notifications-bottom"
+      aria-live="polite"
+      id="chakra-toast-manager-bottom"
+      role="region"
+      style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column; margin: 0px auto;"
+    />
+    <div
+      aria-label="Notifications-bottom-right"
+      aria-live="polite"
+      id="chakra-toast-manager-bottom-right"
+      role="region"
+      style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column;"
+    />
+  </div>
+</body>
+`;
+
+exports[`Hero match snapshot 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body
+    class="chakra-ui-light"
+  >
+    <div>
+      <div
+        class="css-ser5f9"
+        id="hero"
+      >
+        <div
+          class="css-159r5o7"
+        >
+          <div
+            class="css-ojqyia"
+          >
+            <img
+              alt="Bg Image - Table with cocktails and cards"
+              class="chakra-image css-o0922y"
+              src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/e1b053e4603d44705ac074325111d66b.jpg"
+              typename="ComponentCommonImage"
+            />
+            <div
+              class="css-1xv2dbl"
+            />
+          </div>
+        </div>
+        <div
+          class="css-1go9adf"
+        >
+          <div
+            class="css-ugneas"
+          >
+            <div
+              class="chakra-stack css-11nrrcx"
+            >
+              <h1
+                class="chakra-heading css-1c08szr"
+              >
+                Corridor Cocktails
+              </h1>
+              <h3
+                class="chakra-heading css-kmhnlu"
+              >
+                A one-of-a-kind mobile cocktail bar experience
+              </h3>
+              <p
+                class="chakra-text css-9xjet3"
+              >
+                <span>
+                  Corridor Cocktails provides a portable mini bar, craft cocktails, skilled bartenders and anything you need to make your event amazing! 
+                </span>
+              </p>
+              <div
+                class="chakra-stack css-1dpia4i"
+              >
+                <a
+                  href="#contact"
+                  style="width: 100%;"
+                >
+                  <button
+                    class="chakra-button css-d6wxm1"
+                    id="ComponentCommonButton"
+                    type="button"
+                  >
+                    BOOK AN EVENT
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="css-0"
+          >
+            <div
+              class="css-ojqyia"
+            >
+              <img
+                alt="Company Logo - Cocktail glass with two cherries"
+                class="chakra-image css-hjb6tv"
+                src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/597ee6441f99aff5999e28ce065b563b.jpeg"
+                typename="ComponentCommonImage"
+              />
+              <div
+                class="css-4yd85u"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <span
+        hidden=""
+        id="__chakra_env"
+      />
+    </div>
+    <div
+      class="chakra-portal"
+    >
+      <div
+        aria-label="Notifications-top"
+        aria-live="polite"
+        id="chakra-toast-manager-top"
+        role="region"
+        style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column; margin: 0px auto;"
+      />
+      <div
+        aria-label="Notifications-top-left"
+        aria-live="polite"
+        id="chakra-toast-manager-top-left"
+        role="region"
+        style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column;"
+      />
+      <div
+        aria-label="Notifications-top-right"
+        aria-live="polite"
+        id="chakra-toast-manager-top-right"
+        role="region"
+        style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column;"
+      />
+      <div
+        aria-label="Notifications-bottom-left"
+        aria-live="polite"
+        id="chakra-toast-manager-bottom-left"
+        role="region"
+        style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column;"
+      />
+      <div
+        aria-label="Notifications-bottom"
+        aria-live="polite"
+        id="chakra-toast-manager-bottom"
+        role="region"
+        style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column; margin: 0px auto;"
+      />
+      <div
+        aria-label="Notifications-bottom-right"
+        aria-live="polite"
+        id="chakra-toast-manager-bottom-right"
+        role="region"
+        style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column;"
+      />
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="css-ser5f9"
+      id="hero"
+    >
+      <div
+        class="css-159r5o7"
+      >
+        <div
+          class="css-ojqyia"
+        >
+          <img
+            alt="Bg Image - Table with cocktails and cards"
+            class="chakra-image css-o0922y"
+            src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/e1b053e4603d44705ac074325111d66b.jpg"
+            typename="ComponentCommonImage"
+          />
+          <div
+            class="css-1xv2dbl"
+          />
+        </div>
+      </div>
+      <div
+        class="css-1go9adf"
+      >
+        <div
+          class="css-ugneas"
+        >
+          <div
+            class="chakra-stack css-11nrrcx"
+          >
+            <h1
+              class="chakra-heading css-1c08szr"
+            >
+              Corridor Cocktails
+            </h1>
+            <h3
+              class="chakra-heading css-kmhnlu"
+            >
+              A one-of-a-kind mobile cocktail bar experience
+            </h3>
+            <p
+              class="chakra-text css-9xjet3"
+            >
+              <span>
+                Corridor Cocktails provides a portable mini bar, craft cocktails, skilled bartenders and anything you need to make your event amazing! 
+              </span>
+            </p>
+            <div
+              class="chakra-stack css-1dpia4i"
+            >
+              <a
+                href="#contact"
+                style="width: 100%;"
+              >
+                <button
+                  class="chakra-button css-d6wxm1"
+                  id="ComponentCommonButton"
+                  type="button"
+                >
+                  BOOK AN EVENT
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="css-0"
+        >
+          <div
+            class="css-ojqyia"
+          >
+            <img
+              alt="Company Logo - Cocktail glass with two cherries"
+              class="chakra-image css-hjb6tv"
+              src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/597ee6441f99aff5999e28ce065b563b.jpeg"
+              typename="ComponentCommonImage"
+            />
+            <div
+              class="css-4yd85u"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <span
+      hidden=""
+      id="__chakra_env"
+    />
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

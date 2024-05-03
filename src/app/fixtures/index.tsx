@@ -7,7 +7,62 @@ import {
   StrapiHero,
   StrapiInputField,
   StrapiSection,
+  StrapiStyledButton,
+  StrapiStyledImage,
 } from '@/app/types';
+import { type BlocksContent } from '@strapi/blocks-react-renderer';
+
+export const ButtonFixture = (
+  overrides: Partial<StrapiStyledButton> = {}
+): StrapiStyledButton => ({
+  typename: 'ComponentCommonButton',
+  type: 'link',
+  text: 'BOOK AN EVENT',
+  href: '#contact',
+  icon: null,
+  color: '#ffffff',
+  bgColor: '#9D121A',
+  border: {
+    color: 'light',
+    width: null,
+    radius: '2rem',
+  },
+  shadow: '',
+  ...overrides,
+});
+
+export const RichTextFixture = (
+  overrides: { text?: string } = {}
+): BlocksContent => [
+  {
+    type: 'paragraph',
+    children: [
+      {
+        type: 'text',
+        text: 'Corridor Cocktails provides a portable mini bar, craft cocktails, skilled bartenders and anything you need to make your event amazing! ',
+        ...overrides,
+      },
+    ],
+  },
+];
+
+export const ImageFixture = (
+  overrides: Partial<StrapiStyledImage> = {}
+): StrapiStyledImage => ({
+  typename: 'ComponentCommonImage',
+  media: {
+    typename: 'UploadFile',
+    url: 'https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/b181fb8a2e37c5523f5f625b11628738.avif',
+  },
+  alt: 'Craft cocktail with lemon twist',
+  border: {
+    width: '.25rem',
+    color: 'secondary',
+    radius: '99rem',
+  },
+  filter: null,
+  ...overrides,
+});
 
 export const HeroFixture = (
   overrides: Partial<StrapiHero> = {}

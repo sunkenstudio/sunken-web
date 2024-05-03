@@ -6,36 +6,6 @@ import { StrapiBorder, StrapiFooter } from '../../types';
 import { useBrand } from '@/app/contexts/BrandContext';
 import { Icon, IconTypes } from '../Shared/Icon';
 
-const SocialButtonStyle = (sharedProps: {
-  bgColor: string;
-  border: StrapiBorder;
-  shadow: string;
-}) => {
-  const baseStyle = {
-    boxSize: '48px',
-    p: 2,
-    justifyContent: 'center',
-    alignItems: 'center',
-    bgColor: '',
-    borderRadius: '',
-    border: '',
-    shadow: '',
-  };
-  if (sharedProps.bgColor) {
-    baseStyle.bgColor = sharedProps.bgColor;
-  }
-  if (sharedProps.border?.radius) {
-    baseStyle.borderRadius = sharedProps.border?.radius;
-  }
-  if (sharedProps.border?.width && sharedProps.border.color) {
-    baseStyle.border = `${sharedProps.border.width} solid ${sharedProps.border.color}`;
-  }
-  if (sharedProps.shadow) {
-    baseStyle.shadow = sharedProps.shadow;
-  }
-  return baseStyle;
-};
-
 export interface FooterProps {
   buttonStyle: {
     textColor: string;
@@ -78,7 +48,18 @@ export const Footer = ({ buttonStyle, footer }: FooterProps) => {
               <Link key={`social-icon-${i.type}`} href={i.href} target="_blank">
                 <Button
                   as="a"
-                  {...SocialButtonStyle(buttonStyle)}
+                  boxSize={'48px'}
+                  p={2}
+                  justifyContent={'center'}
+                  alignItems={'center'}
+                  bgColor={buttonStyle.bgColor}
+                  borderRadius={buttonStyle?.border?.radius || ''}
+                  border={
+                    buttonStyle.border?.width && buttonStyle.border.color
+                      ? `${buttonStyle.border.width} solid ${colors[buttonStyle.border.color]}`
+                      : ''
+                  }
+                  shadow={buttonStyle?.shadow || ''}
                   _hover={{ filter: 'brightness(75%)' }}
                 >
                   <Icon type={i.type} size={32} color={colors.light} />
