@@ -117,7 +117,7 @@ export interface StrapiHero {
   subheader: string;
   buttons: StrapiStyledButton[];
   text: BlocksContent;
-  image: StrapiStyledImage;
+  image: StrapiStyledImage | null;
   bgImageOpacity: number;
   bgFilterOpacity: number;
   bgImage: StrapiStyledImage;

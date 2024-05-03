@@ -7,6 +7,7 @@ import {
   StrapiHero,
   StrapiInputField,
   StrapiSection,
+  StrapiStyledImage,
 } from '@/app/types';
 import { type BlocksContent } from '@strapi/blocks-react-renderer';
 
@@ -24,6 +25,24 @@ export const RichTextFixture = (
     ],
   },
 ];
+
+export const ImageFixture = (
+  overrides: Partial<StrapiStyledImage> = {}
+): StrapiStyledImage => ({
+  typename: 'ComponentCommonImage',
+  media: {
+    typename: 'UploadFile',
+    url: 'https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/b181fb8a2e37c5523f5f625b11628738.avif',
+  },
+  alt: 'Craft cocktail with lemon twist',
+  border: {
+    width: '.25rem',
+    color: 'secondary',
+    radius: '99rem',
+  },
+  filter: null,
+  ...overrides,
+});
 
 export const HeroFixture = (
   overrides: Partial<StrapiHero> = {}
