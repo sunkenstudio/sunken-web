@@ -223,7 +223,7 @@ export const SectionFixture = (
     },
     filter: null,
   },
-  caption: null,
+  caption: 'caption goes here',
   bgImage: {
     typename: 'ComponentCommonImage',
     media: {
