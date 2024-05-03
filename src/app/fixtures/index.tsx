@@ -7,9 +7,29 @@ import {
   StrapiHero,
   StrapiInputField,
   StrapiSection,
+  StrapiStyledButton,
   StrapiStyledImage,
 } from '@/app/types';
 import { type BlocksContent } from '@strapi/blocks-react-renderer';
+
+export const ButtonFixture = (
+  overrides: Partial<StrapiStyledButton> = {}
+): StrapiStyledButton => ({
+  typename: 'ComponentCommonButton',
+  type: 'link',
+  text: 'BOOK AN EVENT',
+  href: '#contact',
+  icon: null,
+  color: '#ffffff',
+  bgColor: '#9D121A',
+  border: {
+    color: 'light',
+    width: null,
+    radius: '2rem',
+  },
+  shadow: '',
+  ...overrides,
+});
 
 export const RichTextFixture = (
   overrides: { text?: string } = {}

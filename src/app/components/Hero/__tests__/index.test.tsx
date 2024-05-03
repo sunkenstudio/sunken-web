@@ -7,6 +7,7 @@ import { testStories } from '@/app/helpers/testStorybook';
 import * as Stories from '../index.stories';
 import {
   BrandFixture,
+  ButtonFixture,
   HeroFixture,
   ImageFixture,
   RichTextFixture,
@@ -43,66 +44,191 @@ describe('Hero', () => {
     expect(rendered).toMatchSnapshot();
   });
 
-  it('if given header, should render header', async () => {
-    const header = 'Test Header';
-    const rendered = renderComponent({ hero: HeroFixture({ header }) });
-    expect(rendered.getByText(header)).toBeDefined();
-  });
-
-  it('if NOT given header, should NOT render header', async () => {
-    const header = '';
-    const rendered = renderComponent({ hero: HeroFixture({ header }) });
-    expect(rendered.queryByText(HeroFixture().header)).toBeNull();
-  });
-
-  it('if given subheader, should render subheader', async () => {
-    const subheader = 'Test subheader';
-    const rendered = renderComponent({ hero: HeroFixture({ subheader }) });
-    expect(rendered.getByText(subheader)).toBeDefined();
-  });
-
-  it('if NOT given subheader, should NOT render subheader', async () => {
-    const subheader = '';
-    const rendered = renderComponent({ hero: HeroFixture({ subheader }) });
-    expect(rendered.queryByText(HeroFixture().subheader)).toBeNull();
-  });
-
-  it('if given text, should render text', async () => {
-    const text = 'Test text';
-    const rendered = renderComponent({
-      hero: HeroFixture({ text: RichTextFixture({ text }) }),
+  describe('leftAligned variant', () => {
+    it('if given header, should render header', async () => {
+      const header = 'Test Header';
+      const rendered = renderComponent({
+        hero: HeroFixture({ variant: 'leftAligned', header }),
+      });
+      expect(rendered.getByText(header)).toBeDefined();
     });
-    expect(rendered.getByText(text)).toBeDefined();
+
+    it('if NOT given header, should NOT render header', async () => {
+      const header = '';
+      const rendered = renderComponent({
+        hero: HeroFixture({ variant: 'leftAligned', header }),
+      });
+      expect(rendered.queryByText(HeroFixture().header)).toBeNull();
+    });
+
+    it('if given subheader, should render subheader', async () => {
+      const subheader = 'Test subheader';
+      const rendered = renderComponent({
+        hero: HeroFixture({ variant: 'leftAligned', subheader }),
+      });
+      expect(rendered.getByText(subheader)).toBeDefined();
+    });
+
+    it('if NOT given subheader, should NOT render subheader', async () => {
+      const subheader = '';
+      const rendered = renderComponent({
+        hero: HeroFixture({ variant: 'leftAligned', subheader }),
+      });
+      expect(rendered.queryByText(HeroFixture().subheader)).toBeNull();
+    });
+
+    it('if given text, should render text', async () => {
+      const text = 'Test text';
+      const rendered = renderComponent({
+        hero: HeroFixture({
+          variant: 'leftAligned',
+          text: RichTextFixture({ text }),
+        }),
+      });
+      expect(rendered.getByText(text)).toBeDefined();
+    });
+
+    it('if NOT given text, should NOT render text', async () => {
+      const rendered = renderComponent({
+        hero: HeroFixture({ variant: 'leftAligned', text: [] }),
+      });
+      const defaultText = RichTextFixture()[0].children[0] as {
+        type: 'text';
+        text: string;
+      };
+      expect(rendered.queryByText(defaultText?.text)).toBeNull();
+    });
+
+    it('if given image, should render image', () => {
+      const imageAlt = 'Test Image';
+      const image = ImageFixture({ alt: imageAlt });
+      const rendered = renderComponent({
+        hero: HeroFixture({ variant: 'leftAligned', image }),
+      });
+      const expected = rendered.getByAltText(imageAlt);
+      expect(expected).toBeDefined();
+    });
+
+    it('if NOT given image, should NOT render image', () => {
+      const imageAlt = '';
+      const image = ImageFixture({ alt: imageAlt });
+      const rendered = renderComponent({
+        hero: HeroFixture({ variant: 'leftAligned', image }),
+      });
+      const expected = rendered.queryByAltText(ImageFixture().alt);
+      expect(expected).toBeNull();
+    });
+
+    it('if given button, should render button', () => {
+      const text = 'Test button text';
+      const rendered = renderComponent({
+        hero: HeroFixture({
+          variant: 'leftAligned',
+          buttons: [ButtonFixture({ text })],
+        }),
+      });
+      expect(rendered.getByText(text)).toBeDefined();
+    });
+
+    it('if NOT given button, should NOT render button', () => {
+      const rendered = renderComponent({
+        hero: HeroFixture({ variant: 'leftAligned', buttons: [] }),
+      });
+      expect(rendered.queryByText(HeroFixture().buttons[0].text)).toBeNull();
+    });
   });
 
-  it('if NOT given text, should NOT render text', async () => {
-    const rendered = renderComponent({
-      hero: HeroFixture({ text: [] }),
+  describe('centerAligned variant', () => {
+    it('if given header, should render header', async () => {
+      const header = 'Test Header';
+      const rendered = renderComponent({
+        hero: HeroFixture({ variant: 'centerAligned', header }),
+      });
+      expect(rendered.getByText(header)).toBeDefined();
     });
-    const defaultText = RichTextFixture()[0].children[0] as {
-      type: 'text';
-      text: string;
-    };
-    expect(rendered.queryByText(defaultText?.text)).toBeNull();
-  });
 
-  it('if given image, should render image', () => {
-    const imageAlt = 'Test Image';
-    const image = ImageFixture({ alt: imageAlt });
-    const rendered = renderComponent({
-      hero: HeroFixture({ image }),
+    it('if NOT given header, should NOT render header', async () => {
+      const header = '';
+      const rendered = renderComponent({
+        hero: HeroFixture({ variant: 'centerAligned', header }),
+      });
+      expect(rendered.queryByText(HeroFixture().header)).toBeNull();
     });
-    const expected = rendered.getByAltText(imageAlt);
-    expect(expected).toBeDefined();
-  });
 
-  it('if NOT given image, should NOT render image', () => {
-    const imageAlt = '';
-    const image = ImageFixture({ alt: imageAlt });
-    const rendered = renderComponent({
-      hero: HeroFixture({ image }),
+    it('if given subheader, should render subheader', async () => {
+      const subheader = 'Test subheader';
+      const rendered = renderComponent({
+        hero: HeroFixture({ variant: 'centerAligned', subheader }),
+      });
+      expect(rendered.getByText(subheader)).toBeDefined();
     });
-    const expected = rendered.queryByAltText(ImageFixture().alt);
-    expect(expected).toBeNull();
+
+    it('if NOT given subheader, should NOT render subheader', async () => {
+      const subheader = '';
+      const rendered = renderComponent({
+        hero: HeroFixture({ variant: 'centerAligned', subheader }),
+      });
+      expect(rendered.queryByText(HeroFixture().subheader)).toBeNull();
+    });
+
+    it('if given text, should render text', async () => {
+      const text = 'Test text';
+      const rendered = renderComponent({
+        hero: HeroFixture({
+          variant: 'centerAligned',
+          text: RichTextFixture({ text }),
+        }),
+      });
+      expect(rendered.getByText(text)).toBeDefined();
+    });
+
+    it('if NOT given text, should NOT render text', async () => {
+      const rendered = renderComponent({
+        hero: HeroFixture({ variant: 'centerAligned', text: [] }),
+      });
+      const defaultText = RichTextFixture()[0].children[0] as {
+        type: 'text';
+        text: string;
+      };
+      expect(rendered.queryByText(defaultText?.text)).toBeNull();
+    });
+
+    it('if given image, should render image', () => {
+      const imageAlt = 'Test Image';
+      const image = ImageFixture({ alt: imageAlt });
+      const rendered = renderComponent({
+        hero: HeroFixture({ variant: 'centerAligned', image }),
+      });
+      const expected = rendered.getByAltText(imageAlt);
+      expect(expected).toBeDefined();
+    });
+
+    it('if NOT given image, should NOT render image', () => {
+      const imageAlt = '';
+      const image = ImageFixture({ alt: imageAlt });
+      const rendered = renderComponent({
+        hero: HeroFixture({ variant: 'centerAligned', image }),
+      });
+      const expected = rendered.queryByAltText(ImageFixture().alt);
+      expect(expected).toBeNull();
+    });
+
+    it('if given button, should render button', () => {
+      const text = 'Test button text';
+      const rendered = renderComponent({
+        hero: HeroFixture({
+          variant: 'centerAligned',
+          buttons: [ButtonFixture({ text })],
+        }),
+      });
+      expect(rendered.getByText(text)).toBeDefined();
+    });
+
+    it('if NOT given button, should NOT render button', () => {
+      const rendered = renderComponent({
+        hero: HeroFixture({ variant: 'centerAligned', buttons: [] }),
+      });
+      expect(rendered.queryByText(HeroFixture().buttons[0].text)).toBeNull();
+    });
   });
 });
