@@ -12,16 +12,8 @@ export interface SectionProps {
 }
 
 export const Section = ({ section }: SectionProps) => {
-  const {
-    header = 'MISSING',
-    sortOrder,
-    text,
-    image,
-    caption,
-    bgImage,
-    bgColor,
-    variant,
-  } = section;
+  const { header, sortOrder, text, image, caption, bgImage, bgColor, variant } =
+    section;
 
   const { colors } = useBrand();
 

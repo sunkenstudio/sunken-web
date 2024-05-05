@@ -52,7 +52,7 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
-          script: bash ~/sunken-web/update.sh
+          script: docker system prune -a -f --volumes && bash ~/sunken-web/update.sh
 
       - name: notify discord of successful deploy
         if: success()
@@ -66,8 +66,8 @@ jobs:
           { "name": "Branch", "value": "[${{github.ref_name}}](https://github.com/${{github.repository}}/tree/${{github.ref_name}})", "inline": true },
           { "name": "Event", "value": "${{github.event_name}}", "inline": true },
           { "name": "Status", "value": "SUCCESS!!! 😃", "inline": true },
-          { "name": "Commit Message", "value": "[${{ env.SHA }}](https://github.com/${{github.repository}}/commit/${{github.sha}}) - `${{github.event.head_commit.message}}`" },
-          { "name": "Author", "value": "[${{github.event.head_commit.author.name}}](https://github.com/${{github.actor}})" }
+          { "name": "Commit Message", "value": "[${{ github.event.pull_request.head.sha }}](https://github.com/${{github.repository}}/commit/${{github.sha}}) - `${{github.event.head_commit.message}}`" },
+          { "name": "Author", "value": "[${{github.actor}}](https://github.com/${{github.actor}})" }
           ],
           "color":65280,
           "timestamp": "${{github.event.head_commit.timestamp}}",
@@ -87,8 +87,8 @@ jobs:
           { "name": "Branch", "value": "[${{github.ref_name}}](https://github.com/${{github.repository}}/tree/${{github.ref_name}})", "inline": true },
           { "name": "Event", "value": "${{github.event_name}}", "inline": true },
           { "name": "Status", "value": "Something went wrong.. 😞", "inline": true },
-          { "name": "Commit Message", "value": "[${{ env.SHA }}](https://github.com/${{github.repository}}/commit/${{github.sha}}) - `${{github.event.head_commit.message}}`" },
-          { "name": "Author", "value": "[${{github.event.head_commit.author.name}}](https://github.com/${{github.actor}})" }
+          { "name": "Commit Message", "value": "[${{ github.event.pull_request.head.sha }}](https://github.com/${{github.repository}}/commit/${{github.sha}}) - `${{github.event.head_commit.message}}`" },
+          { "name": "Author", "value": "[${{github.actor}}](https://github.com/${{github.actor}})" }
           ],
           "color":16711680,
           "timestamp": "${{github.event.head_commit.timestamp}}",

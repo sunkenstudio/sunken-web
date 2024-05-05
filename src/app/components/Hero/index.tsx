@@ -21,15 +21,18 @@ export const Hero = ({ hero }: HeroProps) => {
     <Box alignItems={'left'} w={{ base: '90%', md: '50%' }}>
       <Stack gap={3} textAlign={'center'} alignItems={'center'}>
         <Box>
-          <Image
-            boxSize={'md'}
-            {...image}
-            objectFit={'cover'}
-            height={{ base: '20%', md: '100%' }}
-            maxHeight={'20rem'}
-            maxWidth={'20rem'}
-          />
+          {image && (
+            <Image
+              boxSize={'md'}
+              {...image}
+              objectFit={'cover'}
+              height={{ base: '20%', md: '100%' }}
+              maxHeight={'20rem'}
+              maxWidth={'20rem'}
+            />
+          )}
         </Box>
+        <H1 textShadow={`1px 1px 3px ${colors.dark}`}>{header}</H1>
         <H3 textShadow={`1px 1px 3px ${colors.dark}`}>{subheader}</H3>
         <Paragraph w={{ base: '100%', md: '85%' }}>
           <RichText content={text} />
@@ -60,9 +63,11 @@ export const Hero = ({ hero }: HeroProps) => {
         </Stack>
       </Box>
       <Hide below="md">
-        <Box>
-          <Image boxSize={'md'} {...image} objectFit={'cover'} />
-        </Box>
+        {image && (
+          <Box>
+            <Image boxSize={'md'} {...image} objectFit={'cover'} />
+          </Box>
+        )}
       </Hide>
     </>
   );
