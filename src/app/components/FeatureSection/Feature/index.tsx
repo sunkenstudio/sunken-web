@@ -21,7 +21,7 @@ export const Feature = ({ type, subHeader, blurb }) => {
       borderColor="green"
       borderRadius="15px"
     >
-      <Icon type={type} size={64} color={colors.light} />
+      {type && <Icon type={type} size={64} color={colors.light} />}
       <H4>{subHeader}</H4>
       <Paragraph>{blurb}</Paragraph>
     </Box>

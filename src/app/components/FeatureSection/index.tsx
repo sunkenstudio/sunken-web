@@ -4,30 +4,7 @@ import { Box } from '@chakra-ui/react';
 import React from 'react';
 import { Feature } from './Feature';
 
-export const FeatureSection = () => {
-  const featureData = [
-    {
-      type: 'headset',
-      subHeader: '24 Hour Customer Service',
-      blurb: 'Need help? Our team of specialists is ready to make your day!',
-    },
-    {
-      type: 'gift',
-      subHeader: 'Send a Gift!',
-      blurb: 'Shopping for someone else? No problem!',
-    },
-    {
-      type: 'student',
-      subHeader: 'Academic Portal',
-      blurb: 'Browse student resources and office hours.',
-    },
-    {
-      type: 'coffee',
-      subHeader: 'Buy us a Cup of Coffee!',
-      blurb: 'Support our work and keep us awake!',
-    },
-  ];
-
+export const FeatureSection = ({ featureData }) => {
   return (
     // Use H-Stack.
     <Box
