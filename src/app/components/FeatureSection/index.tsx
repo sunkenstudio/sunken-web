@@ -29,6 +29,7 @@ export const FeatureSection = () => {
   ];
 
   return (
+    // Use H-Stack.
     <Box
       display="flex"
       alignItems="center"

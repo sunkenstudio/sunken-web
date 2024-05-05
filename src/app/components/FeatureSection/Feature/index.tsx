@@ -10,6 +10,7 @@ export const Feature = ({ type, subHeader, blurb }) => {
   const { colors } = useBrand();
   return (
     <Box
+      // Use Stack and gap prop.
       display="flex"
       flexDirection="column"
       alignItems="center"
