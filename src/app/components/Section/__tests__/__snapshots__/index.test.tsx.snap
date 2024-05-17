@@ -6,11 +6,11 @@ exports[`Section All stories should render successfully Renders Primary story 1`
 >
   <div>
     <div
-      class="css-12zfmgj"
+      class="css-17nws4k"
       id="section-1"
     >
       <div
-        class="css-b4kcmh"
+        class="css-ag3wqc"
       >
         <div
           class="css-ojqyia"
@@ -22,7 +22,7 @@ exports[`Section All stories should render successfully Renders Primary story 1`
             typename="ComponentCommonImage"
           />
           <div
-            class="css-uvk60p"
+            class="css-irqulg"
           />
         </div>
       </div>
@@ -43,7 +43,7 @@ exports[`Section All stories should render successfully Renders Primary story 1`
               >
                 <img
                   alt="Craft cocktail with lemon twist"
-                  class="chakra-image css-10l7ffh"
+                  class="chakra-image css-1yuvylm"
                   src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/b181fb8a2e37c5523f5f625b11628738.avif"
                   typename="ComponentCommonImage"
                 />

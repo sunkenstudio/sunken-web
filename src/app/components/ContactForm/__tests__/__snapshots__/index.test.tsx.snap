@@ -6,11 +6,11 @@ exports[`ContactForm All stories should render successfully Renders Primary stor
 >
   <div>
     <div
-      class="css-1ilgequ"
+      class="css-9fal1s"
       id="contact"
     >
       <div
-        class="css-b4kcmh"
+        class="css-1kpgg84"
       >
         <div
           class="css-ojqyia"
@@ -22,7 +22,7 @@ exports[`ContactForm All stories should render successfully Renders Primary stor
             typename="ComponentCommonImage"
           />
           <div
-            class="css-1bauqsl"
+            class="css-12lgfyx"
           />
         </div>
       </div>
@@ -60,7 +60,7 @@ exports[`ContactForm All stories should render successfully Renders Primary stor
               </label>
               <input
                 aria-required="true"
-                class="chakra-input css-3bdgjy"
+                class="chakra-input css-15izoeg"
                 data-testid="input-name"
                 id="name"
                 name="NAME"
@@ -89,7 +89,7 @@ exports[`ContactForm All stories should render successfully Renders Primary stor
               </label>
               <input
                 aria-required="true"
-                class="chakra-input css-3bdgjy"
+                class="chakra-input css-15izoeg"
                 data-testid="input-start_time"
                 id="start_time"
                 name="STARTTIME"
@@ -118,7 +118,7 @@ exports[`ContactForm All stories should render successfully Renders Primary stor
               </label>
               <input
                 aria-required="true"
-                class="chakra-input css-3bdgjy"
+                class="chakra-input css-15izoeg"
                 data-testid="input-date"
                 id="date"
                 name="DATE"
@@ -149,7 +149,7 @@ exports[`ContactForm All stories should render successfully Renders Primary stor
                   </span>
                 </label>
                 <div
-                  class="chakra-select__wrapper css-42b2qy"
+                  class="chakra-select__wrapper css-1ylyrkq"
                 >
                   <select
                     aria-required="true"
@@ -171,7 +171,7 @@ exports[`ContactForm All stories should render successfully Renders Primary stor
                     </option>
                   </select>
                   <div
-                    class="chakra-select__icon-wrapper css-iohxn1"
+                    class="chakra-select__icon-wrapper css-fcvg7i"
                   >
                     <svg
                       aria-hidden="true"
@@ -210,7 +210,7 @@ exports[`ContactForm All stories should render successfully Renders Primary stor
               </label>
               <textarea
                 aria-required="true"
-                class="chakra-textarea css-1xjenok"
+                class="chakra-textarea css-45s8if"
                 data-testid="input-message"
                 id="message"
                 name="MESSAGE"
@@ -218,7 +218,7 @@ exports[`ContactForm All stories should render successfully Renders Primary stor
               />
             </div>
             <button
-              class="chakra-button css-xoj2zf"
+              class="chakra-button css-1vscnss"
               type="submit"
             >
               SUBMIT
