@@ -6,7 +6,7 @@ exports[`Hero All stories should render successfully Renders Primary story 1`] =
 >
   <div>
     <div
-      class="css-9j274v"
+      class="css-ser5f9"
       id="hero"
     >
       <div
@@ -22,7 +22,7 @@ exports[`Hero All stories should render successfully Renders Primary story 1`] =
             typename="ComponentCommonImage"
           />
           <div
-            class="css-yd0ujm"
+            class="css-1xv2dbl"
           />
         </div>
       </div>
@@ -36,12 +36,12 @@ exports[`Hero All stories should render successfully Renders Primary story 1`] =
             class="chakra-stack css-11nrrcx"
           >
             <h1
-              class="chakra-heading css-1xrotbt"
+              class="chakra-heading css-1c08szr"
             >
               Corridor Cocktails
             </h1>
             <h3
-              class="chakra-heading css-1yk5nes"
+              class="chakra-heading css-kmhnlu"
             >
               A one-of-a-kind mobile cocktail bar experience
             </h3>
@@ -60,7 +60,7 @@ exports[`Hero All stories should render successfully Renders Primary story 1`] =
                 style="width: 100%;"
               >
                 <button
-                  class="chakra-button css-ra552a"
+                  class="chakra-button css-d6wxm1"
                   id="ComponentCommonButton"
                   type="button"
                 >
@@ -78,12 +78,155 @@ exports[`Hero All stories should render successfully Renders Primary story 1`] =
           >
             <img
               alt="Company Logo - Cocktail glass with two cherries"
-              class="chakra-image css-1j2zslm"
+              class="chakra-image css-hjb6tv"
               src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/597ee6441f99aff5999e28ce065b563b.jpeg"
               typename="ComponentCommonImage"
             />
             <div
-              class="css-esqsjk"
+              class="css-4yd85u"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <span
+      hidden=""
+      id="__chakra_env"
+    />
+  </div>
+  <div
+    class="chakra-portal"
+  >
+    <div
+      aria-label="Notifications-top"
+      aria-live="polite"
+      id="chakra-toast-manager-top"
+      role="region"
+      style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column; margin: 0px auto;"
+    />
+    <div
+      aria-label="Notifications-top-left"
+      aria-live="polite"
+      id="chakra-toast-manager-top-left"
+      role="region"
+      style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column;"
+    />
+    <div
+      aria-label="Notifications-top-right"
+      aria-live="polite"
+      id="chakra-toast-manager-top-right"
+      role="region"
+      style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column;"
+    />
+    <div
+      aria-label="Notifications-bottom-left"
+      aria-live="polite"
+      id="chakra-toast-manager-bottom-left"
+      role="region"
+      style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column;"
+    />
+    <div
+      aria-label="Notifications-bottom"
+      aria-live="polite"
+      id="chakra-toast-manager-bottom"
+      role="region"
+      style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column; margin: 0px auto;"
+    />
+    <div
+      aria-label="Notifications-bottom-right"
+      aria-live="polite"
+      id="chakra-toast-manager-bottom-right"
+      role="region"
+      style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column;"
+    />
+  </div>
+</body>
+`;
+
+exports[`Hero All stories should render successfully Renders Split story 1`] = `
+<body
+  class="chakra-ui-light"
+>
+  <div>
+    <div
+      class="css-ser5f9"
+      id="hero"
+    >
+      <div
+        class="css-159r5o7"
+      >
+        <div
+          class="css-ojqyia"
+        >
+          <img
+            alt="Bg Image - Table with cocktails and cards"
+            class="chakra-image css-o0922y"
+            src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/e1b053e4603d44705ac074325111d66b.jpg"
+            typename="ComponentCommonImage"
+          />
+          <div
+            class="css-1xv2dbl"
+          />
+        </div>
+      </div>
+      <div
+        class="css-1go9adf"
+      >
+        <div
+          class="css-1mx75r"
+        >
+          <div
+            class="chakra-stack css-10ohret"
+          >
+            <h1
+              class="chakra-heading css-1c08szr"
+            >
+              Corridor Cocktails
+            </h1>
+            <h3
+              class="chakra-heading css-kmhnlu"
+            >
+              A one-of-a-kind mobile cocktail bar experience
+            </h3>
+            <p
+              class="chakra-text css-9xjet3"
+            >
+              <span>
+                Corridor Cocktails provides a portable mini bar, craft cocktails, skilled bartenders and anything you need to make your event amazing! 
+              </span>
+            </p>
+            <div
+              class="chakra-stack css-zc88h8"
+            >
+              <a
+                href="#contact"
+                style="width: 100%;"
+              >
+                <button
+                  class="chakra-button css-d6wxm1"
+                  id="ComponentCommonButton"
+                  type="button"
+                >
+                  BOOK AN EVENT
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="css-kp9cau"
+        >
+          <div
+            class="css-ojqyia"
+          >
+            <img
+              alt="Company Logo - Cocktail glass with two cherries"
+              class="chakra-image css-3z3kdn"
+              src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/597ee6441f99aff5999e28ce065b563b.jpeg"
+              typename="ComponentCommonImage"
+            />
+            <div
+              class="css-bwra7h"
             />
           </div>
         </div>

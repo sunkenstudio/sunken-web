@@ -25,7 +25,7 @@ exports[`InputField All stories should render successfully Renders Primary story
       </label>
       <input
         aria-required="true"
-        class="chakra-input css-3bdgjy"
+        class="chakra-input css-15izoeg"
         data-testid="input-name"
         id="name"
         name="NAME"
