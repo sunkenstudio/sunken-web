@@ -98,7 +98,7 @@ export const Hero = ({ hero }: HeroProps) => {
           <Box w={'50%'} h="100%">
             <Image
               boxSize={'md'}
-              media={image.media}
+              {...image}
               objectFit={'cover'}
               h="100%"
               w="100%"
