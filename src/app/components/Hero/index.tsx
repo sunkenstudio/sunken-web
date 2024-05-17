@@ -75,7 +75,7 @@ export const Hero = ({ hero }: HeroProps) => {
   const renderSplitVariant = () => (
     <>
       <Box
-        w={'50%'}
+        w={{ base: '100%', md: '50%' }}
         display={'flex'}
         alignItems={'center'}
         justifyContent={'center'}
