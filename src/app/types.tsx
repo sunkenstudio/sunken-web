@@ -78,7 +78,7 @@ export interface StrapiStyledButton {
 export interface StrapiSection {
   typename: string;
   header: string;
-  variant: 'left' | 'right';
+  variant: 'left' | 'right' | 'splitLeft' | 'splitRight';
   sortOrder: number;
   text: BlocksContent;
   image: StrapiStyledImage;
