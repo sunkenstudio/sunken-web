@@ -83,7 +83,7 @@ export interface StrapiSection {
   text: BlocksContent;
   image: StrapiStyledImage;
   caption: string | null;
-  bgImage: StrapiStyledImage;
+  bgImage: StrapiStyledImage | null;
   bgColor: Color;
 }
 
