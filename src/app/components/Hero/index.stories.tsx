@@ -25,4 +25,10 @@ export const Primary: Story = {
   },
 };
 
+export const Split: Story = {
+  args: {
+    ...withDefaults({ hero: HeroFixture({ variant: 'split' }) }),
+  },
+};
+
 export default meta;

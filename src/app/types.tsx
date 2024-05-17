@@ -113,7 +113,7 @@ export interface StrapiFooter {
 export interface StrapiHero {
   typename: string;
   header: string;
-  variant: 'leftAligned' | 'centerAligned';
+  variant: 'leftAligned' | 'centerAligned' | 'split';
   subheader: string;
   buttons: StrapiStyledButton[];
   text: BlocksContent;

@@ -72,9 +72,50 @@ export const Hero = ({ hero }: HeroProps) => {
     </>
   );
 
+  const renderSplitVariant = () => (
+    <>
+      <Box
+        w={'50%'}
+        display={'flex'}
+        alignItems={'center'}
+        justifyContent={'center'}
+      >
+        <Stack gap={3} maxW="90%">
+          <H1 textShadow={`1px 1px 3px ${colors.dark}`}>{header}</H1>
+          <H3 textShadow={`1px 1px 3px ${colors.dark}`}>{subheader}</H3>
+          <Paragraph w={{ base: '100%', md: '85%' }}>
+            <RichText content={text} />
+          </Paragraph>
+          <HStack mt={3} gap={3}>
+            {buttons.map((i) => {
+              return <Button key={i.typename} {...i} />;
+            })}
+          </HStack>
+        </Stack>
+      </Box>
+      <Hide below="md">
+        {image && (
+          <Box w={'50%'} h="100%">
+            <Image
+              boxSize={'md'}
+              media={image.media}
+              objectFit={'cover'}
+              h="100%"
+              w="100%"
+              border={{ width: '0', radius: '0', color: 'dark' }}
+            />
+          </Box>
+        )}
+      </Hide>
+    </>
+  );
+
   const renderContent = () => {
     if (variant === 'centerAligned') {
       return renderCenterVariant();
+    }
+    if (variant === 'split') {
+      return renderSplitVariant();
     }
     return renderLeftVariant();
   };
