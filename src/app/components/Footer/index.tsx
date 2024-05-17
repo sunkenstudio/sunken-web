@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { RichText } from '../Shared/RichText';
 import { StrapiBorder, StrapiFooter } from '../../types';
 import { useBrand } from '@/app/contexts/BrandContext';
-import { Icon, IconTypes } from '../Shared/Icon';
+import { Icon } from '../Shared/Icon';
 
 export interface FooterProps {
   buttonStyle: {
@@ -20,10 +20,10 @@ export const Footer = ({ buttonStyle, footer }: FooterProps) => {
   const { colors } = useBrand();
   const { instagramUrl, facebookUrl, twitterUrl, text } = footer;
 
-  const socialIcons: { type: IconTypes; href: string }[] = [
-    { type: 'instagram', href: instagramUrl },
-    { type: 'facebook', href: facebookUrl },
-    { type: 'twitter', href: twitterUrl },
+  const socialIcons: { type: string; href: string }[] = [
+    { type: 'InstagramLogo', href: instagramUrl },
+    { type: 'FacebookLogo', href: facebookUrl },
+    { type: 'TwitterLogo', href: twitterUrl },
   ];
   return (
     <Flex

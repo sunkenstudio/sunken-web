@@ -1,49 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Footer All stories should render successfully Renders Primary story 1`] = `
+exports[`Icon All stories should render successfully Renders Primary story 1`] = `
 <body
   class="chakra-ui-light"
 >
   <div>
-    <div
-      class="css-do35vm"
-    >
-      <div
-        class="chakra-stack css-1wrik5w"
-      >
-        <div
-          class="chakra-stack css-f17ibg"
-        >
-          <a
-            href="https://instagram.com"
-            target="_blank"
-          >
-            <a
-              class="chakra-button css-luz4nv"
-            />
-          </a>
-          <a
-            href="https://facebook.com"
-            target="_blank"
-          >
-            <a
-              class="chakra-button css-luz4nv"
-            />
-          </a>
-          <a
-            href="https://twitter.com"
-            target="_blank"
-          >
-            <a
-              class="chakra-button css-luz4nv"
-            />
-          </a>
-        </div>
-        <span>
-          Made with &lt;3 in Detroit, MI
-        </span>
-      </div>
-    </div>
     <span
       hidden=""
       id="__chakra_env"
@@ -98,95 +59,15 @@ exports[`Footer All stories should render successfully Renders Primary story 1`]
 </body>
 `;
 
-exports[`Footer match snapshot 1`] = `
+exports[`Icon match snapshot 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body
     class="chakra-ui-light"
   >
-    <div>
-      <div
-        class="css-do35vm"
-      >
-        <div
-          class="chakra-stack css-1wrik5w"
-        >
-          <div
-            class="chakra-stack css-j8nvvj"
-          >
-            <a
-              href="https://instagram.com"
-              target="_blank"
-            >
-              <a
-                class="chakra-button css-qc2lxx"
-              />
-            </a>
-            <a
-              href="https://facebook.com"
-              target="_blank"
-            >
-              <a
-                class="chakra-button css-qc2lxx"
-              />
-            </a>
-            <a
-              href="https://twitter.com"
-              target="_blank"
-            >
-              <a
-                class="chakra-button css-qc2lxx"
-              />
-            </a>
-          </div>
-          <span>
-            Made with &lt;3 in Detroit, MI
-          </span>
-        </div>
-      </div>
-    </div>
+    <div />
   </body>,
-  "container": <div>
-    <div
-      class="css-do35vm"
-    >
-      <div
-        class="chakra-stack css-1wrik5w"
-      >
-        <div
-          class="chakra-stack css-j8nvvj"
-        >
-          <a
-            href="https://instagram.com"
-            target="_blank"
-          >
-            <a
-              class="chakra-button css-qc2lxx"
-            />
-          </a>
-          <a
-            href="https://facebook.com"
-            target="_blank"
-          >
-            <a
-              class="chakra-button css-qc2lxx"
-            />
-          </a>
-          <a
-            href="https://twitter.com"
-            target="_blank"
-          >
-            <a
-              class="chakra-button css-qc2lxx"
-            />
-          </a>
-        </div>
-        <span>
-          Made with &lt;3 in Detroit, MI
-        </span>
-      </div>
-    </div>
-  </div>,
+  "container": <div />,
   "debug": [Function],
   "findAllByAltText": [Function],
   "findAllByDisplayValue": [Function],

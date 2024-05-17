@@ -56,7 +56,7 @@ export const Header = ({ hero, sections, contact }: HeaderProps) => {
           _hover={{ filter: 'brightness(75%)' }}
           {...sharedProps}
         >
-          <Icon type={'list'} size={32} color={colors.light} />
+          <Icon type={'List'} size={32} color={colors.light} />
         </Button>
       </Flex>
       <Drawer isOpen={isOpen} placement="right" onClose={onClose}>

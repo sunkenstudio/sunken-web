@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Icon, IconProps, iconMap } from '../Icon';
+import { Icon, IconProps } from '../Icon';
 
 const meta = {
   title: '_Shared/Icon',
@@ -8,18 +8,18 @@ const meta = {
     layout: 'centered',
   },
   tags: ['autodocs'],
-  argTypes: {
-    type: {
-      control: 'select',
-      options: Object.keys(iconMap({ size: 32, color: 'black' })).sort(),
-    },
-  },
+  // argTypes: {
+  //   type: {
+  //     control: 'select',
+  //     options: Object.keys(iconMap({ size: 32, color: 'black' })).sort(),
+  //   },
+  // },
 } satisfies Meta<typeof Icon>;
 
 type Story = StoryObj<typeof meta>;
 
 const withDefaults = (overrides: Partial<IconProps> = {}): IconProps => ({
-  type: 'facebook',
+  type: 'InstagramLogo',
   color: 'black',
   size: 32,
   ...overrides,

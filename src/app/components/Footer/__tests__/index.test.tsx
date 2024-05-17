@@ -1,6 +1,6 @@
 'use client';
 import '@testing-library/jest-dom';
-import { render } from '@testing-library/react';
+import { render, waitFor } from '@testing-library/react';
 
 import { Footer, FooterProps } from '..';
 import { FooterFixture } from '@/app/fixtures';
@@ -37,52 +37,64 @@ describe('Footer', () => {
   });
 
   describe('social icons', () => {
-    it('if given facebook url, should render facebook icon', () => {
+    it('if given facebook url, should render facebook icon', async () => {
       const rendered = renderComponent({
         footer: FooterFixture({ facebookUrl: 'http://facebook.com' }),
       });
-      const icon = rendered.getByTitle('Facebook Logo');
-      expect(icon).toBeDefined();
+      await waitFor(() => {
+        const icon = rendered.getByTitle('FacebookLogo icon');
+        expect(icon).toBeDefined();
+      });
     });
 
-    it('if NOT given facebook url, should NOT render facebook icon', () => {
+    it('if NOT given facebook url, should NOT render facebook icon', async () => {
       const rendered = renderComponent({
         footer: FooterFixture({ facebookUrl: '' }),
       });
-      const icon = rendered.queryByTitle('Facebook Logo');
-      expect(icon).toBeNull();
+      await waitFor(() => {
+        const icon = rendered.queryByTitle('FacebookLogo icon');
+        expect(icon).toBeNull();
+      });
     });
 
-    it('if given twitter url, should render twitter icon', () => {
+    it('if given twitter url, should render twitter icon', async () => {
       const rendered = renderComponent({
         footer: FooterFixture({ twitterUrl: 'http://twitter.com' }),
       });
-      const icon = rendered.getByTitle('Twitter Logo');
-      expect(icon).toBeDefined();
+      await waitFor(() => {
+        const icon = rendered.getByTitle('TwitterLogo icon');
+        expect(icon).toBeDefined();
+      });
     });
 
-    it('if NOT given twitter url, should NOT render twitter icon', () => {
+    it('if NOT given twitter url, should NOT render twitter icon', async () => {
       const rendered = renderComponent({
         footer: FooterFixture({ twitterUrl: '' }),
       });
-      const icon = rendered.queryByTitle('Twitter Logo');
-      expect(icon).toBeNull();
+      await waitFor(() => {
+        const icon = rendered.queryByTitle('TwitterLogo icon');
+        expect(icon).toBeNull();
+      });
     });
 
-    it('if given instagram url, should render instagram icon', () => {
+    it('if given instagram url, should render instagram icon', async () => {
       const rendered = renderComponent({
         footer: FooterFixture({ instagramUrl: 'http://instagram.com' }),
       });
-      const icon = rendered.getByTitle('Instagram Logo');
-      expect(icon).toBeDefined();
+      await waitFor(() => {
+        const icon = rendered.getByTitle('InstagramLogo icon');
+        expect(icon).toBeDefined();
+      });
     });
 
-    it('if NOT given instagram url, should NOT render instagram icon', () => {
+    it('if NOT given instagram url, should NOT render instagram icon', async () => {
       const rendered = renderComponent({
         footer: FooterFixture({ instagramUrl: '' }),
       });
-      const icon = rendered.queryByTitle('Instagram Logo');
-      expect(icon).toBeNull();
+      await waitFor(() => {
+        const icon = rendered.queryByTitle('InstagramLogo icon');
+        expect(icon).toBeNull();
+      });
     });
   });
 });
