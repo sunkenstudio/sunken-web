@@ -1,26 +1,42 @@
-import {
-  FacebookLogo,
-  InstagramLogo,
-  TwitterLogo,
-  List,
-} from '@phosphor-icons/react';
+import React from 'react';
+import { ImageBroken } from '@phosphor-icons/react';
 
-export type IconTypes = 'facebook' | 'instagram' | 'twitter' | 'list';
 export interface IconProps {
-  type: IconTypes;
+  type: string;
   size: number;
   color: string;
 }
-export const iconMap = (props: {
-  size: number;
-  color: string;
-}): Record<IconTypes, React.ReactNode> => ({
-  facebook: <FacebookLogo alt="Facebook Logo" {...props} />,
-  instagram: <InstagramLogo alt="Instagram Logo" {...props} />,
-  twitter: <TwitterLogo alt="Twitter Logo" {...props} />,
-  list: <List alt="List icon" {...props} />,
-});
+
+export const iconMap = (
+  iconName: string,
+  props: {
+    size: number;
+    color: string;
+  },
+  callback: (icon: React.ReactNode) => void
+) => {
+  import('@phosphor-icons/react')
+    .then((module) => {
+      const DynamicIcon = module[iconName];
+      if (DynamicIcon) {
+        // @ts-ignore
+        callback(<DynamicIcon alt={`${iconName} icon`} {...props} />);
+      } else {
+        throw new Error(`Icon '${iconName}' not found`);
+      }
+    })
+    .catch((error) => {
+      console.error(`Error loading icon '${iconName}':`, error);
+      callback(<ImageBroken alt="Image Broken" {...props} />);
+    });
+};
 
 export const Icon = ({ type, size, color }: IconProps) => {
-  return iconMap({ size, color })[type];
+  const [icon, setIcon] = React.useState<React.ReactNode>(null);
+
+  React.useEffect(() => {
+    iconMap(type, { size, color }, setIcon);
+  }, [type, size, color]);
+
+  return icon;
 };
