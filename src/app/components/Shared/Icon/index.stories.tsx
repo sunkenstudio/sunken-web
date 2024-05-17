@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Icon, IconProps, iconMap } from '../Icon';
+import { Icon, IconProps } from '../Icon';
 
 const meta = {
   title: '_Shared/Icon',
