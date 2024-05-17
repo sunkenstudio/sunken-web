@@ -13,7 +13,9 @@
     "test:watch": "jest --watch",
     "prepare": "husky",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "type-check": "tsc",
+    "ci": "npm run type-check && npm run lint && npm run test"
   },
   "dependencies": {
     "@apollo/client": "^3.9.7",

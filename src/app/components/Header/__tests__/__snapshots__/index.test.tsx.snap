@@ -20,22 +20,7 @@ exports[`Header All stories should render successfully Renders Primary story 1`]
         <button
           class="chakra-button css-va3ex2"
           type="button"
-        >
-          <svg
-            fill="currentColor"
-            height="32"
-            viewBox="0 0 256 256"
-            width="32"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <title>
-              List icon
-            </title>
-            <path
-              d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"
-            />
-          </svg>
-        </button>
+        />
       </div>
     </div>
     <span
@@ -114,22 +99,7 @@ exports[`Header match snapshot 1`] = `
           <button
             class="chakra-button css-va3ex2"
             type="button"
-          >
-            <svg
-              fill="#FFF"
-              height="32"
-              viewBox="0 0 256 256"
-              width="32"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <title>
-                List icon
-              </title>
-              <path
-                d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"
-              />
-            </svg>
-          </button>
+          />
         </div>
       </div>
       <span
@@ -200,22 +170,7 @@ exports[`Header match snapshot 1`] = `
         <button
           class="chakra-button css-va3ex2"
           type="button"
-        >
-          <svg
-            fill="#FFF"
-            height="32"
-            viewBox="0 0 256 256"
-            width="32"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <title>
-              List icon
-            </title>
-            <path
-              d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"
-            />
-          </svg>
-        </button>
+        />
       </div>
     </div>
     <span
