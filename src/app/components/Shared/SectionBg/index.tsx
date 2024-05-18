@@ -5,7 +5,7 @@ import { Image } from '../Image';
 
 export interface SectionBgProps {
   bgColor: string;
-  image: StrapiStyledImage;
+  image: StrapiStyledImage | null;
 }
 
 export const SectionBg = ({ image, bgColor }: SectionBgProps) => {
