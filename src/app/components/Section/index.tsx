@@ -18,7 +18,7 @@ const ContentContainer = ({ children }: { children: React.ReactNode }) => (
     alignItems={'center'}
     justifyContent={'center'}
     w="100%"
-    h="2xl"
+    minH="2xl"
   >
     {children}
   </Flex>
@@ -57,7 +57,11 @@ export const Section = ({ section }: SectionProps) => {
         />
         <Paragraph>{caption}</Paragraph>
       </Stack>
-      <Box w={{ base: '100%', md: '45%' }} textColor={'#FFF'}>
+      <Box
+        w={{ base: '100%', md: '45%' }}
+        textColor={'#FFF'}
+        pl={{ base: 0, md: '5rem' }}
+      >
         <H3 mb={'1.25rem'}>{header}</H3>
         <RichText content={text} />
       </Box>
@@ -66,14 +70,18 @@ export const Section = ({ section }: SectionProps) => {
 
   const renderRight = () => (
     <ContentContainer>
-      <Box w={{ base: '100%', md: '45%' }} textColor={'#FFF'}>
+      <Box
+        w={{ base: '100%', md: '45%' }}
+        textColor={'#FFF'}
+        pr={{ base: 0, md: '5rem' }}
+      >
         <H3 mb={'1.25rem'}>{header}</H3>
         <RichText content={text} />
       </Box>
       <Stack
         boxSize={{ base: 'xs', md: 'md' }}
         mb={{ base: '.5rem', md: '0rem' }}
-        ml={{ base: '0rem', md: '1rem' }}
+        mr={{ base: '0rem', md: '3rem' }}
       >
         <Image
           boxSize={{ base: 'xs', md: 'md' }}
@@ -86,46 +94,48 @@ export const Section = ({ section }: SectionProps) => {
   );
 
   const renderSplitLeft = () => (
-    <ContentContainer>
-      <Box w={'50%'} h="100%">
+    <>
+      <Box w={{ base: '100%', md: '50%' }} h="100%">
         <Image
           {...image}
           objectFit={'cover'}
           h="100%"
           w="100%"
           border={{ width: '0', radius: '0', color: 'dark' }}
+          py={{ base: '2rem', md: 0 }}
         />
       </Box>
       <Box
         w={{ base: '100%', md: '50%' }}
-        textColor={'#FFF'}
         display={'flex'}
-        justifyContent={'center'}
         alignItems={'center'}
+        justifyContent={'center'}
+        textColor={'#FFF'}
       >
         <Box w="90%">
           <H3 mb={'1.25rem'}>{header}</H3>
           <RichText content={text} />
         </Box>
       </Box>
-    </ContentContainer>
+    </>
   );
 
   const renderSplitRight = () => (
-    <ContentContainer>
+    <>
       <Box
         w={{ base: '100%', md: '50%' }}
-        textColor={'#FFF'}
         display={'flex'}
-        justifyContent={'center'}
         alignItems={'center'}
+        justifyContent={'center'}
+        textColor={'#FFF'}
+        py={{ base: '2rem', md: 0 }}
       >
         <Box w="90%">
           <H3 mb={'1.25rem'}>{header}</H3>
           <RichText content={text} />
         </Box>
       </Box>
-      <Box w={'50%'} h="100%">
+      <Box w={{ base: '100%', md: '50%' }} h="100%">
         <Image
           {...image}
           objectFit={'cover'}
@@ -134,7 +144,7 @@ export const Section = ({ section }: SectionProps) => {
           border={{ width: '0', radius: '0', color: 'dark' }}
         />
       </Box>
-    </ContentContainer>
+    </>
   );
 
   return (
@@ -148,16 +158,15 @@ export const Section = ({ section }: SectionProps) => {
       alignItems={'center'}
     >
       <SectionBg bgColor={colors[bgColor]} image={bgImage} />
-      <Flex w="100%" h="100%">
-        <Box
-          justifyContent={'center'}
-          alignItems={'center'}
-          h="100%"
-          w="100%"
-          zIndex={10}
-        >
-          {renderContent()}
-        </Box>
+      <Flex
+        zIndex={10}
+        direction={{ base: 'column', md: 'row' }}
+        alignItems={'center'}
+        justifyContent={'center'}
+        w="100%"
+        h="2xl"
+      >
+        {renderContent()}
       </Flex>
     </Flex>
   );
