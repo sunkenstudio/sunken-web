@@ -36,7 +36,9 @@ exports[`Section All stories should render successfully Renders Left story 1`] =
             </div>
             <p
               class="chakra-text css-0"
-            />
+            >
+              caption goes here
+            </p>
           </div>
           <div
             class="css-y5hzx6"
@@ -187,7 +189,9 @@ exports[`Section All stories should render successfully Renders Right story 1`] 
             </div>
             <p
               class="chakra-text css-0"
-            />
+            >
+              caption goes here
+            </p>
           </div>
         </div>
       </div>
@@ -524,7 +528,9 @@ exports[`Section match snapshot 1`] = `
               </div>
               <p
                 class="chakra-text css-0"
-              />
+              >
+                caption goes here
+              </p>
             </div>
             <div
               class="css-y5hzx6"
@@ -641,7 +647,9 @@ exports[`Section match snapshot 1`] = `
             </div>
             <p
               class="chakra-text css-0"
-            />
+            >
+              caption goes here
+            </p>
           </div>
           <div
             class="css-y5hzx6"

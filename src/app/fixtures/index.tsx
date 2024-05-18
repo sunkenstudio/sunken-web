@@ -230,7 +230,7 @@ export const SectionFixture = (
     },
     filter: null,
   },
-  caption: '',
+  caption: 'caption goes here',
   bgImage: null,
   ...overrides,
 });
