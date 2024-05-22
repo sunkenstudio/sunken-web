@@ -36,9 +36,16 @@ export const SplitLeft: Story = {
     ...withDefaults({ section: SectionFixture({ variant: 'splitLeft' }) }),
   },
 };
+
 export const SplitRight: Story = {
   args: {
     ...withDefaults({ section: SectionFixture({ variant: 'splitRight' }) }),
+  },
+};
+
+export const ImageGrid: Story = {
+  args: {
+    ...withDefaults({ section: SectionFixture({ variant: 'imageGrid' }) }),
   },
 };
 export default meta;

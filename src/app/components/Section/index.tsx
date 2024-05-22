@@ -6,6 +6,8 @@ import { SectionBg } from '../Shared/SectionBg';
 import { StrapiSection } from '../../types';
 import { Image } from '../Shared/Image';
 import { useBrand } from '@/app/contexts/BrandContext';
+import { ImageGrid } from '../ImageGrid';
+import { HeroFixture } from '@/app/fixtures';
 
 export interface SectionProps {
   section: StrapiSection;
@@ -39,6 +41,9 @@ export const Section = ({ section }: SectionProps) => {
     }
     if (variant === 'splitLeft') {
       return renderSplitLeft();
+    }
+    if (variant === 'imageGrid') {
+      return renderImageGrid();
     }
     return renderLeft();
   };
@@ -99,7 +104,7 @@ export const Section = ({ section }: SectionProps) => {
         <Image
           {...image}
           objectFit={'cover'}
-          h="100%"
+          h="2xl"
           w="100%"
           border={{ width: '0', radius: '0', color: 'dark' }}
           py={{ base: '2rem', md: 0 }}
@@ -135,11 +140,11 @@ export const Section = ({ section }: SectionProps) => {
           <RichText content={text} />
         </Box>
       </Box>
-      <Box w={{ base: '100%', md: '50%' }} h="100%">
+      <Box w={{ base: '100%', md: '50%' }} h="inherit">
         <Image
           {...image}
           objectFit={'cover'}
-          h="100%"
+          h="2xl"
           w="100%"
           border={{ width: '0', radius: '0', color: 'dark' }}
         />
@@ -147,13 +152,67 @@ export const Section = ({ section }: SectionProps) => {
     </>
   );
 
+  const renderImageGrid = () => {
+    const imageGridData = {
+      header,
+      sortOrder: 0,
+      columns: 3,
+      elements: [
+        {
+          label: 'Title',
+          href: 'https://google.com',
+          img: HeroFixture().image,
+        },
+        {
+          label: 'Title',
+          href: 'https://google.com',
+          img: HeroFixture().image,
+        },
+        {
+          label: 'Title',
+          href: 'https://google.com',
+          img: HeroFixture().image,
+        },
+        {
+          label: 'Title',
+          href: 'https://google.com',
+          img: HeroFixture().image,
+        },
+        {
+          label: 'Title',
+          href: 'https://google.com',
+          img: HeroFixture().image,
+        },
+        {
+          label: 'Title',
+          href: 'https://google.com',
+          img: HeroFixture().image,
+        },
+      ],
+    };
+    return (
+      <Box
+        textColor={'#FFF'}
+        py={{ base: '2rem', md: 0 }}
+        display={'flex'}
+        justifyContent={'space-around'}
+        alignItems={'center'}
+        flexDirection={'column'}
+        w={'90%'}
+        h={'inherit'}
+      >
+        <H3 m="1rem">{header}</H3>
+        <ImageGrid {...imageGridData} />
+      </Box>
+    );
+  };
+
   return (
     <Flex
       id={`section-${sortOrder}`}
       w="100%"
       color={colors.dark}
       position="relative"
-      minH={'2xl'}
       justifyContent={'center'}
       alignItems={'center'}
     >
@@ -164,7 +223,7 @@ export const Section = ({ section }: SectionProps) => {
         alignItems={'center'}
         justifyContent={'center'}
         w="100%"
-        h="2xl"
+        minH="2xl"
       >
         {renderContent()}
       </Flex>
