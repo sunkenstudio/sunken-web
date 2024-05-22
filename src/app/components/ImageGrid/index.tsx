@@ -1,6 +1,6 @@
 import React from 'react';
 import { ImageGridElement, ImageGridElementProps } from './ImageGridElement';
-import { Flex, Grid, GridItem, SimpleGrid } from '@chakra-ui/react';
+import { GridItem, SimpleGrid } from '@chakra-ui/react';
 import { useBrand } from '@/app/contexts/BrandContext';
 
 export interface ImageGridProps {
@@ -10,14 +10,7 @@ export interface ImageGridProps {
   columns: number;
 }
 
-export const ImageGrid = ({
-  header,
-  elements,
-  sortOrder,
-  columns,
-}: ImageGridProps) => {
-  const { colors } = useBrand();
-
+export const ImageGrid = ({ elements }: ImageGridProps) => {
   return (
     <SimpleGrid minChildWidth={'250px'} spacing={'.5rem'} m="1rem">
       {elements.map((i) => (
