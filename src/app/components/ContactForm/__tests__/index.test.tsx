@@ -15,7 +15,7 @@ import {
 } from '@/app/fixtures';
 import { testStories } from '@/app/helpers/testStorybook';
 import * as Stories from '../index.stories';
-
+console.log('trigger action');
 describe('ContactForm', () => {
   const renderComponent = (overrides: Partial<ContactFormProps> = {}) => {
     const defaults = (props: Partial<ContactFormProps>): ContactFormProps => ({
