@@ -2,6 +2,7 @@
 'use client';
 import { Hero } from './components/Hero';
 import { Section } from './components/Section';
+import { Carousel } from './components/Carousel';
 import { Box, Center, Flex, Spinner, Stack } from '@chakra-ui/react';
 import { useApolloClient } from '@apollo/client';
 import { Header } from './components/Header';
