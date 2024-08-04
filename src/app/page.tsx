@@ -90,7 +90,7 @@ const Home = () => {
     return <>404 Client not found</>;
   }
 
-  const { hero, sections, footer, contact, config } = data;
+  const { hero, sections, footer, contact, carousel, config } = data;
 
   if (config.isUnderConstruction) {
     return <>Under Construction</>;
@@ -139,6 +139,7 @@ const Home = () => {
             {sections.map((i) => (
               <Section key={`section-${i.sortOrder}`} section={i} />
             ))}
+            {carousel.images && <Carousel />}
             {contact.fields && (
               <ContactForm hero={hero} sections={sections} contact={contact} />
             )}
