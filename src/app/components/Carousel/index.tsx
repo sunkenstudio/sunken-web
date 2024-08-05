@@ -1,12 +1,12 @@
 'use client';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useBrand } from '@/app/contexts/BrandContext';
 import { StrapiCarousel } from '@/app/types';
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
-import { Box, Button, Center, Icon, IconButton, Image } from '@chakra-ui/react';
+import { Box, Center, IconButton, Image } from '@chakra-ui/react';
 
 import { Flex } from '@chakra-ui/react';
-import { Pause, Play, PlayPause } from '@phosphor-icons/react';
+import { Pause, Play } from '@phosphor-icons/react';
 
 export interface CarouselProps {
   carousel: StrapiCarousel;
