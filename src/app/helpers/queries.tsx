@@ -99,9 +99,9 @@ export const GET_SITE = gql`
           carousel {
             data {
               attributes {
-                transition_time
-                display_arrows
-                images {
+                TransitionTime
+                DisplayArrows
+                Images {
                   ...imageFields
                 }
               }

@@ -140,7 +140,7 @@ const Home = () => {
             {sections.map((i) => (
               <Section key={`section-${i.sortOrder}`} section={i} />
             ))}
-            {carousel.images && <Carousel />}
+            {carousel.images && <Carousel carousel={carousel} />}
             {contact.fields && (
               <ContactForm hero={hero} sections={sections} contact={contact} />
             )}

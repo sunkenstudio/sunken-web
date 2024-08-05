@@ -123,6 +123,13 @@ export interface StrapiHero {
   bgImage: StrapiStyledImage;
 }
 
+export interface StrapiCarousel {
+  typename: string;
+  displayArrows: boolean;
+  images: StrapiStyledImage[];
+  transitionTime: number;
+}
+
 export interface Client {
   typename: string;
   clientId: string;
