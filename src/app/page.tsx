@@ -15,6 +15,7 @@ import { isEmpty } from 'lodash';
 import { useRef } from 'react';
 import Fonts from './helpers/fonts';
 import { useBrand } from './contexts/BrandContext';
+import { Map } from './components/Map';
 
 const Home = () => {
   const [data, setData] = useState(null);
@@ -90,7 +91,7 @@ const Home = () => {
     return <>404 Client not found</>;
   }
 
-  const { hero, sections, footer, contact, config } = data;
+  const { hero, sections, footer, contact, config, mapSection } = data;
 
   if (config.isUnderConstruction) {
     return <>Under Construction</>;
@@ -142,6 +143,7 @@ const Home = () => {
             {contact.fields && (
               <ContactForm hero={hero} sections={sections} contact={contact} />
             )}
+            <Map mapSection={mapSection} />
           </Stack>
         </Box>
         <Footer buttonStyle={primaryButtonStyle} footer={footer} />

@@ -26,6 +26,12 @@ export interface StrapiInputField {
   options?: string[];
 }
 
+export interface StrapiCoordinates {
+  lat: number;
+  lng: number;
+  label?: string;
+}
+
 export interface StrapiConfig {
   typename: string;
   isUnderConstruction: boolean;
@@ -123,6 +129,15 @@ export interface StrapiHero {
   bgImage: StrapiStyledImage;
 }
 
+export interface StrapiMapSection {
+  typename: string;
+  theme: string;
+  center: StrapiCoordinates;
+  markers: StrapiCoordinates[];
+  markerIcon: string;
+  zoom: number;
+}
+
 export interface Client {
   typename: string;
   clientId: string;
@@ -132,4 +147,5 @@ export interface Client {
   footer: StrapiFooter;
   contact: StrapiContact;
   config: StrapiConfig;
+  mapSection: StrapiMapSection;
 }
