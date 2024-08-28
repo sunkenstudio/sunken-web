@@ -1,7 +1,6 @@
 import { gql } from '@apollo/client';
 
 export const GET_SITE = gql`
-  # Write your query or mutation here
   fragment imageFields on ComponentCommonImage {
     Media {
       data {
@@ -80,6 +79,27 @@ export const GET_SITE = gql`
               }
             }
           }
+
+          map_section {
+            data {
+              attributes {
+                Theme
+                Center {
+                  Lat
+                  Lng
+                  Label
+                }
+                Zoom
+                Markers {
+                  Lat
+                  Lng
+                  Label
+                }
+                MarkerIcon
+              }
+            }
+          }
+
           brand {
             data {
               attributes {
