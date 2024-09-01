@@ -6,6 +6,7 @@ import {
   StrapiFooter,
   StrapiHero,
   StrapiInputField,
+  StrapiMapSection,
   StrapiSection,
   StrapiStyledButton,
   StrapiStyledImage,
@@ -362,6 +363,18 @@ export const ConfigFixture = (
   ...overrides,
 });
 
+export const MapFixture = (
+  overrides: Partial<StrapiMapSection> = {}
+): StrapiMapSection => ({
+  typename: 'map',
+  theme: 'mapbox://styles/danielwarrick/clw8dfydm008f01nxc8l78sac',
+  center: { lat: 0, lng: 0, label: 'label' },
+  markers: [{ lat: 0, lng: 0, label: 'label' }],
+  markerIcon: 'MapPin',
+  zoom: 8,
+  ...overrides,
+});
+
 export const ClientFixture = (overrides: Partial<Client> = {}): Client => ({
   typename: 'Site',
   clientId: 'demo',
@@ -371,5 +384,6 @@ export const ClientFixture = (overrides: Partial<Client> = {}): Client => ({
   footer: FooterFixture(),
   contact: ContactFixture(),
   config: ConfigFixture(),
+  mapSection: MapFixture(),
   ...overrides,
 });

@@ -5,7 +5,7 @@ import { Map as MapboxMap, Marker } from 'react-map-gl';
 import { Icon } from '../Shared/Icon';
 import { StrapiMapSection } from '@/app/types';
 
-interface MapProps {
+export interface MapProps {
   mapSection: StrapiMapSection;
 }
 
