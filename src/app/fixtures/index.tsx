@@ -141,16 +141,15 @@ export const SectionFixture = (
 ): StrapiSection => ({
   typename: 'Section',
   header: 'What We Do',
-  variant: 'left',
   sortOrder: 1,
+  bgColor: 'primary',
   text: [
     {
       type: 'paragraph',
       children: [
         {
           type: 'text',
-          text: 'Hosting a party? Need a bartender? I’m your girl! We’ll create a custom cocktail menu for your event. ',
-          bold: true,
+          text: "Hosting a party? Need a bartender? I'm your girl! We'll create a custom cocktail menu for your event. ",
         },
       ],
     },
@@ -160,7 +159,6 @@ export const SectionFixture = (
         {
           type: 'text',
           text: '',
-          bold: true,
         },
       ],
     },
@@ -170,7 +168,6 @@ export const SectionFixture = (
         {
           type: 'text',
           text: '',
-          bold: true,
         },
       ],
     },
@@ -180,7 +177,6 @@ export const SectionFixture = (
         {
           type: 'text',
           text: 'From small events in your backyard to corporate parties, gallery openings, weddings, and local community events, let us supply your party with libations that will impress your guests.',
-          bold: true,
         },
       ],
     },
@@ -190,7 +186,6 @@ export const SectionFixture = (
         {
           type: 'text',
           text: '',
-          bold: true,
         },
       ],
     },
@@ -200,7 +195,6 @@ export const SectionFixture = (
         {
           type: 'text',
           text: '',
-          bold: true,
         },
       ],
     },
@@ -210,28 +204,40 @@ export const SectionFixture = (
         {
           type: 'text',
           text: 'Together we will create the perfect menu of cocktails, beer, and wine. Corridor Cocktails will make your bar dreams come true!',
-          bold: true,
         },
       ],
     },
   ],
-  bgColor: 'primary',
+  variant: 'left',
   image: {
     typename: 'ComponentCommonImage',
     media: {
       typename: 'UploadFile',
-      url: 'https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/6ae1e6b2ed07556435debb0afc731453.jpeg',
+      url: 'https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/b181fb8a2e37c5523f5f625b11628738.avif',
     },
     alt: 'Craft cocktail with lemon twist',
     border: {
       width: '.25rem',
+      color: 'secondary',
       radius: '99rem',
-      color: 'light',
     },
     filter: null,
   },
   caption: 'caption goes here',
-  bgImage: null,
+  bgImage: {
+    typename: 'ComponentCommonImage',
+    media: {
+      typename: 'UploadFile',
+      url: 'https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/368ef30c049d5e73fc77113499547b2f.svg',
+    },
+    alt: 'Background image - Red fabric',
+    border: null,
+    filter: {
+      grayscale: 0,
+      color: 'light',
+      opacity: 1,
+    },
+  },
   ...overrides,
 });
 
