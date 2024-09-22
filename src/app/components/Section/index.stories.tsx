@@ -19,26 +19,10 @@ const withDefaults = (overrides: Partial<SectionProps> = {}): SectionProps => ({
   ...overrides,
 });
 
-export const Left: Story = {
+export const Primary: Story = {
   args: {
-    ...withDefaults({ section: SectionFixture({ variant: 'left' }) }),
+    ...withDefaults(),
   },
 };
 
-export const Right: Story = {
-  args: {
-    ...withDefaults({ section: SectionFixture({ variant: 'right' }) }),
-  },
-};
-
-export const SplitLeft: Story = {
-  args: {
-    ...withDefaults({ section: SectionFixture({ variant: 'splitLeft' }) }),
-  },
-};
-export const SplitRight: Story = {
-  args: {
-    ...withDefaults({ section: SectionFixture({ variant: 'splitRight' }) }),
-  },
-};
 export default meta;

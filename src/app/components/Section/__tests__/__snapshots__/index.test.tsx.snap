@@ -1,437 +1,84 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Section All stories should render successfully Renders Left story 1`] = `
+exports[`Section All stories should render successfully Renders Primary story 1`] = `
 <body
   class="chakra-ui-light"
 >
   <div>
     <div
-      class="css-vjwvrt"
+      class="css-17nws4k"
       id="section-1"
     >
       <div
         class="css-ag3wqc"
-      />
-      <div
-        class="css-1go9adf"
       >
         <div
-          class="css-brklbi"
+          class="css-ojqyia"
+        >
+          <img
+            alt="Background image - Red fabric"
+            class="chakra-image css-o0922y"
+            src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/368ef30c049d5e73fc77113499547b2f.svg"
+            typename="ComponentCommonImage"
+          />
+          <div
+            class="css-irqulg"
+          />
+        </div>
+      </div>
+      <div
+        class="css-1v0ni0h"
+      >
+        <div
+          class="css-paz77w"
         >
           <div
-            class="chakra-stack css-wj6om1"
+            class="css-ihpfkw"
           >
             <div
-              class="css-ojqyia"
+              class="chakra-stack css-wj6om1"
             >
-              <img
-                alt="Craft cocktail with lemon twist"
-                class="chakra-image css-1o30apd"
-                src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/6ae1e6b2ed07556435debb0afc731453.jpeg"
-                typename="ComponentCommonImage"
-              />
               <div
-                class="css-1x4xquk"
-              />
+                class="css-ojqyia"
+              >
+                <img
+                  alt="Craft cocktail with lemon twist"
+                  class="chakra-image css-1yuvylm"
+                  src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/b181fb8a2e37c5523f5f625b11628738.avif"
+                  typename="ComponentCommonImage"
+                />
+                <div
+                  class="css-1x4xquk"
+                />
+              </div>
+              <p
+                class="chakra-text css-0"
+              >
+                caption goes here
+              </p>
             </div>
-            <p
-              class="chakra-text css-0"
-            >
-              caption goes here
-            </p>
-          </div>
-          <div
-            class="css-y5hzx6"
-          >
-            <h3
-              class="chakra-heading css-14v1f4s"
-            >
-              What We Do
-            </h3>
-            <span>
-              <strong>
-                Hosting a party? Need a bartender? I’m your girl! We’ll create a custom cocktail menu for your event. 
-              </strong>
-            </span>
-            <br />
-            <br />
-            <span>
-              <strong>
-                From small events in your backyard to corporate parties, gallery openings, weddings, and local community events, let us supply your party with libations that will impress your guests.
-              </strong>
-            </span>
-            <br />
-            <br />
-            <span>
-              <strong>
-                Together we will create the perfect menu of cocktails, beer, and wine. Corridor Cocktails will make your bar dreams come true!
-              </strong>
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <span
-      hidden=""
-      id="__chakra_env"
-    />
-  </div>
-  <div
-    class="chakra-portal"
-  >
-    <div
-      aria-label="Notifications-top"
-      aria-live="polite"
-      id="chakra-toast-manager-top"
-      role="region"
-      style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column; margin: 0px auto;"
-    />
-    <div
-      aria-label="Notifications-top-left"
-      aria-live="polite"
-      id="chakra-toast-manager-top-left"
-      role="region"
-      style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column;"
-    />
-    <div
-      aria-label="Notifications-top-right"
-      aria-live="polite"
-      id="chakra-toast-manager-top-right"
-      role="region"
-      style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column;"
-    />
-    <div
-      aria-label="Notifications-bottom-left"
-      aria-live="polite"
-      id="chakra-toast-manager-bottom-left"
-      role="region"
-      style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column;"
-    />
-    <div
-      aria-label="Notifications-bottom"
-      aria-live="polite"
-      id="chakra-toast-manager-bottom"
-      role="region"
-      style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column; margin: 0px auto;"
-    />
-    <div
-      aria-label="Notifications-bottom-right"
-      aria-live="polite"
-      id="chakra-toast-manager-bottom-right"
-      role="region"
-      style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column;"
-    />
-  </div>
-</body>
-`;
-
-exports[`Section All stories should render successfully Renders Right story 1`] = `
-<body
-  class="chakra-ui-light"
->
-  <div>
-    <div
-      class="css-vjwvrt"
-      id="section-1"
-    >
-      <div
-        class="css-ag3wqc"
-      />
-      <div
-        class="css-1go9adf"
-      >
-        <div
-          class="css-brklbi"
-        >
-          <div
-            class="css-1knl751"
-          >
-            <h3
-              class="chakra-heading css-14v1f4s"
-            >
-              What We Do
-            </h3>
-            <span>
-              <strong>
-                Hosting a party? Need a bartender? I’m your girl! We’ll create a custom cocktail menu for your event. 
-              </strong>
-            </span>
-            <br />
-            <br />
-            <span>
-              <strong>
-                From small events in your backyard to corporate parties, gallery openings, weddings, and local community events, let us supply your party with libations that will impress your guests.
-              </strong>
-            </span>
-            <br />
-            <br />
-            <span>
-              <strong>
-                Together we will create the perfect menu of cocktails, beer, and wine. Corridor Cocktails will make your bar dreams come true!
-              </strong>
-            </span>
-          </div>
-          <div
-            class="chakra-stack css-wj6om1"
-          >
             <div
-              class="css-ojqyia"
+              class="css-192f3e9"
             >
-              <img
-                alt="Craft cocktail with lemon twist"
-                class="chakra-image css-1o30apd"
-                src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/6ae1e6b2ed07556435debb0afc731453.jpeg"
-                typename="ComponentCommonImage"
-              />
-              <div
-                class="css-1x4xquk"
-              />
+              <h3
+                class="chakra-heading css-14v1f4s"
+              >
+                What We Do
+              </h3>
+              <span>
+                Hosting a party? Need a bartender? I'm your girl! We'll create a custom cocktail menu for your event. 
+              </span>
+              <br />
+              <br />
+              <span>
+                From small events in your backyard to corporate parties, gallery openings, weddings, and local community events, let us supply your party with libations that will impress your guests.
+              </span>
+              <br />
+              <br />
+              <span>
+                Together we will create the perfect menu of cocktails, beer, and wine. Corridor Cocktails will make your bar dreams come true!
+              </span>
             </div>
-            <p
-              class="chakra-text css-0"
-            >
-              caption goes here
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <span
-      hidden=""
-      id="__chakra_env"
-    />
-  </div>
-  <div
-    class="chakra-portal"
-  >
-    <div
-      aria-label="Notifications-top"
-      aria-live="polite"
-      id="chakra-toast-manager-top"
-      role="region"
-      style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column; margin: 0px auto;"
-    />
-    <div
-      aria-label="Notifications-top-left"
-      aria-live="polite"
-      id="chakra-toast-manager-top-left"
-      role="region"
-      style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column;"
-    />
-    <div
-      aria-label="Notifications-top-right"
-      aria-live="polite"
-      id="chakra-toast-manager-top-right"
-      role="region"
-      style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column;"
-    />
-    <div
-      aria-label="Notifications-bottom-left"
-      aria-live="polite"
-      id="chakra-toast-manager-bottom-left"
-      role="region"
-      style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column;"
-    />
-    <div
-      aria-label="Notifications-bottom"
-      aria-live="polite"
-      id="chakra-toast-manager-bottom"
-      role="region"
-      style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column; margin: 0px auto;"
-    />
-    <div
-      aria-label="Notifications-bottom-right"
-      aria-live="polite"
-      id="chakra-toast-manager-bottom-right"
-      role="region"
-      style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column;"
-    />
-  </div>
-</body>
-`;
-
-exports[`Section All stories should render successfully Renders SplitLeft story 1`] = `
-<body
-  class="chakra-ui-light"
->
-  <div>
-    <div
-      class="css-vjwvrt"
-      id="section-1"
-    >
-      <div
-        class="css-ag3wqc"
-      />
-      <div
-        class="css-1go9adf"
-      >
-        <div
-          class="css-o2ers3"
-        >
-          <div
-            class="css-ojqyia"
-          >
-            <img
-              alt="Craft cocktail with lemon twist"
-              class="chakra-image css-q61zmm"
-              src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/6ae1e6b2ed07556435debb0afc731453.jpeg"
-              typename="ComponentCommonImage"
-            />
-            <div
-              class="css-f6f4g0"
-            />
-          </div>
-        </div>
-        <div
-          class="css-1pitab9"
-        >
-          <div
-            class="css-7822g1"
-          >
-            <h3
-              class="chakra-heading css-14v1f4s"
-            >
-              What We Do
-            </h3>
-            <span>
-              <strong>
-                Hosting a party? Need a bartender? I’m your girl! We’ll create a custom cocktail menu for your event. 
-              </strong>
-            </span>
-            <br />
-            <br />
-            <span>
-              <strong>
-                From small events in your backyard to corporate parties, gallery openings, weddings, and local community events, let us supply your party with libations that will impress your guests.
-              </strong>
-            </span>
-            <br />
-            <br />
-            <span>
-              <strong>
-                Together we will create the perfect menu of cocktails, beer, and wine. Corridor Cocktails will make your bar dreams come true!
-              </strong>
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <span
-      hidden=""
-      id="__chakra_env"
-    />
-  </div>
-  <div
-    class="chakra-portal"
-  >
-    <div
-      aria-label="Notifications-top"
-      aria-live="polite"
-      id="chakra-toast-manager-top"
-      role="region"
-      style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column; margin: 0px auto;"
-    />
-    <div
-      aria-label="Notifications-top-left"
-      aria-live="polite"
-      id="chakra-toast-manager-top-left"
-      role="region"
-      style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column;"
-    />
-    <div
-      aria-label="Notifications-top-right"
-      aria-live="polite"
-      id="chakra-toast-manager-top-right"
-      role="region"
-      style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column;"
-    />
-    <div
-      aria-label="Notifications-bottom-left"
-      aria-live="polite"
-      id="chakra-toast-manager-bottom-left"
-      role="region"
-      style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column;"
-    />
-    <div
-      aria-label="Notifications-bottom"
-      aria-live="polite"
-      id="chakra-toast-manager-bottom"
-      role="region"
-      style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column; margin: 0px auto;"
-    />
-    <div
-      aria-label="Notifications-bottom-right"
-      aria-live="polite"
-      id="chakra-toast-manager-bottom-right"
-      role="region"
-      style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column;"
-    />
-  </div>
-</body>
-`;
-
-exports[`Section All stories should render successfully Renders SplitRight story 1`] = `
-<body
-  class="chakra-ui-light"
->
-  <div>
-    <div
-      class="css-vjwvrt"
-      id="section-1"
-    >
-      <div
-        class="css-ag3wqc"
-      />
-      <div
-        class="css-1go9adf"
-      >
-        <div
-          class="css-t8vz8f"
-        >
-          <div
-            class="css-7822g1"
-          >
-            <h3
-              class="chakra-heading css-14v1f4s"
-            >
-              What We Do
-            </h3>
-            <span>
-              <strong>
-                Hosting a party? Need a bartender? I’m your girl! We’ll create a custom cocktail menu for your event. 
-              </strong>
-            </span>
-            <br />
-            <br />
-            <span>
-              <strong>
-                From small events in your backyard to corporate parties, gallery openings, weddings, and local community events, let us supply your party with libations that will impress your guests.
-              </strong>
-            </span>
-            <br />
-            <br />
-            <span>
-              <strong>
-                Together we will create the perfect menu of cocktails, beer, and wine. Corridor Cocktails will make your bar dreams come true!
-              </strong>
-            </span>
-          </div>
-        </div>
-        <div
-          class="css-o2ers3"
-        >
-          <div
-            class="css-ojqyia"
-          >
-            <img
-              alt="Craft cocktail with lemon twist"
-              class="chakra-image css-tts5s5"
-              src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/6ae1e6b2ed07556435debb0afc731453.jpeg"
-              typename="ComponentCommonImage"
-            />
-            <div
-              class="css-f6f4g0"
-            />
           </div>
         </div>
       </div>
@@ -498,67 +145,79 @@ exports[`Section match snapshot 1`] = `
   >
     <div>
       <div
-        class="css-vjwvrt"
+        class="css-17nws4k"
         id="section-1"
       >
         <div
           class="css-ag3wqc"
-        />
-        <div
-          class="css-1go9adf"
         >
           <div
-            class="css-brklbi"
+            class="css-ojqyia"
+          >
+            <img
+              alt="Background image - Red fabric"
+              class="chakra-image css-o0922y"
+              src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/368ef30c049d5e73fc77113499547b2f.svg"
+              typename="ComponentCommonImage"
+            />
+            <div
+              class="css-irqulg"
+            />
+          </div>
+        </div>
+        <div
+          class="css-1v0ni0h"
+        >
+          <div
+            class="css-paz77w"
           >
             <div
-              class="chakra-stack css-wj6om1"
+              class="css-ihpfkw"
             >
               <div
-                class="css-ojqyia"
+                class="chakra-stack css-wj6om1"
               >
-                <img
-                  alt="Craft cocktail with lemon twist"
-                  class="chakra-image css-1o30apd"
-                  src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/6ae1e6b2ed07556435debb0afc731453.jpeg"
-                  typename="ComponentCommonImage"
-                />
                 <div
-                  class="css-1x4xquk"
-                />
+                  class="css-ojqyia"
+                >
+                  <img
+                    alt="Craft cocktail with lemon twist"
+                    class="chakra-image css-1yuvylm"
+                    src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/b181fb8a2e37c5523f5f625b11628738.avif"
+                    typename="ComponentCommonImage"
+                  />
+                  <div
+                    class="css-1x4xquk"
+                  />
+                </div>
+                <p
+                  class="chakra-text css-0"
+                >
+                  caption goes here
+                </p>
               </div>
-              <p
-                class="chakra-text css-0"
+              <div
+                class="css-192f3e9"
               >
-                caption goes here
-              </p>
-            </div>
-            <div
-              class="css-y5hzx6"
-            >
-              <h3
-                class="chakra-heading css-14v1f4s"
-              >
-                What We Do
-              </h3>
-              <span>
-                <strong>
-                  Hosting a party? Need a bartender? I’m your girl! We’ll create a custom cocktail menu for your event. 
-                </strong>
-              </span>
-              <br />
-              <br />
-              <span>
-                <strong>
+                <h3
+                  class="chakra-heading css-14v1f4s"
+                >
+                  What We Do
+                </h3>
+                <span>
+                  Hosting a party? Need a bartender? I'm your girl! We'll create a custom cocktail menu for your event. 
+                </span>
+                <br />
+                <br />
+                <span>
                   From small events in your backyard to corporate parties, gallery openings, weddings, and local community events, let us supply your party with libations that will impress your guests.
-                </strong>
-              </span>
-              <br />
-              <br />
-              <span>
-                <strong>
+                </span>
+                <br />
+                <br />
+                <span>
                   Together we will create the perfect menu of cocktails, beer, and wine. Corridor Cocktails will make your bar dreams come true!
-                </strong>
-              </span>
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -617,67 +276,79 @@ exports[`Section match snapshot 1`] = `
   </body>,
   "container": <div>
     <div
-      class="css-vjwvrt"
+      class="css-17nws4k"
       id="section-1"
     >
       <div
         class="css-ag3wqc"
-      />
-      <div
-        class="css-1go9adf"
       >
         <div
-          class="css-brklbi"
+          class="css-ojqyia"
+        >
+          <img
+            alt="Background image - Red fabric"
+            class="chakra-image css-o0922y"
+            src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/368ef30c049d5e73fc77113499547b2f.svg"
+            typename="ComponentCommonImage"
+          />
+          <div
+            class="css-irqulg"
+          />
+        </div>
+      </div>
+      <div
+        class="css-1v0ni0h"
+      >
+        <div
+          class="css-paz77w"
         >
           <div
-            class="chakra-stack css-wj6om1"
+            class="css-ihpfkw"
           >
             <div
-              class="css-ojqyia"
+              class="chakra-stack css-wj6om1"
             >
-              <img
-                alt="Craft cocktail with lemon twist"
-                class="chakra-image css-1o30apd"
-                src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/6ae1e6b2ed07556435debb0afc731453.jpeg"
-                typename="ComponentCommonImage"
-              />
               <div
-                class="css-1x4xquk"
-              />
+                class="css-ojqyia"
+              >
+                <img
+                  alt="Craft cocktail with lemon twist"
+                  class="chakra-image css-1yuvylm"
+                  src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/b181fb8a2e37c5523f5f625b11628738.avif"
+                  typename="ComponentCommonImage"
+                />
+                <div
+                  class="css-1x4xquk"
+                />
+              </div>
+              <p
+                class="chakra-text css-0"
+              >
+                caption goes here
+              </p>
             </div>
-            <p
-              class="chakra-text css-0"
+            <div
+              class="css-192f3e9"
             >
-              caption goes here
-            </p>
-          </div>
-          <div
-            class="css-y5hzx6"
-          >
-            <h3
-              class="chakra-heading css-14v1f4s"
-            >
-              What We Do
-            </h3>
-            <span>
-              <strong>
-                Hosting a party? Need a bartender? I’m your girl! We’ll create a custom cocktail menu for your event. 
-              </strong>
-            </span>
-            <br />
-            <br />
-            <span>
-              <strong>
+              <h3
+                class="chakra-heading css-14v1f4s"
+              >
+                What We Do
+              </h3>
+              <span>
+                Hosting a party? Need a bartender? I'm your girl! We'll create a custom cocktail menu for your event. 
+              </span>
+              <br />
+              <br />
+              <span>
                 From small events in your backyard to corporate parties, gallery openings, weddings, and local community events, let us supply your party with libations that will impress your guests.
-              </strong>
-            </span>
-            <br />
-            <br />
-            <span>
-              <strong>
+              </span>
+              <br />
+              <br />
+              <span>
                 Together we will create the perfect menu of cocktails, beer, and wine. Corridor Cocktails will make your bar dreams come true!
-              </strong>
-            </span>
+              </span>
+            </div>
           </div>
         </div>
       </div>
