@@ -69,6 +69,7 @@ export const Carousel = ({ carousel }: CarouselProps) => {
         <Center width="100%">
           {images.map((image, index) => (
             <IconButton
+              key={`image-${index}`}
               aria-label={`view ${image.alt}`}
               variant="ghost"
               icon={<DotOutline />}
