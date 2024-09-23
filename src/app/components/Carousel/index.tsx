@@ -6,7 +6,7 @@ import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
 import { Box, Center, IconButton, Image } from '@chakra-ui/react';
 
 import { Flex } from '@chakra-ui/react';
-import { Pause, Play } from '@phosphor-icons/react';
+import { DotOutline, Pause, Play } from '@phosphor-icons/react';
 
 export interface CarouselProps {
   carousel: StrapiCarousel;
@@ -66,7 +66,17 @@ export const Carousel = ({ carousel }: CarouselProps) => {
             src={images[imageIndex].media.url}
           ></Image>
         </Center>
-        {displayArrows && (
+        <Center width="100%">
+          {images.map((image, index) => (
+            <IconButton
+              aria-label={`view ${image.alt}`}
+              variant="ghost"
+              icon={<DotOutline />}
+              onClick={() => setImageIndex(index)}
+            ></IconButton>
+          ))}
+        </Center>
+        {displayArrows && false && (
           <Center width="100%">
             <IconButton
               aria-label="Show previous image"
