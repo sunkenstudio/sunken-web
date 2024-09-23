@@ -61,7 +61,10 @@ export const Carousel = ({ carousel }: CarouselProps) => {
         justifyContent={'center'}
       >
         <Center width="100%">
-          <Image src={images[imageIndex].media.url}></Image>
+          <Image
+            alt={images[imageIndex].alt}
+            src={images[imageIndex].media.url}
+          ></Image>
         </Center>
         {displayArrows && (
           <Center width="100%">
