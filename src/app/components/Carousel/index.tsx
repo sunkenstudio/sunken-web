@@ -61,21 +61,24 @@ export const Carousel = ({ carousel }: CarouselProps) => {
         justifyContent={'center'}
       >
         <Center width="100%">
-          <Image
-            alt={images[imageIndex].alt}
-            src={images[imageIndex].media.url}
-          ></Image>
-        </Center>
-        <Center width="100%">
-          {images.map((image, index) => (
-            <IconButton
-              key={`image-${index}`}
-              aria-label={`view ${image.alt}`}
-              variant="ghost"
-              icon={<DotOutline />}
-              onClick={() => setImageIndex(index)}
-            ></IconButton>
-          ))}
+          <Box boxSize="3xl">
+            <Image
+              alt={images[imageIndex].alt}
+              src={images[imageIndex].media.url}
+            ></Image>
+            <Center width="100%">
+              {images.map((image, index) => (
+                <IconButton
+                  key={`image-${index}`}
+                  aria-label={`view ${image.alt}`}
+                  color={index === imageIndex ? colors.accent : 'currentcolor'}
+                  variant="ghost"
+                  icon={<DotOutline size={32} />}
+                  onClick={() => setImageIndex(index)}
+                ></IconButton>
+              ))}
+            </Center>
+          </Box>
         </Center>
         {displayArrows && false && (
           <Center width="100%">
