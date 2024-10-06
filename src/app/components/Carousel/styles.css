@@ -1,0 +1,17 @@
+.outerContainer {
+  text-align: center;
+}
+
+.innerContainer {
+  position: relative;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.imageCounter {
+  color: white;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+}

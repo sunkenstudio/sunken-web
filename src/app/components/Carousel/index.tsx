@@ -7,6 +7,7 @@ import { Box, Center, IconButton, Image } from '@chakra-ui/react';
 
 import { Flex } from '@chakra-ui/react';
 import { DotOutline, Pause, Play } from '@phosphor-icons/react';
+import './styles.css';
 
 export interface CarouselProps {
   carousel: StrapiCarousel;
@@ -61,11 +62,16 @@ export const Carousel = ({ carousel }: CarouselProps) => {
         justifyContent={'center'}
       >
         <Center width="100%">
-          <Box boxSize="3xl">
-            <Image
-              alt={images[imageIndex].alt}
-              src={images[imageIndex].media.url}
-            ></Image>
+          <Box className="outerContainer" boxSize="3xl">
+            <div className="innerContainer">
+              <Image
+                alt={images[imageIndex].alt}
+                src={images[imageIndex].media.url}
+              ></Image>
+              <span className="imageCounter">
+                {imageIndex + 1}/{images.length}
+              </span>
+            </div>
             <Center width="100%">
               {images.map((image, index) => (
                 <IconButton
