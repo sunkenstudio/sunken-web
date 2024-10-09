@@ -128,6 +128,7 @@ export interface StrapiCarousel {
   displayArrows: boolean;
   images: StrapiStyledImage[];
   transitionTime: number;
+  showCounter: boolean;
 }
 
 export interface Client {

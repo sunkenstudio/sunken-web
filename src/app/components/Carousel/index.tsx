@@ -14,7 +14,7 @@ export interface CarouselProps {
 }
 export const Carousel = ({ carousel }: CarouselProps) => {
   const { colors } = useBrand();
-  const { displayArrows, images, transitionTime } = carousel;
+  const { displayArrows, images, transitionTime, displayCounter } = carousel;
   const [imageIndex, setImageIndex] = useState(0);
   const [moving, setMoving] = useState(true);
 
@@ -70,9 +70,11 @@ export const Carousel = ({ carousel }: CarouselProps) => {
               src={images[imageIndex].media.url}
             />
           </AspectRatio>
-          <span className="imageCounter">
-            {imageIndex + 1}/{images.length}
-          </span>
+          {displayCounter && (
+            <span className="imageCounter">
+              {imageIndex + 1}/{images.length}
+            </span>
+          )}
         </div>
         <Center width="100%">
           {images.map((image, index) => (
