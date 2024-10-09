@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useBrand } from '@/app/contexts/BrandContext';
 import { StrapiCarousel } from '@/app/types';
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
-import { Box, Center, IconButton, Image } from '@chakra-ui/react';
+import { AspectRatio, Box, Center, IconButton, Image } from '@chakra-ui/react';
 
 import { Flex } from '@chakra-ui/react';
 import { DotOutline, Pause, Play } from '@phosphor-icons/react';
@@ -60,54 +60,54 @@ export const Carousel = ({ carousel }: CarouselProps) => {
         position="relative"
         alignItems={'center'}
         justifyContent={'center'}
+        className="outerContainer"
       >
+        <div className="innerContainer">
+          <AspectRatio ratio={4 / 3} maxW="1000px">
+            <Image
+              objectFit="contain"
+              alt={images[imageIndex].alt}
+              src={images[imageIndex].media.url}
+            />
+          </AspectRatio>
+          <span className="imageCounter">
+            {imageIndex + 1}/{images.length}
+          </span>
+        </div>
         <Center width="100%">
-          <Box className="outerContainer" boxSize="3xl">
-            <div className="innerContainer">
-              <Image
-                alt={images[imageIndex].alt}
-                src={images[imageIndex].media.url}
-              ></Image>
-              <span className="imageCounter">
-                {imageIndex + 1}/{images.length}
-              </span>
-            </div>
+          {images.map((image, index) => (
+            <IconButton
+              key={`image-${index}`}
+              aria-label={`view ${image.alt}`}
+              color={index === imageIndex ? colors.accent : 'currentcolor'}
+              variant="ghost"
+              icon={<DotOutline size={32} />}
+              onClick={() => setImageIndex(index)}
+            ></IconButton>
+          ))}
+          {displayArrows && false && (
             <Center width="100%">
-              {images.map((image, index) => (
-                <IconButton
-                  key={`image-${index}`}
-                  aria-label={`view ${image.alt}`}
-                  color={index === imageIndex ? colors.accent : 'currentcolor'}
-                  variant="ghost"
-                  icon={<DotOutline size={32} />}
-                  onClick={() => setImageIndex(index)}
-                ></IconButton>
-              ))}
+              <IconButton
+                aria-label="Show previous image"
+                variant="ghost"
+                icon={<ChevronLeftIcon />}
+                onClick={handleNext}
+              />
+              <IconButton
+                aria-label="Show next image"
+                variant="ghost"
+                icon={moving ? <Pause /> : <Play />}
+                onClick={() => setMoving(!moving)}
+              />
+              <IconButton
+                aria-label="Show next image"
+                variant="ghost"
+                icon={<ChevronRightIcon />}
+                onClick={handlePrev}
+              />
             </Center>
-          </Box>
+          )}
         </Center>
-        {displayArrows && false && (
-          <Center width="100%">
-            <IconButton
-              aria-label="Show previous image"
-              variant="ghost"
-              icon={<ChevronLeftIcon />}
-              onClick={handleNext}
-            />
-            <IconButton
-              aria-label="Show next image"
-              variant="ghost"
-              icon={moving ? <Pause /> : <Play />}
-              onClick={() => setMoving(!moving)}
-            />
-            <IconButton
-              aria-label="Show next image"
-              variant="ghost"
-              icon={<ChevronRightIcon />}
-              onClick={handlePrev}
-            />
-          </Center>
-        )}
       </Box>
     </Flex>
   );
