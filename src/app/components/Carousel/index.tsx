@@ -6,7 +6,7 @@ import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
 import { AspectRatio, Box, Center, IconButton, Image } from '@chakra-ui/react';
 
 import { Flex } from '@chakra-ui/react';
-import { DotOutline, Pause, Play } from '@phosphor-icons/react';
+import { DotOutline } from '@phosphor-icons/react';
 import './styles.css';
 
 export interface CarouselProps {
@@ -17,6 +17,8 @@ export const Carousel = ({ carousel }: CarouselProps) => {
   const { displayArrows, images, transitionTime, displayCounter } = carousel;
   const [imageIndex, setImageIndex] = useState(0);
   const [moving, setMoving] = useState(transitionTime > 0);
+
+  // TODO:
 
   useEffect(() => {
     if (moving) {
