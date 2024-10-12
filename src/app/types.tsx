@@ -129,6 +129,8 @@ export interface StrapiCarousel {
   images: StrapiStyledImage[];
   transitionTime: number;
   displayCounter: boolean;
+  aspectRatioWidth: number;
+  aspectRatioHeight: number;
 }
 
 export interface Client {

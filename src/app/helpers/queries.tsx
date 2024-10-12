@@ -102,6 +102,8 @@ export const GET_SITE = gql`
                 TransitionTime
                 DisplayArrows
                 DisplayCounter
+                AspectRatioWidth
+                AspectRatioHeight
                 Images {
                   ...imageFields
                 }

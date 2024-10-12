@@ -14,11 +14,18 @@ export interface CarouselProps {
 }
 export const Carousel = ({ carousel }: CarouselProps) => {
   const { colors } = useBrand();
-  const { displayArrows, images, transitionTime, displayCounter } = carousel;
+  const {
+    displayArrows,
+    images,
+    transitionTime,
+    displayCounter,
+    aspectRatioWidth,
+    aspectRatioHeight,
+  } = carousel;
   const [imageIndex, setImageIndex] = useState(0);
   const [moving, setMoving] = useState(transitionTime > 0);
 
-  // TODO:
+  // TODO: Add image transition animation
 
   useEffect(() => {
     if (moving) {
@@ -65,7 +72,10 @@ export const Carousel = ({ carousel }: CarouselProps) => {
         className="outerContainer"
       >
         <div className="innerContainer">
-          <AspectRatio ratio={4 / 3} maxW="1000px">
+          <AspectRatio
+            ratio={aspectRatioWidth / aspectRatioHeight}
+            maxW="1000px"
+          >
             <Image
               objectFit="contain"
               alt={images[imageIndex].alt}
