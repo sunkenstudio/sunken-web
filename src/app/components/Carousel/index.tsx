@@ -16,7 +16,7 @@ export const Carousel = ({ carousel }: CarouselProps) => {
   const { colors } = useBrand();
   const { displayArrows, images, transitionTime, displayCounter } = carousel;
   const [imageIndex, setImageIndex] = useState(0);
-  const [moving, setMoving] = useState(true);
+  const [moving, setMoving] = useState(transitionTime > 0);
 
   useEffect(() => {
     if (moving) {
@@ -77,6 +77,14 @@ export const Carousel = ({ carousel }: CarouselProps) => {
           )}
         </div>
         <Center width="100%">
+          {displayArrows && (
+            <IconButton
+              aria-label="Show previous image"
+              variant="ghost"
+              icon={<ChevronLeftIcon />}
+              onClick={handleNext}
+            />
+          )}
           {images.map((image, index) => (
             <IconButton
               key={`image-${index}`}
@@ -87,27 +95,13 @@ export const Carousel = ({ carousel }: CarouselProps) => {
               onClick={() => setImageIndex(index)}
             ></IconButton>
           ))}
-          {displayArrows && false && (
-            <Center width="100%">
-              <IconButton
-                aria-label="Show previous image"
-                variant="ghost"
-                icon={<ChevronLeftIcon />}
-                onClick={handleNext}
-              />
-              <IconButton
-                aria-label="Show next image"
-                variant="ghost"
-                icon={moving ? <Pause /> : <Play />}
-                onClick={() => setMoving(!moving)}
-              />
-              <IconButton
-                aria-label="Show next image"
-                variant="ghost"
-                icon={<ChevronRightIcon />}
-                onClick={handlePrev}
-              />
-            </Center>
+          {displayArrows && (
+            <IconButton
+              aria-label="Show next image"
+              variant="ghost"
+              icon={<ChevronRightIcon />}
+              onClick={handlePrev}
+            />
           )}
         </Center>
       </Box>
