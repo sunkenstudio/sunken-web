@@ -3,7 +3,14 @@ import React, { useEffect, useState } from 'react';
 import { useBrand } from '@/app/contexts/BrandContext';
 import { StrapiCarousel } from '@/app/types';
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
-import { AspectRatio, Box, Center, IconButton, Image } from '@chakra-ui/react';
+import {
+  AspectRatio,
+  Box,
+  Center,
+  IconButton,
+  Image,
+  SlideFade,
+} from '@chakra-ui/react';
 
 import { Flex } from '@chakra-ui/react';
 import { DotOutline } from '@phosphor-icons/react';
@@ -24,15 +31,17 @@ export const Carousel = ({ carousel }: CarouselProps) => {
   } = carousel;
   const [imageIndex, setImageIndex] = useState(0);
   const [moving, setMoving] = useState(transitionTime > 0);
-
-  // TODO: Add image transition animation
+  const [isShowing, setIsShowing] = useState(true);
 
   useEffect(() => {
     if (moving) {
-      const tick = setInterval(
-        () => setImageIndex((imageIndex + 1) % images.length),
-        transitionTime
-      );
+      const tick = setTimeout(() => {
+        setIsShowing(false);
+        setTimeout(() => {
+          setIsShowing(true);
+          setImageIndex((imageIndex + 1) % images.length);
+        }, 500);
+      }, transitionTime - 500);
 
       return () => clearInterval(tick);
     }
@@ -72,16 +81,18 @@ export const Carousel = ({ carousel }: CarouselProps) => {
         className="outerContainer"
       >
         <div className="innerContainer">
-          <AspectRatio
-            ratio={aspectRatioWidth / aspectRatioHeight}
-            maxW="1000px"
-          >
-            <Image
-              objectFit="contain"
-              alt={images[imageIndex].alt}
-              src={images[imageIndex].media.url}
-            />
-          </AspectRatio>
+          <SlideFade in={isShowing} offsetX={'300px'}>
+            <AspectRatio
+              ratio={aspectRatioWidth / aspectRatioHeight}
+              maxW="1000px"
+            >
+              <Image
+                objectFit="contain"
+                alt={images[imageIndex].alt}
+                src={images[imageIndex].media.url}
+              />
+            </AspectRatio>
+          </SlideFade>
           {displayCounter && (
             <span className="imageCounter">
               {imageIndex + 1}/{images.length}
