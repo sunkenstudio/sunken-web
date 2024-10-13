@@ -35,11 +35,11 @@ export const Carousel = ({ carousel }: CarouselProps) => {
 
   useEffect(() => {
     if (moving) {
-      const tick = setTimeout(() => {
+      const tick = setInterval(() => {
         setIsShowing(false);
         setTimeout(() => {
-          setIsShowing(true);
           setImageIndex((imageIndex + 1) % images.length);
+          setIsShowing(true);
         }, 500);
       }, transitionTime - 500);
 
@@ -48,19 +48,35 @@ export const Carousel = ({ carousel }: CarouselProps) => {
   }, [images, transitionTime, setImageIndex, imageIndex, moving, setMoving]);
 
   const handleNext = () => {
-    if (imageIndex === 0) {
-      setImageIndex(images.length - 1);
-    } else {
-      setImageIndex(imageIndex - 1);
-    }
+    setIsShowing(false);
+    setTimeout(() => {
+      if (imageIndex === images.length - 1) {
+        setImageIndex(0);
+      } else {
+        setImageIndex(imageIndex + 1);
+      }
+      setIsShowing(true);
+    }, 500);
   };
 
   const handlePrev = () => {
-    if (imageIndex === images.length - 1) {
-      setImageIndex(0);
-    } else {
-      setImageIndex(imageIndex + 1);
-    }
+    setIsShowing(false);
+    setTimeout(() => {
+      if (imageIndex === 0) {
+        setImageIndex(images.length - 1);
+      } else {
+        setImageIndex(imageIndex - 1);
+      }
+      setIsShowing(true);
+    }, 500);
+  };
+
+  const selectNewImage = (index: number) => {
+    setIsShowing(false);
+    setTimeout(() => {
+      setImageIndex(index);
+      setIsShowing(true);
+    }, 500);
   };
 
   return (
@@ -81,7 +97,7 @@ export const Carousel = ({ carousel }: CarouselProps) => {
         className="outerContainer"
       >
         <div className="innerContainer">
-          <SlideFade in={isShowing} offsetX={'300px'}>
+          <SlideFade in={isShowing} offsetX={isShowing ? '300px' : '-300px'}>
             <AspectRatio
               ratio={aspectRatioWidth / aspectRatioHeight}
               maxW="1000px"
@@ -105,7 +121,7 @@ export const Carousel = ({ carousel }: CarouselProps) => {
               aria-label="Show previous image"
               variant="ghost"
               icon={<ChevronLeftIcon />}
-              onClick={handleNext}
+              onClick={handlePrev}
             />
           )}
           {images.map((image, index) => (
@@ -115,7 +131,7 @@ export const Carousel = ({ carousel }: CarouselProps) => {
               color={index === imageIndex ? colors.accent : 'currentcolor'}
               variant="ghost"
               icon={<DotOutline size={32} />}
-              onClick={() => setImageIndex(index)}
+              onClick={() => selectNewImage(index)}
             ></IconButton>
           ))}
           {displayArrows && (
@@ -123,7 +139,7 @@ export const Carousel = ({ carousel }: CarouselProps) => {
               aria-label="Show next image"
               variant="ghost"
               icon={<ChevronRightIcon />}
-              onClick={handlePrev}
+              onClick={handleNext}
             />
           )}
         </Center>
