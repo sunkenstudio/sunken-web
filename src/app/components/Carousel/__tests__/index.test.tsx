@@ -25,4 +25,22 @@ describe('Carousel', () => {
       </ChakraProvider>
     );
   };
+
+  // TODO: setup stories
+  //   describe('All stories should render successfully', () => {
+  //     testStories(Stories);
+  //   });
+
+  it('matches snapshot', () => {
+    const rendered = renderComponent();
+    expect(rendered).toMatchSnapshot();
+  });
+
+  // TODO: shows/hides arrows based on flag
+  // TODO: Images auto increment if transitionTime is defined
+  // TODO: Images do not increment if transitionTime is defined
+  // TODO: Dots allow to jump to different images
+  // TODO: Arrows increment and decrement images
+  // TODO: displayCounter shows/hides counter
+  // TODO: Aspect ration test???
 });
