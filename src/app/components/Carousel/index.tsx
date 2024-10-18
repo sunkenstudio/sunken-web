@@ -32,6 +32,7 @@ export const Carousel = ({ carousel }: CarouselProps) => {
   const [imageIndex, setImageIndex] = useState(0);
   const [moving, setMoving] = useState(transitionTime > 0);
   const [isShowing, setIsShowing] = useState(true);
+  const [isMoreThanFive, setIsMoreThanFive] = useState(false);
 
   useEffect(() => {
     if (moving) {
@@ -46,6 +47,10 @@ export const Carousel = ({ carousel }: CarouselProps) => {
       return () => clearInterval(tick);
     }
   }, [images, transitionTime, setImageIndex, imageIndex, moving, setMoving]);
+
+  useEffect(() => {
+    setIsMoreThanFive(images.length > 5);
+  }, [images]);
 
   const handleNext = () => {
     setIsShowing(false);
@@ -116,7 +121,7 @@ export const Carousel = ({ carousel }: CarouselProps) => {
           )}
         </div>
         <Center width="100%">
-          {displayArrows && (
+          {(displayArrows || isMoreThanFive) && (
             <IconButton
               aria-label="Show previous image"
               variant="ghost"
@@ -124,17 +129,18 @@ export const Carousel = ({ carousel }: CarouselProps) => {
               onClick={handlePrev}
             />
           )}
-          {images.map((image, index) => (
-            <IconButton
-              key={`image-${index}`}
-              aria-label={`view ${image.alt}`}
-              color={index === imageIndex ? colors.accent : 'currentcolor'}
-              variant="ghost"
-              icon={<DotOutline size={32} />}
-              onClick={() => selectNewImage(index)}
-            ></IconButton>
-          ))}
-          {displayArrows && (
+          {!isMoreThanFive &&
+            images.map((image, index) => (
+              <IconButton
+                key={`image-${index}`}
+                aria-label={`view ${image.alt}`}
+                color={index === imageIndex ? colors.accent : 'currentcolor'}
+                variant="ghost"
+                icon={<DotOutline size={32} />}
+                onClick={() => selectNewImage(index)}
+              ></IconButton>
+            ))}
+          {(displayArrows || isMoreThanFive) && (
             <IconButton
               aria-label="Show next image"
               variant="ghost"
