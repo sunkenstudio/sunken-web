@@ -77,6 +77,7 @@ export const CarouselFixture = (
         url: 'https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/8203015ace4f442ef439488dcd11d914.jpeg',
         typename: 'UploadFile',
       },
+      alt: 'Outrigger canoe',
     }),
   ],
   transitionTime: 1000,
