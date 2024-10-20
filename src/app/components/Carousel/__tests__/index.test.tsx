@@ -4,7 +4,7 @@ import { render, waitFor } from '@testing-library/react';
 import { Carousel, CarouselProps } from '..';
 import { StrapiBrand } from '@/app/types';
 import { ChakraProvider } from '@chakra-ui/react';
-import { BrandFixture, CarouselFixture } from '@/app/fixtures';
+import { BrandFixture, CarouselFixture, ImageFixture } from '@/app/fixtures';
 import { BrandProvider } from '@/app/contexts/BrandContext';
 import theme from '@/app/styles/theme';
 import { testStories } from '@/app/helpers/testStorybook';
@@ -61,11 +61,19 @@ describe('Carousel', () => {
   it('changes the image if transitionTime is defined', async () => {
     const rendered = renderComponent();
     const firstImage = rendered.getByAltText('Craft cocktail with lemon twist');
+    const firstCounter = rendered.getByText('1/3');
+
     expect(firstImage).toBeInTheDocument();
+    expect(firstCounter).toBeInTheDocument();
+
     await waitFor(
       () => {
         const secondImage = rendered.getByAltText('Outrigger canoe');
+        const secondCounter = rendered.getByText('2/3');
+
         expect(secondImage).toBeInTheDocument();
+        expect(secondCounter).toBeInTheDocument();
+
         const firstImage = rendered.queryByAltText(
           'Craft cocktail with lemon twist'
         );
@@ -82,22 +90,92 @@ describe('Carousel', () => {
       }),
     });
     const firstImage = rendered.getByAltText('Craft cocktail with lemon twist');
+    const firstCounter = rendered.getByText(`1/3`);
+
     expect(firstImage).toBeInTheDocument();
+    expect(firstCounter).toBeInTheDocument();
+
     await waitFor(
       () => {
         const secondImage = rendered.queryByAltText('Outrigger canoe');
         expect(secondImage).not.toBeInTheDocument();
+
         const firstImage = rendered.getByAltText(
           'Craft cocktail with lemon twist'
         );
+        const firstCounter = rendered.getByText(`1/3`);
+
+        expect(firstCounter).toBeInTheDocument();
         expect(firstImage).toBeInTheDocument();
       },
       { timeout: 1500 }
     );
   });
 
+  it('increments displayed image if right arrow is clicked', async () => {
+    const rendered = renderComponent();
+    const arrowLeft = rendered.getByLabelText('Show next image');
+    const firstImage = rendered.getByAltText('Craft cocktail with lemon twist');
+    const firstCounter = rendered.getByText(`1/3`);
+
+    expect(firstImage).toBeInTheDocument();
+    expect(firstCounter).toBeInTheDocument();
+
+    arrowLeft?.click();
+    // wait for transition animation
+    await waitFor(
+      () => {
+        const secondImage = rendered.getByAltText('Outrigger canoe');
+        const secondCounter = rendered.getByText('2/3');
+
+        expect(secondImage).toBeInTheDocument();
+        expect(secondCounter).toBeInTheDocument();
+
+        const firstImage = rendered.queryByAltText(
+          'Craft cocktail with lemon twist'
+        );
+        expect(firstImage).not.toBeInTheDocument();
+      },
+      { timeout: 600 }
+    );
+  });
+
+  it('decrements displayed image if left arrow is clicked', async () => {
+    const rendered = renderComponent();
+    const arrowLeft = rendered.getByLabelText('Show previous image');
+    const firstImage = rendered.getByAltText('Craft cocktail with lemon twist');
+    const firstCounter = rendered.getByText(`1/3`);
+
+    expect(firstImage).toBeInTheDocument();
+    expect(firstCounter).toBeInTheDocument();
+
+    arrowLeft?.click();
+    // wait for transition animation
+    await waitFor(
+      () => {
+        const secondImage = rendered.getByAltText('Dragon boat');
+        const secondCounter = rendered.getByText('3/3');
+
+        expect(secondImage).toBeInTheDocument();
+        expect(secondCounter).toBeInTheDocument();
+
+        const firstImage = rendered.queryByAltText(
+          'Craft cocktail with lemon twist'
+        );
+        expect(firstImage).not.toBeInTheDocument();
+      },
+      { timeout: 600 }
+    );
+  });
+
+  it('hides counter if flag is false', () => {
+    const rendered = renderComponent({
+      carousel: CarouselFixture({ displayCounter: false }),
+    });
+    const counter = rendered.queryByText('1/3');
+    expect(counter).not.toBeInTheDocument();
+  });
+
   // TODO: Dots allow to jump to different images
-  // TODO: Arrows increment and decrement images
-  // TODO: displayCounter shows/hides counter
-  // TODO: Aspect ratio test?
+  // TODO: arrows render and dots do not if more than 5 images are passed
 });

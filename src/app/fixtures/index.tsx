@@ -79,6 +79,13 @@ export const CarouselFixture = (
       },
       alt: 'Outrigger canoe',
     }),
+    ImageFixture({
+      media: {
+        url: 'https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/4af0a0e9e19b8dfde009a6b216c9f7bb.JPG',
+        typename: 'UploadFile',
+      },
+      alt: 'Dragon boat',
+    }),
   ],
   transitionTime: 1000,
   displayCounter: true,
