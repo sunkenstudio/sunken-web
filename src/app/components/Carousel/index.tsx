@@ -14,7 +14,7 @@ import {
 
 import { Flex } from '@chakra-ui/react';
 import { DotOutline } from '@phosphor-icons/react';
-import './styles.css';
+import './Carousel.module.css';
 
 export interface CarouselProps {
   carousel: StrapiCarousel;

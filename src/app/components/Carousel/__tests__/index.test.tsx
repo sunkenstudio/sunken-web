@@ -7,6 +7,8 @@ import { ChakraProvider } from '@chakra-ui/react';
 import { BrandFixture, CarouselFixture } from '@/app/fixtures';
 import { BrandProvider } from '@/app/contexts/BrandContext';
 import theme from '@/app/styles/theme';
+import { testStories } from '@/app/helpers/testStorybook';
+import * as Stories from '../index.stories';
 
 describe('Carousel', () => {
   const renderComponent = (
@@ -26,10 +28,9 @@ describe('Carousel', () => {
     );
   };
 
-  // TODO: setup stories
-  //   describe('All stories should render successfully', () => {
-  //     testStories(Stories);
-  //   });
+  describe('All stories should render successfully', () => {
+    testStories(Stories);
+  });
 
   it('matches snapshot', () => {
     const rendered = renderComponent();
