@@ -34,7 +34,7 @@ exports[`Carousel All stories should render successfully Renders Primary story 1
           >
             1
             /
-            2
+            3
           </span>
         </div>
         <div
@@ -77,7 +77,26 @@ exports[`Carousel All stories should render successfully Renders Primary story 1
             </svg>
           </button>
           <button
-            aria-label="view Craft cocktail with lemon twist"
+            aria-label="view Outrigger canoe"
+            class="chakra-button css-2u9f3v"
+            type="button"
+          >
+            <svg
+              aria-hidden="true"
+              fill="currentColor"
+              focusable="false"
+              height="32"
+              viewBox="0 0 256 256"
+              width="32"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M128,96a32,32,0,1,0,32,32A32,32,0,0,0,128,96Zm0,48a16,16,0,1,1,16-16A16,16,0,0,1,128,144Z"
+              />
+            </svg>
+          </button>
+          <button
+            aria-label="view Dragon boat"
             class="chakra-button css-2u9f3v"
             type="button"
           >
@@ -205,7 +224,7 @@ exports[`Carousel matches snapshot 1`] = `
             >
               1
               /
-              2
+              3
             </span>
           </div>
           <div
@@ -248,7 +267,26 @@ exports[`Carousel matches snapshot 1`] = `
               </svg>
             </button>
             <button
-              aria-label="view Craft cocktail with lemon twist"
+              aria-label="view Outrigger canoe"
+              class="chakra-button css-2u9f3v"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                height="32"
+                viewBox="0 0 256 256"
+                width="32"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M128,96a32,32,0,1,0,32,32A32,32,0,0,0,128,96Zm0,48a16,16,0,1,1,16-16A16,16,0,0,1,128,144Z"
+                />
+              </svg>
+            </button>
+            <button
+              aria-label="view Dragon boat"
               class="chakra-button css-2u9f3v"
               type="button"
             >
@@ -368,7 +406,7 @@ exports[`Carousel matches snapshot 1`] = `
           >
             1
             /
-            2
+            3
           </span>
         </div>
         <div
@@ -411,7 +449,26 @@ exports[`Carousel matches snapshot 1`] = `
             </svg>
           </button>
           <button
-            aria-label="view Craft cocktail with lemon twist"
+            aria-label="view Outrigger canoe"
+            class="chakra-button css-2u9f3v"
+            type="button"
+          >
+            <svg
+              aria-hidden="true"
+              fill="currentColor"
+              focusable="false"
+              height="32"
+              viewBox="0 0 256 256"
+              width="32"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M128,96a32,32,0,1,0,32,32A32,32,0,0,0,128,96Zm0,48a16,16,0,1,1,16-16A16,16,0,0,1,128,144Z"
+              />
+            </svg>
+          </button>
+          <button
+            aria-label="view Dragon boat"
             class="chakra-button css-2u9f3v"
             type="button"
           >
