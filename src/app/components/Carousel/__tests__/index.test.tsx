@@ -9,7 +9,6 @@ import { BrandProvider } from '@/app/contexts/BrandContext';
 import theme from '@/app/styles/theme';
 import { testStories } from '@/app/helpers/testStorybook';
 import * as Stories from '../index.stories';
-import exp from 'constants';
 
 describe('Carousel', () => {
   const renderComponent = (
@@ -114,14 +113,14 @@ describe('Carousel', () => {
 
   it('increments displayed image if right arrow is clicked', async () => {
     const rendered = renderComponent();
-    const arrowLeft = rendered.getByLabelText('Show next image');
+    const arrowRight = rendered.getByLabelText('Show next image');
     const firstImage = rendered.getByAltText('Craft cocktail with lemon twist');
     const firstCounter = rendered.getByText(`1/3`);
 
     expect(firstImage).toBeInTheDocument();
     expect(firstCounter).toBeInTheDocument();
 
-    arrowLeft?.click();
+    arrowRight?.click();
     // wait for transition animation
     await waitFor(
       () => {
@@ -176,6 +175,45 @@ describe('Carousel', () => {
     expect(counter).not.toBeInTheDocument();
   });
 
+  it('renders arrows and does NOT render dots if more than 5 images', () => {
+    const rendered = renderComponent({
+      carousel: CarouselFixture({
+        images: [
+          ...CarouselFixture().images,
+          ImageFixture({
+            media: {
+              url: 'https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/8203015ace4f442ef439488dcd11d914.jpeg',
+              typename: 'UploadFile',
+            },
+            alt: 'drink two',
+          }),
+          ImageFixture({
+            media: {
+              url: 'https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/8203015ace4f442ef439488dcd11d914.jpeg',
+              typename: 'UploadFile',
+            },
+            alt: 'drink three',
+          }),
+          ImageFixture({
+            media: {
+              url: 'https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/8203015ace4f442ef439488dcd11d914.jpeg',
+              typename: 'UploadFile',
+            },
+            alt: 'drink four',
+          }),
+        ],
+      }),
+    });
+    const firstDotBtn = rendered.queryByLabelText(
+      'View Craft cocktail with lemon twist'
+    );
+    const arrowLeft = rendered.getByLabelText('Show previous image');
+    const arrowRight = rendered.getByLabelText('Show next image');
+
+    expect(firstDotBtn).not.toBeInTheDocument();
+    expect(arrowLeft).toBeInTheDocument();
+    expect(arrowRight).toBeInTheDocument();
+  });
+
   // TODO: Dots allow to jump to different images
-  // TODO: arrows render and dots do not if more than 5 images are passed
 });
