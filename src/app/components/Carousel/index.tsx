@@ -14,7 +14,7 @@ import {
 
 import { Flex } from '@chakra-ui/react';
 import { DotOutline } from '@phosphor-icons/react';
-import './Carousel.module.css';
+import styles from './Carousel.module.css';
 
 export interface CarouselProps {
   carousel: StrapiCarousel;
@@ -99,9 +99,9 @@ export const Carousel = ({ carousel }: CarouselProps) => {
         position="relative"
         alignItems={'center'}
         justifyContent={'center'}
-        className="outerContainer"
+        className={styles.outerContainer}
       >
-        <div className="innerContainer">
+        <div className={styles.innerContainer}>
           <SlideFade in={isShowing} offsetX={isShowing ? '300px' : '-300px'}>
             <AspectRatio
               ratio={aspectRatioWidth / aspectRatioHeight}
@@ -115,7 +115,7 @@ export const Carousel = ({ carousel }: CarouselProps) => {
             </AspectRatio>
           </SlideFade>
           {displayCounter && (
-            <span className="imageCounter">
+            <span className={styles.imageCounter}>
               {imageIndex + 1}/{images.length}
             </span>
           )}
