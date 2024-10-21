@@ -1,6 +1,7 @@
 import {
   Client,
   StrapiBrand,
+  StrapiCarousel,
   StrapiConfig,
   StrapiContact,
   StrapiFooter,
@@ -61,6 +62,35 @@ export const ImageFixture = (
     radius: '99rem',
   },
   filter: null,
+  ...overrides,
+});
+
+export const CarouselFixture = (
+  overrides: Partial<StrapiCarousel> = {}
+): StrapiCarousel => ({
+  typename: 'Carousel',
+  displayArrows: true,
+  images: [
+    ImageFixture(),
+    ImageFixture({
+      media: {
+        url: 'https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/8203015ace4f442ef439488dcd11d914.jpeg',
+        typename: 'UploadFile',
+      },
+      alt: 'Outrigger canoe',
+    }),
+    ImageFixture({
+      media: {
+        url: 'https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/4af0a0e9e19b8dfde009a6b216c9f7bb.JPG',
+        typename: 'UploadFile',
+      },
+      alt: 'Dragon boat',
+    }),
+  ],
+  transitionTime: 1000,
+  displayCounter: true,
+  aspectRatioWidth: 4,
+  aspectRatioHeight: 3,
   ...overrides,
 });
 

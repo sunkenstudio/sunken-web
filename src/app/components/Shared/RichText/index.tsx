@@ -9,6 +9,9 @@ export interface RichTextProps extends TextProps {
 }
 
 export const RichText = ({ content, ...rest }: RichTextProps) => {
+  if (!content) {
+    return null;
+  }
   return (
     <BlocksRenderer
       content={content}
