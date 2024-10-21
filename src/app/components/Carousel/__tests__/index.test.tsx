@@ -215,5 +215,31 @@ describe('Carousel', () => {
     expect(arrowRight).toBeInTheDocument();
   });
 
-  // TODO: Dots allow to jump to different images
+  it('changes image when a dot button is clicked', async () => {
+    const rendered = renderComponent();
+    const firstImage = rendered.getByAltText('Craft cocktail with lemon twist');
+    const firstCounter = rendered.getByText(`1/3`);
+    const thirdDotBtn = rendered.getByLabelText('view Dragon boat');
+
+    expect(firstImage).toBeInTheDocument();
+    expect(firstCounter).toBeInTheDocument();
+
+    thirdDotBtn.click();
+    // wait for transition animation
+    await waitFor(
+      () => {
+        const secondImage = rendered.getByAltText('Dragon boat');
+        const secondCounter = rendered.getByText('3/3');
+
+        expect(secondImage).toBeInTheDocument();
+        expect(secondCounter).toBeInTheDocument();
+
+        const firstImage = rendered.queryByAltText(
+          'Craft cocktail with lemon twist'
+        );
+        expect(firstImage).not.toBeInTheDocument();
+      },
+      { timeout: 600 }
+    );
+  });
 });
