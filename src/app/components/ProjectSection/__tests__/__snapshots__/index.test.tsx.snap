@@ -1,0 +1,329 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProjectSection All stories should render successfully Renders Primary story 1`] = `
+<body
+  class="chakra-ui-light"
+>
+  <div>
+    <div
+      class="chakra-stack css-u3n3fd"
+    >
+      <h3
+        class="chakra-heading css-11d1m14"
+      >
+        Projects
+      </h3>
+      <div
+        class="chakra-stack css-1arwy0y"
+      >
+        <div
+          class="css-8atqhb"
+        >
+          <div
+            class="css-1020liq"
+          >
+            <div
+              class="css-c2t2fn"
+            >
+              <div
+                class="chakra-stack css-n3uhkm"
+              >
+                <img
+                  class="chakra-image css-a6rva7"
+                  src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/881d819e76d4feed9921f05433647f6f.png"
+                />
+                <div
+                  class="chakra-stack css-1pftrre"
+                >
+                  <h5
+                    class="chakra-heading css-1mjswtr"
+                  >
+                    Corridor Cocktails
+                  </h5>
+                  <span>
+                    A website for a local vendor providing a pop-up cocktail bar service.
+                  </span>
+                  <a
+                    class="chakra-link css-spn4bz"
+                    href="https://corridorcocktails.org"
+                    target="_blank"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <span
+      hidden=""
+      id="__chakra_env"
+    />
+  </div>
+  <div
+    class="chakra-portal"
+  >
+    <div
+      aria-label="Notifications-top"
+      aria-live="polite"
+      id="chakra-toast-manager-top"
+      role="region"
+      style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column; margin: 0px auto;"
+    />
+    <div
+      aria-label="Notifications-top-left"
+      aria-live="polite"
+      id="chakra-toast-manager-top-left"
+      role="region"
+      style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column;"
+    />
+    <div
+      aria-label="Notifications-top-right"
+      aria-live="polite"
+      id="chakra-toast-manager-top-right"
+      role="region"
+      style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column;"
+    />
+    <div
+      aria-label="Notifications-bottom-left"
+      aria-live="polite"
+      id="chakra-toast-manager-bottom-left"
+      role="region"
+      style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column;"
+    />
+    <div
+      aria-label="Notifications-bottom"
+      aria-live="polite"
+      id="chakra-toast-manager-bottom"
+      role="region"
+      style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column; margin: 0px auto;"
+    />
+    <div
+      aria-label="Notifications-bottom-right"
+      aria-live="polite"
+      id="chakra-toast-manager-bottom-right"
+      role="region"
+      style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column;"
+    />
+  </div>
+</body>
+`;
+
+exports[`ProjectSection match snapshot 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body
+    class="chakra-ui-light"
+  >
+    <div>
+      <div
+        class="chakra-stack css-u3n3fd"
+      >
+        <h3
+          class="chakra-heading css-11d1m14"
+        >
+          Projects
+        </h3>
+        <div
+          class="chakra-stack css-1arwy0y"
+        >
+          <div
+            class="css-8atqhb"
+          >
+            <div
+              class="css-1020liq"
+            >
+              <div
+                class="css-c2t2fn"
+              >
+                <div
+                  class="chakra-stack css-n3uhkm"
+                >
+                  <img
+                    class="chakra-image css-a6rva7"
+                    src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/881d819e76d4feed9921f05433647f6f.png"
+                  />
+                  <div
+                    class="chakra-stack css-1pftrre"
+                  >
+                    <h5
+                      class="chakra-heading css-1mjswtr"
+                    >
+                      Corridor Cocktails
+                    </h5>
+                    <span>
+                      A website for a local vendor providing a pop-up cocktail bar service.
+                    </span>
+                    <a
+                      class="chakra-link css-spn4bz"
+                      href="https://corridorcocktails.org"
+                      target="_blank"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <span
+        hidden=""
+        id="__chakra_env"
+      />
+    </div>
+    <div
+      class="chakra-portal"
+    >
+      <div
+        aria-label="Notifications-top"
+        aria-live="polite"
+        id="chakra-toast-manager-top"
+        role="region"
+        style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column; margin: 0px auto;"
+      />
+      <div
+        aria-label="Notifications-top-left"
+        aria-live="polite"
+        id="chakra-toast-manager-top-left"
+        role="region"
+        style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column;"
+      />
+      <div
+        aria-label="Notifications-top-right"
+        aria-live="polite"
+        id="chakra-toast-manager-top-right"
+        role="region"
+        style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column;"
+      />
+      <div
+        aria-label="Notifications-bottom-left"
+        aria-live="polite"
+        id="chakra-toast-manager-bottom-left"
+        role="region"
+        style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column;"
+      />
+      <div
+        aria-label="Notifications-bottom"
+        aria-live="polite"
+        id="chakra-toast-manager-bottom"
+        role="region"
+        style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column; margin: 0px auto;"
+      />
+      <div
+        aria-label="Notifications-bottom-right"
+        aria-live="polite"
+        id="chakra-toast-manager-bottom-right"
+        role="region"
+        style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column;"
+      />
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="chakra-stack css-u3n3fd"
+    >
+      <h3
+        class="chakra-heading css-11d1m14"
+      >
+        Projects
+      </h3>
+      <div
+        class="chakra-stack css-1arwy0y"
+      >
+        <div
+          class="css-8atqhb"
+        >
+          <div
+            class="css-1020liq"
+          >
+            <div
+              class="css-c2t2fn"
+            >
+              <div
+                class="chakra-stack css-n3uhkm"
+              >
+                <img
+                  class="chakra-image css-a6rva7"
+                  src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/881d819e76d4feed9921f05433647f6f.png"
+                />
+                <div
+                  class="chakra-stack css-1pftrre"
+                >
+                  <h5
+                    class="chakra-heading css-1mjswtr"
+                  >
+                    Corridor Cocktails
+                  </h5>
+                  <span>
+                    A website for a local vendor providing a pop-up cocktail bar service.
+                  </span>
+                  <a
+                    class="chakra-link css-spn4bz"
+                    href="https://corridorcocktails.org"
+                    target="_blank"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <span
+      hidden=""
+      id="__chakra_env"
+    />
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
