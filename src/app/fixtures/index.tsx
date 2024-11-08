@@ -6,6 +6,7 @@ import {
   StrapiFooter,
   StrapiHero,
   StrapiInputField,
+  StrapiProjectSection,
   StrapiSection,
   StrapiStyledButton,
   StrapiStyledImage,
@@ -368,6 +369,40 @@ export const ConfigFixture = (
   ...overrides,
 });
 
+export const ProjectSectionFixture = (
+  overrides: Partial<StrapiProjectSection> = {}
+): StrapiProjectSection => ({
+  typename: 'ProjectSection',
+  header: 'Projects',
+  bgColor: 'dark',
+  color: 'light',
+  articles: [
+    {
+      typename: 'ComponentCommonArticle',
+      title: 'Corridor Cocktails',
+      description: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              text: 'A website for a local vendor providing a pop-up cocktail bar service.',
+            },
+          ],
+        },
+      ],
+      images: [
+        {
+          typename: 'UploadFile',
+          url: 'https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/881d819e76d4feed9921f05433647f6f.png',
+        },
+      ],
+      link: 'https://corridorcocktails.org',
+    },
+  ],
+  ...overrides,
+});
+
 export const ClientFixture = (overrides: Partial<Client> = {}): Client => ({
   typename: 'Site',
   clientId: 'demo',
@@ -377,5 +412,6 @@ export const ClientFixture = (overrides: Partial<Client> = {}): Client => ({
   footer: FooterFixture(),
   contact: ContactFixture(),
   config: ConfigFixture(),
+  projectSection: ProjectSectionFixture(),
   ...overrides,
 });
