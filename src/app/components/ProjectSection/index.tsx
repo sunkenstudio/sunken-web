@@ -13,7 +13,6 @@ export interface ProjectSectionProps {
 
 export const ProjectSection = ({ projectSection }: ProjectSectionProps) => {
   const { header, articles, bgColor, color } = projectSection;
-  console.log({ projectSection });
   const { colors } = useBrand();
   const [index, setIndex] = useState(0);
 
@@ -49,6 +48,7 @@ export const ProjectSection = ({ projectSection }: ProjectSectionProps) => {
         {/* Decrement Button */}
         {index === 0 ? null : (
           <Button
+            data-testid="decrement-btn"
             onClick={decrementIndex}
             disabled={articles.length <= 1}
             zIndex={10}
@@ -100,6 +100,7 @@ export const ProjectSection = ({ projectSection }: ProjectSectionProps) => {
         {/* Increment Button */}
         {index === articles.length - 1 ? null : (
           <Button
+            data-testid="increment-btn"
             onClick={incrementIndex}
             disabled={articles.length <= 1}
             zIndex={10}

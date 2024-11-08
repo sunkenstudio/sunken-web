@@ -1,5 +1,6 @@
 import {
   Client,
+  StrapiArticle,
   StrapiBrand,
   StrapiConfig,
   StrapiContact,
@@ -376,30 +377,33 @@ export const ProjectSectionFixture = (
   header: 'Projects',
   bgColor: 'dark',
   color: 'light',
-  articles: [
+  articles: [ArticleFixture()],
+  ...overrides,
+});
+
+export const ArticleFixture = (
+  overrides: Partial<StrapiArticle> = {}
+): StrapiArticle => ({
+  typename: 'ComponentCommonArticle',
+  title: 'Corridor Cocktails',
+  description: [
     {
-      typename: 'ComponentCommonArticle',
-      title: 'Corridor Cocktails',
-      description: [
+      type: 'paragraph',
+      children: [
         {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'text',
-              text: 'A website for a local vendor providing a pop-up cocktail bar service.',
-            },
-          ],
+          type: 'text',
+          text: 'A website for a local vendor providing a pop-up cocktail bar service.',
         },
       ],
-      images: [
-        {
-          typename: 'UploadFile',
-          url: 'https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/881d819e76d4feed9921f05433647f6f.png',
-        },
-      ],
-      link: 'https://corridorcocktails.org',
     },
   ],
+  images: [
+    {
+      typename: 'UploadFile',
+      url: 'https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/881d819e76d4feed9921f05433647f6f.png',
+    },
+  ],
+  link: 'https://corridorcocktails.org',
   ...overrides,
 });
 
