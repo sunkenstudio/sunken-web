@@ -11,7 +11,7 @@ import {
   useBreakpointValue,
 } from '@chakra-ui/react';
 import React, { useState } from 'react';
-import { H3, H4, H5 } from '../Typography';
+import { H3, H4 } from '../Typography';
 import { RichText } from '../Shared/RichText';
 import { Icon } from '../Shared/Icon';
 
