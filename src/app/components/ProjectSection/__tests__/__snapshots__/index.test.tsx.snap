@@ -14,7 +14,7 @@ exports[`ProjectSection All stories should render successfully Renders Primary s
         Projects
       </h3>
       <div
-        class="chakra-stack css-1arwy0y"
+        class="chakra-stack css-hp8ztd"
       >
         <div
           class="css-8atqhb"
@@ -26,14 +26,14 @@ exports[`ProjectSection All stories should render successfully Renders Primary s
               class="css-c2t2fn"
             >
               <div
-                class="chakra-stack css-n3uhkm"
+                class="chakra-stack css-bfa8om"
               >
                 <img
-                  class="chakra-image css-a6rva7"
+                  class="chakra-image css-mvmjdx"
                   src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/881d819e76d4feed9921f05433647f6f.png"
                 />
                 <div
-                  class="chakra-stack css-1pftrre"
+                  class="chakra-stack css-1esve09"
                 >
                   <h5
                     class="chakra-heading css-1mjswtr"
@@ -53,6 +53,9 @@ exports[`ProjectSection All stories should render successfully Renders Primary s
             </div>
           </div>
         </div>
+        <div
+          class="chakra-stack css-1wgg1jw"
+        />
       </div>
     </div>
     <span
@@ -125,7 +128,7 @@ exports[`ProjectSection match snapshot 1`] = `
           Projects
         </h3>
         <div
-          class="chakra-stack css-1arwy0y"
+          class="chakra-stack css-hp8ztd"
         >
           <div
             class="css-8atqhb"
@@ -137,14 +140,14 @@ exports[`ProjectSection match snapshot 1`] = `
                 class="css-c2t2fn"
               >
                 <div
-                  class="chakra-stack css-n3uhkm"
+                  class="chakra-stack css-bfa8om"
                 >
                   <img
-                    class="chakra-image css-a6rva7"
+                    class="chakra-image css-mvmjdx"
                     src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/881d819e76d4feed9921f05433647f6f.png"
                   />
                   <div
-                    class="chakra-stack css-1pftrre"
+                    class="chakra-stack css-1esve09"
                   >
                     <h5
                       class="chakra-heading css-1mjswtr"
@@ -164,6 +167,9 @@ exports[`ProjectSection match snapshot 1`] = `
               </div>
             </div>
           </div>
+          <div
+            class="chakra-stack css-1wgg1jw"
+          />
         </div>
       </div>
       <span
@@ -228,7 +234,7 @@ exports[`ProjectSection match snapshot 1`] = `
         Projects
       </h3>
       <div
-        class="chakra-stack css-1arwy0y"
+        class="chakra-stack css-hp8ztd"
       >
         <div
           class="css-8atqhb"
@@ -240,14 +246,14 @@ exports[`ProjectSection match snapshot 1`] = `
               class="css-c2t2fn"
             >
               <div
-                class="chakra-stack css-n3uhkm"
+                class="chakra-stack css-bfa8om"
               >
                 <img
-                  class="chakra-image css-a6rva7"
+                  class="chakra-image css-mvmjdx"
                   src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/881d819e76d4feed9921f05433647f6f.png"
                 />
                 <div
-                  class="chakra-stack css-1pftrre"
+                  class="chakra-stack css-1esve09"
                 >
                   <h5
                     class="chakra-heading css-1mjswtr"
@@ -267,6 +273,9 @@ exports[`ProjectSection match snapshot 1`] = `
             </div>
           </div>
         </div>
+        <div
+          class="chakra-stack css-1wgg1jw"
+        />
       </div>
     </div>
     <span

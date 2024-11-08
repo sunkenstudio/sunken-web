@@ -1,7 +1,15 @@
 'use client';
 import { useBrand } from '@/app/contexts/BrandContext';
 import { StrapiProjectSection } from '@/app/types';
-import { Box, Button, HStack, Image, Link, Stack } from '@chakra-ui/react';
+import {
+  Box,
+  Button,
+  HStack,
+  Image,
+  Link,
+  Stack,
+  useBreakpointValue,
+} from '@chakra-ui/react';
 import React, { useState } from 'react';
 import { H3, H5 } from '../Typography';
 import { RichText } from '../Shared/RichText';
@@ -14,6 +22,7 @@ export interface ProjectSectionProps {
 export const ProjectSection = ({ projectSection }: ProjectSectionProps) => {
   const { header, articles, bgColor, color } = projectSection;
   const { colors } = useBrand();
+  const isMobile = useBreakpointValue({ base: true, md: false });
   const [index, setIndex] = useState(0);
 
   const incrementIndex = () => {
@@ -129,29 +138,25 @@ export const ProjectSection = ({ projectSection }: ProjectSectionProps) => {
         {header}
       </H3>
 
-      {/* Desktop Styling*/}
-      <HStack
-        display={{ base: 'none', md: 'inherit' }}
-        mx={{ base: '.5rem', md: '10rem' }}
-        overflow={'hidden'}
-      >
-        {renderDecrementButton()}
-        {renderArticles()}
-        {renderIncrementButton()}
-      </HStack>
-
-      {/* Mobile Styling*/}
-      <Stack
-        display={{ base: 'inherit', md: 'none' }}
-        mx={{ base: '.5rem', md: '10rem' }}
-        overflow={'hidden'}
-      >
-        {renderArticles()}
-        <HStack w="100%" justifyContent={'center'}>
+      {isMobile ? (
+        <Stack mx={{ base: '.5rem', md: '10rem' }} overflow={'hidden'}>
+          {renderArticles()}
+          <HStack w="100%" justifyContent={'center'}>
+            {renderDecrementButton()}
+            {renderIncrementButton()}
+          </HStack>
+        </Stack>
+      ) : (
+        <HStack
+          display={{ base: 'none', md: 'inherit' }}
+          mx={{ base: '.5rem', md: '10rem' }}
+          overflow={'hidden'}
+        >
           {renderDecrementButton()}
+          {renderArticles()}
           {renderIncrementButton()}
         </HStack>
-      </Stack>
+      )}
     </Stack>
   );
 };
