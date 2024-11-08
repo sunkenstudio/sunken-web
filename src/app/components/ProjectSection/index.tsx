@@ -53,7 +53,7 @@ export const ProjectSection = ({ projectSection }: ProjectSectionProps) => {
         onClick={decrementIndex}
         zIndex={10}
         bgColor={colors[color]}
-        w={{ base: '3rem', md: 'inherit' }}
+        w={{ base: '3rem', md: 'auto' }}
       >
         <Icon type="CaretLeft" size={32} color={colors[bgColor]} />
       </Button>
@@ -70,7 +70,7 @@ export const ProjectSection = ({ projectSection }: ProjectSectionProps) => {
         onClick={incrementIndex}
         zIndex={10}
         bgColor={colors[color]}
-        w={{ base: '3rem', md: 'inherit' }}
+        w={{ base: '3rem', md: 'auto' }}
       >
         <Icon type="CaretRight" size={32} color={colors[bgColor]} />
       </Button>
@@ -139,7 +139,7 @@ export const ProjectSection = ({ projectSection }: ProjectSectionProps) => {
       </H3>
 
       {isMobile ? (
-        <Stack mx={{ base: '.5rem', md: '10rem' }} overflow={'hidden'}>
+        <Stack mx={'.5rem'} overflow={'hidden'}>
           {renderArticles()}
           <HStack w="100%" justifyContent={'center'}>
             {renderDecrementButton()}
@@ -147,11 +147,7 @@ export const ProjectSection = ({ projectSection }: ProjectSectionProps) => {
           </HStack>
         </Stack>
       ) : (
-        <HStack
-          display={{ base: 'none', md: 'inherit' }}
-          mx={{ base: '.5rem', md: '10rem' }}
-          overflow={'hidden'}
-        >
+        <HStack mx={'10rem'} overflow={'hidden'}>
           {renderDecrementButton()}
           {renderArticles()}
           {renderIncrementButton()}
