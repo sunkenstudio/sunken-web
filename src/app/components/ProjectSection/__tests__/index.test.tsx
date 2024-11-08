@@ -5,20 +5,22 @@ import { render } from '@testing-library/react';
 import { ProjectSection, ProjectSectionProps } from '..';
 import { testStories } from '@/app/helpers/testStorybook';
 import * as Stories from '../index.stories';
-import {
-  BrandFixture,
-} from '@/app/fixtures';
+import { BrandFixture } from '@/app/fixtures';
 import { BrandProvider } from '@/app/contexts/BrandContext';
 import { ChakraProvider } from '@chakra-ui/react';
 import theme from '@/app/styles/theme';
 import { StrapiBrand } from '@/app/types';
+import { ProjectSectionFixture } from '@/app/fixtures';
 
 describe('ProjectSection', () => {
   const renderComponent = (
     overrides: Partial<ProjectSectionProps> = {},
     contextOverrides: Partial<StrapiBrand> = {}
   ) => {
-    const defaults = (props: Partial<ProjectSectionProps>): ProjectSectionProps => ({
+    const defaults = (
+      props: Partial<ProjectSectionProps>
+    ): ProjectSectionProps => ({
+      projectSection: ProjectSectionFixture(),
       ...props,
     });
     return render(
@@ -38,5 +40,4 @@ describe('ProjectSection', () => {
     const rendered = renderComponent();
     expect(rendered).toMatchSnapshot();
   });
-
-})
+});
