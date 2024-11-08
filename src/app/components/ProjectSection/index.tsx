@@ -11,7 +11,7 @@ import {
   useBreakpointValue,
 } from '@chakra-ui/react';
 import React, { useState } from 'react';
-import { H3, H5 } from '../Typography';
+import { H3, H4, H5 } from '../Typography';
 import { RichText } from '../Shared/RichText';
 import { Icon } from '../Shared/Icon';
 
@@ -102,6 +102,7 @@ export const ProjectSection = ({ projectSection }: ProjectSectionProps) => {
                   src={article.images[0].url}
                   w={{ base: '100%', md: '60%' }}
                   objectFit={'cover'}
+                  mx={{ base: 0, md: '1rem' }}
                 />
                 <Stack
                   w={{ base: '100%', md: '40%' }}
@@ -109,15 +110,17 @@ export const ProjectSection = ({ projectSection }: ProjectSectionProps) => {
                   alignItems={'center'}
                 >
                   {/* Content of each article */}
-                  <H5>{article.title}</H5>
+                  <HStack>
+                    <H4>{article.title} </H4>
+                    <Link href={article.link} target="_blank">
+                      <Icon
+                        type="ArrowSquareOut"
+                        size={32}
+                        color={colors[color]}
+                      />
+                    </Link>
+                  </HStack>
                   <RichText content={article.description} />
-                  <Link href={article.link} target="_blank">
-                    <Icon
-                      type="ArrowSquareOut"
-                      size={32}
-                      color={colors[color]}
-                    />
-                  </Link>
                 </Stack>
               </Stack>
             </Box>
@@ -134,7 +137,7 @@ export const ProjectSection = ({ projectSection }: ProjectSectionProps) => {
       bgColor={colors[bgColor]}
       color={colors[color]}
     >
-      <H3 textAlign={'center'} mt={'2rem'}>
+      <H3 textAlign={'center'} mt={'4rem'}>
         {header}
       </H3>
 
