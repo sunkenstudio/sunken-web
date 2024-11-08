@@ -18,21 +18,105 @@ export const ProjectSection = ({ projectSection }: ProjectSectionProps) => {
 
   const incrementIndex = () => {
     if (index + 1 < articles.length) {
-      setIndex(index + 1); // Go to the next slide
+      setIndex(index + 1);
     } else {
-      setIndex(0); // Loop back to the first slide
+      setIndex(0);
     }
   };
 
   const decrementIndex = () => {
     if (index - 1 >= 0) {
-      setIndex(index - 1); // Go to the previous slide
+      setIndex(index - 1);
     } else {
-      setIndex(articles.length - 1); // Loop back to the last slide
+      setIndex(articles.length - 1);
     }
   };
 
   const slideWidth = 100 / articles.length; // Calculate dynamic width for each slide
+
+  const renderDecrementButton = () => {
+    if (index === 0) {
+      return null;
+    }
+    return (
+      <Button
+        data-testid="decrement-btn"
+        onClick={decrementIndex}
+        zIndex={10}
+        bgColor={colors[color]}
+        w={{ base: '3rem', md: 'inherit' }}
+      >
+        <Icon type="CaretLeft" size={32} color={colors[bgColor]} />
+      </Button>
+    );
+  };
+
+  const renderIncrementButton = () => {
+    if (index === articles.length - 1) {
+      return null;
+    }
+    return (
+      <Button
+        data-testid="increment-btn"
+        onClick={incrementIndex}
+        zIndex={10}
+        bgColor={colors[color]}
+        w={{ base: '3rem', md: 'inherit' }}
+      >
+        <Icon type="CaretRight" size={32} color={colors[bgColor]} />
+      </Button>
+    );
+  };
+
+  const renderArticles = () => {
+    return (
+      <Box w="100%">
+        {/* The container that holds all the slides */}
+        <Box
+          display="flex"
+          transition="transform .5s ease"
+          transform={`translateX(-${index * slideWidth}%)`}
+          w={`${articles.length * 100}%`}
+          mr={'1rem'}
+          overflow={'hidden'}
+          mt={'2rem'}
+        >
+          {articles.map((article, i) => (
+            <Box
+              key={i}
+              w="100%" // Each slide takes up 100% of the container width
+              display="flex"
+              opacity={i !== index ? 0 : 1}
+            >
+              <Stack flexDir={{ base: 'column', md: 'row' }} w="100%">
+                <Image
+                  src={article.images[0].url}
+                  w={{ base: '100%', md: '60%' }}
+                  objectFit={'cover'}
+                />
+                <Stack
+                  w={{ base: '100%', md: '40%' }}
+                  justifyContent={'center'}
+                  alignItems={'center'}
+                >
+                  {/* Content of each article */}
+                  <H5>{article.title}</H5>
+                  <RichText content={article.description} />
+                  <Link href={article.link} target="_blank">
+                    <Icon
+                      type="ArrowSquareOut"
+                      size={32}
+                      color={colors[color]}
+                    />
+                  </Link>
+                </Stack>
+              </Stack>
+            </Box>
+          ))}
+        </Box>
+      </Box>
+    );
+  };
 
   return (
     <Stack
@@ -44,72 +128,30 @@ export const ProjectSection = ({ projectSection }: ProjectSectionProps) => {
       <H3 textAlign={'center'} mt={'2rem'}>
         {header}
       </H3>
-      <HStack mx="10rem" overflow={'hidden'}>
-        {/* Decrement Button */}
-        {index === 0 ? null : (
-          <Button
-            data-testid="decrement-btn"
-            onClick={decrementIndex}
-            disabled={articles.length <= 1}
-            zIndex={10}
-            bgColor={colors[color]}
-          >
-            <Icon type="CaretLeft" size={32} color={colors[bgColor]} />
-          </Button>
-        )}
 
-        {/* Slider Container */}
-        <Box w="100%">
-          {/* The container that holds all the slides */}
-          <Box
-            display="flex"
-            transition="transform .5s ease"
-            transform={`translateX(-${index * slideWidth}%)`} // Dynamically shift the content by the width of one slide
-            w={`${articles.length * 100}%`} // The container's width is 100% per article, multiplied by the number of articles
-            mr={'1rem'}
-            overflow={'hidden'}
-            mt={'2rem'}
-          >
-            {articles.map((article, i) => (
-              <Box
-                key={i}
-                w="100%" // Each slide takes up 100% of the container width
-                display="flex"
-                opacity={i !== index ? 0 : 1}
-              >
-                <HStack w="100%">
-                  <Image src={article.images[0].url} w="60%" />
-                  <Stack w="40%">
-                    {/* Content of each article */}
-                    <H5>{article.title}</H5>
-                    <RichText content={article.description} />
-                    <Link href={article.link} target="_blank">
-                      <Icon
-                        type="ArrowSquareOut"
-                        size={32}
-                        color={colors[color]}
-                      />
-                    </Link>
-                  </Stack>
-                </HStack>
-              </Box>
-            ))}
-          </Box>
-        </Box>
-
-        {/* Increment Button */}
-        {index === articles.length - 1 ? null : (
-          <Button
-            data-testid="increment-btn"
-            onClick={incrementIndex}
-            disabled={articles.length <= 1}
-            zIndex={10}
-            bgColor={colors[color]}
-          >
-            <Icon type="CaretRight" size={32} color={colors[bgColor]} />
-          </Button>
-        )}
+      {/* Desktop Styling*/}
+      <HStack
+        display={{ base: 'none', md: 'inherit' }}
+        mx={{ base: '.5rem', md: '10rem' }}
+        overflow={'hidden'}
+      >
+        {renderDecrementButton()}
+        {renderArticles()}
+        {renderIncrementButton()}
       </HStack>
+
+      {/* Mobile Styling*/}
+      <Stack
+        display={{ base: 'inherit', md: 'none' }}
+        mx={{ base: '.5rem', md: '10rem' }}
+        overflow={'hidden'}
+      >
+        {renderArticles()}
+        <HStack w="100%" justifyContent={'center'}>
+          {renderDecrementButton()}
+          {renderIncrementButton()}
+        </HStack>
+      </Stack>
     </Stack>
   );
 };
