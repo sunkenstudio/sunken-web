@@ -5,40 +5,70 @@ import React from 'react';
 
 export interface ImageScrollProps {
   images: StrapiImage[];
-  speed: number;
+  speed: number; // This controls the speed of the animation
 }
 
 export const ImageScroll = ({ images, speed }: ImageScrollProps) => {
-  const imagesWithLoop = [...images, ...images]; // Duplicate images to create a continuous loop
-
   return (
-    <Box display="flex" w="100%" maxH="5rem" py="1rem" overflow="hidden">
+    <Box
+      display="flex"
+      w="100%"
+      maxH="5rem"
+      py="1rem"
+      overflow="hidden"
+      position="relative"
+    >
+      {/* Scroll container 1 */}
       <Box
+        className="scroll"
         display="flex"
         alignItems="center"
         justifyContent="space-around"
-        width="fit-content"
-        whiteSpace="nowrap"
-        gap="25rem" // Adjust this gap for spacing between images
         sx={{
-          animation: `loop ${speed}s linear infinite`, // Use the `speed` prop for dynamic control
+          animation: `loop ${speed}s linear infinite`,
+          position: 'absolute',
+          width: '100%',
+          whiteSpace: 'nowrap',
           '@keyframes loop': {
             '0%': {
-              transform: 'translateX(0)',
+              transform: 'translateX(100%)',
             },
             '100%': {
-              transform: 'translateX(-50%)', // Scroll half the total width of the images
+              transform: 'translateX(-100%)',
             },
           },
         }}
       >
-        {imagesWithLoop.map((image, index) => (
-          <Image
-            key={index}
-            src={image.url}
-            alt={`Image ${index}`}
-            maxH="100%"
-          />
+        {images.map((image, index) => (
+          <Image key={index} src={image.url} alt={`Image ${index}`} h="3rem" />
+        ))}
+      </Box>
+
+      {/* Scroll container 2 (delayed start) */}
+      <Box
+        className="scroll"
+        display="flex"
+        alignItems="center"
+        justifyContent="space-around"
+        sx={{
+          animation: `loop ${speed}s linear infinite`,
+          position: 'absolute',
+          width: '100%',
+          whiteSpace: 'nowrap',
+          transform: 'translateX(100%)', // Start it off-screen
+          animationDelay: `${speed / 2}s`, // Delay for second loop to start
+          '@keyframes loop': {
+            '0%': {
+              transform: 'translateX(100%)',
+            },
+            '100%': {
+              transform: 'translateX(-100%)',
+            },
+          },
+        }}
+      >
+        {images.map((image, index) => (
+          <Image key={index} src={image.url} alt={`Image ${index}`} h="3rem" />
         ))}
       </Box>
     </Box>
