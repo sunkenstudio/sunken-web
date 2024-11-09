@@ -10,6 +10,7 @@ export interface ImageScrollProps {
   speed: 'slow' | 'normal' | 'fast'; // This controls the speed of the animation
   header?: string;
   bgColor?: Color;
+  color?: Color;
 }
 
 export const ImageScroll = ({
@@ -17,6 +18,7 @@ export const ImageScroll = ({
   speed,
   header,
   bgColor = 'light',
+  color = 'dark',
 }: ImageScrollProps) => {
   const { colors } = useBrand();
 
@@ -39,6 +41,7 @@ export const ImageScroll = ({
       display="flex"
       textAlign={'center'}
       bgColor={colors[bgColor]}
+      color={colors[color]}
       py={header ? '1rem' : 0}
     >
       {header && <H4 mb="1rem">{header}</H4>}
