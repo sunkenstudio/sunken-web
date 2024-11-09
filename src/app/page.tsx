@@ -139,6 +139,7 @@ const Home = () => {
           <Stack gap={0}>
             <Hero hero={hero} />
             <ImageScroll
+              header="Featured In"
               bgColor="light"
               images={[
                 ImageFixture(),
