@@ -9,8 +9,13 @@ exports[`ImageScroll All stories should render successfully Renders Fast story 1
       class="css-21eb5z"
     >
       <div
-        class="chakra-stack css-161nts6"
+        class="chakra-stack css-7metxj"
       >
+        <h4
+          class="chakra-heading css-22e040"
+        >
+          Featured In
+        </h4>
         <div
           class="css-44ez6k"
         >
@@ -128,8 +133,13 @@ exports[`ImageScroll All stories should render successfully Renders Normal story
       class="css-21eb5z"
     >
       <div
-        class="chakra-stack css-161nts6"
+        class="chakra-stack css-7metxj"
       >
+        <h4
+          class="chakra-heading css-22e040"
+        >
+          Featured In
+        </h4>
         <div
           class="css-44ez6k"
         >
@@ -247,8 +257,13 @@ exports[`ImageScroll All stories should render successfully Renders Slow story 1
       class="css-21eb5z"
     >
       <div
-        class="chakra-stack css-161nts6"
+        class="chakra-stack css-7metxj"
       >
+        <h4
+          class="chakra-heading css-22e040"
+        >
+          Featured In
+        </h4>
         <div
           class="css-44ez6k"
         >
@@ -365,7 +380,7 @@ exports[`ImageScroll match snapshot 1`] = `
   >
     <div>
       <div
-        class="chakra-stack css-161nts6"
+        class="chakra-stack css-427o8i"
       >
         <div
           class="css-44ez6k"
@@ -474,7 +489,7 @@ exports[`ImageScroll match snapshot 1`] = `
   </body>,
   "container": <div>
     <div
-      class="chakra-stack css-161nts6"
+      class="chakra-stack css-427o8i"
     >
       <div
         class="css-44ez6k"
