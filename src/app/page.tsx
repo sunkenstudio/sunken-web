@@ -145,7 +145,7 @@ const Home = () => {
                 ImageFixture(),
                 ImageFixture(),
               ]}
-              speed={50}
+              speed={'normal'}
             />
             {sections.map((i) => (
               <Section key={`section-${i.sortOrder}`} section={i} />

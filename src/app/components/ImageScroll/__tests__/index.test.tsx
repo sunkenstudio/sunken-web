@@ -18,7 +18,7 @@ describe('ImageScroll', () => {
   ) => {
     const defaults = (props: Partial<ImageScrollProps>): ImageScrollProps => ({
       images: [ImageFixture(), ImageFixture(), ImageFixture(), ImageFixture()],
-      speed: 1,
+      speed: 'normal',
       ...props,
     });
     return render(

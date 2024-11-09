@@ -5,10 +5,20 @@ import React from 'react';
 
 export interface ImageScrollProps {
   images: StrapiImage[];
-  speed: number; // This controls the speed of the animation
+  speed: 'slow' | 'normal' | 'fast'; // This controls the speed of the animation
 }
 
 export const ImageScroll = ({ images, speed }: ImageScrollProps) => {
+  const getCalculatedSpeed = () => {
+    if (speed === 'slow') {
+      return 50;
+    }
+    if (speed === 'fast') {
+      return 10;
+    }
+    return 25;
+  };
+  const calculatedSpeed = getCalculatedSpeed();
   return (
     <Box
       display="flex"
@@ -25,7 +35,7 @@ export const ImageScroll = ({ images, speed }: ImageScrollProps) => {
         alignItems="center"
         justifyContent="space-around"
         sx={{
-          animation: `loop ${speed}s linear infinite`,
+          animation: `loop ${calculatedSpeed}s linear infinite`,
           position: 'absolute',
           width: '100%',
           whiteSpace: 'nowrap',
@@ -51,12 +61,12 @@ export const ImageScroll = ({ images, speed }: ImageScrollProps) => {
         alignItems="center"
         justifyContent="space-around"
         sx={{
-          animation: `loop ${speed}s linear infinite`,
+          animation: `loop ${calculatedSpeed}s linear infinite`,
           position: 'absolute',
           width: '100%',
           whiteSpace: 'nowrap',
           transform: 'translateX(100%)', // Start it off-screen
-          animationDelay: `${speed / 2}s`, // Delay for second loop to start
+          animationDelay: `${calculatedSpeed / 2}s`, // Delay for second loop to start
           '@keyframes loop': {
             '0%': {
               transform: 'translateX(100%)',

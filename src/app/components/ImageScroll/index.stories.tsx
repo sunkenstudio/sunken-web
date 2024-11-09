@@ -18,13 +18,25 @@ const withDefaults = (
   overrides: Partial<ImageScrollProps> = {}
 ): ImageScrollProps => ({
   images: [ImageFixture(), ImageFixture(), ImageFixture(), ImageFixture()],
-  speed: 1,
+  speed: 'normal',
   ...overrides,
 });
 
-export const Primary: Story = {
+export const Normal: Story = {
   args: {
     ...withDefaults(),
+  },
+};
+
+export const Slow: Story = {
+  args: {
+    ...withDefaults({ speed: 'slow' }),
+  },
+};
+
+export const Fast: Story = {
+  args: {
+    ...withDefaults({ speed: 'fast' }),
   },
 };
 
