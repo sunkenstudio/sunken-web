@@ -127,6 +127,23 @@ export const GET_SITE = gql`
               }
             }
           }
+          image_scroll {
+            data {
+              attributes {
+                Header
+                BgColor
+                Color
+                Speed
+                Images {
+                  data {
+                    attributes {
+                      url
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }

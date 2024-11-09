@@ -123,6 +123,14 @@ export interface StrapiHero {
   bgImage: StrapiStyledImage;
 }
 
+export interface StrapiImageScroll {
+  speed: 'normal' | 'fast' | 'slow';
+  images: StrapiImage[];
+  header?: string;
+  bgColor?: Color;
+  color?: Color;
+}
+
 export interface Client {
   typename: string;
   clientId: string;
@@ -131,5 +139,6 @@ export interface Client {
   brand: StrapiBrand;
   footer: StrapiFooter;
   contact: StrapiContact;
+  imageScroll: StrapiImageScroll;
   config: StrapiConfig;
 }

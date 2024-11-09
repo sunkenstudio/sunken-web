@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ImageScroll, ImageScrollProps } from '../ImageScroll';
-import { ImageFixture } from '@/app/fixtures';
+import { ImageScrollFixture } from '@/app/fixtures';
+import { StrapiImageScroll } from '@/app/types';
 
 const meta = {
   title: 'components/ImageScroll',
@@ -15,14 +16,9 @@ const meta = {
 type Story = StoryObj<typeof meta>;
 
 const withDefaults = (
-  overrides: Partial<ImageScrollProps> = {}
+  overrides: Partial<StrapiImageScroll> = {}
 ): ImageScrollProps => ({
-  color: 'light',
-  bgColor: 'dark',
-  header: 'Featured In',
-  images: [ImageFixture(), ImageFixture(), ImageFixture(), ImageFixture()],
-  speed: 'normal',
-  ...overrides,
+  imageScroll: ImageScrollFixture(overrides),
 });
 
 export const Normal: Story = {

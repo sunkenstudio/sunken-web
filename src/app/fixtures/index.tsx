@@ -6,6 +6,7 @@ import {
   StrapiFooter,
   StrapiHero,
   StrapiImage,
+  StrapiImageScroll,
   StrapiInputField,
   StrapiSection,
   StrapiStyledButton,
@@ -377,6 +378,17 @@ export const ConfigFixture = (
   ...overrides,
 });
 
+export const ImageScrollFixture = (
+  overrides: Partial<StrapiImageScroll> = {}
+): StrapiImageScroll => ({
+  color: 'light',
+  bgColor: 'dark',
+  header: 'Featured In',
+  images: [ImageFixture(), ImageFixture(), ImageFixture(), ImageFixture()],
+  speed: 'normal',
+  ...overrides,
+});
+
 export const ClientFixture = (overrides: Partial<Client> = {}): Client => ({
   typename: 'Site',
   clientId: 'demo',
@@ -386,5 +398,6 @@ export const ClientFixture = (overrides: Partial<Client> = {}): Client => ({
   footer: FooterFixture(),
   contact: ContactFixture(),
   config: ConfigFixture(),
+  imageScroll: ImageScrollFixture(),
   ...overrides,
 });

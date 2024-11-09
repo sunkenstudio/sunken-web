@@ -16,7 +16,6 @@ import { useRef } from 'react';
 import Fonts from './helpers/fonts';
 import { useBrand } from './contexts/BrandContext';
 import { ImageScroll } from './components/ImageScroll';
-import { ImageFixture } from './fixtures';
 
 const Home = () => {
   const [data, setData] = useState(null);
@@ -92,7 +91,7 @@ const Home = () => {
     return <>404 Client not found</>;
   }
 
-  const { hero, sections, footer, contact, config } = data;
+  const { hero, sections, footer, contact, config, imageScroll } = data;
 
   if (config.isUnderConstruction) {
     return <>Under Construction</>;
@@ -138,17 +137,7 @@ const Home = () => {
         <Box>
           <Stack gap={0}>
             <Hero hero={hero} />
-            <ImageScroll
-              header="Featured In"
-              bgColor="light"
-              images={[
-                ImageFixture(),
-                ImageFixture(),
-                ImageFixture(),
-                ImageFixture(),
-              ]}
-              speed={'normal'}
-            />
+            <ImageScroll imageScroll={imageScroll} />
             {sections.map((i) => (
               <Section key={`section-${i.sortOrder}`} section={i} />
             ))}
