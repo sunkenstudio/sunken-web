@@ -17,6 +17,7 @@ describe('ImageScroll', () => {
     contextOverrides: Partial<StrapiBrand> = {}
   ) => {
     const defaults = (props: Partial<ImageScrollProps>): ImageScrollProps => ({
+      bgColor: 'light',
       images: [ImageFixture(), ImageFixture(), ImageFixture(), ImageFixture()],
       speed: 'normal',
       ...props,

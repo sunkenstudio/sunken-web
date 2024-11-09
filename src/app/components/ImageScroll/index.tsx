@@ -1,14 +1,18 @@
 'use client';
-import { StrapiImage } from '@/app/types';
+import { useBrand } from '@/app/contexts/BrandContext';
+import { Color, StrapiImage } from '@/app/types';
 import { Box, Image } from '@chakra-ui/react';
 import React from 'react';
 
 export interface ImageScrollProps {
+  bgColor: Color;
   images: StrapiImage[];
   speed: 'slow' | 'normal' | 'fast'; // This controls the speed of the animation
 }
 
-export const ImageScroll = ({ images, speed }: ImageScrollProps) => {
+export const ImageScroll = ({ bgColor, images, speed }: ImageScrollProps) => {
+  const { colors } = useBrand();
+
   const getCalculatedSpeed = () => {
     if (speed === 'slow') {
       return 50;
@@ -18,7 +22,9 @@ export const ImageScroll = ({ images, speed }: ImageScrollProps) => {
     }
     return 25;
   };
+
   const calculatedSpeed = getCalculatedSpeed();
+
   return (
     <Box
       display="flex"
@@ -27,6 +33,7 @@ export const ImageScroll = ({ images, speed }: ImageScrollProps) => {
       py="1rem"
       overflow="hidden"
       position="relative"
+      bgColor={colors[bgColor]}
     >
       {/* Scroll container 1 */}
       <Box

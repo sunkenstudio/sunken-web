@@ -17,6 +17,7 @@ type Story = StoryObj<typeof meta>;
 const withDefaults = (
   overrides: Partial<ImageScrollProps> = {}
 ): ImageScrollProps => ({
+  bgColor: 'light',
   images: [ImageFixture(), ImageFixture(), ImageFixture(), ImageFixture()],
   speed: 'normal',
   ...overrides,
