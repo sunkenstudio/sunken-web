@@ -9,7 +9,7 @@ import {
   BrandFixture,
   ButtonFixture,
   HeroFixture,
-  ImageFixture,
+  StyledImageFixture,
   RichTextFixture,
 } from '@/app/fixtures';
 import { BrandProvider } from '@/app/contexts/BrandContext';
@@ -101,7 +101,7 @@ describe('Hero', () => {
 
     it('if given image, should render image', () => {
       const imageAlt = 'Test Image';
-      const image = ImageFixture({ alt: imageAlt });
+      const image = StyledImageFixture({ alt: imageAlt });
       const rendered = renderComponent({
         hero: HeroFixture({ variant: 'leftAligned', image }),
       });
@@ -111,11 +111,11 @@ describe('Hero', () => {
 
     it('if NOT given image, should NOT render image', () => {
       const imageAlt = '';
-      const image = ImageFixture({ alt: imageAlt });
+      const image = StyledImageFixture({ alt: imageAlt });
       const rendered = renderComponent({
         hero: HeroFixture({ variant: 'leftAligned', image }),
       });
-      const expected = rendered.queryByAltText(ImageFixture().alt);
+      const expected = rendered.queryByAltText(StyledImageFixture().alt);
       expect(expected).toBeNull();
     });
 
@@ -195,7 +195,7 @@ describe('Hero', () => {
 
     it('if given image, should render image', () => {
       const imageAlt = 'Test Image';
-      const image = ImageFixture({ alt: imageAlt });
+      const image = StyledImageFixture({ alt: imageAlt });
       const rendered = renderComponent({
         hero: HeroFixture({ variant: 'centerAligned', image }),
       });
@@ -205,11 +205,11 @@ describe('Hero', () => {
 
     it('if NOT given image, should NOT render image', () => {
       const imageAlt = '';
-      const image = ImageFixture({ alt: imageAlt });
+      const image = StyledImageFixture({ alt: imageAlt });
       const rendered = renderComponent({
         hero: HeroFixture({ variant: 'centerAligned', image }),
       });
-      const expected = rendered.queryByAltText(ImageFixture().alt);
+      const expected = rendered.queryByAltText(StyledImageFixture().alt);
       expect(expected).toBeNull();
     });
 
