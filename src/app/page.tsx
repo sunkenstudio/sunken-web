@@ -15,6 +15,8 @@ import { isEmpty } from 'lodash';
 import { useRef } from 'react';
 import Fonts from './helpers/fonts';
 import { useBrand } from './contexts/BrandContext';
+import { ImageScroll } from './components/ImageScroll';
+import { ImageFixture } from './fixtures';
 
 const Home = () => {
   const [data, setData] = useState(null);
@@ -139,6 +141,15 @@ const Home = () => {
             {sections.map((i) => (
               <Section key={`section-${i.sortOrder}`} section={i} />
             ))}
+            <ImageScroll
+              images={[
+                ImageFixture(),
+                ImageFixture(),
+                ImageFixture(),
+                ImageFixture(),
+              ]}
+              speed={10}
+            />
             {contact.fields && (
               <ContactForm hero={hero} sections={sections} contact={contact} />
             )}

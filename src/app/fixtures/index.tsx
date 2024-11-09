@@ -5,6 +5,7 @@ import {
   StrapiContact,
   StrapiFooter,
   StrapiHero,
+  StrapiImage,
   StrapiInputField,
   StrapiSection,
   StrapiStyledButton,
@@ -46,7 +47,7 @@ export const RichTextFixture = (
   },
 ];
 
-export const ImageFixture = (
+export const StyledImageFixture = (
   overrides: Partial<StrapiStyledImage> = {}
 ): StrapiStyledImage => ({
   typename: 'ComponentCommonImage',
@@ -61,6 +62,14 @@ export const ImageFixture = (
     radius: '99rem',
   },
   filter: null,
+  ...overrides,
+});
+
+export const ImageFixture = (
+  overrides: Partial<StrapiImage> = {}
+): StrapiImage => ({
+  typename: 'UploadFile',
+  url: 'https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/b8c12199347804e795219ef484f5572e.jpeg',
   ...overrides,
 });
 
