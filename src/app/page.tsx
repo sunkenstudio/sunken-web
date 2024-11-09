@@ -138,9 +138,6 @@ const Home = () => {
         <Box>
           <Stack gap={0}>
             <Hero hero={hero} />
-            {sections.map((i) => (
-              <Section key={`section-${i.sortOrder}`} section={i} />
-            ))}
             <ImageScroll
               images={[
                 ImageFixture(),
@@ -150,6 +147,10 @@ const Home = () => {
               ]}
               speed={10}
             />
+            {sections.map((i) => (
+              <Section key={`section-${i.sortOrder}`} section={i} />
+            ))}
+
             {contact.fields && (
               <ContactForm hero={hero} sections={sections} contact={contact} />
             )}

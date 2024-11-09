@@ -13,7 +13,7 @@ export const ImageScroll = ({ images, speed }: ImageScrollProps) => {
     <Box
       display="flex"
       w="100%"
-      maxH="5rem"
+      minH="5rem"
       py="1rem"
       overflow="hidden"
       position="relative"
