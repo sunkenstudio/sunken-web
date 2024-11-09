@@ -6,78 +6,82 @@ exports[`Section All stories should render successfully Renders Primary story 1`
 >
   <div>
     <div
-      class="css-17nws4k"
-      id="section-1"
+      class="css-21eb5z"
     >
       <div
-        class="css-ag3wqc"
+        class="css-17nws4k"
+        id="section-1"
       >
         <div
-          class="css-ojqyia"
+          class="css-ag3wqc"
         >
-          <img
-            alt="Background image - Red fabric"
-            class="chakra-image css-o0922y"
-            src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/368ef30c049d5e73fc77113499547b2f.svg"
-            typename="ComponentCommonImage"
-          />
           <div
-            class="css-irqulg"
-          />
+            class="css-ojqyia"
+          >
+            <img
+              alt="Background image - Red fabric"
+              class="chakra-image css-o0922y"
+              src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/368ef30c049d5e73fc77113499547b2f.svg"
+              typename="ComponentCommonImage"
+            />
+            <div
+              class="css-irqulg"
+            />
+          </div>
         </div>
-      </div>
-      <div
-        class="css-1v0ni0h"
-      >
         <div
-          class="css-paz77w"
+          class="css-1v0ni0h"
         >
           <div
-            class="css-ihpfkw"
+            class="css-paz77w"
           >
             <div
-              class="chakra-stack css-wj6om1"
+              class="css-ihpfkw"
             >
               <div
-                class="css-ojqyia"
+                class="chakra-stack css-wj6om1"
               >
-                <img
-                  alt="Craft cocktail with lemon twist"
-                  class="chakra-image css-1yuvylm"
-                  src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/b181fb8a2e37c5523f5f625b11628738.avif"
-                  typename="ComponentCommonImage"
-                />
                 <div
-                  class="css-1x4xquk"
-                />
+                  class="css-ojqyia"
+                >
+                  <img
+                    alt="Craft cocktail with lemon twist"
+                    class="chakra-image css-1yuvylm"
+                    src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/b181fb8a2e37c5523f5f625b11628738.avif"
+                    typename="ComponentCommonImage"
+                  />
+                  <div
+                    class="css-1x4xquk"
+                  />
+                </div>
+                <p
+                  class="chakra-text css-0"
+                >
+                  caption goes here
+                </p>
               </div>
-              <p
-                class="chakra-text css-0"
+              <div
+                class="css-192f3e9"
               >
-                caption goes here
-              </p>
-            </div>
-            <div
-              class="css-192f3e9"
-            >
-              <h3
-                class="chakra-heading css-14v1f4s"
-              >
-                What We Do
-              </h3>
-              <span>
-                Hosting a party? Need a bartender? I'm your girl! We'll create a custom cocktail menu for your event. 
-              </span>
-              <br />
-              <br />
-              <span>
-                From small events in your backyard to corporate parties, gallery openings, weddings, and local community events, let us supply your party with libations that will impress your guests.
-              </span>
-              <br />
-              <br />
-              <span>
-                Together we will create the perfect menu of cocktails, beer, and wine. Corridor Cocktails will make your bar dreams come true!
-              </span>
+                <h3
+                  class="chakra-heading css-14v1f4s"
+                >
+                  What We Do
+                </h3>
+                <span>
+                  Hosting a party? Need a bartender? I'm your girl! We'll create a custom cocktail menu for your event. 
+                </span>
+                <br />
+                <br />
+                <span>
+                  From small events in your backyard to corporate parties, gallery openings, weddings, and local community events, let us supply your party with libations that will impress your guests.
+                </span>
+                <br />
+                <br />
+                <span>
+                  Together we will create the perfect menu of cocktails, beer, and wine. Corridor Cocktails will make your bar dreams come true!
+                </span>
+              </div>
             </div>
           </div>
         </div>

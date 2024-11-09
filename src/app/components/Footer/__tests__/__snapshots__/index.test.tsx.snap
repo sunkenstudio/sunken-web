@@ -6,42 +6,46 @@ exports[`Footer All stories should render successfully Renders Primary story 1`]
 >
   <div>
     <div
-      class="css-do35vm"
+      class="css-21eb5z"
     >
       <div
-        class="chakra-stack css-9bhvi1"
+        class="css-do35vm"
       >
         <div
-          class="chakra-stack css-f17ibg"
+          class="chakra-stack css-9bhvi1"
         >
-          <a
-            href="https://instagram.com"
-            target="_blank"
+          <div
+            class="chakra-stack css-f17ibg"
           >
             <a
-              class="chakra-button css-luz4nv"
-            />
-          </a>
-          <a
-            href="https://facebook.com"
-            target="_blank"
-          >
+              href="https://instagram.com"
+              target="_blank"
+            >
+              <a
+                class="chakra-button css-luz4nv"
+              />
+            </a>
             <a
-              class="chakra-button css-luz4nv"
-            />
-          </a>
-          <a
-            href="https://twitter.com"
-            target="_blank"
-          >
+              href="https://facebook.com"
+              target="_blank"
+            >
+              <a
+                class="chakra-button css-luz4nv"
+              />
+            </a>
             <a
-              class="chakra-button css-luz4nv"
-            />
-          </a>
+              href="https://twitter.com"
+              target="_blank"
+            >
+              <a
+                class="chakra-button css-luz4nv"
+              />
+            </a>
+          </div>
+          <span>
+            Made with &lt;3 in Detroit, MI
+          </span>
         </div>
-        <span>
-          Made with &lt;3 in Detroit, MI
-        </span>
       </div>
     </div>
     <span

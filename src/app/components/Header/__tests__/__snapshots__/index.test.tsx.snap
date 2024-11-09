@@ -6,21 +6,25 @@ exports[`Header All stories should render successfully Renders Primary story 1`]
 >
   <div>
     <div
-      class="css-1u92onj"
+      class="css-21eb5z"
     >
       <div
-        class="css-k008qs"
+        class="css-1u92onj"
       >
         <div
-          class="css-0"
-        />
-        <div
-          class="css-17xejub"
-        />
-        <button
-          class="chakra-button css-va3ex2"
-          type="button"
-        />
+          class="css-k008qs"
+        >
+          <div
+            class="css-0"
+          />
+          <div
+            class="css-17xejub"
+          />
+          <button
+            class="chakra-button css-va3ex2"
+            type="button"
+          />
+        </div>
       </div>
     </div>
     <span

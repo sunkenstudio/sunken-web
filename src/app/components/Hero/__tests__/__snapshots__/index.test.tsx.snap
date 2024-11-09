@@ -6,85 +6,89 @@ exports[`Hero All stories should render successfully Renders Primary story 1`] =
 >
   <div>
     <div
-      class="css-ser5f9"
-      id="hero"
+      class="css-21eb5z"
     >
       <div
-        class="css-159r5o7"
+        class="css-ser5f9"
+        id="hero"
       >
         <div
-          class="css-ojqyia"
-        >
-          <img
-            alt="Bg Image - Table with cocktails and cards"
-            class="chakra-image css-o0922y"
-            src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/e1b053e4603d44705ac074325111d66b.jpg"
-            typename="ComponentCommonImage"
-          />
-          <div
-            class="css-1xv2dbl"
-          />
-        </div>
-      </div>
-      <div
-        class="css-1go9adf"
-      >
-        <div
-          class="css-ugneas"
-        >
-          <div
-            class="chakra-stack css-11nrrcx"
-          >
-            <h1
-              class="chakra-heading css-1c08szr"
-            >
-              Corridor Cocktails
-            </h1>
-            <h3
-              class="chakra-heading css-kmhnlu"
-            >
-              A one-of-a-kind mobile cocktail bar experience
-            </h3>
-            <p
-              class="chakra-text css-9xjet3"
-            >
-              <span>
-                Corridor Cocktails provides a portable mini bar, craft cocktails, skilled bartenders and anything you need to make your event amazing! 
-              </span>
-            </p>
-            <div
-              class="chakra-stack css-1dpia4i"
-            >
-              <a
-                href="#contact"
-                style="width: 100%;"
-              >
-                <button
-                  class="chakra-button css-d6wxm1"
-                  id="ComponentCommonButton"
-                  type="button"
-                >
-                  BOOK AN EVENT
-                </button>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div
-          class="css-0"
+          class="css-159r5o7"
         >
           <div
             class="css-ojqyia"
           >
             <img
-              alt="Company Logo - Cocktail glass with two cherries"
-              class="chakra-image css-hjb6tv"
-              src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/597ee6441f99aff5999e28ce065b563b.jpeg"
+              alt="Bg Image - Table with cocktails and cards"
+              class="chakra-image css-o0922y"
+              src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/e1b053e4603d44705ac074325111d66b.jpg"
               typename="ComponentCommonImage"
             />
             <div
-              class="css-4yd85u"
+              class="css-1xv2dbl"
             />
+          </div>
+        </div>
+        <div
+          class="css-1go9adf"
+        >
+          <div
+            class="css-ugneas"
+          >
+            <div
+              class="chakra-stack css-11nrrcx"
+            >
+              <h1
+                class="chakra-heading css-1c08szr"
+              >
+                Corridor Cocktails
+              </h1>
+              <h3
+                class="chakra-heading css-kmhnlu"
+              >
+                A one-of-a-kind mobile cocktail bar experience
+              </h3>
+              <p
+                class="chakra-text css-9xjet3"
+              >
+                <span>
+                  Corridor Cocktails provides a portable mini bar, craft cocktails, skilled bartenders and anything you need to make your event amazing! 
+                </span>
+              </p>
+              <div
+                class="chakra-stack css-1dpia4i"
+              >
+                <a
+                  href="#contact"
+                  style="width: 100%;"
+                >
+                  <button
+                    class="chakra-button css-d6wxm1"
+                    id="ComponentCommonButton"
+                    type="button"
+                  >
+                    BOOK AN EVENT
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="css-0"
+          >
+            <div
+              class="css-ojqyia"
+            >
+              <img
+                alt="Company Logo - Cocktail glass with two cherries"
+                class="chakra-image css-hjb6tv"
+                src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/597ee6441f99aff5999e28ce065b563b.jpeg"
+                typename="ComponentCommonImage"
+              />
+              <div
+                class="css-4yd85u"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -149,85 +153,89 @@ exports[`Hero All stories should render successfully Renders Split story 1`] = `
 >
   <div>
     <div
-      class="css-ser5f9"
-      id="hero"
+      class="css-21eb5z"
     >
       <div
-        class="css-159r5o7"
+        class="css-ser5f9"
+        id="hero"
       >
         <div
-          class="css-ojqyia"
-        >
-          <img
-            alt="Bg Image - Table with cocktails and cards"
-            class="chakra-image css-o0922y"
-            src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/e1b053e4603d44705ac074325111d66b.jpg"
-            typename="ComponentCommonImage"
-          />
-          <div
-            class="css-1xv2dbl"
-          />
-        </div>
-      </div>
-      <div
-        class="css-1go9adf"
-      >
-        <div
-          class="css-1mx75r"
-        >
-          <div
-            class="chakra-stack css-10ohret"
-          >
-            <h1
-              class="chakra-heading css-1c08szr"
-            >
-              Corridor Cocktails
-            </h1>
-            <h3
-              class="chakra-heading css-kmhnlu"
-            >
-              A one-of-a-kind mobile cocktail bar experience
-            </h3>
-            <p
-              class="chakra-text css-9xjet3"
-            >
-              <span>
-                Corridor Cocktails provides a portable mini bar, craft cocktails, skilled bartenders and anything you need to make your event amazing! 
-              </span>
-            </p>
-            <div
-              class="chakra-stack css-zc88h8"
-            >
-              <a
-                href="#contact"
-                style="width: 100%;"
-              >
-                <button
-                  class="chakra-button css-d6wxm1"
-                  id="ComponentCommonButton"
-                  type="button"
-                >
-                  BOOK AN EVENT
-                </button>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div
-          class="css-kp9cau"
+          class="css-159r5o7"
         >
           <div
             class="css-ojqyia"
           >
             <img
-              alt="Company Logo - Cocktail glass with two cherries"
-              class="chakra-image css-3z3kdn"
-              src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/597ee6441f99aff5999e28ce065b563b.jpeg"
+              alt="Bg Image - Table with cocktails and cards"
+              class="chakra-image css-o0922y"
+              src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/e1b053e4603d44705ac074325111d66b.jpg"
               typename="ComponentCommonImage"
             />
             <div
-              class="css-bwra7h"
+              class="css-1xv2dbl"
             />
+          </div>
+        </div>
+        <div
+          class="css-1go9adf"
+        >
+          <div
+            class="css-1mx75r"
+          >
+            <div
+              class="chakra-stack css-10ohret"
+            >
+              <h1
+                class="chakra-heading css-1c08szr"
+              >
+                Corridor Cocktails
+              </h1>
+              <h3
+                class="chakra-heading css-kmhnlu"
+              >
+                A one-of-a-kind mobile cocktail bar experience
+              </h3>
+              <p
+                class="chakra-text css-9xjet3"
+              >
+                <span>
+                  Corridor Cocktails provides a portable mini bar, craft cocktails, skilled bartenders and anything you need to make your event amazing! 
+                </span>
+              </p>
+              <div
+                class="chakra-stack css-zc88h8"
+              >
+                <a
+                  href="#contact"
+                  style="width: 100%;"
+                >
+                  <button
+                    class="chakra-button css-d6wxm1"
+                    id="ComponentCommonButton"
+                    type="button"
+                  >
+                    BOOK AN EVENT
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="css-kp9cau"
+          >
+            <div
+              class="css-ojqyia"
+            >
+              <img
+                alt="Company Logo - Cocktail glass with two cherries"
+                class="chakra-image css-3z3kdn"
+                src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/597ee6441f99aff5999e28ce065b563b.jpeg"
+                typename="ComponentCommonImage"
+              />
+              <div
+                class="css-bwra7h"
+              />
+            </div>
           </div>
         </div>
       </div>
