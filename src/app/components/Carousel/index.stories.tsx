@@ -3,7 +3,7 @@ import { Carousel, CarouselProps } from '../Carousel';
 import { CarouselFixture } from '@/app/fixtures';
 
 const meta = {
-  title: 'components/<Carousel></Carousel>',
+  title: 'components/Carousel',
   component: Carousel,
   parameters: {
     layout: 'centered',
