@@ -87,10 +87,10 @@ export const InputField = ({ id, field, value, onChange }: InputFieldProps) => {
           id={id}
           data-testid={`input-${id}`}
           name={display}
-          variant="filled"
           onChange={onChange}
           value={value}
           color={colors.dark}
+          bgColor="white"
         />
       </FormControl>
     );
