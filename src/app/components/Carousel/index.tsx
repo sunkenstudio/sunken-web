@@ -58,22 +58,23 @@ export const Carousel = ({ carousel }: CarouselProps) => {
   };
 
   const handlePrev = () => {
-    setSlideClass(styles['image-slide-out']);
+    setSlideClass(styles['image-slide-out-reverse']);
     setTimeout(() => {
       if (imageIndex === 0) {
         setImageIndex(images.length - 1);
       } else {
         setImageIndex(imageIndex - 1);
       }
-      setSlideClass(styles['image-slide-in']);
+      setSlideClass(styles['image-slide-in-reverse']);
     }, 300);
   };
 
   const selectNewImage = (index: number) => {
-    setSlideClass(styles['image-slide-out']);
+    const isReverse = index < imageIndex ? true : false;
+    setSlideClass(styles[`image-slide-out${isReverse ? '-reverse' : ''}`]);
     setTimeout(() => {
       setImageIndex(index);
-      setSlideClass(styles['image-slide-in']);
+      setSlideClass(styles[`image-slide-in${isReverse ? '-reverse' : ''}`]);
     }, 300);
   };
 
