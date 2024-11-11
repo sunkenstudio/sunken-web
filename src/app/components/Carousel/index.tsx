@@ -3,14 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useBrand } from '@/app/contexts/BrandContext';
 import { StrapiCarousel } from '@/app/types';
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
-import {
-  AspectRatio,
-  Box,
-  Center,
-  IconButton,
-  Image,
-  SlideFade,
-} from '@chakra-ui/react';
+import { AspectRatio, Box, Center, IconButton, Image } from '@chakra-ui/react';
 
 import { Flex } from '@chakra-ui/react';
 import { DotOutline } from '@phosphor-icons/react';
@@ -31,18 +24,18 @@ export const Carousel = ({ carousel }: CarouselProps) => {
   } = carousel;
   const [imageIndex, setImageIndex] = useState(0);
   const [moving, setMoving] = useState(transitionTime > 0);
-  const [isShowing, setIsShowing] = useState(true);
   const [isMoreThanFive, setIsMoreThanFive] = useState(false);
+  const [slideClass, setSlideClass] = useState(styles['image-slide-in']);
 
   useEffect(() => {
     if (moving) {
       const tick = setInterval(() => {
-        setIsShowing(false);
+        setSlideClass(styles['image-slide-out']);
         setTimeout(() => {
           setImageIndex((imageIndex + 1) % images.length);
-          setIsShowing(true);
-        }, 500);
-      }, transitionTime - 500);
+          setSlideClass(styles['image-slide-in']);
+        }, 300);
+      }, transitionTime - 300);
 
       return () => clearInterval(tick);
     }
@@ -53,35 +46,35 @@ export const Carousel = ({ carousel }: CarouselProps) => {
   }, [images]);
 
   const handleNext = () => {
-    setIsShowing(false);
+    setSlideClass(styles['image-slide-out']);
     setTimeout(() => {
       if (imageIndex === images.length - 1) {
         setImageIndex(0);
       } else {
         setImageIndex(imageIndex + 1);
       }
-      setIsShowing(true);
-    }, 500);
+      setSlideClass(styles['image-slide-in']);
+    }, 300);
   };
 
   const handlePrev = () => {
-    setIsShowing(false);
+    setSlideClass(styles['image-slide-out']);
     setTimeout(() => {
       if (imageIndex === 0) {
         setImageIndex(images.length - 1);
       } else {
         setImageIndex(imageIndex - 1);
       }
-      setIsShowing(true);
-    }, 500);
+      setSlideClass(styles['image-slide-in']);
+    }, 300);
   };
 
   const selectNewImage = (index: number) => {
-    setIsShowing(false);
+    setSlideClass(styles['image-slide-out']);
     setTimeout(() => {
       setImageIndex(index);
-      setIsShowing(true);
-    }, 500);
+      setSlideClass(styles['image-slide-in']);
+    }, 300);
   };
 
   return (
@@ -102,18 +95,17 @@ export const Carousel = ({ carousel }: CarouselProps) => {
         className={styles.outerContainer}
       >
         <div className={styles.innerContainer}>
-          <SlideFade in={isShowing} offsetX={isShowing ? '300px' : '-300px'}>
-            <AspectRatio
-              ratio={aspectRatioWidth / aspectRatioHeight}
-              maxW="1000px"
-            >
-              <Image
-                objectFit="contain"
-                alt={images[imageIndex].alt}
-                src={images[imageIndex].media.url}
-              />
-            </AspectRatio>
-          </SlideFade>
+          <AspectRatio
+            ratio={aspectRatioWidth / aspectRatioHeight}
+            maxW="1000px"
+            className={slideClass}
+          >
+            <Image
+              objectFit="contain"
+              alt={images[imageIndex].alt}
+              src={images[imageIndex].media.url}
+            />
+          </AspectRatio>
           {displayCounter && (
             <span className={styles.imageCounter}>
               {imageIndex + 1}/{images.length}

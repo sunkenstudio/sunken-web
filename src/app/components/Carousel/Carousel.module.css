@@ -14,3 +14,33 @@
   top: 25px;
   right: 25px;
 }
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+.image-slide-in {
+  animation: slideIn 0.4s forwards;
+}
+
+.image-slide-out {
+  animation: slideOut 0.4s forwards;
+}
