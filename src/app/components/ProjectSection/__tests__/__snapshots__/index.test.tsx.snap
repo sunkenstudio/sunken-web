@@ -9,7 +9,7 @@ exports[`ProjectSection All stories should render successfully Renders Primary s
       class="css-21eb5z"
     >
       <div
-        class="chakra-stack css-u3n3fd"
+        class="chakra-stack css-1br5z7s"
       >
         <h3
           class="chakra-heading css-j73ljy"
@@ -17,7 +17,7 @@ exports[`ProjectSection All stories should render successfully Renders Primary s
           Projects
         </h3>
         <div
-          class="chakra-stack css-uaverl"
+          class="chakra-stack css-hp8ztd"
         >
           <div
             class="css-8atqhb"
@@ -29,10 +29,10 @@ exports[`ProjectSection All stories should render successfully Renders Primary s
                 class="css-c2t2fn"
               >
                 <div
-                  class="chakra-stack css-bfa8om"
+                  class="chakra-stack css-1csycjh"
                 >
                   <img
-                    class="chakra-image css-2psxrk"
+                    class="chakra-image css-50u34x"
                     src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/881d819e76d4feed9921f05433647f6f.png"
                   />
                   <div
@@ -56,14 +56,14 @@ exports[`ProjectSection All stories should render successfully Renders Primary s
                     <span>
                       A website for a local vendor providing a pop-up cocktail bar service.
                     </span>
+                    <div
+                      class="chakra-stack css-1igwmid"
+                    />
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div
-            class="chakra-stack css-1wgg1jw"
-          />
         </div>
       </div>
     </div>
@@ -129,7 +129,7 @@ exports[`ProjectSection match snapshot 1`] = `
   >
     <div>
       <div
-        class="chakra-stack css-u3n3fd"
+        class="chakra-stack css-1br5z7s"
       >
         <h3
           class="chakra-heading css-j73ljy"
@@ -137,7 +137,7 @@ exports[`ProjectSection match snapshot 1`] = `
           Projects
         </h3>
         <div
-          class="chakra-stack css-uaverl"
+          class="chakra-stack css-hp8ztd"
         >
           <div
             class="css-8atqhb"
@@ -149,10 +149,10 @@ exports[`ProjectSection match snapshot 1`] = `
                 class="css-c2t2fn"
               >
                 <div
-                  class="chakra-stack css-bfa8om"
+                  class="chakra-stack css-1csycjh"
                 >
                   <img
-                    class="chakra-image css-2psxrk"
+                    class="chakra-image css-50u34x"
                     src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/881d819e76d4feed9921f05433647f6f.png"
                   />
                   <div
@@ -176,14 +176,14 @@ exports[`ProjectSection match snapshot 1`] = `
                     <span>
                       A website for a local vendor providing a pop-up cocktail bar service.
                     </span>
+                    <div
+                      class="chakra-stack css-1igwmid"
+                    />
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div
-            class="chakra-stack css-1wgg1jw"
-          />
         </div>
       </div>
       <span
@@ -240,7 +240,7 @@ exports[`ProjectSection match snapshot 1`] = `
   </body>,
   "container": <div>
     <div
-      class="chakra-stack css-u3n3fd"
+      class="chakra-stack css-1br5z7s"
     >
       <h3
         class="chakra-heading css-j73ljy"
@@ -248,7 +248,7 @@ exports[`ProjectSection match snapshot 1`] = `
         Projects
       </h3>
       <div
-        class="chakra-stack css-uaverl"
+        class="chakra-stack css-hp8ztd"
       >
         <div
           class="css-8atqhb"
@@ -260,10 +260,10 @@ exports[`ProjectSection match snapshot 1`] = `
               class="css-c2t2fn"
             >
               <div
-                class="chakra-stack css-bfa8om"
+                class="chakra-stack css-1csycjh"
               >
                 <img
-                  class="chakra-image css-2psxrk"
+                  class="chakra-image css-50u34x"
                   src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/881d819e76d4feed9921f05433647f6f.png"
                 />
                 <div
@@ -287,14 +287,14 @@ exports[`ProjectSection match snapshot 1`] = `
                   <span>
                     A website for a local vendor providing a pop-up cocktail bar service.
                   </span>
+                  <div
+                    class="chakra-stack css-1igwmid"
+                  />
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div
-          class="chakra-stack css-1wgg1jw"
-        />
       </div>
     </div>
     <span

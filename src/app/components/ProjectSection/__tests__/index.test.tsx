@@ -44,8 +44,8 @@ describe('ProjectSection', () => {
 
   it('should display no arrows if only one index', () => {
     const rendered = renderComponent();
-    expect(rendered.queryByTestId('increment-btn')).toBeNull();
-    expect(rendered.queryByTestId('decrement-btn')).toBeNull();
+    expect(rendered.queryByTestId('increment-btn-0')).toBeNull();
+    expect(rendered.queryByTestId('decrement-btn-0')).toBeNull();
   });
 
   it('should display right arrow only if first index', () => {
@@ -55,8 +55,8 @@ describe('ProjectSection', () => {
         articles: [ArticleFixture(), ArticleFixture(), ArticleFixture()],
       },
     });
-    expect(rendered.getByTestId('increment-btn')).toBeDefined();
-    expect(rendered.queryByTestId('decrement-btn')).toBeNull();
+    expect(rendered.getByTestId('increment-btn-0')).toBeDefined();
+    expect(rendered.queryByTestId('decrement-btn-0')).toBeNull();
   });
 
   it('should display left arrow only if last index', async () => {
@@ -66,12 +66,12 @@ describe('ProjectSection', () => {
         articles: [ArticleFixture(), ArticleFixture(), ArticleFixture()],
       },
     });
-    const incrementBtn = rendered.getByTestId('increment-btn');
+    const incrementBtn = rendered.getByTestId('increment-btn-0');
     userEvent.click(incrementBtn);
     userEvent.click(incrementBtn);
     await waitFor(() => {
-      expect(rendered.getByTestId('decrement-btn')).toBeDefined();
-      expect(rendered.queryByTestId('increment-btn')).toBeNull();
+      expect(rendered.getByTestId('decrement-btn-2')).toBeDefined();
+      expect(rendered.queryByTestId('increment-btn-2')).toBeNull();
     });
   });
 
@@ -82,11 +82,11 @@ describe('ProjectSection', () => {
         articles: [ArticleFixture(), ArticleFixture(), ArticleFixture()],
       },
     });
-    const incrementBtn = rendered.getByTestId('increment-btn');
+    const incrementBtn = rendered.getByTestId('increment-btn-0');
     userEvent.click(incrementBtn);
     await waitFor(() => {
-      expect(rendered.getByTestId('increment-btn')).toBeDefined();
-      expect(rendered.getByTestId('decrement-btn')).toBeDefined();
+      expect(rendered.getByTestId('increment-btn-1')).toBeDefined();
+      expect(rendered.getByTestId('decrement-btn-1')).toBeDefined();
     });
   });
 });

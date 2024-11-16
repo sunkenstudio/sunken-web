@@ -1,15 +1,7 @@
 'use client';
 import { useBrand } from '@/app/contexts/BrandContext';
 import { StrapiProjectSection } from '@/app/types';
-import {
-  Box,
-  Button,
-  HStack,
-  Image,
-  Link,
-  Stack,
-  useBreakpointValue,
-} from '@chakra-ui/react';
+import { Box, Button, HStack, Image, Link, Stack } from '@chakra-ui/react';
 import React, { useState } from 'react';
 import { H3, H4 } from '../Typography';
 import { RichText } from '../Shared/RichText';
@@ -22,7 +14,6 @@ export interface ProjectSectionProps {
 export const ProjectSection = ({ projectSection }: ProjectSectionProps) => {
   const { header, articles, bgColor, color } = projectSection;
   const { colors } = useBrand();
-  const isMobile = useBreakpointValue({ base: true, md: false });
   const [index, setIndex] = useState(0);
 
   const incrementIndex = () => {
@@ -43,13 +34,13 @@ export const ProjectSection = ({ projectSection }: ProjectSectionProps) => {
 
   const slideWidth = 100 / articles.length; // Calculate dynamic width for each slide
 
-  const renderDecrementButton = () => {
+  const renderDecrementButton = (idx: number) => {
     if (index === 0) {
       return null;
     }
     return (
       <Button
-        data-testid="decrement-btn"
+        data-testid={`decrement-btn-${idx}`}
         onClick={decrementIndex}
         zIndex={10}
         bgColor={colors[color]}
@@ -60,13 +51,13 @@ export const ProjectSection = ({ projectSection }: ProjectSectionProps) => {
     );
   };
 
-  const renderIncrementButton = () => {
+  const renderIncrementButton = (idx: number) => {
     if (index === articles.length - 1) {
       return null;
     }
     return (
       <Button
-        data-testid="increment-btn"
+        data-testid={`increment-btn-${idx}`}
         onClick={incrementIndex}
         zIndex={10}
         bgColor={colors[color]}
@@ -97,12 +88,17 @@ export const ProjectSection = ({ projectSection }: ProjectSectionProps) => {
               display="flex"
               opacity={i !== index ? 0 : 1}
             >
-              <Stack flexDir={{ base: 'column', md: 'row' }} w="100%">
+              <Stack
+                flexDir={{ base: 'column', md: 'row' }}
+                w="100%"
+                alignItems={'center'}
+              >
                 <Image
                   src={article.images[0].url}
                   w={{ base: '100%', md: '60%' }}
-                  objectFit={'cover'}
+                  objectFit={'contain'}
                   mx={{ base: 0, md: '1rem' }}
+                  maxH={'360px'}
                 />
                 <Stack
                   w={{ base: '100%', md: '40%' }}
@@ -121,6 +117,10 @@ export const ProjectSection = ({ projectSection }: ProjectSectionProps) => {
                     </Link>
                   </HStack>
                   <RichText content={article.description} />
+                  <HStack>
+                    {renderDecrementButton(i)}
+                    {renderIncrementButton(i)}
+                  </HStack>
                 </Stack>
               </Stack>
             </Box>
@@ -134,28 +134,16 @@ export const ProjectSection = ({ projectSection }: ProjectSectionProps) => {
     <Stack
       w="100%"
       minH={'2xl'}
+      maxH={{ md: '2xl' }}
       bgColor={colors[bgColor]}
       color={colors[color]}
     >
       <H3 textAlign={'center'} mt={'4rem'}>
         {header}
       </H3>
-
-      {isMobile ? (
-        <Stack mx={'.5rem'} overflow={'hidden'}>
-          {renderArticles()}
-          <HStack w="100%" justifyContent={'center'}>
-            {renderDecrementButton()}
-            {renderIncrementButton()}
-          </HStack>
-        </Stack>
-      ) : (
-        <HStack mx={'10rem'} overflow={'hidden'}>
-          {renderDecrementButton()}
-          {renderArticles()}
-          {renderIncrementButton()}
-        </HStack>
-      )}
+      <Stack mx={{ base: '.5rem', md: '10rem' }} overflow={'hidden'}>
+        {renderArticles()}
+      </Stack>
     </Stack>
   );
 };
