@@ -16,18 +16,13 @@ exports[`Carousel All stories should render successfully Renders Primary story 1
           class="innerContainer"
         >
           <div
-            class="chakra-offset-slide"
-            style="opacity: 0; transform: translateX(300px) translateY(8px) translateZ(0);"
+            class="chakra-aspect-ratio image-slide-in css-1vq9gpo"
           >
-            <div
-              class="chakra-aspect-ratio css-1vq9gpo"
-            >
-              <img
-                alt="Craft cocktail with lemon twist"
-                class="chakra-image css-g98gbd"
-                src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/b181fb8a2e37c5523f5f625b11628738.avif"
-              />
-            </div>
+            <img
+              alt="Craft cocktail with lemon twist"
+              class="chakra-image css-g98gbd"
+              src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/b181fb8a2e37c5523f5f625b11628738.avif"
+            />
           </div>
           <span
             class="imageCounter"
@@ -206,18 +201,13 @@ exports[`Carousel matches snapshot 1`] = `
             class="innerContainer"
           >
             <div
-              class="chakra-offset-slide"
-              style="opacity: 0; transform: translateX(300px) translateY(8px) translateZ(0);"
+              class="chakra-aspect-ratio image-slide-in css-1vq9gpo"
             >
-              <div
-                class="chakra-aspect-ratio css-1vq9gpo"
-              >
-                <img
-                  alt="Craft cocktail with lemon twist"
-                  class="chakra-image css-g98gbd"
-                  src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/b181fb8a2e37c5523f5f625b11628738.avif"
-                />
-              </div>
+              <img
+                alt="Craft cocktail with lemon twist"
+                class="chakra-image css-g98gbd"
+                src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/b181fb8a2e37c5523f5f625b11628738.avif"
+              />
             </div>
             <span
               class="imageCounter"
@@ -388,18 +378,13 @@ exports[`Carousel matches snapshot 1`] = `
           class="innerContainer"
         >
           <div
-            class="chakra-offset-slide"
-            style="opacity: 0; transform: translateX(300px) translateY(8px) translateZ(0);"
+            class="chakra-aspect-ratio image-slide-in css-1vq9gpo"
           >
-            <div
-              class="chakra-aspect-ratio css-1vq9gpo"
-            >
-              <img
-                alt="Craft cocktail with lemon twist"
-                class="chakra-image css-g98gbd"
-                src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/b181fb8a2e37c5523f5f625b11628738.avif"
-              />
-            </div>
+            <img
+              alt="Craft cocktail with lemon twist"
+              class="chakra-image css-g98gbd"
+              src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/b181fb8a2e37c5523f5f625b11628738.avif"
+            />
           </div>
           <span
             class="imageCounter"
