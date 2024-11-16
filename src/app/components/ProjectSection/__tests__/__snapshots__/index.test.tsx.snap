@@ -9,7 +9,7 @@ exports[`ProjectSection All stories should render successfully Renders Primary s
       class="css-21eb5z"
     >
       <div
-        class="chakra-stack css-1br5z7s"
+        class="chakra-stack css-u3n3fd"
       >
         <h3
           class="chakra-heading css-j73ljy"
@@ -57,7 +57,7 @@ exports[`ProjectSection All stories should render successfully Renders Primary s
                       A website for a local vendor providing a pop-up cocktail bar service.
                     </span>
                     <div
-                      class="chakra-stack css-1igwmid"
+                      class="chakra-stack css-12khxvo"
                     />
                   </div>
                 </div>
@@ -129,7 +129,7 @@ exports[`ProjectSection match snapshot 1`] = `
   >
     <div>
       <div
-        class="chakra-stack css-1br5z7s"
+        class="chakra-stack css-u3n3fd"
       >
         <h3
           class="chakra-heading css-j73ljy"
@@ -177,7 +177,7 @@ exports[`ProjectSection match snapshot 1`] = `
                       A website for a local vendor providing a pop-up cocktail bar service.
                     </span>
                     <div
-                      class="chakra-stack css-1igwmid"
+                      class="chakra-stack css-12khxvo"
                     />
                   </div>
                 </div>
@@ -240,7 +240,7 @@ exports[`ProjectSection match snapshot 1`] = `
   </body>,
   "container": <div>
     <div
-      class="chakra-stack css-1br5z7s"
+      class="chakra-stack css-u3n3fd"
     >
       <h3
         class="chakra-heading css-j73ljy"
@@ -288,7 +288,7 @@ exports[`ProjectSection match snapshot 1`] = `
                     A website for a local vendor providing a pop-up cocktail bar service.
                   </span>
                   <div
-                    class="chakra-stack css-1igwmid"
+                    class="chakra-stack css-12khxvo"
                   />
                 </div>
               </div>
