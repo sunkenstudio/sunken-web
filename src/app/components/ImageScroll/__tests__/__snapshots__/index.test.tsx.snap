@@ -20,7 +20,7 @@ exports[`ImageScroll All stories should render successfully Renders Fast story 1
           class="css-44ez6k"
         >
           <div
-            class="scroll css-1llhkwe"
+            class="scroll css-1ejpetb"
           >
             <img
               alt="Image 0"
@@ -44,7 +44,7 @@ exports[`ImageScroll All stories should render successfully Renders Fast story 1
             />
           </div>
           <div
-            class="scroll css-k517ip"
+            class="scroll css-1cslos3"
           >
             <img
               alt="Image 0"
@@ -144,7 +144,7 @@ exports[`ImageScroll All stories should render successfully Renders Normal story
           class="css-44ez6k"
         >
           <div
-            class="scroll css-xliua8"
+            class="scroll css-bd22uf"
           >
             <img
               alt="Image 0"
@@ -168,7 +168,7 @@ exports[`ImageScroll All stories should render successfully Renders Normal story
             />
           </div>
           <div
-            class="scroll css-60jj35"
+            class="scroll css-snf51v"
           >
             <img
               alt="Image 0"
@@ -268,7 +268,7 @@ exports[`ImageScroll All stories should render successfully Renders Slow story 1
           class="css-44ez6k"
         >
           <div
-            class="scroll css-1sdco0m"
+            class="scroll css-1fqo93h"
           >
             <img
               alt="Image 0"
@@ -292,7 +292,7 @@ exports[`ImageScroll All stories should render successfully Renders Slow story 1
             />
           </div>
           <div
-            class="scroll css-7wpwqh"
+            class="scroll css-1cfm9gz"
           >
             <img
               alt="Image 0"
@@ -386,7 +386,7 @@ exports[`ImageScroll match snapshot 1`] = `
           class="css-44ez6k"
         >
           <div
-            class="scroll css-xliua8"
+            class="scroll css-bd22uf"
           >
             <img
               alt="Image 0"
@@ -410,7 +410,7 @@ exports[`ImageScroll match snapshot 1`] = `
             />
           </div>
           <div
-            class="scroll css-60jj35"
+            class="scroll css-snf51v"
           >
             <img
               alt="Image 0"
@@ -495,7 +495,7 @@ exports[`ImageScroll match snapshot 1`] = `
         class="css-44ez6k"
       >
         <div
-          class="scroll css-xliua8"
+          class="scroll css-bd22uf"
         >
           <img
             alt="Image 0"
@@ -519,7 +519,7 @@ exports[`ImageScroll match snapshot 1`] = `
           />
         </div>
         <div
-          class="scroll css-60jj35"
+          class="scroll css-snf51v"
         >
           <img
             alt="Image 0"

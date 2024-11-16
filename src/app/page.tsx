@@ -55,7 +55,6 @@ const Home = () => {
           if (clientData) {
             document.title = clientData.brand.companyName;
             setFontFamilies(clientData?.brand?.fonts || []);
-            console.log(clientData);
             setData(clientData);
           } else {
             setData({});
@@ -126,7 +125,7 @@ const Home = () => {
     border: hero.buttons[0].border,
     shadow: hero.buttons[0].shadow,
   };
-  console.log({ imageScroll });
+
   return (
     <main>
       <Box
