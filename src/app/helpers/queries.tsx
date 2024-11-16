@@ -80,6 +80,27 @@ export const GET_SITE = gql`
               }
             }
           }
+          project_section {
+            data {
+              attributes {
+                Header
+                BgColor
+                Color
+                Articles {
+                  Title
+                  Description
+                  Images {
+                    data {
+                      attributes {
+                        url
+                      }
+                    }
+                  }
+                  Link
+                }
+              }
+            }
+          }
           brand {
             data {
               attributes {
@@ -93,6 +114,20 @@ export const GET_SITE = gql`
                   Family
                 }
                 CompanyName
+              }
+            }
+          }
+          carousel {
+            data {
+              attributes {
+                TransitionTime
+                DisplayArrows
+                DisplayCounter
+                AspectRatioWidth
+                AspectRatioHeight
+                Images {
+                  ...imageFields
+                }
               }
             }
           }

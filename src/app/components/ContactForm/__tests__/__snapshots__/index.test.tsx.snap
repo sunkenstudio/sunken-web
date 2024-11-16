@@ -497,7 +497,7 @@ exports[`ContactForm match snapshot 1`] = `
                 </label>
                 <textarea
                   aria-required="true"
-                  class="chakra-textarea css-0"
+                  class="chakra-textarea css-cxmp86"
                   data-testid="input-message"
                   id="message"
                   name="MESSAGE"
@@ -722,7 +722,7 @@ exports[`ContactForm match snapshot 1`] = `
               </label>
               <textarea
                 aria-required="true"
-                class="chakra-textarea css-0"
+                class="chakra-textarea css-cxmp86"
                 data-testid="input-message"
                 id="message"
                 name="MESSAGE"

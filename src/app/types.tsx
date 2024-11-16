@@ -131,6 +131,32 @@ export interface StrapiImageScroll {
   color?: Color;
 }
 
+export interface StrapiProjectSection {
+  typename: string;
+  header: string;
+  bgColor: Color;
+  color: Color;
+  articles: StrapiArticle[];
+}
+
+export interface StrapiArticle {
+  typename: string;
+  title: string;
+  description: BlocksContent;
+  images: StrapiImage[];
+  link: string;
+}
+
+export interface StrapiCarousel {
+  typename: string;
+  displayArrows: boolean;
+  images: StrapiStyledImage[];
+  transitionTime: number;
+  displayCounter: boolean;
+  aspectRatioWidth: number;
+  aspectRatioHeight: number;
+}
+
 export interface Client {
   typename: string;
   clientId: string;
@@ -141,4 +167,5 @@ export interface Client {
   contact: StrapiContact;
   imageScroll: StrapiImageScroll;
   config: StrapiConfig;
+  projectSection: StrapiProjectSection;
 }
