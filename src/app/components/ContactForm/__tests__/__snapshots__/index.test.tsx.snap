@@ -213,7 +213,7 @@ exports[`ContactForm All stories should render successfully Renders Primary stor
                 </label>
                 <textarea
                   aria-required="true"
-                  class="chakra-textarea css-45s8if"
+                  class="chakra-textarea css-rfxfuy"
                   data-testid="input-message"
                   id="message"
                   name="MESSAGE"

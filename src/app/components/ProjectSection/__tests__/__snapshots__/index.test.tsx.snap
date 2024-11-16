@@ -6,61 +6,65 @@ exports[`ProjectSection All stories should render successfully Renders Primary s
 >
   <div>
     <div
-      class="chakra-stack css-u3n3fd"
+      class="css-21eb5z"
     >
-      <h3
-        class="chakra-heading css-j73ljy"
-      >
-        Projects
-      </h3>
       <div
-        class="chakra-stack css-uaverl"
+        class="chakra-stack css-u3n3fd"
       >
+        <h3
+          class="chakra-heading css-j73ljy"
+        >
+          Projects
+        </h3>
         <div
-          class="css-8atqhb"
+          class="chakra-stack css-uaverl"
         >
           <div
-            class="css-1020liq"
+            class="css-8atqhb"
           >
             <div
-              class="css-c2t2fn"
+              class="css-1020liq"
             >
               <div
-                class="chakra-stack css-bfa8om"
+                class="css-c2t2fn"
               >
-                <img
-                  class="chakra-image css-2psxrk"
-                  src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/881d819e76d4feed9921f05433647f6f.png"
-                />
                 <div
-                  class="chakra-stack css-1esve09"
+                  class="chakra-stack css-bfa8om"
                 >
+                  <img
+                    class="chakra-image css-2psxrk"
+                    src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/881d819e76d4feed9921f05433647f6f.png"
+                  />
                   <div
-                    class="chakra-stack css-1igwmid"
+                    class="chakra-stack css-1esve09"
                   >
-                    <h4
-                      class="chakra-heading css-1nymyhw"
+                    <div
+                      class="chakra-stack css-1igwmid"
                     >
-                      Corridor Cocktails
-                       
-                    </h4>
-                    <a
-                      class="chakra-link css-spn4bz"
-                      href="https://corridorcocktails.org"
-                      target="_blank"
-                    />
+                      <h4
+                        class="chakra-heading css-1nymyhw"
+                      >
+                        Corridor Cocktails
+                         
+                      </h4>
+                      <a
+                        class="chakra-link css-spn4bz"
+                        href="https://corridorcocktails.org"
+                        target="_blank"
+                      />
+                    </div>
+                    <span>
+                      A website for a local vendor providing a pop-up cocktail bar service.
+                    </span>
                   </div>
-                  <span>
-                    A website for a local vendor providing a pop-up cocktail bar service.
-                  </span>
                 </div>
               </div>
             </div>
           </div>
+          <div
+            class="chakra-stack css-1wgg1jw"
+          />
         </div>
-        <div
-          class="chakra-stack css-1wgg1jw"
-        />
       </div>
     </div>
     <span
