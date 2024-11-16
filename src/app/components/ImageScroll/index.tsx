@@ -2,7 +2,7 @@
 import { useBrand } from '@/app/contexts/BrandContext';
 import { StrapiImageScroll } from '@/app/types';
 import { Box, Image, Stack } from '@chakra-ui/react';
-import React from 'react';
+import React, { useState } from 'react';
 import { H4 } from '../Typography';
 
 export interface ImageScrollProps {
@@ -20,6 +20,8 @@ export const ImageScroll = ({ imageScroll }: ImageScrollProps) => {
     color = 'dark',
   } = imageScroll;
 
+  const [isFirstIteration, setIsFirstIteration] = useState(true);
+
   const getCalculatedSpeed = () => {
     if (speed === 'slow') {
       return 50;
@@ -27,11 +29,18 @@ export const ImageScroll = ({ imageScroll }: ImageScrollProps) => {
     if (speed === 'fast') {
       return 10;
     }
-    return 25;
+    return (images.length / 3) * 15;
   };
 
-  const calculatedSpeed = getCalculatedSpeed();
+  const handleAnimationIteration = () => {
+    setIsFirstIteration(false); // After the first iteration, set this to false
+  };
 
+  if (!images) {
+    return null;
+  }
+
+  const calculatedSpeed = getCalculatedSpeed();
   return (
     <Stack
       w="100%"
@@ -58,20 +67,23 @@ export const ImageScroll = ({ imageScroll }: ImageScrollProps) => {
           display="flex"
           alignItems="center"
           justifyContent="space-around"
+          position="absolute"
+          width={`${(images.length / 3) * 100}%`}
+          whiteSpace="nowrap"
           sx={{
-            animation: `loop ${calculatedSpeed}s linear infinite`,
-            position: 'absolute',
-            width: '100%',
-            whiteSpace: 'nowrap',
-            '@keyframes loop': {
+            animation: `loop_1 ${calculatedSpeed}s linear infinite`,
+            '@keyframes loop_1': {
               '0%': {
-                transform: 'translateX(100%)',
+                transform: isFirstIteration
+                  ? 'translateX(40%)'
+                  : 'translateX(100%)',
               },
               '100%': {
                 transform: 'translateX(-100%)',
               },
             },
           }}
+          onAnimationIteration={handleAnimationIteration}
         >
           {images.map((image, index) => (
             <Image
@@ -89,14 +101,14 @@ export const ImageScroll = ({ imageScroll }: ImageScrollProps) => {
           display="flex"
           alignItems="center"
           justifyContent="space-around"
+          position="absolute"
+          width={`${(images.length / 3) * 100}%`}
+          whiteSpace="nowrap"
           sx={{
-            animation: `loop ${calculatedSpeed}s linear infinite`,
-            position: 'absolute',
-            width: '100%',
-            whiteSpace: 'nowrap',
+            animation: `loop_2 ${calculatedSpeed}s linear infinite`,
             transform: 'translateX(100%)', // Start it off-screen
             animationDelay: `${calculatedSpeed / 2}s`, // Delay for second loop to start
-            '@keyframes loop': {
+            '@keyframes loop_2': {
               '0%': {
                 transform: 'translateX(100%)',
               },

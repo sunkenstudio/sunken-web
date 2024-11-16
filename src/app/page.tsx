@@ -126,6 +126,7 @@ const Home = () => {
     border: hero.buttons[0].border,
     shadow: hero.buttons[0].shadow,
   };
+  console.log({ imageScroll });
   return (
     <main>
       <Box
