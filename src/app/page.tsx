@@ -16,6 +16,7 @@ import { isEmpty } from 'lodash';
 import { useRef } from 'react';
 import Fonts from './helpers/fonts';
 import { useBrand } from './contexts/BrandContext';
+import { ProjectSection } from './components/ProjectSection';
 
 const Home = () => {
   const [data, setData] = useState(null);
@@ -53,6 +54,7 @@ const Home = () => {
           if (clientData) {
             document.title = clientData.brand.companyName;
             setFontFamilies(clientData?.brand?.fonts || []);
+            console.log(clientData);
             setData(clientData);
           } else {
             setData({});
@@ -91,7 +93,8 @@ const Home = () => {
     return <>404 Client not found</>;
   }
 
-  const { hero, sections, footer, contact, carousel, config } = data;
+  const { hero, sections, footer, contact, carousel, config, projectSection } =
+    data;
 
   if (config.isUnderConstruction) {
     return <>Under Construction</>;
@@ -143,6 +146,9 @@ const Home = () => {
             {carousel?.images?.length > 0 && <Carousel carousel={carousel} />}
             {contact.fields && (
               <ContactForm hero={hero} sections={sections} contact={contact} />
+            )}
+            {projectSection && (
+              <ProjectSection projectSection={projectSection} />
             )}
           </Stack>
         </Box>
