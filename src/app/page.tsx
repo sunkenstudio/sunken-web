@@ -2,6 +2,7 @@
 'use client';
 import { Hero } from './components/Hero';
 import { Section } from './components/Section';
+import { Carousel } from './components/Carousel';
 import { Box, Center, Flex, Spinner, Stack } from '@chakra-ui/react';
 import { useApolloClient } from '@apollo/client';
 import { Header } from './components/Header';
@@ -15,6 +16,7 @@ import { isEmpty } from 'lodash';
 import { useRef } from 'react';
 import Fonts from './helpers/fonts';
 import { useBrand } from './contexts/BrandContext';
+import { ProjectSection } from './components/ProjectSection';
 
 const Home = () => {
   const [data, setData] = useState(null);
@@ -52,6 +54,7 @@ const Home = () => {
           if (clientData) {
             document.title = clientData.brand.companyName;
             setFontFamilies(clientData?.brand?.fonts || []);
+            console.log(clientData);
             setData(clientData);
           } else {
             setData({});
@@ -90,7 +93,8 @@ const Home = () => {
     return <>404 Client not found</>;
   }
 
-  const { hero, sections, footer, contact, config } = data;
+  const { hero, sections, footer, contact, carousel, config, projectSection } =
+    data;
 
   if (config.isUnderConstruction) {
     return <>Under Construction</>;
@@ -139,8 +143,12 @@ const Home = () => {
             {sections.map((i) => (
               <Section key={`section-${i.sortOrder}`} section={i} />
             ))}
+            {carousel?.images?.length > 0 && <Carousel carousel={carousel} />}
             {contact.fields && (
               <ContactForm hero={hero} sections={sections} contact={contact} />
+            )}
+            {projectSection && (
+              <ProjectSection projectSection={projectSection} />
             )}
           </Stack>
         </Box>

@@ -1,11 +1,14 @@
 import {
   Client,
+  StrapiArticle,
   StrapiBrand,
+  StrapiCarousel,
   StrapiConfig,
   StrapiContact,
   StrapiFooter,
   StrapiHero,
   StrapiInputField,
+  StrapiProjectSection,
   StrapiSection,
   StrapiStyledButton,
   StrapiStyledImage,
@@ -61,6 +64,35 @@ export const ImageFixture = (
     radius: '99rem',
   },
   filter: null,
+  ...overrides,
+});
+
+export const CarouselFixture = (
+  overrides: Partial<StrapiCarousel> = {}
+): StrapiCarousel => ({
+  typename: 'Carousel',
+  displayArrows: true,
+  images: [
+    ImageFixture(),
+    ImageFixture({
+      media: {
+        url: 'https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/8203015ace4f442ef439488dcd11d914.jpeg',
+        typename: 'UploadFile',
+      },
+      alt: 'Outrigger canoe',
+    }),
+    ImageFixture({
+      media: {
+        url: 'https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/4af0a0e9e19b8dfde009a6b216c9f7bb.JPG',
+        typename: 'UploadFile',
+      },
+      alt: 'Dragon boat',
+    }),
+  ],
+  transitionTime: 1000,
+  displayCounter: true,
+  aspectRatioWidth: 4,
+  aspectRatioHeight: 3,
   ...overrides,
 });
 
@@ -368,6 +400,43 @@ export const ConfigFixture = (
   ...overrides,
 });
 
+export const ProjectSectionFixture = (
+  overrides: Partial<StrapiProjectSection> = {}
+): StrapiProjectSection => ({
+  typename: 'ProjectSection',
+  header: 'Projects',
+  bgColor: 'dark',
+  color: 'light',
+  articles: [ArticleFixture()],
+  ...overrides,
+});
+
+export const ArticleFixture = (
+  overrides: Partial<StrapiArticle> = {}
+): StrapiArticle => ({
+  typename: 'ComponentCommonArticle',
+  title: 'Corridor Cocktails',
+  description: [
+    {
+      type: 'paragraph',
+      children: [
+        {
+          type: 'text',
+          text: 'A website for a local vendor providing a pop-up cocktail bar service.',
+        },
+      ],
+    },
+  ],
+  images: [
+    {
+      typename: 'UploadFile',
+      url: 'https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/881d819e76d4feed9921f05433647f6f.png',
+    },
+  ],
+  link: 'https://corridorcocktails.org',
+  ...overrides,
+});
+
 export const ClientFixture = (overrides: Partial<Client> = {}): Client => ({
   typename: 'Site',
   clientId: 'demo',
@@ -377,5 +446,6 @@ export const ClientFixture = (overrides: Partial<Client> = {}): Client => ({
   footer: FooterFixture(),
   contact: ContactFixture(),
   config: ConfigFixture(),
+  projectSection: ProjectSectionFixture(),
   ...overrides,
 });
