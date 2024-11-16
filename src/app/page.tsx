@@ -147,7 +147,7 @@ const Home = () => {
             {contact.fields && (
               <ContactForm hero={hero} sections={sections} contact={contact} />
             )}
-            {projectSection && (
+            {projectSection?.articles?.length > 0 && (
               <ProjectSection projectSection={projectSection} />
             )}
           </Stack>
