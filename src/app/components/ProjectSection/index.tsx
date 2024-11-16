@@ -117,7 +117,7 @@ export const ProjectSection = ({ projectSection }: ProjectSectionProps) => {
                     </Link>
                   </HStack>
                   <RichText content={article.description} />
-                  <HStack>
+                  <HStack mt="1rem" gap=".5rem">
                     {renderDecrementButton(i)}
                     {renderIncrementButton(i)}
                   </HStack>
@@ -134,7 +134,6 @@ export const ProjectSection = ({ projectSection }: ProjectSectionProps) => {
     <Stack
       w="100%"
       minH={'2xl'}
-      maxH={{ md: '2xl' }}
       bgColor={colors[bgColor]}
       color={colors[color]}
     >
