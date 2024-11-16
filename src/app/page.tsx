@@ -154,11 +154,11 @@ const Home = () => {
               <Section key={`section-${i.sortOrder}`} section={i} />
             ))}
             {carousel?.images?.length > 0 && <Carousel carousel={carousel} />}
-            {contact.fields && (
-              <ContactForm hero={hero} sections={sections} contact={contact} />
-            )}
             {projectSection?.articles?.length > 0 && (
               <ProjectSection projectSection={projectSection} />
+            )}
+            {contact.fields && (
+              <ContactForm hero={hero} sections={sections} contact={contact} />
             )}
           </Stack>
         </Box>
