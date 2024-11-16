@@ -7,6 +7,8 @@ import {
   StrapiContact,
   StrapiFooter,
   StrapiHero,
+  StrapiImage,
+  StrapiImageScroll,
   StrapiInputField,
   StrapiProjectSection,
   StrapiSection,
@@ -49,7 +51,7 @@ export const RichTextFixture = (
   },
 ];
 
-export const ImageFixture = (
+export const StyledImageFixture = (
   overrides: Partial<StrapiStyledImage> = {}
 ): StrapiStyledImage => ({
   typename: 'ComponentCommonImage',
@@ -67,21 +69,29 @@ export const ImageFixture = (
   ...overrides,
 });
 
+export const ImageFixture = (
+  overrides: Partial<StrapiImage> = {}
+): StrapiImage => ({
+  typename: 'UploadFile',
+  url: 'https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/b8c12199347804e795219ef484f5572e.jpeg',
+  ...overrides,
+});
+
 export const CarouselFixture = (
   overrides: Partial<StrapiCarousel> = {}
 ): StrapiCarousel => ({
   typename: 'Carousel',
   displayArrows: true,
   images: [
-    ImageFixture(),
-    ImageFixture({
+    StyledImageFixture(),
+    StyledImageFixture({
       media: {
         url: 'https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/8203015ace4f442ef439488dcd11d914.jpeg',
         typename: 'UploadFile',
       },
       alt: 'Outrigger canoe',
     }),
-    ImageFixture({
+    StyledImageFixture({
       media: {
         url: 'https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/4af0a0e9e19b8dfde009a6b216c9f7bb.JPG',
         typename: 'UploadFile',
@@ -400,6 +410,17 @@ export const ConfigFixture = (
   ...overrides,
 });
 
+export const ImageScrollFixture = (
+  overrides: Partial<StrapiImageScroll> = {}
+): StrapiImageScroll => ({
+  color: 'light',
+  bgColor: 'dark',
+  header: 'Featured In',
+  images: [ImageFixture(), ImageFixture(), ImageFixture(), ImageFixture()],
+  speed: 'normal',
+  ...overrides,
+});
+
 export const ProjectSectionFixture = (
   overrides: Partial<StrapiProjectSection> = {}
 ): StrapiProjectSection => ({
@@ -446,6 +467,7 @@ export const ClientFixture = (overrides: Partial<Client> = {}): Client => ({
   footer: FooterFixture(),
   contact: ContactFixture(),
   config: ConfigFixture(),
+  imageScroll: ImageScrollFixture(),
   projectSection: ProjectSectionFixture(),
   ...overrides,
 });

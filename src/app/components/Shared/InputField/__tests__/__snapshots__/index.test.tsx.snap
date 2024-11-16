@@ -6,33 +6,37 @@ exports[`InputField All stories should render successfully Renders Primary story
 >
   <div>
     <div
-      class="chakra-form-control css-1kxonj9"
-      role="group"
+      class="css-21eb5z"
     >
-      <label
-        class="chakra-form__label css-g6pte"
-        for="name"
-        id="field-:r0:-label"
+      <div
+        class="chakra-form-control css-1kxonj9"
+        role="group"
       >
-        NAME
-        <span
-          aria-hidden="true"
-          class="chakra-form__required-indicator css-1tfjd1n"
-          role="presentation"
+        <label
+          class="chakra-form__label css-g6pte"
+          for="name"
+          id="field-:r0:-label"
         >
-          *
-        </span>
-      </label>
-      <input
-        aria-required="true"
-        class="chakra-input css-15izoeg"
-        data-testid="input-name"
-        id="name"
-        name="NAME"
-        required=""
-        type="text"
-        value="value"
-      />
+          NAME
+          <span
+            aria-hidden="true"
+            class="chakra-form__required-indicator css-1tfjd1n"
+            role="presentation"
+          >
+            *
+          </span>
+        </label>
+        <input
+          aria-required="true"
+          class="chakra-input css-15izoeg"
+          data-testid="input-name"
+          id="name"
+          name="NAME"
+          required=""
+          type="text"
+          value="value"
+        />
+      </div>
     </div>
     <span
       hidden=""

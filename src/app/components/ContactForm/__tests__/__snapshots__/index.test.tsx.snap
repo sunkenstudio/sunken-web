@@ -6,129 +6,42 @@ exports[`ContactForm All stories should render successfully Renders Primary stor
 >
   <div>
     <div
-      class="css-9fal1s"
-      id="contact"
+      class="css-21eb5z"
     >
       <div
-        class="css-1kpgg84"
+        class="css-9fal1s"
+        id="contact"
       >
         <div
-          class="css-ojqyia"
+          class="css-1kpgg84"
         >
-          <img
-            alt="Bg image - logo"
-            class="chakra-image css-o0922y"
-            src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/b8c12199347804e795219ef484f5572e.jpeg"
-            typename="ComponentCommonImage"
-          />
           <div
-            class="css-12lgfyx"
-          />
+            class="css-ojqyia"
+          >
+            <img
+              alt="Bg image - logo"
+              class="chakra-image css-o0922y"
+              src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/b8c12199347804e795219ef484f5572e.jpeg"
+              typename="ComponentCommonImage"
+            />
+            <div
+              class="css-12lgfyx"
+            />
+          </div>
         </div>
-      </div>
-      <div
-        class="chakra-stack css-7pq1ey"
-      >
-        <h3
-          class="chakra-heading css-1qtl148"
+        <div
+          class="chakra-stack css-7pq1ey"
         >
-          Contact
-        </h3>
-        <form
-          style="display: flex; width: 100%; justify-content: center;"
-        >
-          <div
-            class="chakra-stack css-ynastw"
+          <h3
+            class="chakra-heading css-1qtl148"
+          >
+            Contact
+          </h3>
+          <form
+            style="display: flex; width: 100%; justify-content: center;"
           >
             <div
-              class="chakra-form-control css-1kxonj9"
-              role="group"
-            >
-              <label
-                class="chakra-form__label css-g6pte"
-                for="name"
-                id="field-:r0:-label"
-              >
-                NAME
-                <span
-                  aria-hidden="true"
-                  class="chakra-form__required-indicator css-1tfjd1n"
-                  role="presentation"
-                >
-                  *
-                </span>
-              </label>
-              <input
-                aria-required="true"
-                class="chakra-input css-15izoeg"
-                data-testid="input-name"
-                id="name"
-                name="NAME"
-                required=""
-                type="text"
-                value=""
-              />
-            </div>
-            <div
-              class="chakra-form-control css-1kxonj9"
-              role="group"
-            >
-              <label
-                class="chakra-form__label css-g6pte"
-                for="start_time"
-                id="field-:r1:-label"
-              >
-                STARTTIME
-                <span
-                  aria-hidden="true"
-                  class="chakra-form__required-indicator css-1tfjd1n"
-                  role="presentation"
-                >
-                  *
-                </span>
-              </label>
-              <input
-                aria-required="true"
-                class="chakra-input css-15izoeg"
-                data-testid="input-start_time"
-                id="start_time"
-                name="STARTTIME"
-                required=""
-                type="time"
-                value=""
-              />
-            </div>
-            <div
-              class="chakra-form-control css-1kxonj9"
-              role="group"
-            >
-              <label
-                class="chakra-form__label css-g6pte"
-                for="date"
-                id="field-:r2:-label"
-              >
-                DATE
-                <span
-                  aria-hidden="true"
-                  class="chakra-form__required-indicator css-1tfjd1n"
-                  role="presentation"
-                >
-                  *
-                </span>
-              </label>
-              <input
-                aria-required="true"
-                class="chakra-input css-15izoeg"
-                data-testid="input-date"
-                id="date"
-                name="DATE"
-                required=""
-                type="time"
-                value=""
-              />
-            </div>
-            <div
-              class="chakra-stack css-8g8ihq"
+              class="chakra-stack css-ynastw"
             >
               <div
                 class="chakra-form-control css-1kxonj9"
@@ -136,10 +49,10 @@ exports[`ContactForm All stories should render successfully Renders Primary stor
               >
                 <label
                   class="chakra-form__label css-g6pte"
-                  for="dropdown"
-                  id="field-:r3:-label"
+                  for="name"
+                  id="field-:r0:-label"
                 >
-                  DROPDOWN
+                  NAME
                   <span
                     aria-hidden="true"
                     class="chakra-form__required-indicator css-1tfjd1n"
@@ -148,83 +61,174 @@ exports[`ContactForm All stories should render successfully Renders Primary stor
                     *
                   </span>
                 </label>
-                <div
-                  class="chakra-select__wrapper css-1ylyrkq"
+                <input
+                  aria-required="true"
+                  class="chakra-input css-15izoeg"
+                  data-testid="input-name"
+                  id="name"
+                  name="NAME"
+                  required=""
+                  type="text"
+                  value=""
+                />
+              </div>
+              <div
+                class="chakra-form-control css-1kxonj9"
+                role="group"
+              >
+                <label
+                  class="chakra-form__label css-g6pte"
+                  for="start_time"
+                  id="field-:r1:-label"
                 >
-                  <select
-                    aria-required="true"
-                    class="chakra-select css-16z42hf"
-                    data-testid="input-dropdown"
-                    id="dropdown"
-                    name="DROPDOWN"
-                    required=""
+                  STARTTIME
+                  <span
+                    aria-hidden="true"
+                    class="chakra-form__required-indicator css-1tfjd1n"
+                    role="presentation"
                   >
-                    <option
-                      value="Option 1"
-                    >
-                      Option 1
-                    </option>
-                    <option
-                      value="Option 2"
-                    >
-                      Option 2
-                    </option>
-                  </select>
-                  <div
-                    class="chakra-select__icon-wrapper css-fcvg7i"
+                    *
+                  </span>
+                </label>
+                <input
+                  aria-required="true"
+                  class="chakra-input css-15izoeg"
+                  data-testid="input-start_time"
+                  id="start_time"
+                  name="STARTTIME"
+                  required=""
+                  type="time"
+                  value=""
+                />
+              </div>
+              <div
+                class="chakra-form-control css-1kxonj9"
+                role="group"
+              >
+                <label
+                  class="chakra-form__label css-g6pte"
+                  for="date"
+                  id="field-:r2:-label"
+                >
+                  DATE
+                  <span
+                    aria-hidden="true"
+                    class="chakra-form__required-indicator css-1tfjd1n"
+                    role="presentation"
                   >
-                    <svg
+                    *
+                  </span>
+                </label>
+                <input
+                  aria-required="true"
+                  class="chakra-input css-15izoeg"
+                  data-testid="input-date"
+                  id="date"
+                  name="DATE"
+                  required=""
+                  type="time"
+                  value=""
+                />
+              </div>
+              <div
+                class="chakra-stack css-8g8ihq"
+              >
+                <div
+                  class="chakra-form-control css-1kxonj9"
+                  role="group"
+                >
+                  <label
+                    class="chakra-form__label css-g6pte"
+                    for="dropdown"
+                    id="field-:r3:-label"
+                  >
+                    DROPDOWN
+                    <span
                       aria-hidden="true"
-                      class="chakra-select__icon"
-                      focusable="false"
+                      class="chakra-form__required-indicator css-1tfjd1n"
                       role="presentation"
-                      style="width: 1em; height: 1em; color: currentColor;"
-                      viewBox="0 0 24 24"
                     >
-                      <path
-                        d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
-                        fill="currentColor"
-                      />
-                    </svg>
+                      *
+                    </span>
+                  </label>
+                  <div
+                    class="chakra-select__wrapper css-1ylyrkq"
+                  >
+                    <select
+                      aria-required="true"
+                      class="chakra-select css-16z42hf"
+                      data-testid="input-dropdown"
+                      id="dropdown"
+                      name="DROPDOWN"
+                      required=""
+                    >
+                      <option
+                        value="Option 1"
+                      >
+                        Option 1
+                      </option>
+                      <option
+                        value="Option 2"
+                      >
+                        Option 2
+                      </option>
+                    </select>
+                    <div
+                      class="chakra-select__icon-wrapper css-fcvg7i"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="chakra-select__icon"
+                        focusable="false"
+                        role="presentation"
+                        style="width: 1em; height: 1em; color: currentColor;"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div
-              class="chakra-form-control css-1kxonj9"
-              role="group"
-            >
-              <label
-                class="chakra-form__label css-g6pte"
-                for="message"
-                id="field-:r4:-label"
+              <div
+                class="chakra-form-control css-1kxonj9"
+                role="group"
               >
-                MESSAGE
-                <span
-                  aria-hidden="true"
-                  class="chakra-form__required-indicator css-1tfjd1n"
-                  role="presentation"
+                <label
+                  class="chakra-form__label css-g6pte"
+                  for="message"
+                  id="field-:r4:-label"
                 >
-                  *
-                </span>
-              </label>
-              <textarea
-                aria-required="true"
-                class="chakra-textarea css-rfxfuy"
-                data-testid="input-message"
-                id="message"
-                name="MESSAGE"
-                required=""
-              />
+                  MESSAGE
+                  <span
+                    aria-hidden="true"
+                    class="chakra-form__required-indicator css-1tfjd1n"
+                    role="presentation"
+                  >
+                    *
+                  </span>
+                </label>
+                <textarea
+                  aria-required="true"
+                  class="chakra-textarea css-rfxfuy"
+                  data-testid="input-message"
+                  id="message"
+                  name="MESSAGE"
+                  required=""
+                />
+              </div>
+              <button
+                class="chakra-button css-1vscnss"
+                type="submit"
+              >
+                SUBMIT
+              </button>
             </div>
-            <button
-              class="chakra-button css-1vscnss"
-              type="submit"
-            >
-              SUBMIT
-            </button>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </div>
     <span

@@ -8,7 +8,7 @@ import * as Stories from '../index.stories';
 import {
   BrandFixture,
   SectionFixture,
-  ImageFixture,
+  StyledImageFixture,
   RichTextFixture,
 } from '@/app/fixtures';
 import { BrandProvider } from '@/app/contexts/BrandContext';
@@ -102,7 +102,7 @@ describe('Section', () => {
 
     it('if given image, should render image', () => {
       const imageAlt = 'Test Image';
-      const image = ImageFixture({ alt: imageAlt });
+      const image = StyledImageFixture({ alt: imageAlt });
       const rendered = renderComponent({
         section: SectionFixture({ variant: 'left', image }),
       });
@@ -112,11 +112,11 @@ describe('Section', () => {
 
     it('if NOT given image, should NOT render image', () => {
       const imageAlt = '';
-      const image = ImageFixture({ alt: imageAlt });
+      const image = StyledImageFixture({ alt: imageAlt });
       const rendered = renderComponent({
         section: SectionFixture({ variant: 'left', image }),
       });
-      const expected = rendered.queryByAltText(ImageFixture().alt);
+      const expected = rendered.queryByAltText(StyledImageFixture().alt);
       expect(expected).toBeNull();
     });
   });
@@ -180,7 +180,7 @@ describe('Section', () => {
 
     it('if given image, should render image', () => {
       const imageAlt = 'Test Image';
-      const image = ImageFixture({ alt: imageAlt });
+      const image = StyledImageFixture({ alt: imageAlt });
       const rendered = renderComponent({
         section: SectionFixture({ variant: 'right', image }),
       });
@@ -190,11 +190,11 @@ describe('Section', () => {
 
     it('if NOT given image, should NOT render image', () => {
       const imageAlt = '';
-      const image = ImageFixture({ alt: imageAlt });
+      const image = StyledImageFixture({ alt: imageAlt });
       const rendered = renderComponent({
         section: SectionFixture({ variant: 'right', image }),
       });
-      const expected = rendered.queryByAltText(ImageFixture().alt);
+      const expected = rendered.queryByAltText(StyledImageFixture().alt);
       expect(expected).toBeNull();
     });
   });

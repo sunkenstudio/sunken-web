@@ -16,6 +16,7 @@ import { isEmpty } from 'lodash';
 import { useRef } from 'react';
 import Fonts from './helpers/fonts';
 import { useBrand } from './contexts/BrandContext';
+import { ImageScroll } from './components/ImageScroll';
 import { ProjectSection } from './components/ProjectSection';
 
 const Home = () => {
@@ -54,7 +55,6 @@ const Home = () => {
           if (clientData) {
             document.title = clientData.brand.companyName;
             setFontFamilies(clientData?.brand?.fonts || []);
-            console.log(clientData);
             setData(clientData);
           } else {
             setData({});
@@ -93,8 +93,16 @@ const Home = () => {
     return <>404 Client not found</>;
   }
 
-  const { hero, sections, footer, contact, carousel, config, projectSection } =
-    data;
+  const {
+    hero,
+    sections,
+    footer,
+    contact,
+    carousel,
+    config,
+    projectSection,
+    imageScroll,
+  } = data;
 
   if (config.isUnderConstruction) {
     return <>Under Construction</>;
@@ -117,6 +125,7 @@ const Home = () => {
     border: hero.buttons[0].border,
     shadow: hero.buttons[0].shadow,
   };
+
   return (
     <main>
       <Box
@@ -140,6 +149,7 @@ const Home = () => {
         <Box>
           <Stack gap={0}>
             <Hero hero={hero} />
+            {imageScroll && <ImageScroll imageScroll={imageScroll} />}
             {sections.map((i) => (
               <Section key={`section-${i.sortOrder}`} section={i} />
             ))}

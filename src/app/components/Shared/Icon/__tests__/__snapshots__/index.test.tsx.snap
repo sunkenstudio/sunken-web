@@ -5,6 +5,9 @@ exports[`Icon All stories should render successfully Renders Primary story 1`] =
   class="chakra-ui-light"
 >
   <div>
+    <div
+      class="css-21eb5z"
+    />
     <span
       hidden=""
       id="__chakra_env"
