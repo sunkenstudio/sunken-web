@@ -149,7 +149,7 @@ const Home = () => {
         <Box>
           <Stack gap={0}>
             <Hero hero={hero} />
-            <ImageScroll imageScroll={imageScroll} />
+            {imageScroll && <ImageScroll imageScroll={imageScroll} />}
             {sections.map((i) => (
               <Section key={`section-${i.sortOrder}`} section={i} />
             ))}
