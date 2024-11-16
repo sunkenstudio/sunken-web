@@ -117,6 +117,20 @@ export const GET_SITE = gql`
               }
             }
           }
+          carousel {
+            data {
+              attributes {
+                TransitionTime
+                DisplayArrows
+                DisplayCounter
+                AspectRatioWidth
+                AspectRatioHeight
+                Images {
+                  ...imageFields
+                }
+              }
+            }
+          }
           footer {
             data {
               attributes {

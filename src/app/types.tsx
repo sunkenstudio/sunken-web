@@ -139,6 +139,16 @@ export interface StrapiArticle {
   link: string;
 }
 
+export interface StrapiCarousel {
+  typename: string;
+  displayArrows: boolean;
+  images: StrapiStyledImage[];
+  transitionTime: number;
+  displayCounter: boolean;
+  aspectRatioWidth: number;
+  aspectRatioHeight: number;
+}
+
 export interface Client {
   typename: string;
   clientId: string;
