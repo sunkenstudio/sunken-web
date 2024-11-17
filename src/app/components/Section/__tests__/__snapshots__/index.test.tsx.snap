@@ -55,7 +55,7 @@ exports[`Section All stories should render successfully Renders Primary story 1`
                   />
                 </div>
                 <p
-                  class="chakra-text css-0"
+                  class="chakra-text css-pb9lfc"
                 >
                   caption goes here
                 </p>
@@ -195,7 +195,7 @@ exports[`Section match snapshot 1`] = `
                   />
                 </div>
                 <p
-                  class="chakra-text css-0"
+                  class="chakra-text css-pb9lfc"
                 >
                   caption goes here
                 </p>
@@ -326,7 +326,7 @@ exports[`Section match snapshot 1`] = `
                 />
               </div>
               <p
-                class="chakra-text css-0"
+                class="chakra-text css-pb9lfc"
               >
                 caption goes here
               </p>
