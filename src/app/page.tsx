@@ -1,4 +1,3 @@
-// @ts-nocheck
 'use client';
 import { Hero } from './components/Hero';
 import { Section } from './components/Section';
@@ -7,71 +6,53 @@ import { Box, Center, Flex, Spinner, Stack } from '@chakra-ui/react';
 import { useApolloClient } from '@apollo/client';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
-import { GET_SITE } from './graphql/queries';
 import { ContactForm } from './components/ContactForm';
-import { Client } from './types';
-import { formatStrapiData, getClientIdFromUrl } from './helpers/utils';
 import { useEffect, useState } from 'react';
 import { isEmpty } from 'lodash';
-import { useRef } from 'react';
 import Fonts from './helpers/fonts';
 import { useBrand } from './contexts/BrandContext';
 import { ImageScroll } from './components/ImageScroll';
 import { ProjectSection } from './components/ProjectSection';
+import { getSite } from './requests';
+import { Client, FontFamily } from './types';
 
 const Home = () => {
-  const [data, setData] = useState(null);
-  const [fontFamilies, setFontFamilies] = useState('');
-  const ref = useRef();
-
+  const [data, setData] = useState<Client | {} | null>(null);
+  const [fontFamilies, setFontFamilies] = useState<FontFamily[]>([]);
   const client = useApolloClient();
+
   const { colors, loadContent } = useBrand();
 
   useEffect(() => {
-    async function fetchData(id: string) {
-      client
-        .query({
-          query: GET_SITE,
-          variables: {
-            ClientId: id,
-          },
-        })
-        .then((res) => {
-          const sites = res.data.sites.data;
-          if (sites.length === 0) {
-            return null;
-          }
-          const raw = res.data.sites.data[0];
-          const clientData: Client = formatStrapiData(raw.attributes);
-          loadContent(clientData.brand);
+    getSite(client)
+      .then((site) => {
+        if (site) {
+          // Initialize brand context
+          loadContent(site.brand);
 
-          const { fonts } = clientData.brand;
+          // Load metadata
+          document.title = site.brand.companyName;
+
+          // Load fonts
+          const { fonts } = site.brand;
           if (fonts.length > 0) {
             Fonts(fonts);
           }
-          return clientData;
-        })
-        .then((clientData) => {
-          if (clientData) {
-            document.title = clientData.brand.companyName;
-            setFontFamilies(clientData?.brand?.fonts || []);
-            setData(clientData);
-          } else {
-            setData({});
-          }
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    }
-
-    const ClientId = getClientIdFromUrl();
-
-    if (ClientId) {
-      fetchData(ClientId);
-    } else {
-      setData({});
-    }
+          setFontFamilies(site?.brand?.fonts || []);
+        }
+        return site;
+      })
+      .then((site) => {
+        // Load site data
+        if (site) {
+          setData(site);
+        }
+        // 404
+        else {
+          setData({});
+        }
+      })
+      .catch((err) => console.log(err));
   }, []);
 
   if (!data) {
@@ -102,7 +83,7 @@ const Home = () => {
     config,
     projectSection,
     imageScroll,
-  } = data;
+  } = data as Client;
 
   if (config.isUnderConstruction) {
     return <>Under Construction</>;
@@ -120,8 +101,8 @@ const Home = () => {
   const fontHeader = fontFamilies?.[0]?.family || '';
   const fontBody = fontFamilies?.[1]?.family || fontHeader || '';
   const primaryButtonStyle = {
-    textColor: colors[hero.buttons[0].color as Color],
-    bgColor: colors[hero.buttons[0].bgColor as Color],
+    textColor: colors[hero.buttons[0].color],
+    bgColor: colors[hero.buttons[0].bgColor],
     border: hero.buttons[0].border,
     shadow: hero.buttons[0].shadow,
   };
@@ -129,9 +110,7 @@ const Home = () => {
   return (
     <main>
       <Box
-        ref={ref}
         bgColor={'white'}
-        // m={1}
         position={'absolute'}
         left={0}
         right={0}

@@ -1,4 +1,5 @@
 import { type BlocksContent } from '@strapi/blocks-react-renderer';
+import { BrandColors } from './contexts/BrandContext';
 
 export interface StrapiContact {
   typename: string;
@@ -37,7 +38,7 @@ export interface StrapiImage {
   url: string;
 }
 
-export type Color = 'primary' | 'secondary' | 'accent' | 'light' | 'dark';
+export type Color = keyof BrandColors;
 
 export type StrapiBrandColor = {
   color: Color;
@@ -69,8 +70,8 @@ export interface StrapiStyledButton {
   text: string;
   href: string;
   icon: string | null;
-  color: string;
-  bgColor: string;
+  color: Color;
+  bgColor: Color;
   border: StrapiBorder;
   shadow: string;
 }
@@ -168,4 +169,7 @@ export interface Client {
   imageScroll: StrapiImageScroll;
   config: StrapiConfig;
   projectSection: StrapiProjectSection;
+  carousel: StrapiCarousel;
 }
+
+export type FontFamily = { typename: string; family: string; url: string };

@@ -17,7 +17,7 @@ const BrandContext = createContext<BrandContextType>({
   loadContent: emptyFunction,
 });
 
-interface BrandColors {
+export interface BrandColors {
   primary: string;
   secondary: string;
   accent: string;
