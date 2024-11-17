@@ -1,5 +1,6 @@
 import {
   Client,
+  Color,
   StrapiArticle,
   StrapiBrand,
   StrapiCarousel,
@@ -18,7 +19,6 @@ import {
   StrapiStyledImage,
 } from '@/app/types';
 import { type BlocksContent } from '@strapi/blocks-react-renderer';
-import { FeatureSectionProps } from '../components/FeatureSection';
 
 export const ButtonFixture = (
   overrides: Partial<StrapiStyledButton> = {}
@@ -28,8 +28,8 @@ export const ButtonFixture = (
   text: 'BOOK AN EVENT',
   href: '#contact',
   icon: null,
-  color: '#ffffff',
-  bgColor: '#9D121A',
+  color: '#ffffff' as Color,
+  bgColor: '#9D121A' as Color,
   border: {
     color: 'light',
     width: null,
@@ -168,8 +168,8 @@ export const HeroFixture = (
       text: 'BOOK AN EVENT',
       href: '#contact',
       icon: null,
-      color: '#ffffff',
-      bgColor: '#9D121A',
+      color: '#ffffff' as Color,
+      bgColor: '#9D121A' as Color,
       border: {
         color: 'light',
         width: null,

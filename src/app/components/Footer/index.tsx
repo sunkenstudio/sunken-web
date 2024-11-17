@@ -5,7 +5,7 @@ import { RichText } from '../_Shared/RichText';
 import { StrapiBorder, StrapiFooter } from '../../types';
 import { useBrand } from '@/app/contexts/BrandContext';
 import { Icon } from '../_Shared/Icon';
-import { ICONS } from '@/app/constants';
+import { ICONS, IconType } from '@/app/constants';
 
 export interface FooterProps {
   buttonStyle: {
@@ -21,7 +21,7 @@ export const Footer = ({ buttonStyle, footer }: FooterProps) => {
   const { colors } = useBrand();
   const { instagramUrl, facebookUrl, twitterUrl, text } = footer;
 
-  const socialIcons: { type: string; href: string }[] = [
+  const socialIcons: { type: IconType; href: string }[] = [
     { type: ICONS.InstagramLogo, href: instagramUrl },
     { type: ICONS.FacebookLogo, href: facebookUrl },
     { type: ICONS.TwitterLogo, href: twitterUrl },
