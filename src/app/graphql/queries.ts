@@ -12,6 +12,7 @@ export const GET_SITE = gql`
   ${Fragments.CONTACT}
   ${Fragments.CONFIG}
   ${Fragments.IMAGE_SCROLL}
+  ${Fragments.FEATURE_SECTION}
 
   query Site($ClientId: String) {
     sites(filters: { ClientId: { eq: $ClientId } }) {
@@ -44,6 +45,9 @@ export const GET_SITE = gql`
           }
           image_scroll {
             ...imageScroll
+          }
+          feature_section {
+            ...featureSection
           }
         }
       }

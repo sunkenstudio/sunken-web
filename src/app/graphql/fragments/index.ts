@@ -7,3 +7,4 @@ export { FOOTER } from './footer';
 export { CONTACT } from './contact';
 export { CONFIG } from './config';
 export { IMAGE_SCROLL } from './imageScroll';
+export { FEATURE_SECTION } from './featureSection';
