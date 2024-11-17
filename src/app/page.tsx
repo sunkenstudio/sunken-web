@@ -130,7 +130,7 @@ const Home = () => {
         <Box>
           <Stack gap={0}>
             <Hero hero={hero} />
-            {featureSection && (
+            {featureSection?.features?.length > 0 && (
               <FeatureSection featureSection={featureSection} />
             )}
             {imageScroll && <ImageScroll imageScroll={imageScroll} />}
