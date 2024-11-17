@@ -2,11 +2,11 @@
 import { Box, Flex, HStack, Hide, Stack } from '@chakra-ui/react';
 import React from 'react';
 import { H1, H3, Paragraph } from '../Typography';
-import { Image } from '../Shared/Image';
-import { RichText } from '../Shared/RichText';
-import { SectionBg } from '../Shared/SectionBg';
+import { Image } from '../_Shared/Image';
+import { RichText } from '../_Shared/RichText';
+import { SectionBg } from '../_Shared/SectionBg';
 import { StrapiHero } from '../../types';
-import { Button } from '../Shared/Button';
+import { Button } from '../_Shared/Button';
 import { useBrand } from '@/app/contexts/BrandContext';
 
 export interface HeroProps {

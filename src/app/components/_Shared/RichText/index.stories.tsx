@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { RichText, RichTextProps } from '../RichText';
+import { RichText, RichTextProps } from '.';
 
 const meta = {
   title: '_Shared/RichText',

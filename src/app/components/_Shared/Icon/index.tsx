@@ -1,14 +1,15 @@
 import React from 'react';
 import { ImageBroken } from '@phosphor-icons/react';
+import { IconType } from '@/app/constants';
 
 export interface IconProps {
-  type: string;
+  type: IconType;
   size: number;
   color: string;
 }
 
 export const iconMap = (
-  iconName: string,
+  iconName: IconType,
   props: {
     size: number;
     color: string;

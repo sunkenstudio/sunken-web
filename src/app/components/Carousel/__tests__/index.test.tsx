@@ -4,7 +4,11 @@ import { render, waitFor } from '@testing-library/react';
 import { Carousel, CarouselProps } from '..';
 import { StrapiBrand } from '@/app/types';
 import { ChakraProvider } from '@chakra-ui/react';
-import { BrandFixture, CarouselFixture, ImageFixture } from '@/app/fixtures';
+import {
+  BrandFixture,
+  CarouselFixture,
+  StyledImageFixture,
+} from '@/app/fixtures';
 import { BrandProvider } from '@/app/contexts/BrandContext';
 import theme from '@/app/styles/theme';
 import { testStories } from '@/app/helpers/testStorybook';
@@ -180,21 +184,21 @@ describe('Carousel', () => {
       carousel: CarouselFixture({
         images: [
           ...CarouselFixture().images,
-          ImageFixture({
+          StyledImageFixture({
             media: {
               url: 'https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/8203015ace4f442ef439488dcd11d914.jpeg',
               typename: 'UploadFile',
             },
             alt: 'drink two',
           }),
-          ImageFixture({
+          StyledImageFixture({
             media: {
               url: 'https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/8203015ace4f442ef439488dcd11d914.jpeg',
               typename: 'UploadFile',
             },
             alt: 'drink three',
           }),
-          ImageFixture({
+          StyledImageFixture({
             media: {
               url: 'https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/8203015ace4f442ef439488dcd11d914.jpeg',
               typename: 'UploadFile',

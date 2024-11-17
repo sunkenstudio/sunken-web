@@ -5,6 +5,7 @@ import { render, waitFor } from '@testing-library/react';
 import { Icon, IconProps } from '..';
 import { testStories } from '@/app/helpers/testStorybook';
 import * as Stories from '../index.stories';
+import { IconType } from '@/app/constants';
 
 describe('Icon', () => {
   const renderComponent = (overrides: Partial<IconProps> = {}) => {
@@ -34,7 +35,7 @@ describe('Icon', () => {
   });
 
   it('should render BrokenImage when given an incorrect type', async () => {
-    const rendered = renderComponent({ type: 'foo' });
+    const rendered = renderComponent({ type: 'foo' as IconType });
     await waitFor(() => {
       expect(rendered.getByTitle('Image Broken')).toBeDefined();
     });

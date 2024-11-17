@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { InputField, InputFieldProps } from '../InputField';
+import { InputField, InputFieldProps } from '.';
 import { TextInputFixture } from '@/app/fixtures';
 import { fn } from '@storybook/test';
 

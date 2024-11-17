@@ -1,10 +1,11 @@
 import { Button, Flex, HStack, Stack } from '@chakra-ui/react';
 import React from 'react';
 import Link from 'next/link';
-import { RichText } from '../Shared/RichText';
+import { RichText } from '../_Shared/RichText';
 import { StrapiBorder, StrapiFooter } from '../../types';
 import { useBrand } from '@/app/contexts/BrandContext';
-import { Icon } from '../Shared/Icon';
+import { Icon } from '../_Shared/Icon';
+import { ICONS, IconType } from '@/app/constants';
 
 export interface FooterProps {
   buttonStyle: {
@@ -20,10 +21,10 @@ export const Footer = ({ buttonStyle, footer }: FooterProps) => {
   const { colors } = useBrand();
   const { instagramUrl, facebookUrl, twitterUrl, text } = footer;
 
-  const socialIcons: { type: string; href: string }[] = [
-    { type: 'InstagramLogo', href: instagramUrl },
-    { type: 'FacebookLogo', href: facebookUrl },
-    { type: 'TwitterLogo', href: twitterUrl },
+  const socialIcons: { type: IconType; href: string }[] = [
+    { type: ICONS.InstagramLogo, href: instagramUrl },
+    { type: ICONS.FacebookLogo, href: facebookUrl },
+    { type: ICONS.TwitterLogo, href: twitterUrl },
   ];
   return (
     <Flex

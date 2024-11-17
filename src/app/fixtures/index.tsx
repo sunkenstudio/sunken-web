@@ -1,10 +1,13 @@
 import {
   Client,
+  Color,
   StrapiArticle,
   StrapiBrand,
   StrapiCarousel,
   StrapiConfig,
   StrapiContact,
+  StrapiFeature,
+  StrapiFeatureSection,
   StrapiFooter,
   StrapiHero,
   StrapiImage,
@@ -25,8 +28,8 @@ export const ButtonFixture = (
   text: 'BOOK AN EVENT',
   href: '#contact',
   icon: null,
-  color: '#ffffff',
-  bgColor: '#9D121A',
+  color: '#ffffff' as Color,
+  bgColor: '#9D121A' as Color,
   border: {
     color: 'light',
     width: null,
@@ -165,8 +168,8 @@ export const HeroFixture = (
       text: 'BOOK AN EVENT',
       href: '#contact',
       icon: null,
-      color: '#ffffff',
-      bgColor: '#9D121A',
+      color: '#ffffff' as Color,
+      bgColor: '#9D121A' as Color,
       border: {
         color: 'light',
         width: null,
@@ -458,6 +461,32 @@ export const ArticleFixture = (
   ...overrides,
 });
 
+export const FeatureFixture = (
+  overrides: Partial<StrapiFeature> = {}
+): StrapiFeature => ({
+  typename: 'ComponentCommonFeature',
+  header: 'Contract Grade Office Furniture',
+  blurb:
+    'Branch includes desks, chairs, tables and more that inspire and support your team',
+  icon: 'UserCircleGear',
+  ...overrides,
+});
+
+export const FeatureSectionFixture = (
+  overrides: Partial<StrapiFeatureSection> = {}
+): StrapiFeatureSection => ({
+  typename: 'FeatureSection',
+  header: 'The Branch Difference',
+  description: 'some text goes here',
+  backsplashColor: 'primary',
+  color: 'dark',
+  bgColor: 'light',
+  iconColor: 'light',
+  numColumns: 3,
+  features: [FeatureFixture(), FeatureFixture(), FeatureFixture()],
+  ...overrides,
+});
+
 export const ClientFixture = (overrides: Partial<Client> = {}): Client => ({
   typename: 'Site',
   clientId: 'demo',
@@ -469,5 +498,7 @@ export const ClientFixture = (overrides: Partial<Client> = {}): Client => ({
   config: ConfigFixture(),
   imageScroll: ImageScrollFixture(),
   projectSection: ProjectSectionFixture(),
+  featureSection: FeatureSectionFixture(),
+  carousel: CarouselFixture(),
   ...overrides,
 });
