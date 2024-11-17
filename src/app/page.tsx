@@ -18,7 +18,7 @@ import { Client, FontFamily } from './types';
 import { FeatureSection } from './components/FeatureSection';
 
 const Home = () => {
-  const [data, setData] = useState<Client | {} | null>(null);
+  const [data, setData] = useState<Client | Record<string, never> | null>(null);
   const [fontFamilies, setFontFamilies] = useState<FontFamily[]>([]);
   const client = useApolloClient();
 

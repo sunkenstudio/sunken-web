@@ -4,6 +4,7 @@ import { Box, Grid, Stack } from '@chakra-ui/react';
 import React from 'react';
 import { H3, H5, Paragraph } from '../Typography';
 import { Icon } from '../_Shared/Icon';
+import { kebabCase } from 'lodash';
 
 export interface FeatureSectionProps {
   featureSection: StrapiFeatureSection;
@@ -46,7 +47,11 @@ export const FeatureSection = ({ featureSection }: FeatureSectionProps) => {
         columnGap={'3rem'}
       >
         {features.map((i) => (
-          <Stack alignItems={'center'} gap="1rem">
+          <Stack
+            key={`feature-${kebabCase(i.header)}`}
+            alignItems={'center'}
+            gap="1rem"
+          >
             <Box
               bgColor={colors[backsplashColor]}
               padding={'1rem'}
