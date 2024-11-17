@@ -5,6 +5,7 @@ import { RichText } from '../Shared/RichText';
 import { StrapiBorder, StrapiFooter } from '../../types';
 import { useBrand } from '@/app/contexts/BrandContext';
 import { Icon } from '../Shared/Icon';
+import { ICONS } from '@/app/constants';
 
 export interface FooterProps {
   buttonStyle: {
@@ -21,9 +22,9 @@ export const Footer = ({ buttonStyle, footer }: FooterProps) => {
   const { instagramUrl, facebookUrl, twitterUrl, text } = footer;
 
   const socialIcons: { type: string; href: string }[] = [
-    { type: 'InstagramLogo', href: instagramUrl },
-    { type: 'FacebookLogo', href: facebookUrl },
-    { type: 'TwitterLogo', href: twitterUrl },
+    { type: ICONS.InstagramLogo, href: instagramUrl },
+    { type: ICONS.FacebookLogo, href: facebookUrl },
+    { type: ICONS.TwitterLogo, href: twitterUrl },
   ];
   return (
     <Flex

@@ -18,6 +18,7 @@ import { scrollToElement } from '@/app/helpers/utils';
 import { Color, StrapiContact, StrapiHero, StrapiSection } from '../../types';
 import { useBrand } from '@/app/contexts/BrandContext';
 import { Icon } from '../Shared/Icon';
+import { ICONS } from '@/app/constants';
 
 export interface HeaderProps {
   hero: StrapiHero;
@@ -56,7 +57,7 @@ export const Header = ({ hero, sections, contact }: HeaderProps) => {
           _hover={{ filter: 'brightness(75%)' }}
           {...sharedProps}
         >
-          <Icon type={'List'} size={32} color={colors.light} />
+          <Icon type={ICONS.List} size={32} color={colors.light} />
         </Button>
       </Flex>
       <Drawer isOpen={isOpen} placement="right" onClose={onClose}>

@@ -6,6 +6,7 @@ import React, { useState } from 'react';
 import { H3, H4 } from '../Typography';
 import { RichText } from '../Shared/RichText';
 import { Icon } from '../Shared/Icon';
+import { ICONS } from '@/app/constants';
 
 export interface ProjectSectionProps {
   projectSection: StrapiProjectSection;
@@ -46,7 +47,7 @@ export const ProjectSection = ({ projectSection }: ProjectSectionProps) => {
         bgColor={colors[color]}
         w={{ base: '3rem', md: 'auto' }}
       >
-        <Icon type="CaretLeft" size={32} color={colors[bgColor]} />
+        <Icon type={ICONS.CaretLeft} size={32} color={colors[bgColor]} />
       </Button>
     );
   };
@@ -63,7 +64,7 @@ export const ProjectSection = ({ projectSection }: ProjectSectionProps) => {
         bgColor={colors[color]}
         w={{ base: '3rem', md: 'auto' }}
       >
-        <Icon type="CaretRight" size={32} color={colors[bgColor]} />
+        <Icon type={ICONS.CaretRight} size={32} color={colors[bgColor]} />
       </Button>
     );
   };
