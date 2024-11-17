@@ -7,7 +7,7 @@ import { Box, Center, Flex, Spinner, Stack } from '@chakra-ui/react';
 import { useApolloClient } from '@apollo/client';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
-import { GET_SITE } from './helpers/queries';
+import { GET_SITE } from './graphql/queries';
 import { ContactForm } from './components/ContactForm';
 import { Client } from './types';
 import { formatStrapiData, getClientIdFromUrl } from './helpers/utils';
