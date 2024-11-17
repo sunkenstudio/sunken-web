@@ -1,10 +1,10 @@
 import { Button, Flex, HStack, Stack } from '@chakra-ui/react';
 import React from 'react';
 import Link from 'next/link';
-import { RichText } from '../Shared/RichText';
+import { RichText } from '../_Shared/RichText';
 import { StrapiBorder, StrapiFooter } from '../../types';
 import { useBrand } from '@/app/contexts/BrandContext';
-import { Icon } from '../Shared/Icon';
+import { Icon } from '../_Shared/Icon';
 import { ICONS } from '@/app/constants';
 
 export interface FooterProps {

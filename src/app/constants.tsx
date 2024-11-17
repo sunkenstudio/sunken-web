@@ -1426,7 +1426,6 @@ export const ICONS = {
   Van: 'Van',
   VectorTwo: 'VectorTwo',
   FishSimple: 'FishSimple',
-  BookUser: 'BookUser',
   ChargingStation: 'ChargingStation',
   ArrowCircleUpRight: 'ArrowCircleUpRight',
   Hockey: 'Hockey',
@@ -1511,4 +1510,6 @@ export const ICONS = {
   DotOutline: 'DotOutline',
   Placeholder: 'Placeholder',
   AppStoreLogo: 'AppStoreLogo',
-};
+} as const;
+
+export type IconType = keyof typeof ICONS;

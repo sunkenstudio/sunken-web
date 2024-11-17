@@ -4,11 +4,11 @@ import { Flex, Stack } from '@chakra-ui/react';
 import { H3 } from '../Typography';
 import { useFormik, FormikProvider } from 'formik';
 import { sendEmail } from '@/actions';
-import { SectionBg } from '../Shared/SectionBg';
+import { SectionBg } from '../_Shared/SectionBg';
 import { StrapiContact, StrapiHero, StrapiSection } from '../../types';
-import { InputField } from '../Shared/InputField';
+import { InputField } from '../_Shared/InputField';
 import { snakeCase } from 'lodash';
-import { Button } from '../Shared/Button';
+import { Button } from '../_Shared/Button';
 import { useBrand } from '@/app/contexts/BrandContext';
 
 export interface ContactFormProps {

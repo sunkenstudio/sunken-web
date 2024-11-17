@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { SectionBg, SectionBgProps } from '../SectionBg';
+import { SectionBg, SectionBgProps } from '.';
 import { Color } from '@/app/types';
 
 const meta = {

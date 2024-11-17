@@ -1,10 +1,10 @@
 import { Box, Flex, Stack } from '@chakra-ui/react';
 import React from 'react';
 import { H3, Paragraph } from '../Typography';
-import { RichText } from '../Shared/RichText';
-import { SectionBg } from '../Shared/SectionBg';
+import { RichText } from '../_Shared/RichText';
+import { SectionBg } from '../_Shared/SectionBg';
 import { StrapiSection } from '../../types';
-import { Image } from '../Shared/Image';
+import { Image } from '../_Shared/Image';
 import { useBrand } from '@/app/contexts/BrandContext';
 
 export interface SectionProps {

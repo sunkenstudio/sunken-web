@@ -17,7 +17,7 @@ import { H3, H4 } from '../Typography';
 import { scrollToElement } from '@/app/helpers/utils';
 import { Color, StrapiContact, StrapiHero, StrapiSection } from '../../types';
 import { useBrand } from '@/app/contexts/BrandContext';
-import { Icon } from '../Shared/Icon';
+import { Icon } from '../_Shared/Icon';
 import { ICONS } from '@/app/constants';
 
 export interface HeaderProps {

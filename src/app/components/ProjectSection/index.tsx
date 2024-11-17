@@ -4,8 +4,8 @@ import { StrapiProjectSection } from '@/app/types';
 import { Box, Button, HStack, Image, Link, Stack } from '@chakra-ui/react';
 import React, { useState } from 'react';
 import { H3, H4 } from '../Typography';
-import { RichText } from '../Shared/RichText';
-import { Icon } from '../Shared/Icon';
+import { RichText } from '../_Shared/RichText';
+import { Icon } from '../_Shared/Icon';
 import { ICONS } from '@/app/constants';
 
 export interface ProjectSectionProps {
