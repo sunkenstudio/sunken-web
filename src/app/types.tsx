@@ -172,6 +172,7 @@ export interface StrapiFeatureSection {
   description: string;
   backsplashColor: Color;
   color: Color;
+  bgColor: Color;
   features: StrapiFeature[];
 }
 

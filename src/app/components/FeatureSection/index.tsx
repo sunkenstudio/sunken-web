@@ -8,19 +8,21 @@ export interface FeatureSectionProps {
 }
 
 export const FeatureSection = ({ featureSection }: FeatureSectionProps) => {
-  const { header, description, backsplashColor, color, features } =
+  const { header, description, backsplashColor, color, bgColor, features } =
     featureSection;
   const { colors } = useBrand();
 
   return (
     <Stack
       w="100%"
-      minH="5rem"
+      minH="md"
       display="flex"
       textAlign={'center'}
       bgColor={colors[bgColor]}
       color={colors[color]}
       py={header ? '1rem' : 0}
-    ></Stack>
+    >
+      hello
+    </Stack>
   );
 };

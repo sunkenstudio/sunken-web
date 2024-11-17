@@ -15,6 +15,7 @@ import { ImageScroll } from './components/ImageScroll';
 import { ProjectSection } from './components/ProjectSection';
 import { getSite } from './requests';
 import { Client, FontFamily } from './types';
+import { FeatureSection } from './components/FeatureSection';
 
 const Home = () => {
   const [data, setData] = useState<Client | {} | null>(null);
@@ -83,6 +84,7 @@ const Home = () => {
     config,
     projectSection,
     imageScroll,
+    featureSection,
   } = data as Client;
 
   if (config.isUnderConstruction) {
@@ -128,6 +130,7 @@ const Home = () => {
         <Box>
           <Stack gap={0}>
             <Hero hero={hero} />
+            <FeatureSection featureSection={featureSection} />
             {imageScroll && <ImageScroll imageScroll={imageScroll} />}
             {sections.map((i) => (
               <Section key={`section-${i.sortOrder}`} section={i} />
