@@ -173,6 +173,8 @@ export interface StrapiFeatureSection {
   backsplashColor: Color;
   color: Color;
   bgColor: Color;
+  iconColor: Color;
+  numColumns: number;
   features: StrapiFeature[];
 }
 
@@ -188,6 +190,7 @@ export interface Client {
   config: StrapiConfig;
   projectSection: StrapiProjectSection;
   carousel: StrapiCarousel;
+  featureSection: StrapiFeatureSection;
 }
 
 export type FontFamily = { typename: string; family: string; url: string };

@@ -12,6 +12,8 @@ export const FEATURE_SECTION = gql`
         BacksplashColor
         Color
         BgColor
+        IconColor
+        NumColumns
         Features {
           ...feature
         }

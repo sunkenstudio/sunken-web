@@ -57,7 +57,7 @@ export const Section = ({ section }: SectionProps) => {
                   {...image}
                   objectFit={'cover'}
                 />
-                <Paragraph>{caption}</Paragraph>
+                <Paragraph textColor={'#FFF'}>{caption}</Paragraph>
               </Stack>
             ) : null}
             <Box w={{ base: '100%', md: '45%' }} textColor={'#FFF'}>
@@ -75,7 +75,7 @@ export const Section = ({ section }: SectionProps) => {
                   {...image}
                   objectFit={'cover'}
                 />
-                <Paragraph>{caption}</Paragraph>
+                <Paragraph textColor={'#FFF'}>{caption}</Paragraph>
               </Stack>
             ) : null}
           </Flex>

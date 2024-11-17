@@ -130,7 +130,9 @@ const Home = () => {
         <Box>
           <Stack gap={0}>
             <Hero hero={hero} />
-            <FeatureSection featureSection={featureSection} />
+            {featureSection && (
+              <FeatureSection featureSection={featureSection} />
+            )}
             {imageScroll && <ImageScroll imageScroll={imageScroll} />}
             {sections.map((i) => (
               <Section key={`section-${i.sortOrder}`} section={i} />
