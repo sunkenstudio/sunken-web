@@ -308,6 +308,10 @@ export const BrandFixture = (
     },
   ],
   companyName: 'Corridor Cocktails',
+  favicon: {
+    typename: '',
+    url: '',
+  },
   ...overrides,
 });
 
