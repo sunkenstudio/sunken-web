@@ -130,23 +130,23 @@ const Home = () => {
         <Box>
           <Stack gap={0}>
             <Hero hero={hero} />
-            {featureSection?.features?.length > 0 && (
+            {featureSection && (
               <FeatureSection featureSection={featureSection} />
             )}
             {imageScroll && <ImageScroll imageScroll={imageScroll} />}
             {sections.map((i) => (
               <Section key={`section-${i.sortOrder}`} section={i} />
             ))}
-            {carousel?.images?.length > 0 && <Carousel carousel={carousel} />}
-            {projectSection?.articles?.length > 0 && (
+            {carousel && <Carousel carousel={carousel} />}
+            {projectSection && (
               <ProjectSection projectSection={projectSection} />
             )}
-            {contact.fields && (
+            {contact && (
               <ContactForm hero={hero} sections={sections} contact={contact} />
             )}
           </Stack>
         </Box>
-        <Footer buttonStyle={primaryButtonStyle} footer={footer} />
+        {footer && <Footer buttonStyle={primaryButtonStyle} footer={footer} />}
       </Box>
     </main>
   );

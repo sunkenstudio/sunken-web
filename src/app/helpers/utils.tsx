@@ -30,8 +30,32 @@ export const getClientIdFromUrl = () => {
   return window?.location?.hostname;
 };
 
-// TODO - Figure out the correct typing for this mess
 export const formatStrapiData = (data: any): Client => {
+  // handle missing top level entries
+  const missingTopLevelEntries = Object.entries(data)
+    /* @ts-ignore */
+    .map(([k, v]) => (v?.data == null ? k : null))
+    .filter((i) => i);
+
+  const sanitized = Object.entries(data).reduce((acc, [k, v]) => {
+    if (missingTopLevelEntries.includes(k) && typeof v === 'object') {
+      return {
+        ...acc,
+        [k]: null,
+      };
+    }
+    return {
+      ...acc,
+      [k]: v,
+    };
+  }, {});
+
+  return recursiveFormat(sanitized);
+};
+
+// TODO - Figure out the correct typing for this mess
+export const recursiveFormat = (data: any): Client => {
+  // console.log(data);
   return Object.entries(data).reduce((acc, [key, val]) => {
     const formattedKey = camelCase(key);
     if (typeof val === 'object') {
@@ -40,7 +64,7 @@ export const formatStrapiData = (data: any): Client => {
         return {
           ...acc,
           /* @ts-ignore */
-          [formattedKey]: val.data.map((i) => formatStrapiData(i.attributes)),
+          [formattedKey]: val.data.map((i) => recursiveFormat(i.attributes)),
         };
       }
       /* @ts-ignore */
@@ -48,7 +72,7 @@ export const formatStrapiData = (data: any): Client => {
         return {
           ...acc,
           /* @ts-ignore */
-          [formattedKey]: formatStrapiData(val.data.attributes),
+          [formattedKey]: recursiveFormat(val.data.attributes),
         };
       }
     }
@@ -56,7 +80,7 @@ export const formatStrapiData = (data: any): Client => {
     if (val?.__typename?.includes('Component')) {
       return {
         ...acc,
-        [formattedKey]: formatStrapiData(val),
+        [formattedKey]: recursiveFormat(val),
       };
     }
     // hero > buttons array
@@ -67,7 +91,7 @@ export const formatStrapiData = (data: any): Client => {
     ) {
       return {
         ...acc,
-        [formattedKey]: val.map((i) => formatStrapiData(i)),
+        [formattedKey]: val.map((i) => recursiveFormat(i)),
       };
     }
     return {

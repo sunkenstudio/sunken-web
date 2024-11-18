@@ -1,6 +1,15 @@
 import { gql } from '@apollo/client';
 import * as Fragments from './fragments';
 
+export const GET_SITE_ID = gql`
+  query GetSiteIdByClientId($ClientId: String) {
+    sites(filters: { ClientId: { eq: $ClientId } }, pagination: { limit: 1 }) {
+      data {
+        id
+      }
+    }
+  }
+`;
 export const GET_SITE = gql`
   # Fragments
   ${Fragments.HERO}
@@ -14,8 +23,8 @@ export const GET_SITE = gql`
   ${Fragments.IMAGE_SCROLL}
   ${Fragments.FEATURE_SECTION}
 
-  query Site($ClientId: String) {
-    sites(filters: { ClientId: { eq: $ClientId } }) {
+  query Site($id: ID!) {
+    site(id: $id) {
       data {
         attributes {
           ClientId
