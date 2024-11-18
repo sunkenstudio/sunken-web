@@ -15,6 +15,13 @@ export const BRAND = gql`
         Fonts {
           ...font
         }
+        Favicon {
+          data {
+            attributes {
+              url
+            }
+          }
+        }
         CompanyName
       }
     }
