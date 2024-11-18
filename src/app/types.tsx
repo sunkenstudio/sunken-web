@@ -101,6 +101,7 @@ export interface StrapiBrand {
     family: string;
     url: string;
   }[];
+  favicon: StrapiImage;
   companyName: string;
 }
 

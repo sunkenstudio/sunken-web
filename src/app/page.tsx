@@ -34,6 +34,16 @@ const Home = () => {
           // Load metadata
           document.title = site.brand.companyName;
 
+          // Load favicon
+          if (site.brand.favicon.url) {
+            const faviconLink: HTMLLinkElement =
+              document.querySelector("link[rel='icon']") ||
+              document.createElement('link');
+            faviconLink.rel = 'icon';
+            faviconLink.href = site.brand.favicon.url; // Assuming site.brand.favicon is the URL of the favicon
+            document.head.appendChild(faviconLink); // Add the favicon link to the document head if not already present
+          }
+
           // Load fonts
           const { fonts } = site.brand;
           if (fonts.length > 0) {
