@@ -21,6 +21,7 @@ export const HERO = gql`
         Buttons {
           ...styledButton
         }
+        SortOrder
       }
     }
   }

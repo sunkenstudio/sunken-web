@@ -17,6 +17,7 @@ export const SECTIONS = gql`
           ...styledImage
         }
         Caption
+        SortOrder
         BgImage {
           ...styledImage
         }

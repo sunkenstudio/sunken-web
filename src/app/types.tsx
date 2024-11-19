@@ -9,6 +9,7 @@ export interface StrapiContact {
   header: string;
   bgColor: Color;
   bgImage: StrapiStyledImage;
+  sortOrder: number;
 }
 
 export interface StrapiInputField {
@@ -124,6 +125,7 @@ export interface StrapiHero {
   bgImageOpacity: number;
   bgFilterOpacity: number;
   bgImage: StrapiStyledImage;
+  sortOrder: number;
 }
 
 export interface StrapiImageScroll {
@@ -132,6 +134,7 @@ export interface StrapiImageScroll {
   header?: string;
   bgColor?: Color;
   color?: Color;
+  sortOrder: number;
 }
 
 export interface StrapiProjectSection {
@@ -140,6 +143,7 @@ export interface StrapiProjectSection {
   bgColor: Color;
   color: Color;
   articles: StrapiArticle[];
+  sortOrder: number;
 }
 
 export interface StrapiArticle {
@@ -158,6 +162,7 @@ export interface StrapiCarousel {
   displayCounter: boolean;
   aspectRatioWidth: number;
   aspectRatioHeight: number;
+  sortOrder: number;
 }
 
 export interface StrapiFeature {
@@ -177,6 +182,7 @@ export interface StrapiFeatureSection {
   iconColor: Color;
   numColumns: number;
   features: StrapiFeature[];
+  sortOrder: number;
 }
 
 export interface Client {

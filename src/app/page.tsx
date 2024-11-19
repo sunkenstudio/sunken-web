@@ -119,6 +119,51 @@ const Home = () => {
     shadow: hero.buttons[0].shadow,
   };
 
+  const renderSortable = () => {
+    const sortableComponents = [
+      {
+        props: hero,
+        component: hero ? <Hero hero={hero} /> : null,
+      },
+      {
+        props: featureSection,
+        component: featureSection ? (
+          <FeatureSection featureSection={featureSection} />
+        ) : null,
+      },
+      {
+        props: imageScroll,
+        component: imageScroll ? (
+          <ImageScroll imageScroll={imageScroll} />
+        ) : null,
+      },
+      {
+        props: carousel,
+        component: carousel ? <Carousel carousel={carousel} /> : null,
+      },
+      {
+        props: projectSection,
+        component: projectSection ? (
+          <ProjectSection projectSection={projectSection} />
+        ) : null,
+      },
+      {
+        props: contact,
+        component: contact ? (
+          <ContactForm hero={hero} sections={sections} contact={contact} />
+        ) : null,
+      },
+      ...sections.map((i) => ({
+        props: i,
+        component: <Section key={`section-${i.sortOrder}`} section={i} />,
+      })),
+    ]
+      .filter((i) => Boolean(i.props))
+      .sort((a, b) => a.props.sortOrder - b.props.sortOrder);
+
+    return sortableComponents.map((i) => i.component);
+  };
+
   return (
     <main>
       <Box
@@ -138,23 +183,7 @@ const Home = () => {
       >
         <Header hero={hero} sections={sections} contact={contact} />
         <Box>
-          <Stack gap={0}>
-            <Hero hero={hero} />
-            {featureSection && (
-              <FeatureSection featureSection={featureSection} />
-            )}
-            {imageScroll && <ImageScroll imageScroll={imageScroll} />}
-            {sections.map((i) => (
-              <Section key={`section-${i.sortOrder}`} section={i} />
-            ))}
-            {carousel && <Carousel carousel={carousel} />}
-            {projectSection && (
-              <ProjectSection projectSection={projectSection} />
-            )}
-            {contact && (
-              <ContactForm hero={hero} sections={sections} contact={contact} />
-            )}
-          </Stack>
+          <Stack gap={0}>{renderSortable()}</Stack>
         </Box>
         {footer && <Footer buttonStyle={primaryButtonStyle} footer={footer} />}
       </Box>

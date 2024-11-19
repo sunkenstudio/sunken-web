@@ -11,6 +11,7 @@ export const CONTACT = gql`
         SendTo
         Header
         BgColor
+        SortOrder
         BgImage {
           ...styledImage
         }

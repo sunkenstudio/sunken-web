@@ -14,6 +14,7 @@ export const FEATURE_SECTION = gql`
         BgColor
         IconColor
         NumColumns
+        SortOrder
         Features {
           ...feature
         }
