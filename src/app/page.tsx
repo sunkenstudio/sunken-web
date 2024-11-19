@@ -123,35 +123,29 @@ const Home = () => {
     const sortableComponents = [
       {
         props: hero,
-        component: hero ? <Hero hero={hero} /> : null,
+        component: <Hero hero={hero} />,
       },
       {
         props: featureSection,
-        component: featureSection ? (
-          <FeatureSection featureSection={featureSection} />
-        ) : null,
+        component: <FeatureSection featureSection={featureSection} />,
       },
       {
         props: imageScroll,
-        component: imageScroll ? (
-          <ImageScroll imageScroll={imageScroll} />
-        ) : null,
+        component: <ImageScroll imageScroll={imageScroll} />,
       },
       {
         props: carousel,
-        component: carousel ? <Carousel carousel={carousel} /> : null,
+        component: <Carousel carousel={carousel} />,
       },
       {
         props: projectSection,
-        component: projectSection ? (
-          <ProjectSection projectSection={projectSection} />
-        ) : null,
+        component: <ProjectSection projectSection={projectSection} />,
       },
       {
         props: contact,
-        component: contact ? (
+        component: (
           <ContactForm hero={hero} sections={sections} contact={contact} />
-        ) : null,
+        ),
       },
       ...sections.map((i) => ({
         props: i,
