@@ -26,6 +26,7 @@ describe('ImageScroll', () => {
           ImageFixture(),
         ],
         speed: 'normal',
+        sortOrder: 1,
         ...props,
       },
     });

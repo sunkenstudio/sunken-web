@@ -12,6 +12,7 @@ export const CAROUSEL = gql`
         DisplayCounter
         AspectRatioWidth
         AspectRatioHeight
+        SortOrder
         Images {
           ...styledImage
         }

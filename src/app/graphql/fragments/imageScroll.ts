@@ -8,6 +8,7 @@ export const IMAGE_SCROLL = gql`
         BgColor
         Color
         Speed
+        SortOrder
         Images {
           data {
             attributes {

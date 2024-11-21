@@ -85,6 +85,7 @@ export const CarouselFixture = (
 ): StrapiCarousel => ({
   typename: 'Carousel',
   displayArrows: true,
+  sortOrder: 1,
   images: [
     StyledImageFixture(),
     StyledImageFixture({
@@ -116,6 +117,7 @@ export const HeroFixture = (
   header: 'Corridor Cocktails',
   variant: 'leftAligned',
   subheader: 'A one-of-a-kind mobile cocktail bar experience',
+  sortOrder: 0,
   text: [
     {
       type: 'paragraph',
@@ -350,6 +352,7 @@ export const ContactFixture = (
   ],
   sendTo: 'dan@sunkenstudio.com',
   bgColor: 'dark',
+  sortOrder: 1,
   bgImage: {
     typename: 'ComponentCommonImage',
     media: {
@@ -425,6 +428,7 @@ export const ImageScrollFixture = (
   header: 'Featured In',
   images: [ImageFixture(), ImageFixture(), ImageFixture(), ImageFixture()],
   speed: 'normal',
+  sortOrder: 1,
   ...overrides,
 });
 
@@ -436,6 +440,7 @@ export const ProjectSectionFixture = (
   bgColor: 'dark',
   color: 'light',
   articles: [ArticleFixture()],
+  sortOrder: 1,
   ...overrides,
 });
 
@@ -488,6 +493,7 @@ export const FeatureSectionFixture = (
   iconColor: 'light',
   numColumns: 3,
   features: [FeatureFixture(), FeatureFixture(), FeatureFixture()],
+  sortOrder: 1,
   ...overrides,
 });
 

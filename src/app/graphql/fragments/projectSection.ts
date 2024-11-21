@@ -10,6 +10,7 @@ export const PROJECT_SECTION = gql`
         Header
         BgColor
         Color
+        SortOrder
         Articles {
           ...article
         }
