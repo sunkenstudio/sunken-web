@@ -4,7 +4,7 @@ import { Client } from '../types';
 import { useApolloClient, useMutation } from '@apollo/client';
 import { getSite } from '../requests';
 import { isEmpty } from 'lodash';
-import { Stack } from '@chakra-ui/react';
+import { Stack, useToast } from '@chakra-ui/react';
 import { HeroForm } from './components/HeroForm';
 import { FormikProvider, useFormik } from 'formik';
 import { Button } from '../components/_Shared/Button';
@@ -14,6 +14,7 @@ import { UPDATE_HERO } from '../graphql/queries';
 export default function Admin() {
   const [data, setData] = useState<Client | Record<string, never> | null>(null);
   const client = useApolloClient();
+  const toast = useToast();
 
   const formik = useFormik({
     initialValues: {} as Client,
@@ -31,11 +32,22 @@ export default function Admin() {
         header: formik.values.hero.header,
       },
     })
-      .then((response) => {
-        console.log('Hero Updated!', response.data.updateHero.hero);
+      .then(() => {
+        toast({
+          title: 'Hero Updated!',
+          status: 'success',
+          duration: 3000,
+          isClosable: true,
+        });
       })
       .catch((error) => {
         console.error('Error updating hero:', error);
+        toast({
+          title: 'Something went wrong...',
+          status: 'error',
+          duration: 3000,
+          isClosable: true,
+        });
       });
   };
 
