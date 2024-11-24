@@ -115,6 +115,7 @@ export interface StrapiFooter {
 }
 
 export interface StrapiHero {
+  id: number;
   typename: string;
   header: string;
   variant: 'leftAligned' | 'centerAligned' | 'split';

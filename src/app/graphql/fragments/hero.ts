@@ -7,6 +7,7 @@ export const HERO = gql`
 
   fragment hero on HeroEntityResponse {
     data {
+      id
       attributes {
         Header
         Subheader

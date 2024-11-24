@@ -1,7 +1,7 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import { Client } from '../types';
-import { useApolloClient } from '@apollo/client';
+import { useApolloClient, useMutation } from '@apollo/client';
 import { getSite } from '../requests';
 import { isEmpty } from 'lodash';
 import { Stack } from '@chakra-ui/react';
@@ -9,6 +9,7 @@ import { HeroForm } from './components/HeroForm';
 import { FormikProvider, useFormik } from 'formik';
 import { Button } from '../components/_Shared/Button';
 import { H3 } from '../components/Typography';
+import { UPDATE_HERO } from '../graphql/queries';
 
 export default function Admin() {
   const [data, setData] = useState<Client | Record<string, never> | null>(null);
@@ -17,9 +18,26 @@ export default function Admin() {
   const formik = useFormik({
     initialValues: {} as Client,
     onSubmit: () => {
-      console.log(formik.values);
+      handleUpdate();
     },
   });
+
+  const [updateHero] = useMutation(UPDATE_HERO);
+
+  const handleUpdate = () => {
+    updateHero({
+      variables: {
+        id: formik.values.hero.id,
+        header: formik.values.hero.header,
+      },
+    })
+      .then((response) => {
+        console.log('Hero Updated!', response.data.updateHero.hero);
+      })
+      .catch((error) => {
+        console.error('Error updating hero:', error);
+      });
+  };
 
   useEffect(() => {
     getSite(client)

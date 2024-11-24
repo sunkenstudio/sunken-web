@@ -55,9 +55,9 @@ export const formatStrapiData = (data: any): Client => {
 
 // TODO - Figure out the correct typing for this mess
 export const recursiveFormat = (data: any): Client => {
-  // console.log(data);
   return Object.entries(data).reduce((acc, [key, val]) => {
     const formattedKey = camelCase(key);
+
     if (typeof val === 'object') {
       /* @ts-ignore */
       if (val && Array.isArray(val?.data)) {
@@ -71,8 +71,12 @@ export const recursiveFormat = (data: any): Client => {
       if (val?.data?.attributes) {
         return {
           ...acc,
-          /* @ts-ignore */
-          [formattedKey]: recursiveFormat(val.data.attributes),
+          [formattedKey]: recursiveFormat({
+            /* @ts-ignore */
+            id: val.data.id,
+            /* @ts-ignore */
+            ...val.data.attributes,
+          }),
         };
       }
     }
