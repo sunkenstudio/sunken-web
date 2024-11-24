@@ -2,6 +2,57 @@
 import { camelCase } from 'lodash';
 import { Client } from '../types';
 
+import { convertFromRaw, convertToRaw, EditorState } from 'draft-js';
+import { BlocksContent } from '@strapi/blocks-react-renderer';
+
+export interface Block {
+  type: string;
+  children: Array<{ type: string; text: string }>;
+}
+
+export const convertBlocksToEditorState = (
+  blocksContent: Block[]
+): EditorState => {
+  // Convert BlocksContent (which is typically an array of block objects) into raw Draft.js content state.
+  const rawContent = {
+    entityMap: {},
+    blocks: blocksContent.map((block) => ({
+      text: block.children.map((child) => child.text).join(''), // Join text from all children (if multiple)
+      type: block.type, // type can be 'paragraph', 'header', etc.
+      depth: 0, // Assuming no nested lists (adjust if needed)
+      inlineStyleRanges: [], // You can add inline styles like bold, italic here if needed
+      entityRanges: [], // You can add entity ranges like links if needed
+      data: {}, // Additional block-level data (can be used for custom data)
+    })),
+  };
+
+  // Convert to EditorState
+  const contentState = convertFromRaw(rawContent);
+  return EditorState.createWithContent(contentState);
+};
+
+export const convertEditorStateToBlocks = (
+  editorState: EditorState
+): BlocksContent[] => {
+  // Extract raw content from the editorState
+  const rawContent = convertToRaw(editorState.getCurrentContent());
+
+  // Map over the blocks and convert them into the desired BlocksContent format
+  const blocksContent: BlocksContent[] = rawContent.blocks.map((block) => {
+    return {
+      type: block.type, // Block type, such as 'paragraph', 'header', etc.
+      children: [
+        {
+          type: 'text', // We only have text nodes, but this can be expanded if needed
+          text: block.text, // The actual text of the block
+        },
+      ],
+    };
+  });
+
+  return blocksContent;
+};
+
 export const emptyFunction = () => {
   // Default value for no behavior
 };
