@@ -1,26 +1,33 @@
-import React, { useState, useEffect } from 'react';
-import { Editor, EditorState } from 'react-draft-wysiwyg';
-import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
-
+import React, { useEffect, useState } from 'react';
+import { EditorState } from 'draft-js';
+import { Editor } from 'react-draft-wysiwyg';
 import { BlocksContent } from '@strapi/blocks-react-renderer';
 import {
   convertBlocksToEditorState,
   convertEditorStateToBlocks,
 } from '@/app/helpers/utils';
-import { ContentState } from 'draft-js';
+import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
 interface RichTextInputProps {
-  value: EditorState;
-  onChange: (content: EditorState) => void; // onChange will send back BlocksContent
+  value: BlocksContent;
+  onChange: (e: React.ChangeEvent<any>) => void;
 }
 
 export const RichTextInput = ({ value, onChange }: RichTextInputProps) => {
-  const [editorState, setEditorState] = useState(value);
+  const [text, setText] = useState<EditorState>(EditorState.createEmpty());
+
+  useEffect(() => {
+    if (value) {
+      handleEditorStateChange(convertBlocksToEditorState(value));
+    }
+  }, []);
 
   // Handle editor state changes
-  const handleEditorStateChange = (newEditorState: EditorState) => {
-    setEditorState(newEditorState);
-    onChange(newEditorState); // Send the converted BlocksContent back to parent
+  const handleEditorStateChange = (newText: EditorState) => {
+    setText(newText);
+    onChange({
+      target: { name: 'hero.text', value: convertEditorStateToBlocks(newText) },
+    });
   };
 
   // Toolbar configuration to show only supported Strapi options
@@ -53,7 +60,7 @@ export const RichTextInput = ({ value, onChange }: RichTextInputProps) => {
 
   return (
     <Editor
-      editorState={editorState}
+      editorState={text}
       toolbarClassName="toolbarClassName"
       wrapperClassName="wrapperClassName"
       editorClassName="editorClassName"

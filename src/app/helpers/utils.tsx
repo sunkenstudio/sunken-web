@@ -5,13 +5,8 @@ import { Client } from '../types';
 import { convertFromRaw, convertToRaw, EditorState } from 'draft-js';
 import { BlocksContent } from '@strapi/blocks-react-renderer';
 
-export interface Block {
-  type: string;
-  children: Array<{ type: string; text: string }>;
-}
-
 export const convertBlocksToEditorState = (
-  blocksContent: Block[]
+  blocksContent: BlocksContent
 ): EditorState => {
   // Convert BlocksContent (which is typically an array of block objects) into raw Draft.js content state.
   const rawContent = {

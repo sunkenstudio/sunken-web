@@ -12,11 +12,6 @@ import {
 } from '@chakra-ui/react';
 import { Client, StrapiHero } from '@/app/types';
 import { RichTextInput } from '../RichTextInput';
-import { EditorState } from 'draft-js';
-import {
-  convertBlocksToEditorState,
-  convertEditorStateToBlocks,
-} from '@/app/helpers/utils';
 
 export interface HeroFormProps {
   hero: StrapiHero;
@@ -26,20 +21,10 @@ export interface HeroFormProps {
 
 export const HeroForm = ({ hero, values, onChange }: HeroFormProps) => {
   const [isOpen, setIsOpen] = useState(false); // State to manage collapse toggle
-  const [text, setText] = useState<EditorState>(
-    hero.text
-      ? convertBlocksToEditorState(hero.text)
-      : EditorState.createEmpty()
-  ); // Initialize with empty EditorState if not available
+
+  // Initialize with empty EditorState if not available
   const toggleCollapse = () => {
     setIsOpen(!isOpen);
-  };
-
-  const handleRichTextChange = (newText: EditorState) => {
-    setText(newText); // Update local text state with new BlocksContent
-    onChange({
-      target: { name: 'hero.text', value: convertEditorStateToBlocks(newText) },
-    }); // Propagate change to parent form state
   };
 
   return (
@@ -86,7 +71,7 @@ export const HeroForm = ({ hero, values, onChange }: HeroFormProps) => {
             <ListItem>
               <FormControl>
                 <FormLabel htmlFor={'hero-form-subheader'}>TEXT</FormLabel>
-                <RichTextInput value={text} onChange={handleRichTextChange} />
+                <RichTextInput value={values?.hero?.text} onChange={onChange} />
               </FormControl>
             </ListItem>
           </List>
