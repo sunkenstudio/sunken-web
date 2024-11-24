@@ -31,7 +31,6 @@ export const HeroForm = ({ hero, values, onChange }: HeroFormProps) => {
       ? convertBlocksToEditorState(hero.text)
       : EditorState.createEmpty()
   ); // Initialize with empty EditorState if not available
-  console.log(values?.hero?.text);
   const toggleCollapse = () => {
     setIsOpen(!isOpen);
   };

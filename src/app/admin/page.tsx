@@ -26,6 +26,7 @@ export default function Admin() {
   const [updateHero] = useMutation(UPDATE_HERO);
 
   const handleUpdate = () => {
+    console.log('values', formik.values);
     updateHero({
       variables: {
         ...formik.values.hero,
