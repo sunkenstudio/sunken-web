@@ -36,13 +36,29 @@ export const HeroForm = ({ hero, values, onChange }: HeroFormProps) => {
         <Box>
           <List spacing={3}>
             <ListItem>
-              <FormControl isRequired>
+              <FormControl>
                 <FormLabel htmlFor={'hero-form-header'}>HEADER</FormLabel>
                 <Input
                   id={'hero-form-header'}
                   name={'hero.header'}
                   type={'text'}
                   value={values?.hero?.header}
+                  onChange={onChange}
+                  color={'black'}
+                  bgColor="white"
+                />
+              </FormControl>
+            </ListItem>
+            <ListItem>
+              <FormControl>
+                <FormLabel htmlFor={'hero-form-subheader'}>
+                  SUB-HEADER
+                </FormLabel>
+                <Input
+                  id={'hero-form-subheader'}
+                  name={'hero.subheader'}
+                  type={'text'}
+                  value={values?.hero?.subheader || ''}
                   onChange={onChange}
                   color={'black'}
                   bgColor="white"

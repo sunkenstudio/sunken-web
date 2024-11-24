@@ -28,8 +28,7 @@ export default function Admin() {
   const handleUpdate = () => {
     updateHero({
       variables: {
-        id: formik.values.hero.id,
-        header: formik.values.hero.header,
+        ...formik.values.hero,
       },
     })
       .then(() => {
