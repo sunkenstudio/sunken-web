@@ -9,7 +9,7 @@ import { HeroForm } from './components/HeroForm';
 import { FormikProvider, useFormik } from 'formik';
 import { Button } from '../components/_Shared/Button';
 import { H3 } from '../components/Typography';
-import { UPDATE_HERO } from '../graphql/queries';
+import { UPDATE_HERO } from '../graphql/mutations';
 
 export default function Admin() {
   const [data, setData] = useState<Client | Record<string, never> | null>(null);

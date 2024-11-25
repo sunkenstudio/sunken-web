@@ -63,27 +63,3 @@ export const GET_SITE = gql`
     }
   }
 `;
-
-// Patch Header field in Hero
-export const UPDATE_HERO = gql`
-  mutation UpdateHero(
-    $id: ID!
-    $header: String!
-    $subheader: String!
-    $text: JSON!
-  ) {
-    updateHero(
-      id: $id
-      data: { Header: $header, Subheader: $subheader, Text: $text }
-    ) {
-      data {
-        id
-        attributes {
-          Header
-          Subheader
-          Text
-        }
-      }
-    }
-  }
-`;
