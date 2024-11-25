@@ -1,8 +1,8 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import { Client } from '../types';
+import { Client, StrapiImage } from '../types';
 import { useApolloClient, useMutation } from '@apollo/client';
-import { getSite } from '../requests';
+import { getMediaLibrary, getSite } from '../requests';
 import { isEmpty } from 'lodash';
 import { Stack, useToast } from '@chakra-ui/react';
 import { HeroForm } from './components/HeroForm';
@@ -10,11 +10,15 @@ import { FormikProvider, useFormik } from 'formik';
 import { Button } from '../components/_Shared/Button';
 import { H3 } from '../components/Typography';
 import { UPDATE_HERO } from '../graphql/mutations';
+import { useBrand } from '../contexts/BrandContext';
 
 export default function Admin() {
   const [data, setData] = useState<Client | Record<string, never> | null>(null);
+  const [images, setImages] = useState<StrapiImage[]>([]);
+
   const client = useApolloClient();
   const toast = useToast();
+  const { loadContent } = useBrand();
 
   const formik = useFormik({
     initialValues: {} as Client,
@@ -57,11 +61,14 @@ export default function Admin() {
         if (site) {
           setData(site);
           formik.setValues(site);
+          loadContent(site.brand);
         } else {
           setData({});
         }
       })
       .catch((err) => console.log(err));
+
+    getMediaLibrary(client);
   }, []);
 
   if (!data) {

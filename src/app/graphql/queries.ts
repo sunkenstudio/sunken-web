@@ -63,3 +63,19 @@ export const GET_SITE = gql`
     }
   }
 `;
+
+export const GET_IMAGES = gql`
+  query {
+    uploadFiles {
+      data {
+        id
+        attributes {
+          name
+          url
+          alternativeText
+          caption
+        }
+      }
+    }
+  }
+`;

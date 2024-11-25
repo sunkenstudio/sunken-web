@@ -12,6 +12,8 @@ import {
 } from '@chakra-ui/react';
 import { Client, StrapiHero } from '@/app/types';
 import { RichTextInput } from '../RichTextInput';
+import { ImageInput } from '../ImageInput';
+import { TextInput } from '../TextInput';
 
 export interface HeroFormProps {
   hero: StrapiHero;
@@ -20,18 +22,16 @@ export interface HeroFormProps {
 }
 
 export const HeroForm = ({ hero, values, onChange }: HeroFormProps) => {
-  const [isOpen, setIsOpen] = useState(false); // State to manage collapse toggle
+  const [isOpen, setIsOpen] = useState(false);
 
-  // Initialize with empty EditorState if not available
   const toggleCollapse = () => {
     setIsOpen(!isOpen);
   };
-
+  console.log({ hero });
   return (
     <Box width="100%" borderBottom="1px" borderColor="gray.200" p={'1rem'}>
-      {/* Button to toggle collapse */}
       <Button onClick={toggleCollapse} mb={4}>
-        {isOpen ? 'Close Hero' : `Hero (Order ${hero.sortOrder})`}
+        {isOpen ? 'Close Hero' : `Hero (${hero.sortOrder})`}
       </Button>
 
       {/* Collapsible content */}
@@ -41,14 +41,10 @@ export const HeroForm = ({ hero, values, onChange }: HeroFormProps) => {
             <ListItem>
               <FormControl>
                 <FormLabel htmlFor={'hero-form-header'}>HEADER</FormLabel>
-                <Input
-                  id={'hero-form-header'}
+                <TextInput
                   name={'hero.header'}
-                  type={'text'}
                   value={values?.hero?.header}
                   onChange={onChange}
-                  color={'black'}
-                  bgColor="white"
                 />
               </FormControl>
             </ListItem>
@@ -57,14 +53,10 @@ export const HeroForm = ({ hero, values, onChange }: HeroFormProps) => {
                 <FormLabel htmlFor={'hero-form-subheader'}>
                   SUB-HEADER
                 </FormLabel>
-                <Input
-                  id={'hero-form-subheader'}
+                <TextInput
                   name={'hero.subheader'}
-                  type={'text'}
-                  value={values?.hero?.subheader || ''}
+                  value={values?.hero?.subheader}
                   onChange={onChange}
-                  color={'black'}
-                  bgColor="white"
                 />
               </FormControl>
             </ListItem>
@@ -72,6 +64,28 @@ export const HeroForm = ({ hero, values, onChange }: HeroFormProps) => {
               <FormControl>
                 <FormLabel htmlFor={'hero-form-subheader'}>TEXT</FormLabel>
                 <RichTextInput value={values?.hero?.text} onChange={onChange} />
+              </FormControl>
+            </ListItem>
+            <ListItem>
+              <FormControl>
+                <FormLabel htmlFor={'hero-form-image'}>IMAGE</FormLabel>
+                <ImageInput
+                  name="hero.image"
+                  value={values?.hero?.image}
+                  onChange={onChange}
+                />
+              </FormControl>
+            </ListItem>
+            <ListItem>
+              <FormControl>
+                <FormLabel htmlFor={'hero-form-bgImage'}>
+                  BACKGROUND IMAGE
+                </FormLabel>
+                <ImageInput
+                  name="hero.bgImage"
+                  value={values?.hero?.bgImage}
+                  onChange={onChange}
+                />
               </FormControl>
             </ListItem>
           </List>
