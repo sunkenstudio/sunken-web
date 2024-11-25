@@ -21,7 +21,7 @@ export const Image = ({
   const borderString = border
     ? `${border.width} ${colors[border.color]} solid`
     : '';
-  console.log({ filter });
+  console.log({ borderString });
   return (
     <Box position={'relative'} height={'100%'} width={'100%'}>
       <ChakraImage

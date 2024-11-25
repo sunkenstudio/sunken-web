@@ -6,7 +6,6 @@ import {
   Collapse,
   FormControl,
   FormLabel,
-  Input,
   List,
   ListItem,
 } from '@chakra-ui/react';
@@ -40,7 +39,9 @@ export const HeroForm = ({ hero, values, onChange }: HeroFormProps) => {
           <List spacing={3}>
             <ListItem>
               <FormControl>
-                <FormLabel htmlFor={'hero-form-header'}>HEADER</FormLabel>
+                <FormLabel htmlFor={'hero-form-header'} fontWeight={'bold'}>
+                  HEADER
+                </FormLabel>
                 <TextInput
                   name={'hero.header'}
                   value={values?.hero?.header}
@@ -50,7 +51,7 @@ export const HeroForm = ({ hero, values, onChange }: HeroFormProps) => {
             </ListItem>
             <ListItem>
               <FormControl>
-                <FormLabel htmlFor={'hero-form-subheader'}>
+                <FormLabel htmlFor={'hero-form-subheader'} fontWeight={'bold'}>
                   SUB-HEADER
                 </FormLabel>
                 <TextInput
@@ -62,13 +63,17 @@ export const HeroForm = ({ hero, values, onChange }: HeroFormProps) => {
             </ListItem>
             <ListItem>
               <FormControl>
-                <FormLabel htmlFor={'hero-form-subheader'}>TEXT</FormLabel>
+                <FormLabel htmlFor={'hero-form-subheader'} fontWeight={'bold'}>
+                  TEXT
+                </FormLabel>
                 <RichTextInput value={values?.hero?.text} onChange={onChange} />
               </FormControl>
             </ListItem>
             <ListItem>
               <FormControl>
-                <FormLabel htmlFor={'hero-form-image'}>IMAGE</FormLabel>
+                <FormLabel htmlFor={'hero-form-image'} fontWeight={'bold'}>
+                  IMAGE
+                </FormLabel>
                 <ImageInput
                   name="hero.image"
                   value={values?.hero?.image}
@@ -78,7 +83,7 @@ export const HeroForm = ({ hero, values, onChange }: HeroFormProps) => {
             </ListItem>
             <ListItem>
               <FormControl>
-                <FormLabel htmlFor={'hero-form-bgImage'}>
+                <FormLabel htmlFor={'hero-form-bgImage'} fontWeight={'bold'}>
                   BACKGROUND IMAGE
                 </FormLabel>
                 <ImageInput

@@ -17,12 +17,12 @@ export const ImageInput = ({ name, value, onChange }: ImageInputProps) => {
   console.log({ value });
   return (
     <HStack gap={'3rem'}>
-      <Box w="30%">
+      <Box maxW="30%">
         <Image {...value} />
       </Box>
       <Stack>
-        <Paragraph>FILTER</Paragraph>
-        <HStack>
+        <Paragraph fontWeight={'bold'}>FILTER</Paragraph>
+        <HStack border={'1px solid #edf2f7'} p={'1rem'} borderRadius={'.5rem'}>
           <Stack>
             <Paragraph>Color</Paragraph>
             <Select
@@ -70,6 +70,49 @@ export const ImageInput = ({ name, value, onChange }: ImageInputProps) => {
               <option value={80}>80%</option>
               <option value={90}>90%</option>
               <option value={100}>100%</option>
+            </Select>
+          </Stack>
+        </HStack>
+        <Paragraph fontWeight={'bold'}>BORDER</Paragraph>
+        <HStack border={'1px solid #edf2f7'} p={'1rem'} borderRadius={'.5rem'}>
+          <Stack>
+            <Paragraph>Width</Paragraph>
+            <Select
+              name={`${name}.border.width`}
+              value={value?.border?.width || 0}
+              onChange={onChange}
+            >
+              <option value={'0px'}>0px</option>
+              <option value={'1px'}>1px</option>
+              <option value={'2px'}>2px</option>
+              <option value={'3px'}>3px</option>
+              <option value={'4px'}>4px</option>
+            </Select>
+          </Stack>
+          <Stack>
+            <Paragraph>Color</Paragraph>
+            <Select
+              name={`${name}.border.color`}
+              value={value?.border?.color}
+              onChange={onChange}
+            >
+              <option value="primary">Primary</option>
+              <option value="secondary">Secondary</option>
+              <option value="accent">Accent</option>
+              <option value="light">Light</option>
+              <option value="dark">Dark</option>
+            </Select>
+          </Stack>
+          <Stack>
+            <Paragraph>Radius</Paragraph>
+            <Select
+              name={`${name}.border.radius`}
+              value={value?.border?.radius}
+              onChange={onChange}
+            >
+              <option value="0">Regular</option>
+              <option value="1rem">Rounded</option>
+              <option value="100%">Circle</option>
             </Select>
           </Stack>
         </HStack>
