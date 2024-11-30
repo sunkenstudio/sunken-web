@@ -1,8 +1,8 @@
 import { gql } from '@apollo/client';
 import * as Common from './common';
 
-export const CONTACT = gql`
-  ${Common.STYLED_IMAGE}
+export const GET_CONTACT = gql`
+  ${Common.GET_STYLED_IMAGE}
 
   fragment contact on ContactEntityResponse {
     data {

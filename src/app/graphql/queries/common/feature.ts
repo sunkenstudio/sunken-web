@@ -1,6 +1,6 @@
 import { gql } from '@apollo/client';
 
-export const FEATURE = gql`
+export const GET_FEATURE = gql`
   fragment feature on ComponentCommonFeature {
     Header
     Blurb

@@ -1,6 +1,6 @@
 import { gql } from '@apollo/client';
 
-export const STYLED_BUTTON = gql`
+export const GET_STYLED_BUTTON = gql`
   fragment styledButton on ComponentCommonButton {
     Type
     Text

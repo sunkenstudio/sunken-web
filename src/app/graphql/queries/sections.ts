@@ -1,8 +1,8 @@
 import { gql } from '@apollo/client';
 import * as Common from './common';
 
-export const SECTIONS = gql`
-  ${Common.STYLED_IMAGE}
+export const GET_SECTIONS = gql`
+  ${Common.GET_STYLED_IMAGE}
 
   # multiple entities so it gets a "RelationResponseCollection"
   fragment sections on SectionRelationResponseCollection {

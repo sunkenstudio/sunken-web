@@ -2,8 +2,8 @@ import { gql } from '@apollo/client';
 import * as Common from './common';
 
 export const GET_HERO = gql`
-  ${Common.STYLED_IMAGE}
-  ${Common.STYLED_BUTTON}
+  ${Common.GET_STYLED_IMAGE}
+  ${Common.GET_STYLED_BUTTON}
 
   fragment hero on HeroEntityResponse {
     data {
@@ -29,7 +29,7 @@ export const GET_HERO = gql`
 `;
 
 export const UPDATE_HERO = gql`
-  ${Common.STYLED_IMAGE}
+  ${Common.GET_STYLED_IMAGE}
 
   mutation UpdateHero(
     $id: ID!

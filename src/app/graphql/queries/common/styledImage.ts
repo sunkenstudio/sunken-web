@@ -1,6 +1,6 @@
 import { gql } from '@apollo/client';
 
-export const STYLED_IMAGE = gql`
+export const GET_STYLED_IMAGE = gql`
   fragment styledImage on ComponentCommonImage {
     Media {
       data {

@@ -1,8 +1,8 @@
 import { gql } from '@apollo/client';
 import * as Common from './common';
 
-export const BRAND = gql`
-  ${Common.FONT}
+export const GET_BRAND = gql`
+  ${Common.GET_FONT}
 
   fragment brand on BrandEntityResponse {
     data {
