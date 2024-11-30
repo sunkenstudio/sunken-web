@@ -37,6 +37,7 @@ export const UPDATE_HERO = gql`
     $subheader: String!
     $text: JSON!
     $image: ComponentCommonImageInput!
+    $bgImage: ComponentCommonImageInput!
   ) {
     updateHero(
       id: $id
@@ -45,6 +46,7 @@ export const UPDATE_HERO = gql`
         Subheader: $subheader
         Text: $text
         Image: $image
+        BgImage: $bgImage
       }
     ) {
       data {
@@ -53,6 +55,9 @@ export const UPDATE_HERO = gql`
           Subheader
           Text
           Image {
+            ...styledImage
+          }
+          BgImage {
             ...styledImage
           }
         }

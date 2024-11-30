@@ -31,14 +31,17 @@ export default function Admin() {
 
   const handleUpdate = () => {
     console.log('values', formik.values);
+    const { hero } = formik.values;
     updateHero({
       variables: {
-        ...formik.values.hero,
+        ...hero,
         image: {
-          Media: formik.values.hero.image?.media.id,
-          Alt: formik.values.hero.image?.media.alt,
-          Border: formik.values.hero.image?.media.border,
-          Filter: formik.values.hero.image?.media.filter,
+          ...hero.image,
+          media: hero.image?.media.id,
+        },
+        bgImage: {
+          ...hero.bgImage,
+          media: hero.bgImage?.media.id,
         },
       },
     })

@@ -2,7 +2,7 @@ import { gql } from '@apollo/client';
 
 export const GET_STYLED_IMAGE = gql`
   fragment styledImage on ComponentCommonImage {
-    Media {
+    media {
       data {
         id
         attributes {
@@ -11,16 +11,16 @@ export const GET_STYLED_IMAGE = gql`
         }
       }
     }
-    Alt
-    Border {
-      Width
-      Radius
-      Color
+    alt
+    border {
+      width
+      radius
+      color
     }
-    Filter {
-      Color
-      Opacity
-      Grayscale
+    filter {
+      color
+      opacity
+      grayscale
     }
   }
 `;

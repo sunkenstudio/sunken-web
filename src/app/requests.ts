@@ -55,7 +55,6 @@ export const getMediaLibrary = async (
     });
     const raw = res.data.uploadFiles.data;
     const images = raw.map((i) => ({ id: i.id, ...i.attributes }));
-    // const images: StrapiImage[] = res?.data.uploadFiles.data;
     const imageObj = images.reduce(
       (acc, i) => ({
         [i.id]: i,
@@ -63,7 +62,6 @@ export const getMediaLibrary = async (
       }),
       {}
     );
-    console.log({ imageObj });
     return Promise.resolve(imageObj);
   } catch (err) {
     return Promise.resolve({});

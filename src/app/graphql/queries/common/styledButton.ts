@@ -9,9 +9,9 @@ export const GET_STYLED_BUTTON = gql`
     Color
     BgColor
     Border {
-      Width
-      Radius
-      Color
+      width
+      radius
+      color
     }
     Shadow
   }

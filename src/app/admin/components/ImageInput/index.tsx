@@ -3,7 +3,7 @@ import { Image } from '@/app/components/_Shared/Image';
 import { Paragraph } from '@/app/components/Typography';
 import { MediaLibrary, StrapiStyledImage } from '@/app/types';
 import { Box, Button, HStack, Stack, Select } from '@chakra-ui/react';
-import React, { useState } from 'react';
+import React from 'react';
 
 interface ImageInputProps {
   name: string;
@@ -63,7 +63,14 @@ export const ImageInput = ({
             <Select
               name={`${name}.filter.opacity`}
               value={value?.filter?.opacity}
-              onChange={onChange}
+              onChange={(e) => {
+                onChange({
+                  target: {
+                    name: `${name}.filter.opacity`,
+                    value: parseFloat(e.target.value),
+                  },
+                });
+              }}
             >
               <option value={0.0}>0.0</option>
               <option value={0.2}>0.2</option>
@@ -78,7 +85,14 @@ export const ImageInput = ({
             <Select
               name={`${name}.filter.grayscale`}
               value={value?.filter?.grayscale}
-              onChange={onChange}
+              onChange={(e) => {
+                onChange({
+                  target: {
+                    name: `${name}.filter.grayscale`,
+                    value: parseInt(e.target.value),
+                  },
+                });
+              }}
             >
               <option value={0}>0%</option>
               <option value={10}>10%</option>
