@@ -1,5 +1,5 @@
 import { GET_MEDIA_LIBRARY, GET_SITE, GET_SITE_ID } from './graphql';
-import { Client, MediaLibrary, StrapiImage } from './types';
+import { Client, MediaLibrary } from './types';
 import { formatStrapiData, getClientIdFromUrl } from './helpers/utils';
 import { ApolloClient } from '@apollo/client';
 

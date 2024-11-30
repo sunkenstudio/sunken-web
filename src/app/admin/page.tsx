@@ -15,7 +15,6 @@ import {
 } from '@chakra-ui/react';
 import { HeroForm } from './components/HeroForm';
 import { FormikProvider, useFormik } from 'formik';
-import { Button } from '../components/_Shared/Button';
 import { H3 } from '../components/Typography';
 import { UPDATE_HERO } from '../graphql/queries';
 import { useBrand } from '../contexts/BrandContext';
@@ -110,7 +109,6 @@ export default function Admin() {
             <TabPanels>
               <TabPanel>
                 <HeroForm
-                  hero={data.hero}
                   values={formik?.values}
                   mediaLibrary={mediaLibrary}
                   onChange={formik.handleChange}

@@ -17,18 +17,12 @@ import { Hero } from '@/app/components/Hero';
 import { SelectInput } from '../SelectInput';
 
 export interface HeroFormProps {
-  hero: StrapiHero;
   values: Client;
   mediaLibrary: MediaLibrary;
   onChange: (e: React.ChangeEvent<any>) => void;
 }
 
-export const HeroForm = ({
-  hero,
-  values,
-  mediaLibrary,
-  onChange,
-}: HeroFormProps) => {
+export const HeroForm = ({ values, mediaLibrary, onChange }: HeroFormProps) => {
   const [isPreview, setIsPreview] = useState(false);
 
   const togglePreview = () => {
