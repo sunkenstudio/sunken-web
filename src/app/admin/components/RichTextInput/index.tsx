@@ -7,6 +7,7 @@ import {
   convertEditorStateToBlocks,
 } from '@/app/helpers/utils';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
+import { Box } from '@chakra-ui/react';
 
 interface RichTextInputProps {
   value: BlocksContent;
@@ -59,13 +60,17 @@ export const RichTextInput = ({ value, onChange }: RichTextInputProps) => {
   };
 
   return (
-    <Editor
-      editorState={text}
-      toolbarClassName="toolbarClassName"
-      wrapperClassName="wrapperClassName"
-      editorClassName="editorClassName"
-      onEditorStateChange={handleEditorStateChange}
-      toolbar={toolbarConfig} // Pass the custom toolbar config here
-    />
+    <Box w={{ base: '100%', md: '30%' }}>
+      <Editor
+        editorState={text}
+        onEditorStateChange={handleEditorStateChange}
+        toolbar={toolbarConfig}
+        wrapperStyle={{
+          border: '1px solid #edf2f7',
+          padding: '1rem',
+          borderRadius: '.5rem',
+        }}
+      />
+    </Box>
   );
 };

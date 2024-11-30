@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import {
   Box,
   Button,
-  Collapse,
   FormControl,
   FormLabel,
   HStack,
@@ -15,6 +14,7 @@ import { RichTextInput } from '../RichTextInput';
 import { ImageInput } from '../ImageInput';
 import { TextInput } from '../TextInput';
 import { Hero } from '@/app/components/Hero';
+import { SelectInput } from '../SelectInput';
 
 export interface HeroFormProps {
   hero: StrapiHero;
@@ -52,6 +52,31 @@ export const HeroForm = ({
       ) : (
         <Box>
           <List spacing={3}>
+            <ListItem>
+              <FormControl>
+                <FormLabel htmlFor={'hero-form-variant'} fontWeight={'bold'}>
+                  VARIANT
+                </FormLabel>
+                <SelectInput
+                  name={'hero.variant'}
+                  value={values?.hero?.variant}
+                  options={[
+                    { key: 'split', val: 'split', display: 'Split' },
+                    {
+                      key: 'leftAligned',
+                      val: 'leftAligned',
+                      display: 'Left-Aligned',
+                    },
+                    {
+                      key: 'centerAligned',
+                      val: 'centerAligned',
+                      display: 'Center Aligned',
+                    },
+                  ]}
+                  onChange={onChange}
+                />
+              </FormControl>
+            </ListItem>
             <ListItem>
               <FormControl>
                 <FormLabel htmlFor={'hero-form-header'} fontWeight={'bold'}>

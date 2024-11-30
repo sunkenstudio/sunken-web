@@ -17,6 +17,7 @@ export const TextInput = ({ name, value, onChange }: TextInputProps) => {
       onChange={onChange}
       color={'black'}
       bgColor="white"
+      w={{ base: '100%', md: '30%' }}
     />
   );
 };
