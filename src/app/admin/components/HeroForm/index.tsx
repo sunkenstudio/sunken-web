@@ -9,7 +9,7 @@ import {
   List,
   ListItem,
 } from '@chakra-ui/react';
-import { Client, MediaLibrary, StrapiHero } from '@/app/types';
+import { Client, MediaLibrary } from '@/app/types';
 import { RichTextInput } from '../RichTextInput';
 import { ImageInput } from '../ImageInput';
 import { TextInput } from '../TextInput';
