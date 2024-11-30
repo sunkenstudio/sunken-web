@@ -1,6 +1,6 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import { Client, StrapiImage } from '../types';
+import { Client, MediaLibrary } from '../types';
 import { useApolloClient, useMutation } from '@apollo/client';
 import { getMediaLibrary, getSite } from '../requests';
 import { isEmpty } from 'lodash';
@@ -14,7 +14,7 @@ import { useBrand } from '../contexts/BrandContext';
 
 export default function Admin() {
   const [data, setData] = useState<Client | Record<string, never> | null>(null);
-  const [images, setImages] = useState<StrapiImage[]>([]);
+  const [mediaLibrary, setMediaLibrary] = useState<MediaLibrary>({});
 
   const client = useApolloClient();
   const toast = useToast();
@@ -35,14 +35,10 @@ export default function Admin() {
       variables: {
         ...formik.values.hero,
         image: {
-          Media: '1', // The media ID
-          Alt: 'tile texture', // Alt text
-          Border: {
-            Width: null, // Optional properties (can be null)
-            Radius: null,
-            Color: null,
-          },
-          Filter: null, // Optional filter (can be null)
+          Media: formik.values.hero.image?.media.id,
+          Alt: formik.values.hero.image?.media.alt,
+          Border: formik.values.hero.image?.media.border,
+          Filter: formik.values.hero.image?.media.filter,
         },
       },
     })
@@ -78,7 +74,7 @@ export default function Admin() {
       })
       .catch((err) => console.log(err));
 
-    getMediaLibrary(client);
+    getMediaLibrary(client).then((media) => setMediaLibrary(media));
   }, []);
 
   if (!data) {
@@ -97,6 +93,7 @@ export default function Admin() {
           <HeroForm
             hero={data.hero}
             values={formik?.values}
+            mediaLibrary={mediaLibrary}
             onChange={formik.handleChange}
           />
           <Button

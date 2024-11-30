@@ -1,25 +1,46 @@
 'use client';
 import { Image } from '@/app/components/_Shared/Image';
 import { Paragraph } from '@/app/components/Typography';
-import { StrapiStyledImage } from '@/app/types';
+import { MediaLibrary, StrapiStyledImage } from '@/app/types';
 import { Box, Button, HStack, Stack, Select } from '@chakra-ui/react';
 import React, { useState } from 'react';
-import { TextInput } from '../TextInput';
 
 interface ImageInputProps {
   name: string;
   value: StrapiStyledImage | null;
+  mediaLibrary: MediaLibrary;
   onChange: (e: React.ChangeEvent<any>) => void;
 }
 
-export const ImageInput = ({ name, value, onChange }: ImageInputProps) => {
-  const [image, setImage] = useState<StrapiStyledImage | null>(null);
+export const ImageInput = ({
+  name,
+  value,
+  mediaLibrary,
+  onChange,
+}: ImageInputProps) => {
   console.log({ value });
+  console.log(mediaLibrary, value?.media.id);
   return (
     <HStack gap={'3rem'}>
-      <Box maxW="30%">
-        <Image {...value} />
-      </Box>
+      {mediaLibrary && (
+        <Stack maxW="30%">
+          <Select
+            name={`${name}.media.id`}
+            value={value?.media.id}
+            onChange={onChange}
+          >
+            {Object.entries(mediaLibrary).map(([k, v]) => (
+              <option key={`image-option-${k}`} value={k}>
+                {v.id}
+              </option>
+            ))}
+          </Select>
+
+          <Box w="100%">
+            <Image {...value} media={mediaLibrary[value.media.id]} />
+          </Box>
+        </Stack>
+      )}
       <Stack>
         <Paragraph fontWeight={'bold'}>FILTER</Paragraph>
         <HStack border={'1px solid #edf2f7'} p={'1rem'} borderRadius={'.5rem'}>

@@ -1,5 +1,5 @@
-import { GET_IMAGES, GET_SITE, GET_SITE_ID } from './graphql';
-import { Client } from './types';
+import { GET_MEDIA_LIBRARY, GET_SITE, GET_SITE_ID } from './graphql';
+import { Client, MediaLibrary, StrapiImage } from './types';
 import { formatStrapiData, getClientIdFromUrl } from './helpers/utils';
 import { ApolloClient } from '@apollo/client';
 
@@ -46,15 +46,26 @@ export const getSite = async (
   }
 };
 
-export const getMediaLibrary = async (client: ApolloClient<object>) => {
+export const getMediaLibrary = async (
+  client: ApolloClient<object>
+): Promise<MediaLibrary> => {
   try {
     const res = await client.query({
-      query: GET_IMAGES,
+      query: GET_MEDIA_LIBRARY,
     });
-    const imageData = formatStrapiData(res.data);
-    console.log({ imageData });
-    return Promise.resolve(res);
+    const raw = res.data.uploadFiles.data;
+    const images = raw.map((i) => ({ id: i.id, ...i.attributes }));
+    // const images: StrapiImage[] = res?.data.uploadFiles.data;
+    const imageObj = images.reduce(
+      (acc, i) => ({
+        [i.id]: i,
+        ...acc,
+      }),
+      {}
+    );
+    console.log({ imageObj });
+    return Promise.resolve(imageObj);
   } catch (err) {
-    return Promise.resolve(null);
+    return Promise.resolve({});
   }
 };

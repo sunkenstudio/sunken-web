@@ -36,8 +36,10 @@ export interface StrapiConfig {
 }
 
 export interface StrapiImage {
+  id: string;
   typename: string;
   url: string;
+  name: string;
 }
 
 export type Color = keyof BrandColors;
@@ -202,3 +204,4 @@ export interface Client {
 }
 
 export type FontFamily = { typename: string; family: string; url: string };
+export type MediaLibrary = Record<string, StrapiImage>;

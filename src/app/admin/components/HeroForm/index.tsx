@@ -10,7 +10,7 @@ import {
   List,
   ListItem,
 } from '@chakra-ui/react';
-import { Client, StrapiHero } from '@/app/types';
+import { Client, MediaLibrary, StrapiHero } from '@/app/types';
 import { RichTextInput } from '../RichTextInput';
 import { ImageInput } from '../ImageInput';
 import { TextInput } from '../TextInput';
@@ -19,10 +19,16 @@ import { Hero } from '@/app/components/Hero';
 export interface HeroFormProps {
   hero: StrapiHero;
   values: Client;
+  mediaLibrary: MediaLibrary;
   onChange: (e: React.ChangeEvent<any>) => void;
 }
 
-export const HeroForm = ({ hero, values, onChange }: HeroFormProps) => {
+export const HeroForm = ({
+  hero,
+  values,
+  mediaLibrary,
+  onChange,
+}: HeroFormProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isPreview, setIsPreview] = useState(false);
 
@@ -32,7 +38,6 @@ export const HeroForm = ({ hero, values, onChange }: HeroFormProps) => {
   const togglePreview = () => {
     setIsPreview(!isPreview);
   };
-  console.log({ hero });
 
   return (
     <Box width="100%" borderBottom="1px" borderColor="gray.200" p={'1rem'}>
@@ -104,6 +109,7 @@ export const HeroForm = ({ hero, values, onChange }: HeroFormProps) => {
                     name="hero.image"
                     value={values?.hero?.image}
                     onChange={onChange}
+                    mediaLibrary={mediaLibrary}
                   />
                 </FormControl>
               </ListItem>
@@ -116,6 +122,7 @@ export const HeroForm = ({ hero, values, onChange }: HeroFormProps) => {
                     name="hero.bgImage"
                     value={values?.hero?.bgImage}
                     onChange={onChange}
+                    mediaLibrary={mediaLibrary}
                   />
                 </FormControl>
               </ListItem>

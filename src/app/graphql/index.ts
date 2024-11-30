@@ -12,15 +12,15 @@ export const GET_SITE_ID = gql`
 `;
 export const GET_SITE = gql`
   ${Queries.GET_HERO}
-  ${Queries.SECTIONS}
-  ${Queries.PROJECT_SECTION}
-  ${Queries.BRAND}
-  ${Queries.CAROUSEL}
-  ${Queries.FOOTER}
-  ${Queries.CONTACT}
-  ${Queries.CONFIG}
-  ${Queries.IMAGE_SCROLL}
-  ${Queries.FEATURE_SECTION}
+  ${Queries.GET_SECTIONS}
+  ${Queries.GET_PROJECT_SECTION}
+  ${Queries.GET_BRAND}
+  ${Queries.GET_CAROUSEL}
+  ${Queries.GET_FOOTER}
+  ${Queries.GET_CONTACT}
+  ${Queries.GET_CONFIG}
+  ${Queries.GET_IMAGE_SCROLL}
+  ${Queries.GET_FEATURE_SECTION}
 
   query Site($id: ID!) {
     site(id: $id) {
@@ -63,7 +63,7 @@ export const GET_SITE = gql`
   }
 `;
 
-export const GET_IMAGES = gql`
+export const GET_MEDIA_LIBRARY = gql`
   query {
     uploadFiles {
       data {
