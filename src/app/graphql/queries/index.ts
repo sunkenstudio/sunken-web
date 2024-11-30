@@ -1,4 +1,4 @@
-export { HERO } from './hero';
+export { GET_HERO, UPDATE_HERO } from './hero';
 export { SECTIONS } from './sections';
 export { PROJECT_SECTION } from './projectSection';
 export { BRAND } from './brand';

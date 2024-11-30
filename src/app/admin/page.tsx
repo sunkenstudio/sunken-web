@@ -9,7 +9,7 @@ import { HeroForm } from './components/HeroForm';
 import { FormikProvider, useFormik } from 'formik';
 import { Button } from '../components/_Shared/Button';
 import { H3 } from '../components/Typography';
-import { UPDATE_HERO } from '../graphql/mutations';
+import { UPDATE_HERO } from '../graphql/queries';
 import { useBrand } from '../contexts/BrandContext';
 
 export default function Admin() {
@@ -34,6 +34,16 @@ export default function Admin() {
     updateHero({
       variables: {
         ...formik.values.hero,
+        image: {
+          Media: '1', // The media ID
+          Alt: 'tile texture', // Alt text
+          Border: {
+            Width: null, // Optional properties (can be null)
+            Radius: null,
+            Color: null,
+          },
+          Filter: null, // Optional filter (can be null)
+        },
       },
     })
       .then(() => {

@@ -1,5 +1,5 @@
 import { gql } from '@apollo/client';
-import * as Fragments from './fragments';
+import * as Queries from './queries';
 
 export const GET_SITE_ID = gql`
   query GetSiteIdByClientId($ClientId: String) {
@@ -11,17 +11,16 @@ export const GET_SITE_ID = gql`
   }
 `;
 export const GET_SITE = gql`
-  # Fragments
-  ${Fragments.HERO}
-  ${Fragments.SECTIONS}
-  ${Fragments.PROJECT_SECTION}
-  ${Fragments.BRAND}
-  ${Fragments.CAROUSEL}
-  ${Fragments.FOOTER}
-  ${Fragments.CONTACT}
-  ${Fragments.CONFIG}
-  ${Fragments.IMAGE_SCROLL}
-  ${Fragments.FEATURE_SECTION}
+  ${Queries.GET_HERO}
+  ${Queries.SECTIONS}
+  ${Queries.PROJECT_SECTION}
+  ${Queries.BRAND}
+  ${Queries.CAROUSEL}
+  ${Queries.FOOTER}
+  ${Queries.CONTACT}
+  ${Queries.CONFIG}
+  ${Queries.IMAGE_SCROLL}
+  ${Queries.FEATURE_SECTION}
 
   query Site($id: ID!) {
     site(id: $id) {

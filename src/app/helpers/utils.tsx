@@ -102,6 +102,9 @@ export const formatStrapiData = (data: any): Client => {
 // TODO - Figure out the correct typing for this mess
 export const recursiveFormat = (data: any): Client => {
   return Object.entries(data).reduce((acc, [key, val]) => {
+    if (key == '__typename') {
+      return { ...acc };
+    }
     const formattedKey = camelCase(key);
 
     if (typeof val === 'object') {

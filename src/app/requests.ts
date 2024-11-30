@@ -1,4 +1,4 @@
-import { GET_IMAGES, GET_SITE, GET_SITE_ID } from './graphql/queries';
+import { GET_IMAGES, GET_SITE, GET_SITE_ID } from './graphql';
 import { Client } from './types';
 import { formatStrapiData, getClientIdFromUrl } from './helpers/utils';
 import { ApolloClient } from '@apollo/client';
