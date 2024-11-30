@@ -4,7 +4,15 @@ import { Client, MediaLibrary } from '../types';
 import { useApolloClient, useMutation } from '@apollo/client';
 import { getMediaLibrary, getSite } from '../requests';
 import { isEmpty } from 'lodash';
-import { Stack, useToast } from '@chakra-ui/react';
+import {
+  Stack,
+  useToast,
+  Tabs,
+  TabList,
+  Tab,
+  TabPanels,
+  TabPanel,
+} from '@chakra-ui/react';
 import { HeroForm } from './components/HeroForm';
 import { FormikProvider, useFormik } from 'formik';
 import { Button } from '../components/_Shared/Button';
@@ -30,7 +38,6 @@ export default function Admin() {
   const [updateHero] = useMutation(UPDATE_HERO);
 
   const handleUpdate = () => {
-    console.log('values', formik.values);
     const { hero } = formik.values;
     updateHero({
       variables: {
@@ -91,21 +98,35 @@ export default function Admin() {
   return (
     <Stack p={'1rem'}>
       <FormikProvider value={formik}>
-        <H3>SITE EDITOR</H3>
+        <H3 mb={'1rem'}>SITE EDITOR</H3>
         <form onSubmit={formik.handleSubmit}>
-          <HeroForm
-            hero={data.hero}
-            values={formik?.values}
-            mediaLibrary={mediaLibrary}
-            onChange={formik.handleChange}
-          />
-          <Button
-            mt={'1rem'}
-            type="submit"
-            w={'100%'}
-            textShadow={''}
-            text={'SUBMIT'}
-          />
+          <Tabs variant="soft-rounded">
+            <TabList>
+              <Tab>HERO</Tab>
+              <Tab>BRAND</Tab>
+              <Tab>SECTION 1</Tab>
+              <Tab>CONTACT</Tab>
+            </TabList>
+            <TabPanels>
+              <TabPanel>
+                <HeroForm
+                  hero={data.hero}
+                  values={formik?.values}
+                  mediaLibrary={mediaLibrary}
+                  onChange={formik.handleChange}
+                />
+              </TabPanel>
+              <TabPanel>
+                <p>Brand form goes here</p>
+              </TabPanel>
+              <TabPanel>
+                <p>Section form goes here</p>
+              </TabPanel>
+              <TabPanel>
+                <p>Contact form goes here</p>
+              </TabPanel>
+            </TabPanels>
+          </Tabs>
         </form>
       </FormikProvider>
     </Stack>

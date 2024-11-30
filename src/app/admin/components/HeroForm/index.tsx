@@ -29,107 +29,99 @@ export const HeroForm = ({
   mediaLibrary,
   onChange,
 }: HeroFormProps) => {
-  const [isOpen, setIsOpen] = useState(false);
   const [isPreview, setIsPreview] = useState(false);
 
-  const toggleCollapse = () => {
-    setIsOpen(!isOpen);
-  };
   const togglePreview = () => {
     setIsPreview(!isPreview);
   };
 
   return (
-    <Box width="100%" borderBottom="1px" borderColor="gray.200" p={'1rem'}>
-      <HStack gap={'3rem'}>
-        <Button onClick={toggleCollapse} mb={4}>
-          {isOpen ? 'Close Hero' : `Hero (${hero.sortOrder})`}
+    <Box width="100%" p={'1rem'}>
+      <HStack gap={'1rem'}>
+        <Button onClick={togglePreview} mb={4}>
+          {isPreview ? 'Close Preview' : `Preview`}
         </Button>
-        {isOpen ? (
-          <Button onClick={togglePreview} mb={4}>
-            {isPreview ? 'Close Preview' : `Preview`}
-          </Button>
-        ) : null}
+        <Button type="submit" mb={4}>
+          Save Changes
+        </Button>
       </HStack>
 
       {/* Collapsible content */}
-      <Collapse in={isOpen}>
-        {isPreview ? (
-          <Hero hero={values.hero} />
-        ) : (
-          <Box>
-            <List spacing={3}>
-              <ListItem>
-                <FormControl>
-                  <FormLabel htmlFor={'hero-form-header'} fontWeight={'bold'}>
-                    HEADER
-                  </FormLabel>
-                  <TextInput
-                    name={'hero.header'}
-                    value={values?.hero?.header}
-                    onChange={onChange}
-                  />
-                </FormControl>
-              </ListItem>
-              <ListItem>
-                <FormControl>
-                  <FormLabel
-                    htmlFor={'hero-form-subheader'}
-                    fontWeight={'bold'}
-                  >
-                    SUB-HEADER
-                  </FormLabel>
-                  <TextInput
-                    name={'hero.subheader'}
-                    value={values?.hero?.subheader}
-                    onChange={onChange}
-                  />
-                </FormControl>
-              </ListItem>
-              <ListItem>
-                <FormControl>
-                  <FormLabel
-                    htmlFor={'hero-form-subheader'}
-                    fontWeight={'bold'}
-                  >
-                    TEXT
-                  </FormLabel>
-                  <RichTextInput
-                    value={values?.hero?.text}
-                    onChange={onChange}
-                  />
-                </FormControl>
-              </ListItem>
-              <ListItem>
-                <FormControl>
-                  <FormLabel htmlFor={'hero-form-image'} fontWeight={'bold'}>
-                    IMAGE
-                  </FormLabel>
-                  <ImageInput
-                    name="hero.image"
-                    value={values?.hero?.image}
-                    onChange={onChange}
-                    mediaLibrary={mediaLibrary}
-                  />
-                </FormControl>
-              </ListItem>
-              <ListItem>
-                <FormControl>
-                  <FormLabel htmlFor={'hero-form-bgImage'} fontWeight={'bold'}>
-                    BACKGROUND IMAGE
-                  </FormLabel>
-                  <ImageInput
-                    name="hero.bgImage"
-                    value={values?.hero?.bgImage}
-                    onChange={onChange}
-                    mediaLibrary={mediaLibrary}
-                  />
-                </FormControl>
-              </ListItem>
-            </List>
-          </Box>
-        )}
-      </Collapse>
+      {isPreview ? (
+        <Hero hero={values.hero} />
+      ) : (
+        <Box>
+          <List spacing={3}>
+            <ListItem>
+              <FormControl>
+                <FormLabel htmlFor={'hero-form-header'} fontWeight={'bold'}>
+                  HEADER
+                </FormLabel>
+                <TextInput
+                  name={'hero.header'}
+                  value={values?.hero?.header}
+                  onChange={onChange}
+                />
+              </FormControl>
+            </ListItem>
+            <ListItem>
+              <FormControl>
+                <FormLabel htmlFor={'hero-form-subheader'} fontWeight={'bold'}>
+                  SUB-HEADER
+                </FormLabel>
+                <TextInput
+                  name={'hero.subheader'}
+                  value={values?.hero?.subheader}
+                  onChange={onChange}
+                />
+              </FormControl>
+            </ListItem>
+            <ListItem>
+              <FormControl>
+                <FormLabel htmlFor={'hero-form-subheader'} fontWeight={'bold'}>
+                  TEXT
+                </FormLabel>
+                <RichTextInput value={values?.hero?.text} onChange={onChange} />
+              </FormControl>
+            </ListItem>
+            <ListItem>
+              <FormControl>
+                <FormLabel htmlFor={'hero-form-image'} fontWeight={'bold'}>
+                  IMAGE
+                </FormLabel>
+                <ImageInput
+                  name="hero.image"
+                  value={values?.hero?.image}
+                  onChange={onChange}
+                  mediaLibrary={mediaLibrary}
+                />
+              </FormControl>
+            </ListItem>
+            <ListItem>
+              <FormControl>
+                <FormLabel htmlFor={'hero-form-bgImage'} fontWeight={'bold'}>
+                  BACKGROUND IMAGE
+                </FormLabel>
+                <ImageInput
+                  name="hero.bgImage"
+                  value={values?.hero?.bgImage}
+                  onChange={onChange}
+                  mediaLibrary={mediaLibrary}
+                />
+              </FormControl>
+            </ListItem>
+          </List>
+        </Box>
+      )}
+
+      <HStack gap={'1rem'} mt={'1rem'}>
+        <Button onClick={togglePreview} mb={4}>
+          {isPreview ? 'Close Preview' : `Preview`}
+        </Button>
+        <Button type="submit" mb={4}>
+          Save Changes
+        </Button>
+      </HStack>
     </Box>
   );
 };
