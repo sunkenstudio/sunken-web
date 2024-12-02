@@ -1,9 +1,20 @@
 'use client';
+import { useMutation } from '@apollo/client';
 import { Image } from '@/app/components/_Shared/Image';
 import { Paragraph } from '@/app/components/Typography';
 import { MediaLibrary, StrapiStyledImage } from '@/app/types';
-import { Box, Button, HStack, Stack, Select } from '@chakra-ui/react';
-import React from 'react';
+import {
+  Box,
+  HStack,
+  Stack,
+  Select,
+  FormControl,
+  FormLabel,
+  Input,
+  useToast,
+} from '@chakra-ui/react';
+import React, { ChangeEvent, useEffect, useState } from 'react';
+import { UPLOAD_IMAGE } from '@/app/graphql';
 
 interface ImageInputProps {
   name: string;
@@ -18,16 +29,73 @@ export const ImageInput = ({
   mediaLibrary,
   onChange,
 }: ImageInputProps) => {
-  console.log({ value });
-  console.log(mediaLibrary, value?.media.id);
+  const [file, setFile] = useState<File | null>(null);
+  const [uploadImage] = useMutation(UPLOAD_IMAGE);
+  const toast = useToast();
+
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.files) {
+      setFile(event.target.files[0]); // Select the first file
+    }
+  };
+
+  const handleUpload = async () => {
+    if (!file) {
+      alert('Please select a file to upload.');
+      return;
+    }
+    console.log({ file });
+
+    try {
+      const uploaded = await uploadImage({
+        variables: {
+          file,
+        },
+      });
+      console.log({ uploaded });
+      toast({
+        title: 'File Uploaded!',
+        status: 'success',
+        duration: 3000,
+        isClosable: true,
+      });
+    } catch (error) {
+      console.error('Error uploading file:', error);
+      toast({
+        title: 'Something went wrong...',
+        status: 'error',
+        duration: 3000,
+        isClosable: true,
+      });
+    }
+  };
+
+  useEffect(() => {
+    if (file) {
+      handleUpload();
+    }
+  }, [file]);
   return (
     <HStack gap={'3rem'}>
       {mediaLibrary && (
         <Stack maxW="30%">
           <Select
             name={`${name}.media.id`}
-            value={value?.media.id}
-            onChange={onChange}
+            value={value?.media?.id || ''}
+            onChange={(e) => {
+              // need to update whole media value for preview to update correctly
+              const img = Object.values(mediaLibrary).find(
+                (i) => i.id === e.target.value
+              );
+              onChange({
+                target: {
+                  name: `${name}.media`,
+                  value: {
+                    ...img,
+                  },
+                },
+              } as ChangeEvent<any>);
+            }}
           >
             {Object.entries(mediaLibrary).map(([k, v]) => (
               <option key={`image-option-${k}`} value={k}>
@@ -37,7 +105,9 @@ export const ImageInput = ({
           </Select>
 
           <Box w="100%">
-            <Image {...value} media={mediaLibrary[value.media.id]} />
+            {value?.media && (
+              <Image {...value} media={mediaLibrary[value.media.id]} />
+            )}
           </Box>
         </Stack>
       )}
@@ -69,7 +139,7 @@ export const ImageInput = ({
                     name: `${name}.filter.opacity`,
                     value: parseFloat(e.target.value),
                   },
-                });
+                } as ChangeEvent<any>);
               }}
             >
               <option value={0.0}>0.0</option>
@@ -91,7 +161,7 @@ export const ImageInput = ({
                     name: `${name}.filter.grayscale`,
                     value: parseInt(e.target.value),
                   },
-                });
+                } as ChangeEvent<any>);
               }}
             >
               <option value={0}>0%</option>
@@ -152,8 +222,16 @@ export const ImageInput = ({
           </Stack>
         </HStack>
         <HStack>
-          <Button>CHANGE IMAGE</Button>
-          <Button>UPLOAD IMAGE</Button>
+          <FormControl>
+            <FormLabel htmlFor="image-upload-input">Upload Image</FormLabel>
+            <Input
+              id="image-upload-input"
+              type="file"
+              onChange={handleFileChange} // Handle file selection
+              color={'black'}
+              bgColor="white"
+            />
+          </FormControl>
         </HStack>
       </Stack>
     </HStack>

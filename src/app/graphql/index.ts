@@ -78,3 +78,16 @@ export const GET_MEDIA_LIBRARY = gql`
     }
   }
 `;
+
+export const UPLOAD_IMAGE = gql`
+  mutation uploadFile($file: Upload!) {
+    upload(file: $file) {
+      data {
+        id
+        attributes {
+          name
+        }
+      }
+    }
+  }
+`;
