@@ -1,5 +1,5 @@
 import { GET_MEDIA_LIBRARY, GET_SITE, GET_SITE_ID } from './graphql';
-import { Client, MediaLibrary } from './types';
+import { Client, GetMediaLibraryResponse, MediaLibrary } from './types';
 import { formatStrapiData, getClientIdFromUrl } from './helpers/utils';
 import { ApolloClient } from '@apollo/client';
 
@@ -50,7 +50,7 @@ export const getMediaLibrary = async (
   client: ApolloClient<object>
 ): Promise<MediaLibrary> => {
   try {
-    const res = await client.query({
+    const res: GetMediaLibraryResponse = await client.query({
       query: GET_MEDIA_LIBRARY,
     });
     const raw = res.data.uploadFiles.data;

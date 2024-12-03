@@ -12,6 +12,7 @@ export const convertBlocksToEditorState = (
   const rawContent = {
     entityMap: {},
     blocks: blocksContent.map((block) => ({
+      //@ts-ignore
       text: block.children.map((child) => child.text).join(''), // Join text from all children (if multiple)
       type: block.type, // type can be 'paragraph', 'header', etc.
       depth: 0, // Assuming no nested lists (adjust if needed)
@@ -22,6 +23,7 @@ export const convertBlocksToEditorState = (
   };
 
   // Convert to EditorState
+  //@ts-ignore
   const contentState = convertFromRaw(rawContent);
   return EditorState.createWithContent(contentState);
 };
@@ -42,7 +44,7 @@ export const convertEditorStateToBlocks = (
           text: block.text, // The actual text of the block
         },
       ],
-    };
+    } as unknown as BlocksContent;
   });
 
   return blocksContent;

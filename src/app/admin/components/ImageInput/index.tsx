@@ -212,7 +212,7 @@ export const ImageInput = ({
             <Paragraph>Radius</Paragraph>
             <Select
               name={`${name}.border.radius`}
-              value={value?.border?.radius}
+              value={value?.border?.radius || ''}
               onChange={onChange}
             >
               <option value="0">Regular</option>

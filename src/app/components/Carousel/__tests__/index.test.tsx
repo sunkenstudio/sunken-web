@@ -7,6 +7,7 @@ import { ChakraProvider } from '@chakra-ui/react';
 import {
   BrandFixture,
   CarouselFixture,
+  ImageFixture,
   StyledImageFixture,
 } from '@/app/fixtures';
 import { BrandProvider } from '@/app/contexts/BrandContext';
@@ -185,24 +186,24 @@ describe('Carousel', () => {
         images: [
           ...CarouselFixture().images,
           StyledImageFixture({
-            media: {
+            media: ImageFixture({
               url: 'https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/8203015ace4f442ef439488dcd11d914.jpeg',
               typename: 'UploadFile',
-            },
+            }),
             alt: 'drink two',
           }),
           StyledImageFixture({
-            media: {
+            media: ImageFixture({
               url: 'https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/8203015ace4f442ef439488dcd11d914.jpeg',
               typename: 'UploadFile',
-            },
+            }),
             alt: 'drink three',
           }),
           StyledImageFixture({
-            media: {
+            media: ImageFixture({
               url: 'https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/8203015ace4f442ef439488dcd11d914.jpeg',
               typename: 'UploadFile',
-            },
+            }),
             alt: 'drink four',
           }),
         ],

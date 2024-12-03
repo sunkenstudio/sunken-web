@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { ChangeEvent, useEffect, useState } from 'react';
 import { EditorState } from 'draft-js';
 import { Editor } from 'react-draft-wysiwyg';
 import { BlocksContent } from '@strapi/blocks-react-renderer';
@@ -28,7 +28,7 @@ export const RichTextInput = ({ value, onChange }: RichTextInputProps) => {
     setText(newText);
     onChange({
       target: { name: 'hero.text', value: convertEditorStateToBlocks(newText) },
-    });
+    } as ChangeEvent<any>);
   };
 
   // Toolbar configuration to show only supported Strapi options
