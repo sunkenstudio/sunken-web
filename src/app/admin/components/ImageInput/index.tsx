@@ -44,15 +44,14 @@ export const ImageInput = ({
       alert('Please select a file to upload.');
       return;
     }
-    console.log({ file });
 
     try {
-      const uploaded = await uploadImage({
+      await uploadImage({
         variables: {
           file,
         },
       });
-      console.log({ uploaded });
+
       toast({
         title: 'File Uploaded!',
         status: 'success',
