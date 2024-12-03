@@ -10,11 +10,13 @@ import {
   ListItem,
 } from '@chakra-ui/react';
 import { Client, MediaLibrary } from '@/app/types';
-import { RichTextInput } from '../RichTextInput';
 import { ImageInput } from '../ImageInput';
 import { TextInput } from '../TextInput';
 import { Hero } from '@/app/components/Hero';
 import { SelectInput } from '../SelectInput';
+import dynamic from 'next/dynamic';
+// Dynamically import RichTextInput with no SSR
+const RichTextInput = dynamic(() => import('../RichTextInput'), { ssr: false });
 
 export interface HeroFormProps {
   values: Client;

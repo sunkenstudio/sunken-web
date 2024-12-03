@@ -1,3 +1,4 @@
+'use client';
 import React, { ChangeEvent, useEffect, useState } from 'react';
 import { EditorState } from 'draft-js';
 import { Editor } from 'react-draft-wysiwyg';
@@ -74,3 +75,5 @@ export const RichTextInput = ({ value, onChange }: RichTextInputProps) => {
     </Box>
   );
 };
+
+export default RichTextInput;
