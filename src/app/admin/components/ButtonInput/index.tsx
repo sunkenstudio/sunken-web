@@ -90,6 +90,12 @@ export const ButtonInput = ({
         <option value="light">Light</option>
         <option value="dark">Dark</option>
       </Select>
+      <Paragraph fontWeight={'bold'}>Shadow</Paragraph>
+      <TextInput
+        name={`${name}[${index}].shadow`}
+        value={value?.[index]?.shadow || ''}
+        onChange={onChange}
+      />
       <Paragraph fontWeight={'bold'}>BORDER</Paragraph>
       <HStack border={'1px solid #edf2f7'} p={'1rem'} borderRadius={'.5rem'}>
         <Stack>
