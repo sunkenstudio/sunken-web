@@ -1,6 +1,6 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import { Client, MediaLibrary, UploadFile } from '../types';
+import { Client, MediaLibrary } from '../types';
 import { useApolloClient, useMutation } from '@apollo/client';
 import { getMediaLibrary, getSite } from '../requests';
 import { isEmpty } from 'lodash';
