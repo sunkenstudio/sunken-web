@@ -1,8 +1,8 @@
 import { gql } from '@apollo/client';
 import * as Common from './common';
 
-export const FEATURE_SECTION = gql`
-  ${Common.FEATURE}
+export const GET_FEATURE_SECTION = gql`
+  ${Common.GET_FEATURE}
 
   fragment featureSection on FeatureSectionEntityResponse {
     data {

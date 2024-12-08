@@ -1,8 +1,8 @@
 import { gql } from '@apollo/client';
 import * as Common from './common';
 
-export const CAROUSEL = gql`
-  ${Common.STYLED_IMAGE}
+export const GET_CAROUSEL = gql`
+  ${Common.GET_STYLED_IMAGE}
 
   fragment carousel on CarouselEntityResponse {
     data {

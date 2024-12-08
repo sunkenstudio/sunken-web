@@ -1,5 +1,5 @@
 import { gql } from '@apollo/client';
-import * as Fragments from './fragments';
+import * as Queries from './queries';
 
 export const GET_SITE_ID = gql`
   query GetSiteIdByClientId($ClientId: String) {
@@ -11,17 +11,16 @@ export const GET_SITE_ID = gql`
   }
 `;
 export const GET_SITE = gql`
-  # Fragments
-  ${Fragments.HERO}
-  ${Fragments.SECTIONS}
-  ${Fragments.PROJECT_SECTION}
-  ${Fragments.BRAND}
-  ${Fragments.CAROUSEL}
-  ${Fragments.FOOTER}
-  ${Fragments.CONTACT}
-  ${Fragments.CONFIG}
-  ${Fragments.IMAGE_SCROLL}
-  ${Fragments.FEATURE_SECTION}
+  ${Queries.GET_HERO}
+  ${Queries.GET_SECTIONS}
+  ${Queries.GET_PROJECT_SECTION}
+  ${Queries.GET_BRAND}
+  ${Queries.GET_CAROUSEL}
+  ${Queries.GET_FOOTER}
+  ${Queries.GET_CONTACT}
+  ${Queries.GET_CONFIG}
+  ${Queries.GET_IMAGE_SCROLL}
+  ${Queries.GET_FEATURE_SECTION}
 
   query Site($id: ID!) {
     site(id: $id) {
@@ -58,6 +57,35 @@ export const GET_SITE = gql`
           feature_section {
             ...featureSection
           }
+        }
+      }
+    }
+  }
+`;
+
+export const GET_MEDIA_LIBRARY = gql`
+  query {
+    uploadFiles {
+      data {
+        id
+        attributes {
+          name
+          url
+          alternativeText
+          caption
+        }
+      }
+    }
+  }
+`;
+
+export const UPLOAD_IMAGE = gql`
+  mutation uploadFile($file: Upload!) {
+    upload(file: $file) {
+      data {
+        id
+        attributes {
+          name
         }
       }
     }

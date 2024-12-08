@@ -58,10 +58,7 @@ export const StyledImageFixture = (
   overrides: Partial<StrapiStyledImage> = {}
 ): StrapiStyledImage => ({
   typename: 'ComponentCommonImage',
-  media: {
-    typename: 'UploadFile',
-    url: 'https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/b181fb8a2e37c5523f5f625b11628738.avif',
-  },
+  media: ImageFixture(),
   alt: 'Craft cocktail with lemon twist',
   border: {
     width: '.25rem',
@@ -75,6 +72,8 @@ export const StyledImageFixture = (
 export const ImageFixture = (
   overrides: Partial<StrapiImage> = {}
 ): StrapiImage => ({
+  id: '1',
+  name: 'file-name',
   typename: 'UploadFile',
   url: 'https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/b8c12199347804e795219ef484f5572e.jpeg',
   ...overrides,
@@ -89,17 +88,17 @@ export const CarouselFixture = (
   images: [
     StyledImageFixture(),
     StyledImageFixture({
-      media: {
+      media: ImageFixture({
         url: 'https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/8203015ace4f442ef439488dcd11d914.jpeg',
         typename: 'UploadFile',
-      },
+      }),
       alt: 'Outrigger canoe',
     }),
     StyledImageFixture({
-      media: {
+      media: ImageFixture({
         url: 'https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/4af0a0e9e19b8dfde009a6b216c9f7bb.JPG',
         typename: 'UploadFile',
-      },
+      }),
       alt: 'Dragon boat',
     }),
   ],
@@ -113,6 +112,7 @@ export const CarouselFixture = (
 export const HeroFixture = (
   overrides: Partial<StrapiHero> = {}
 ): StrapiHero => ({
+  id: 0,
   typename: 'Hero',
   header: 'Corridor Cocktails',
   variant: 'leftAligned',
@@ -131,10 +131,10 @@ export const HeroFixture = (
   ],
   image: {
     typename: 'ComponentCommonImage',
-    media: {
+    media: ImageFixture({
       typename: 'UploadFile',
       url: 'https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/597ee6441f99aff5999e28ce065b563b.jpeg',
-    },
+    }),
     alt: 'Company Logo - Cocktail glass with two cherries',
     border: {
       width: '.25rem',
@@ -151,10 +151,10 @@ export const HeroFixture = (
   bgFilterOpacity: 0.25,
   bgImage: {
     typename: 'ComponentCommonImage',
-    media: {
+    media: ImageFixture({
       typename: 'UploadFile',
       url: 'https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/e1b053e4603d44705ac074325111d66b.jpg',
-    },
+    }),
     alt: 'Bg Image - Table with cocktails and cards',
     border: null,
     filter: {
@@ -258,10 +258,10 @@ export const SectionFixture = (
   variant: 'left',
   image: {
     typename: 'ComponentCommonImage',
-    media: {
+    media: ImageFixture({
       typename: 'UploadFile',
       url: 'https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/b181fb8a2e37c5523f5f625b11628738.avif',
-    },
+    }),
     alt: 'Craft cocktail with lemon twist',
     border: {
       width: '.25rem',
@@ -273,10 +273,10 @@ export const SectionFixture = (
   caption: 'caption goes here',
   bgImage: {
     typename: 'ComponentCommonImage',
-    media: {
+    media: ImageFixture({
       typename: 'UploadFile',
       url: 'https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/368ef30c049d5e73fc77113499547b2f.svg',
-    },
+    }),
     alt: 'Background image - Red fabric',
     border: null,
     filter: {
@@ -311,6 +311,8 @@ export const BrandFixture = (
   ],
   companyName: 'Corridor Cocktails',
   favicon: {
+    id: '',
+    name: '',
     typename: '',
     url: '',
   },
@@ -355,10 +357,10 @@ export const ContactFixture = (
   sortOrder: 1,
   bgImage: {
     typename: 'ComponentCommonImage',
-    media: {
+    media: ImageFixture({
       typename: 'UploadFile',
       url: 'https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/b8c12199347804e795219ef484f5572e.jpeg',
-    },
+    }),
     alt: 'Bg image - logo',
     border: null,
     filter: {
@@ -461,10 +463,10 @@ export const ArticleFixture = (
     },
   ],
   images: [
-    {
+    ImageFixture({
       typename: 'UploadFile',
       url: 'https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/881d819e76d4feed9921f05433647f6f.png',
-    },
+    }),
   ],
   link: 'https://corridorcocktails.org',
   ...overrides,

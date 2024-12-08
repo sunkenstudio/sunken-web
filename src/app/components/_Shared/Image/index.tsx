@@ -10,7 +10,7 @@ import { useBrand } from '@/app/contexts/BrandContext';
 export type ImageProps = StrapiStyledImage & ChakraStyledOptions;
 
 export const Image = ({
-  media = { typename: '', url: '' },
+  media = { typename: '', url: '', id: '', name: '' },
   alt,
   border = { width: '', color: 'dark', radius: '' },
   filter,
@@ -21,7 +21,6 @@ export const Image = ({
   const borderString = border
     ? `${border.width} ${colors[border.color]} solid`
     : '';
-
   return (
     <Box position={'relative'} height={'100%'} width={'100%'}>
       <ChakraImage

@@ -24,7 +24,7 @@ exports[`Carousel All stories should render successfully Renders Primary story 1
               <img
                 alt="Craft cocktail with lemon twist"
                 class="chakra-image css-g98gbd"
-                src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/b181fb8a2e37c5523f5f625b11628738.avif"
+                src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/b8c12199347804e795219ef484f5572e.jpeg"
               />
             </div>
             <span
@@ -210,7 +210,7 @@ exports[`Carousel matches snapshot 1`] = `
               <img
                 alt="Craft cocktail with lemon twist"
                 class="chakra-image css-g98gbd"
-                src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/b181fb8a2e37c5523f5f625b11628738.avif"
+                src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/b8c12199347804e795219ef484f5572e.jpeg"
               />
             </div>
             <span
@@ -387,7 +387,7 @@ exports[`Carousel matches snapshot 1`] = `
             <img
               alt="Craft cocktail with lemon twist"
               class="chakra-image css-g98gbd"
-              src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/b181fb8a2e37c5523f5f625b11628738.avif"
+              src="https://sunkenstudio-strapi-cms.nyc3.digitaloceanspaces.com/b8c12199347804e795219ef484f5572e.jpeg"
             />
           </div>
           <span

@@ -1,18 +1,19 @@
 import { gql } from '@apollo/client';
 import * as Common from './common';
 
-export const PROJECT_SECTION = gql`
-  ${Common.ARTICLE}
+export const GET_CONTACT = gql`
+  ${Common.GET_STYLED_IMAGE}
 
-  fragment projectSection on ProjectSectionEntityResponse {
+  fragment contact on ContactEntityResponse {
     data {
       attributes {
+        Fields
+        SendTo
         Header
         BgColor
-        Color
         SortOrder
-        Articles {
-          ...article
+        BgImage {
+          ...styledImage
         }
       }
     }

@@ -5,10 +5,12 @@ import { BASE_URL } from './urls';
 import theme from './styles/theme';
 import { BrandProvider } from './contexts/BrandContext';
 import React from 'react';
+import createUploadLink from 'apollo-upload-client/createUploadLink.mjs';
 
 export function Providers({ children }: { children: React.ReactNode }) {
   const client = new ApolloClient({
-    uri: `${BASE_URL}/graphql`,
+    // uri: `${BASE_URL}/graphql`,
+    link: createUploadLink({ uri: `${BASE_URL}/graphql` }),
     cache: new InMemoryCache(),
   });
   return (

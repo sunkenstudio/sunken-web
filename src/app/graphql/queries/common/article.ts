@@ -1,6 +1,6 @@
 import { gql } from '@apollo/client';
 
-export const ARTICLE = gql`
+export const GET_ARTICLE = gql`
   fragment article on ComponentCommonArticle {
     Title
     Description

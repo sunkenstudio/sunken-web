@@ -2,6 +2,54 @@
 import { camelCase } from 'lodash';
 import { Client } from '../types';
 
+import { convertFromRaw, convertToRaw, EditorState } from 'draft-js';
+import { BlocksContent } from '@strapi/blocks-react-renderer';
+
+export const convertBlocksToEditorState = (
+  blocksContent: BlocksContent
+): EditorState => {
+  // Convert BlocksContent (which is typically an array of block objects) into raw Draft.js content state.
+  const rawContent = {
+    entityMap: {},
+    blocks: blocksContent.map((block) => ({
+      //@ts-ignore
+      text: block.children.map((child) => child.text).join(''), // Join text from all children (if multiple)
+      type: block.type, // type can be 'paragraph', 'header', etc.
+      depth: 0, // Assuming no nested lists (adjust if needed)
+      inlineStyleRanges: [], // You can add inline styles like bold, italic here if needed
+      entityRanges: [], // You can add entity ranges like links if needed
+      data: {}, // Additional block-level data (can be used for custom data)
+    })),
+  };
+
+  // Convert to EditorState
+  //@ts-ignore
+  const contentState = convertFromRaw(rawContent);
+  return EditorState.createWithContent(contentState);
+};
+
+export const convertEditorStateToBlocks = (
+  editorState: EditorState
+): BlocksContent[] => {
+  // Extract raw content from the editorState
+  const rawContent = convertToRaw(editorState.getCurrentContent());
+
+  // Map over the blocks and convert them into the desired BlocksContent format
+  const blocksContent: BlocksContent[] = rawContent.blocks.map((block) => {
+    return {
+      type: block.type, // Block type, such as 'paragraph', 'header', etc.
+      children: [
+        {
+          type: 'text', // We only have text nodes, but this can be expanded if needed
+          text: block.text, // The actual text of the block
+        },
+      ],
+    } as unknown as BlocksContent;
+  });
+
+  return blocksContent;
+};
+
 export const emptyFunction = () => {
   // Default value for no behavior
 };
@@ -55,9 +103,12 @@ export const formatStrapiData = (data: any): Client => {
 
 // TODO - Figure out the correct typing for this mess
 export const recursiveFormat = (data: any): Client => {
-  // console.log(data);
   return Object.entries(data).reduce((acc, [key, val]) => {
+    if (key == '__typename') {
+      return { ...acc };
+    }
     const formattedKey = camelCase(key);
+
     if (typeof val === 'object') {
       /* @ts-ignore */
       if (val && Array.isArray(val?.data)) {
@@ -71,8 +122,12 @@ export const recursiveFormat = (data: any): Client => {
       if (val?.data?.attributes) {
         return {
           ...acc,
-          /* @ts-ignore */
-          [formattedKey]: recursiveFormat(val.data.attributes),
+          [formattedKey]: recursiveFormat({
+            /* @ts-ignore */
+            id: val.data.id,
+            /* @ts-ignore */
+            ...val.data.attributes,
+          }),
         };
       }
     }

@@ -1,0 +1,10 @@
+export { GET_HERO, UPDATE_HERO } from './hero';
+export { GET_SECTIONS } from './sections';
+export { GET_PROJECT_SECTION } from './projectSection';
+export { GET_BRAND } from './brand';
+export { GET_CAROUSEL } from './carousel';
+export { GET_FOOTER } from './footer';
+export { GET_CONTACT } from './contact';
+export { GET_CONFIG } from './config';
+export { GET_IMAGE_SCROLL } from './imageScroll';
+export { GET_FEATURE_SECTION } from './featureSection';

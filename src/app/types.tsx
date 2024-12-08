@@ -36,8 +36,10 @@ export interface StrapiConfig {
 }
 
 export interface StrapiImage {
+  id: string;
   typename: string;
   url: string;
+  name: string;
 }
 
 export type Color = keyof BrandColors;
@@ -115,6 +117,7 @@ export interface StrapiFooter {
 }
 
 export interface StrapiHero {
+  id: number;
   typename: string;
   header: string;
   variant: 'leftAligned' | 'centerAligned' | 'split';
@@ -201,3 +204,25 @@ export interface Client {
 }
 
 export type FontFamily = { typename: string; family: string; url: string };
+export type MediaLibrary = Record<string, StrapiImage>;
+
+export type UploadFile = {
+  id: string;
+  attributes: {
+    name: string;
+    url: string;
+    alternativeText: string | null;
+    caption: string | null;
+    __typename: 'UploadFile';
+  };
+  __typename: 'UploadFileEntity';
+};
+
+export interface GetMediaLibraryResponse {
+  data: {
+    uploadFiles: {
+      data: UploadFile[];
+      __typename: string;
+    };
+  };
+}

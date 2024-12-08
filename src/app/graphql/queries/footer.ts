@@ -1,6 +1,6 @@
 import { gql } from '@apollo/client';
 
-export const FOOTER = gql`
+export const GET_FOOTER = gql`
   fragment footer on FooterEntityResponse {
     data {
       attributes {
