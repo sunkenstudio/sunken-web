@@ -15,6 +15,8 @@ import { TextInput } from '../TextInput';
 import { Hero } from '@/app/components/Hero';
 import { SelectInput } from '../SelectInput';
 import dynamic from 'next/dynamic';
+import { ButtonInput } from '../ButtonInput';
+import { CollapsibleInput } from '../CollapsableInput';
 // Dynamically import RichTextInput with no SSR
 const RichTextInput = dynamic(() => import('../RichTextInput'), { ssr: false });
 
@@ -26,7 +28,6 @@ export interface HeroFormProps {
 
 export const HeroForm = ({ values, mediaLibrary, onChange }: HeroFormProps) => {
   const [isPreview, setIsPreview] = useState(false);
-
   const togglePreview = () => {
     setIsPreview(!isPreview);
   };
@@ -110,12 +111,14 @@ export const HeroForm = ({ values, mediaLibrary, onChange }: HeroFormProps) => {
                 <FormLabel htmlFor={'hero-form-image'} fontWeight={'bold'}>
                   IMAGE
                 </FormLabel>
-                <ImageInput
-                  name="hero.image"
-                  value={values?.hero?.image}
-                  onChange={onChange}
-                  mediaLibrary={mediaLibrary}
-                />
+                <CollapsibleInput>
+                  <ImageInput
+                    name="hero.image"
+                    value={values?.hero?.image}
+                    onChange={onChange}
+                    mediaLibrary={mediaLibrary}
+                  />
+                </CollapsibleInput>
               </FormControl>
             </ListItem>
             <ListItem>
@@ -123,12 +126,29 @@ export const HeroForm = ({ values, mediaLibrary, onChange }: HeroFormProps) => {
                 <FormLabel htmlFor={'hero-form-bgImage'} fontWeight={'bold'}>
                   BACKGROUND IMAGE
                 </FormLabel>
-                <ImageInput
-                  name="hero.bgImage"
-                  value={values?.hero?.bgImage}
-                  onChange={onChange}
-                  mediaLibrary={mediaLibrary}
-                />
+                <CollapsibleInput>
+                  <ImageInput
+                    name="hero.bgImage"
+                    value={values?.hero?.bgImage}
+                    onChange={onChange}
+                    mediaLibrary={mediaLibrary}
+                  />
+                </CollapsibleInput>
+              </FormControl>
+            </ListItem>
+            <ListItem>
+              <FormControl>
+                <FormLabel htmlFor={'hero-form-buttons'} fontWeight={'bold'}>
+                  BUTTONS
+                </FormLabel>
+                {values?.hero?.buttons.map((i, idx) => (
+                  <ButtonInput
+                    name="hero.buttons"
+                    index={idx}
+                    value={values?.hero?.buttons}
+                    onChange={onChange}
+                  />
+                ))}
               </FormControl>
             </ListItem>
           </List>

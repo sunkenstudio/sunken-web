@@ -31,6 +31,7 @@ export const ImageInput = ({
 }: ImageInputProps) => {
   const [file, setFile] = useState<File | null>(null);
   const [uploadImage] = useMutation(UPLOAD_IMAGE);
+
   const toast = useToast();
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
