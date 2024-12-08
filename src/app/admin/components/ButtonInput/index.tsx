@@ -19,6 +19,7 @@ import {
 } from '@chakra-ui/react';
 import React, { ChangeEvent, useEffect, useState } from 'react';
 import { UPLOAD_IMAGE } from '@/app/graphql';
+import { TextInput } from '../TextInput';
 
 interface ButtonInputProps {
   name: string;
@@ -33,8 +34,62 @@ export const ButtonInput = ({
   value,
   onChange,
 }: ButtonInputProps) => {
+  console.log({ value });
   return (
-    <HStack gap={'3rem'}>
+    <Stack border={'1px solid #edf2f7'} p={'1rem'} borderRadius={'.5rem'}>
+      <Paragraph fontWeight={'bold'}>Text</Paragraph>
+      <TextInput
+        name={`${name}[${index}].text`}
+        value={value?.[index]?.text || ''}
+        onChange={onChange}
+      />
+      <Paragraph fontWeight={'bold'}>Type</Paragraph>
+      <Select
+        name={`${name}[${index}].type`}
+        value={value?.[index]?.type}
+        onChange={onChange}
+      >
+        <option value="link">Link</option>
+        <option value="modal">Modal</option>
+        <option value="pdf">PDF</option>
+        <option value="submit">Submit</option>
+      </Select>
+      <Paragraph fontWeight={'bold'}>Href</Paragraph>
+      <TextInput
+        name={`${name}[${index}].href`}
+        value={value?.[index]?.href || ''}
+        onChange={onChange}
+      />
+      <Paragraph fontWeight={'bold'}>Icon</Paragraph>
+      <TextInput
+        name={`${name}[${index}].icon`}
+        value={value?.[index]?.icon || ''}
+        onChange={onChange}
+      />
+      <Paragraph fontWeight={'bold'}>Color</Paragraph>
+      <Select
+        name={`${name}[${index}].color`}
+        value={value?.[index]?.color || ''}
+        onChange={onChange}
+      >
+        <option value="primary">Primary</option>
+        <option value="secondary">Secondary</option>
+        <option value="accent">Accent</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+      </Select>
+      <Paragraph fontWeight={'bold'}>Background Color</Paragraph>
+      <Select
+        name={`${name}[${index}].bgColor`}
+        value={value?.[index]?.bgColor || ''}
+        onChange={onChange}
+      >
+        <option value="primary">Primary</option>
+        <option value="secondary">Secondary</option>
+        <option value="accent">Accent</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+      </Select>
       <Paragraph fontWeight={'bold'}>BORDER</Paragraph>
       <HStack border={'1px solid #edf2f7'} p={'1rem'} borderRadius={'.5rem'}>
         <Stack>
@@ -78,6 +133,6 @@ export const ButtonInput = ({
           </Select>
         </Stack>
       </HStack>
-    </HStack>
+    </Stack>
   );
 };

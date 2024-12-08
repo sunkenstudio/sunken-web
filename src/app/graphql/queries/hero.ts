@@ -30,6 +30,7 @@ export const GET_HERO = gql`
 
 export const UPDATE_HERO = gql`
   ${Common.GET_STYLED_IMAGE}
+  ${Common.GET_STYLED_BUTTON}
 
   mutation UpdateHero(
     $id: ID!
@@ -38,6 +39,7 @@ export const UPDATE_HERO = gql`
     $text: JSON!
     $image: ComponentCommonImageInput!
     $bgImage: ComponentCommonImageInput!
+    $buttons: [ComponentCommonButtonInput!]!
   ) {
     updateHero(
       id: $id
@@ -47,6 +49,7 @@ export const UPDATE_HERO = gql`
         Text: $text
         Image: $image
         BgImage: $bgImage
+        Buttons: $buttons
       }
     ) {
       data {
@@ -59,6 +62,9 @@ export const UPDATE_HERO = gql`
           }
           BgImage {
             ...styledImage
+          }
+          Buttons {
+            ...styledButton
           }
         }
       }

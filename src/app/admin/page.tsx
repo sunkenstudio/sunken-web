@@ -31,6 +31,7 @@ export default function Admin() {
   const formik = useFormik({
     initialValues: {} as Client,
     onSubmit: () => {
+      console.log({ values: formik.values });
       handleUpdate();
     },
   });
@@ -39,6 +40,7 @@ export default function Admin() {
 
   const handleUpdate = () => {
     const { hero } = formik.values;
+    console.log({ buttons: hero.buttons });
     updateHero({
       variables: {
         ...hero,

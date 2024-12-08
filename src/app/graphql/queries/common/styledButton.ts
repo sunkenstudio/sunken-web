@@ -2,17 +2,17 @@ import { gql } from '@apollo/client';
 
 export const GET_STYLED_BUTTON = gql`
   fragment styledButton on ComponentCommonButton {
-    Type
-    Text
-    Href
-    Icon
-    Color
-    BgColor
-    Border {
+    type
+    text
+    href
+    icon
+    color
+    bgColor
+    border {
       width
       radius
       color
     }
-    Shadow
+    shadow
   }
 `;
