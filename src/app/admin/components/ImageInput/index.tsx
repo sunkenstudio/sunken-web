@@ -35,7 +35,17 @@ export const ImageInput = ({
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.files) {
-      setFile(event.target.files[0]); // Select the first file
+      const selectedFile = event.target.files[0];
+
+      // Append 'demo_' to the file name
+      const newFileName = `demo_${selectedFile.name}`;
+
+      // Create a new File object with the modified name
+      const newFile = new File([selectedFile], newFileName, {
+        type: selectedFile.type,
+      });
+
+      setFile(newFile); // Set the new file with the updated name
     }
   };
 
@@ -45,28 +55,28 @@ export const ImageInput = ({
       return;
     }
 
-    try {
-      await uploadImage({
-        variables: {
-          file,
-        },
+    uploadImage({
+      variables: {
+        file,
+      },
+    })
+      .then(() => {
+        toast({
+          title: 'File Uploaded!',
+          status: 'success',
+          duration: 3000,
+          isClosable: true,
+        });
+      })
+      .catch((err) => {
+        console.error('Error uploading file:', err);
+        toast({
+          title: 'Something went wrong...',
+          status: 'error',
+          duration: 3000,
+          isClosable: true,
+        });
       });
-
-      toast({
-        title: 'File Uploaded!',
-        status: 'success',
-        duration: 3000,
-        isClosable: true,
-      });
-    } catch (error) {
-      console.error('Error uploading file:', error);
-      toast({
-        title: 'Something went wrong...',
-        status: 'error',
-        duration: 3000,
-        isClosable: true,
-      });
-    }
   };
 
   useEffect(() => {
@@ -98,7 +108,7 @@ export const ImageInput = ({
           >
             {Object.entries(mediaLibrary).map(([k, v]) => (
               <option key={`image-option-${k}`} value={k}>
-                {v.id}
+                {v.name}
               </option>
             ))}
           </Select>

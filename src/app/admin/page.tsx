@@ -1,6 +1,6 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import { Client, MediaLibrary } from '../types';
+import { Client, MediaLibrary, UploadFile } from '../types';
 import { useApolloClient, useMutation } from '@apollo/client';
 import { getMediaLibrary, getSite } from '../requests';
 import { isEmpty } from 'lodash';
@@ -22,6 +22,7 @@ import { useBrand } from '../contexts/BrandContext';
 export default function Admin() {
   const [data, setData] = useState<Client | Record<string, never> | null>(null);
   const [mediaLibrary, setMediaLibrary] = useState<MediaLibrary>({});
+  const [isLoading, setIsLoading] = useState(true);
 
   const client = useApolloClient();
   const toast = useToast();
@@ -77,16 +78,20 @@ export default function Admin() {
           setData(site);
           formik.setValues(site);
           loadContent(site.brand);
+          getMediaLibrary(client, site.clientId)
+            .then((media) => setMediaLibrary(media))
+            .then(() => setIsLoading(false));
         } else {
           setData({});
         }
       })
-      .catch((err) => console.log(err));
-
-    getMediaLibrary(client).then((media) => setMediaLibrary(media));
+      .catch((err) => {
+        console.log(err);
+        setIsLoading(false);
+      });
   }, []);
 
-  if (!data) {
+  if (!data || isLoading) {
     return <div>Loading...</div>;
   }
 
@@ -97,7 +102,7 @@ export default function Admin() {
   return (
     <Stack p={'1rem'}>
       <FormikProvider value={formik}>
-        <H3 mb={'1rem'}>SITE EDITOR</H3>
+        <H3 mb={'1rem'}>{`SITE EDITOR - ${data?.clientId}`}</H3>
         <form onSubmit={formik.handleSubmit}>
           <Tabs variant="soft-rounded">
             <TabList>

@@ -1,5 +1,10 @@
 import { GET_MEDIA_LIBRARY, GET_SITE, GET_SITE_ID } from './graphql';
-import { Client, GetMediaLibraryResponse, MediaLibrary } from './types';
+import {
+  Client,
+  GetMediaLibraryResponse,
+  MediaLibrary,
+  UploadFile,
+} from './types';
 import { formatStrapiData, getClientIdFromUrl } from './helpers/utils';
 import { ApolloClient } from '@apollo/client';
 
@@ -46,14 +51,24 @@ export const getSite = async (
   }
 };
 
+const filterImagesByClient = (clientId: string, files: UploadFile[]) => {
+  return files.filter((i) => {
+    if (i.attributes.name.split('_')[0] === clientId) {
+      return true;
+    }
+    return false;
+  });
+};
+
 export const getMediaLibrary = async (
-  client: ApolloClient<object>
+  client: ApolloClient<object>,
+  clientId: string
 ): Promise<MediaLibrary> => {
   try {
     const res: GetMediaLibraryResponse = await client.query({
       query: GET_MEDIA_LIBRARY,
     });
-    const raw = res.data.uploadFiles.data;
+    const raw = filterImagesByClient(clientId, res.data.uploadFiles.data);
     const images = raw.map((i) => ({ id: i.id, ...i.attributes }));
     const imageObj = images.reduce(
       (acc, i) => ({
@@ -62,6 +77,7 @@ export const getMediaLibrary = async (
       }),
       {}
     );
+    console.log({ images });
     return Promise.resolve(imageObj);
   } catch (err) {
     return Promise.resolve({});
