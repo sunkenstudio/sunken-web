@@ -17,6 +17,7 @@ import { SelectInput } from '../SelectInput';
 import dynamic from 'next/dynamic';
 import { ButtonInput } from '../ButtonInput';
 import { CollapsibleInput } from '../CollapsableInput';
+import { kebabCase } from 'lodash';
 // Dynamically import RichTextInput with no SSR
 const RichTextInput = dynamic(() => import('../RichTextInput'), { ssr: false });
 
@@ -143,6 +144,7 @@ export const HeroForm = ({ values, mediaLibrary, onChange }: HeroFormProps) => {
                 </FormLabel>
                 {values?.hero?.buttons.map((i, idx) => (
                   <ButtonInput
+                    key={`button-${kebabCase(i.text)}`}
                     name="hero.buttons"
                     index={idx}
                     value={values?.hero?.buttons}

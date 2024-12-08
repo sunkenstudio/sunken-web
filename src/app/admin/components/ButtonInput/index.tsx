@@ -1,24 +1,8 @@
 'use client';
-import { useMutation } from '@apollo/client';
-import { Image } from '@/app/components/_Shared/Image';
 import { Paragraph } from '@/app/components/Typography';
-import {
-  MediaLibrary,
-  StrapiStyledButton,
-  StrapiStyledImage,
-} from '@/app/types';
-import {
-  Box,
-  HStack,
-  Stack,
-  Select,
-  FormControl,
-  FormLabel,
-  Input,
-  useToast,
-} from '@chakra-ui/react';
-import React, { ChangeEvent, useEffect, useState } from 'react';
-import { UPLOAD_IMAGE } from '@/app/graphql';
+import { StrapiStyledButton } from '@/app/types';
+import { HStack, Stack, Select } from '@chakra-ui/react';
+import React from 'react';
 import { TextInput } from '../TextInput';
 
 interface ButtonInputProps {
