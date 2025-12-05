@@ -18,7 +18,7 @@ jobs:
           node-version: '20.11.1'
 
       - name: Install Dependencies
-        run: npm install
+        run: npm install --legacy-peer-deps
 
       - name: Run Prettier
         run: npm run format
@@ -39,7 +39,7 @@ jobs:
           node-version: '20.11.1'
 
       - name: Install Dependencies
-        run: npm install
+        run: npm install --legacy-peer-deps
 
       - name: Install Dependencies
         run: npm run build
