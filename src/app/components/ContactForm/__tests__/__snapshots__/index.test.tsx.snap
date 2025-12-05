@@ -505,7 +505,7 @@ exports[`ContactForm match snapshot 1`] = `
                 />
               </div>
               <button
-                class="chakra-button css-1qrv8y5"
+                class="chakra-button css-1gbjgum"
                 type="submit"
               >
                 SUBMIT
@@ -730,7 +730,7 @@ exports[`ContactForm match snapshot 1`] = `
               />
             </div>
             <button
-              class="chakra-button css-1qrv8y5"
+              class="chakra-button css-1gbjgum"
               type="submit"
             >
               SUBMIT
